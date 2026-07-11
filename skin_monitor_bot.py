@@ -98,17 +98,34 @@ def parse_price(s: str) -> float | None:
         return None
 
 
+class SteamBlocked(Exception):
+    """Steam стабильно отвечает 429/403 — дальше долбить бессмысленно."""
+
+
+# счётчик подряд идущих отказов Steam; сбрасывается при успешном ответе
+_consecutive_blocks = 0
+BLOCK_LIMIT = 5  # столько 429/403 подряд = прерываем проход
+
+
 async def get_json(session: aiohttp.ClientSession, url: str) -> dict | None:
+    global _consecutive_blocks
     try:
         async with session.get(url, headers=UA, timeout=aiohttp.ClientTimeout(total=20)) as r:
-            if r.status == 429:
-                log.warning("429 — пауза 5 минут")
-                await asyncio.sleep(300)
+            if r.status in (429, 403):
+                _consecutive_blocks += 1
+                log.warning("HTTP %s (блок %d/%d): %s",
+                            r.status, _consecutive_blocks, BLOCK_LIMIT, url[:80])
+                if _consecutive_blocks >= BLOCK_LIMIT:
+                    raise SteamBlocked(f"Steam вернул {r.status} {BLOCK_LIMIT} раз подряд")
+                await asyncio.sleep(2)
                 return None
             if r.status != 200:
                 log.warning("HTTP %s: %s", r.status, url[:90])
                 return None
+            _consecutive_blocks = 0
             return await r.json(content_type=None)
+    except SteamBlocked:
+        raise
     except Exception as e:
         log.warning("сеть: %s", e)
         return None

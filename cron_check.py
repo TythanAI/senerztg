@@ -26,6 +26,7 @@ from skin_monitor_bot import (
     STEAM,
     STICKER_MIN_PRICE,
     WATCHLIST,
+    SteamBlocked,
     fetch_listings,
     inspect_item,
     lowest_price,
@@ -42,6 +43,7 @@ SEEN_KEEP = 20000        # сколько последних listing_id помн
 PRICE_KEEP_SEC = 86400   # история цен — сутки
 STICKER_TTL = 86400      # кэш цен наклеек — сутки
 HEARTBEAT_SEC = 86400    # раз в сутки слать «я жив», даже если находок нет
+PASS_BUDGET_SEC = 480    # жёсткий потолок на проход (8 мин) — не зависаем никогда
 
 log = logging.getLogger("cron")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -128,57 +130,67 @@ async def main() -> None:
     state = load_state()
     seen = set(state["seen"])
     found = 0
-    steam_ok = False  # достучались ли до Steam хоть раз за проход
+    steam_ok = False   # достучались ли до Steam хоть раз за проход
+    blocked = False    # Steam стабильно отдаёт 429/403
+    deadline = time.monotonic() + PASS_BUDGET_SEC
 
     async with aiohttp.ClientSession() as session:
-        for item in WATCHLIST:
-            name = item["name"]
-            low = await lowest_price(session, name)
-            if low:
-                steam_ok = True
-                spike = check_spike(state, name, low)
-                if spike:
-                    await notify(session, spike)
-            await asyncio.sleep(ITEM_PAUSE)
+        try:
+            for item in WATCHLIST:
+                if time.monotonic() > deadline:
+                    log.warning("исчерпан бюджет времени прохода, останавливаюсь")
+                    break
+                name = item["name"]
+                low = await lowest_price(session, name)
+                if low:
+                    steam_ok = True
+                    spike = check_spike(state, name, low)
+                    if spike:
+                        await notify(session, spike)
+                await asyncio.sleep(ITEM_PAUSE)
 
-            for lot in await fetch_listings(session, name):
-                if lot["listing_id"] in seen:
-                    continue
-                seen.add(lot["listing_id"])
-                state["seen"].append(lot["listing_id"])
+                for lot in await fetch_listings(session, name):
+                    if lot["listing_id"] in seen:
+                        continue
+                    seen.add(lot["listing_id"])
+                    state["seen"].append(lot["listing_id"])
 
-                if low and lot["price"] > low * (1 + item.get("max_overpay_pct", 10) / 100):
-                    continue
-                if not lot["inspect"]:
-                    continue
+                    if low and lot["price"] > low * (1 + item.get("max_overpay_pct", 10) / 100):
+                        continue
+                    if not lot["inspect"]:
+                        continue
 
-                info = await inspect_item(session, lot["inspect"])
-                await asyncio.sleep(1.5)
-                if not info:
-                    continue
-                reasons = match_rules(item, info)
-                if item.get("check_sticker_value") and info.get("stickers"):
-                    reasons += await expensive_stickers(session, state, info)
-                if not reasons:
-                    continue
+                    info = await inspect_item(session, lot["inspect"])
+                    await asyncio.sleep(1.5)
+                    if not info:
+                        continue
+                    reasons = match_rules(item, info)
+                    if item.get("check_sticker_value") and info.get("stickers"):
+                        reasons += await expensive_stickers(session, state, info)
+                    if not reasons:
+                        continue
 
-                found += 1
-                await notify(session, (
-                    f"🎯 НАХОДКА: {name}\n"
-                    f"Цена лота: {lot['price']:.2f} (минимум: {low or '?'})\n"
-                    f"Почему: {'; '.join(reasons)}\n"
-                    f"Флоат: {info.get('floatvalue', '?')}, паттерн: {info.get('paintseed', '?')}\n"
-                    f"Купить: {lot['buy_url']}"))
+                    found += 1
+                    await notify(session, (
+                        f"🎯 НАХОДКА: {name}\n"
+                        f"Цена лота: {lot['price']:.2f} (минимум: {low or '?'})\n"
+                        f"Почему: {'; '.join(reasons)}\n"
+                        f"Флоат: {info.get('floatvalue', '?')}, паттерн: {info.get('paintseed', '?')}\n"
+                        f"Купить: {lot['buy_url']}"))
 
-            await asyncio.sleep(ITEM_PAUSE)
+                await asyncio.sleep(ITEM_PAUSE)
+        except SteamBlocked as e:
+            blocked = True
+            log.warning("проход прерван: %s", e)
 
         # подтверждение жизни: первый запуск + раз в сутки
         now = int(time.time())
-        if not steam_ok:
+        if blocked or not steam_ok:
             await notify(session,
-                "⚠️ Монитор запустился, но Steam не ответил ни на один запрос "
-                "(вероятно, режет IP серверов GitHub). Проверь логи Actions — "
-                "если там HTTP 403/429, монитор нужно запускать с домашнего IP.")
+                "⚠️ Монитор запустился, но Steam блокирует запросы с IP серверов "
+                "GitHub (HTTP 403/429). Это ожидаемо для дата-центров. Монитор "
+                "нужно запускать с домашнего IP — см. README, раздел про локальный "
+                "запуск по расписанию.")
         elif not state["first_run_done"]:
             await notify(session,
                 f"✅ Монитор подключён и работает! Слежу за {len(WATCHLIST)} "

@@ -10,12 +10,12 @@ permissions:
 
 concurrency:
   group: steam-monitor
-  cancel-in-progress: false
+  cancel-in-progress: true   # новый запуск снимает зависший, а не встаёт в очередь
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
