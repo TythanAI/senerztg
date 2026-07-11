@@ -1,0 +1,100 @@
+{
+  "_комментарий": "Список мониторинга. Сиды blue gem взяты из публичных гайдов (csgoskins.gg, skinlords, hotspawn, pricempire, 2025-2026). Добавляй свои предметы по образцу: name = market_hash_name со страницы маркета.",
+
+  "global_sticker_keywords": ["Katowice 2014"],
+
+  "items": [
+    {
+      "name": "AK-47 | Case Hardened (Minimal Wear)",
+      "paint_seeds": [661, 151, 179, 321, 387, 670, 955],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25,
+      "_note": "661 = легендарный Scar pattern; остальные Tier 1"
+    },
+    {
+      "name": "AK-47 | Case Hardened (Field-Tested)",
+      "paint_seeds": [661, 151, 179, 321, 387, 670, 955],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25
+    },
+    {
+      "name": "AK-47 | Case Hardened (Well-Worn)",
+      "paint_seeds": [661, 151, 179, 321, 387, 670, 955],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25
+    },
+    {
+      "name": "AK-47 | Case Hardened (Battle-Scarred)",
+      "paint_seeds": [661, 151, 179, 321, 387, 670, 955],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25,
+      "_note": "в BS блюджемы находят чаще всего — их плохо видно на превью"
+    },
+    {
+      "name": "Five-SeveN | Case Hardened (Minimal Wear)",
+      "paint_seeds": [278, 690, 868, 363, 670, 768, 823, 321, 879, 770, 555, 661, 387],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25,
+      "_note": "278 и 690 — топовые блюджемы Five-SeveN"
+    },
+    {
+      "name": "Five-SeveN | Case Hardened (Field-Tested)",
+      "paint_seeds": [278, 690, 868, 363, 670, 768, 823, 321, 879, 770, 555, 661, 387],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25
+    },
+    {
+      "name": "Five-SeveN | Case Hardened (Well-Worn)",
+      "paint_seeds": [278, 690, 868, 363, 670, 768, 823, 321, 879, 770, 555, 661, 387],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 25
+    },
+    {
+      "name": "Glock-18 | Fade (Factory New)",
+      "paint_seeds": [763],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 15,
+      "_note": "763 — самый ценный full fade"
+    },
+    {
+      "name": "★ Karambit | Case Hardened (Field-Tested)",
+      "paint_seeds": [387],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 20,
+      "_note": "387 — самый известный blue gem карамбита"
+    },
+    {
+      "name": "AWP | Asiimov (Battle-Scarred)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": 0.999,
+      "sticker_keywords": [], "max_overpay_pct": 20,
+      "_note": "Blackiimov: флоат 0.999+ — коллекционная вещь"
+    },
+    {
+      "name": "AWP | Asiimov (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": 0.19, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 10,
+      "_note": "минимальный флоат Asiimov = 0.18, всё около 0.18x ценится"
+    },
+    {
+      "name": "Desert Eagle | Blaze (Factory New)",
+      "paint_seeds": [],
+      "max_float": 0.01, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 10
+    },
+    {
+      "name": "AK-47 | Redline (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": 0.16, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "_note": "ликвидный скин: низкий флоат + детектор бустов"
+    },
+    {
+      "name": "M4A4 | Asiimov (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": 0.20, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8
+    }
+  ]
+}
