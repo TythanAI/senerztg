@@ -32,8 +32,14 @@ python skin_monitor_bot.py
 | AWP Asiimov (BS) | «Blackiimov»: флоат ≥ 0.999 |
 | AWP Asiimov (FT) | флоат ≤ 0.19 (минимум скина — 0.18) |
 | Desert Eagle Blaze (FN) | флоат ≤ 0.01 |
-| AK-47 Redline (FT), M4A4 Asiimov (FT) | низкий флоат + детектор бустов |
+| AK-47 Redline (FT), M4A4 Asiimov (FT) | низкий флоат + дорогие наклейки + бусты |
+| AK-47 Slate, Glock Water Elemental, USP-S Cortex, M4A1-S Cyrex, Deagle Printstream, AWP Electric Hive | дорогие наклейки на дешёвой базе |
 | **Все лоты выше** | наклейки Katowice 2014 |
+
+**Дорогие наклейки:** на предметах с `"check_sticker_value": true` бот узнаёт
+реальную цену каждой наклейки лота на маркете (кэш на сутки) и шлёт алерт,
+если наклейка стоит от `sticker_min_price` (по умолчанию 500), а сам скин
+продаётся почти по минимальной цене — классический недооценённый крафт.
 
 Сиды взяты из публичных гайдов (csgoskins.gg, skinlords, hotspawn, pricempire,
 hellcase, 2025–2026). Перед крупной покупкой сверяй паттерн вручную!

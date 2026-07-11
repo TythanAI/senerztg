@@ -60,12 +60,15 @@ STEAM = "https://steamcommunity.com"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 
-def load_watchlist() -> tuple[list[dict], list[str]]:
+def load_watchlist() -> tuple[list[dict], list[str], float]:
     data = json.loads(WATCHLIST_PATH.read_text(encoding="utf-8"))
-    return data["items"], data.get("global_sticker_keywords", [])
+    return (data["items"], data.get("global_sticker_keywords", []),
+            data.get("sticker_min_price", 500))
 
 
-WATCHLIST, GLOBAL_STICKERS = load_watchlist()
+WATCHLIST, GLOBAL_STICKERS, STICKER_MIN_PRICE = load_watchlist()
+
+STICKER_CACHE_TTL = 86400  # цены наклеек кэшируются на сутки
 
 
 def db() -> sqlite3.Connection:
@@ -73,6 +76,8 @@ def db() -> sqlite3.Connection:
     conn.execute("CREATE TABLE IF NOT EXISTS seen (listing_id TEXT PRIMARY KEY, ts INTEGER)")
     conn.execute("CREATE TABLE IF NOT EXISTS prices (item TEXT, ts INTEGER, price REAL)")
     conn.execute("CREATE TABLE IF NOT EXISTS events (ts INTEGER, text TEXT)")
+    conn.execute("CREATE TABLE IF NOT EXISTS sticker_prices"
+                 " (name TEXT PRIMARY KEY, ts INTEGER, price REAL)")
     return conn
 
 
@@ -154,6 +159,36 @@ async def inspect_item(session: aiohttp.ClientSession, inspect_link: str) -> dic
     return (data or {}).get("iteminfo")
 
 
+async def sticker_price(session: aiohttp.ClientSession, sticker_name: str) -> float | None:
+    """Цена наклейки на маркете, с кэшем на сутки (0 в кэше = 'не нашли')."""
+    mhn = sticker_name if sticker_name.startswith("Sticker |") else f"Sticker | {sticker_name}"
+    now = int(time.time())
+    with db() as conn:
+        row = conn.execute(
+            "SELECT price, ts FROM sticker_prices WHERE name = ?", (mhn,)).fetchone()
+    if row and now - row[1] < STICKER_CACHE_TTL:
+        return row[0] or None
+    price = await lowest_price(session, mhn)
+    await asyncio.sleep(ITEM_PAUSE)  # это тоже запрос к Steam
+    with db() as conn:
+        conn.execute("INSERT OR REPLACE INTO sticker_prices VALUES (?, ?, ?)",
+                     (mhn, now, price or 0))
+    return price
+
+
+async def expensive_stickers(session: aiohttp.ClientSession, info: dict) -> list[str]:
+    """Причины вида 'дорогая наклейка: X (~N)' для наклеек дороже порога."""
+    reasons = []
+    names = {s.get("name", "") for s in info.get("stickers", []) if s.get("name")}
+    for n in names:
+        p = await sticker_price(session, n)
+        if p and p >= STICKER_MIN_PRICE:
+            count = sum(1 for s in info.get("stickers", []) if s.get("name") == n)
+            mult = f" x{count}" if count > 1 else ""
+            reasons.append(f"дорогая наклейка: {n}{mult} (~{p:.0f})")
+    return reasons
+
+
 def match_rules(item: dict, info: dict) -> list[str]:
     """Причины, почему лот интересен (пустой список = не подходит)."""
     reasons = []
@@ -232,6 +267,8 @@ async def monitor_loop(bot: Bot) -> None:
                     if not info:
                         continue
                     reasons = match_rules(item, info)
+                    if item.get("check_sticker_value") and info.get("stickers"):
+                        reasons += await expensive_stickers(session, info)
                     if not reasons:
                         continue
 
@@ -263,6 +300,8 @@ async def cmd_status(message: Message) -> None:
             cond.append(f"флоат ≥ {it['min_float']}")
         if it.get("paint_seeds"):
             cond.append(f"{len(it['paint_seeds'])} редких паттернов")
+        if it.get("check_sticker_value"):
+            cond.append(f"наклейки от {STICKER_MIN_PRICE:.0f}")
         lines.append(f"• {it['name']} — {'; '.join(cond) or 'наклейки/буст'}")
     if GLOBAL_STICKERS:
         lines.append(f"\n🏷 На всех лотах ищу наклейки: {', '.join(GLOBAL_STICKERS)}")

@@ -2,6 +2,7 @@
   "_комментарий": "Список мониторинга. Сиды blue gem взяты из публичных гайдов (csgoskins.gg, skinlords, hotspawn, pricempire, 2025-2026). Добавляй свои предметы по образцу: name = market_hash_name со страницы маркета.",
 
   "global_sticker_keywords": ["Katowice 2014"],
+  "sticker_min_price": 500,
 
   "items": [
     {
@@ -88,13 +89,58 @@
       "paint_seeds": [],
       "max_float": 0.16, "min_float": null,
       "sticker_keywords": [], "max_overpay_pct": 8,
-      "_note": "ликвидный скин: низкий флоат + детектор бустов"
+      "check_sticker_value": true,
+      "_note": "ликвидный скин: низкий флоат + дорогие наклейки + бусты"
     },
     {
       "name": "M4A4 | Asiimov (Field-Tested)",
       "paint_seeds": [],
       "max_float": 0.20, "min_float": null,
-      "sticker_keywords": [], "max_overpay_pct": 8
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
+    },
+    {
+      "name": "AK-47 | Slate (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true,
+      "_note": "дешёвая база для крафтов — дорогие наклейки сливают по цене скина"
+    },
+    {
+      "name": "Glock-18 | Water Elemental (Minimal Wear)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
+    },
+    {
+      "name": "USP-S | Cortex (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
+    },
+    {
+      "name": "M4A1-S | Cyrex (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
+    },
+    {
+      "name": "Desert Eagle | Printstream (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
+    },
+    {
+      "name": "AWP | Electric Hive (Field-Tested)",
+      "paint_seeds": [],
+      "max_float": null, "min_float": null,
+      "sticker_keywords": [], "max_overpay_pct": 8,
+      "check_sticker_value": true
     }
   ]
 }
