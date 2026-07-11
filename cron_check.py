@@ -32,15 +32,16 @@ from skin_monitor_bot import (
     match_rules,
 )
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 STATE_PATH = Path(__file__).with_name("state.json")
 
-SPIKE_PCT = 12          # скачок цены в %...
-SPIKE_WINDOW_MIN = 60   # ...за столько минут (шире, чем у живого бота: cron ходит реже)
+SPIKE_PCT = 12           # скачок цены в %...
+SPIKE_WINDOW_MIN = 60    # ...за столько минут (шире, чем у живого бота: cron ходит реже)
 
-SEEN_KEEP = 20000       # сколько последних listing_id помнить
-PRICE_KEEP_SEC = 86400  # история цен — сутки
-STICKER_TTL = 86400     # кэш цен наклеек — сутки
+SEEN_KEEP = 20000        # сколько последних listing_id помнить
+PRICE_KEEP_SEC = 86400   # история цен — сутки
+STICKER_TTL = 86400      # кэш цен наклеек — сутки
+HEARTBEAT_SEC = 86400    # раз в сутки слать «я жив», даже если находок нет
 
 log = logging.getLogger("cron")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -48,8 +49,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 
 def load_state() -> dict:
     if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
-    return {"seen": [], "prices": {}, "sticker_prices": {}}
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        state.setdefault("last_heartbeat", 0)
+        state.setdefault("first_run_done", False)
+        return state
+    return {"seen": [], "prices": {}, "sticker_prices": {},
+            "last_heartbeat": 0, "first_run_done": False}
 
 
 def save_state(state: dict) -> None:
@@ -115,15 +120,22 @@ def check_spike(state: dict, name: str, price: float) -> str | None:
 
 
 async def main() -> None:
+    if not BOT_TOKEN:
+        log.error("BOT_TOKEN не задан! В репозитории: Settings -> Secrets and "
+                  "variables -> Actions -> New repository secret, имя BOT_TOKEN.")
+        raise SystemExit(1)
+
     state = load_state()
     seen = set(state["seen"])
     found = 0
+    steam_ok = False  # достучались ли до Steam хоть раз за проход
 
     async with aiohttp.ClientSession() as session:
         for item in WATCHLIST:
             name = item["name"]
             low = await lowest_price(session, name)
             if low:
+                steam_ok = True
                 spike = check_spike(state, name, low)
                 if spike:
                     await notify(session, spike)
@@ -160,8 +172,30 @@ async def main() -> None:
 
             await asyncio.sleep(ITEM_PAUSE)
 
+        # подтверждение жизни: первый запуск + раз в сутки
+        now = int(time.time())
+        if not steam_ok:
+            await notify(session,
+                "⚠️ Монитор запустился, но Steam не ответил ни на один запрос "
+                "(вероятно, режет IP серверов GitHub). Проверь логи Actions — "
+                "если там HTTP 403/429, монитор нужно запускать с домашнего IP.")
+        elif not state["first_run_done"]:
+            await notify(session,
+                f"✅ Монитор подключён и работает! Слежу за {len(WATCHLIST)} "
+                f"предметами. Буду писать, когда найду редкий паттерн, дорогую "
+                f"наклейку или резкий буст цены. Тишина = просто пока ничего "
+                f"подходящего на маркете. Команда /last покажет историю.")
+            state["first_run_done"] = True
+            state["last_heartbeat"] = now
+        elif now - state["last_heartbeat"] >= HEARTBEAT_SEC:
+            await notify(session,
+                f"💓 Монитор жив, за сутки проверено {len(WATCHLIST)} предметов. "
+                f"Находок за последний проход: {found}.")
+            state["last_heartbeat"] = now
+
     save_state(state)
-    log.info("проход завершён: находок %d, известных лотов %d", found, len(state["seen"]))
+    log.info("проход завершён: находок %d, известных лотов %d, steam_ok=%s",
+             found, len(state["seen"]), steam_ok)
 
 
 if __name__ == "__main__":
