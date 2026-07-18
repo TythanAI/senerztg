@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Марина Кератинова — кератиновое выпрямление и восстановление волос</title>
+<meta name="description" content="Кератиновое выпрямление, ботокс и нанопластика волос. Работаю на оригинальных составах, индивидуальный подбор под ваш тип волос. Запись по телефону и в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b211c;
+    --ink-soft:#5c4f47;
+    --cream:#faf6f0;
+    --cream-2:#f3ebe1;
+    --caramel:#b07d4f;
+    --caramel-dark:#8f6238;
+    --gold:#c9a26e;
+    --line:#e4d8c9;
+    --white:#fffdf9;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.15}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  .accent{font-family:'Caveat',cursive;color:var(--caramel);font-size:1.35em;font-weight:600}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 32px;border-radius:999px;
+    background:var(--ink);color:var(--cream);
+    font-weight:600;font-size:15px;letter-spacing:.02em;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    border:none;cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(43,33,28,.22);background:var(--caramel-dark)}
+  .btn--light{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn--light:hover{background:var(--ink);color:var(--cream)}
+  .btn--wa{background:#2e7d5b}
+  .btn--wa:hover{background:#256b4d}
+
+  /* ---------- шапка ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,240,.88);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;letter-spacing:.01em}
+  .logo em{font-style:normal;color:var(--caramel)}
+  .nav-links{display:flex;gap:30px;font-size:14.5px;font-weight:500}
+  .nav-links a{position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--caramel);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-phone{font-weight:700;font-size:15px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+  /* ---------- герой ---------- */
+  .hero{position:relative;overflow:hidden;padding:70px 0 90px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 22px}
+  .hero h1 .line{display:block}
+  .hero h1 em{font-style:italic;color:var(--caramel-dark)}
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel-dark);
+  }
+  .kicker::before{content:"";width:34px;height:1.5px;background:var(--caramel)}
+  .hero p.lead{font-size:17.5px;color:var(--ink-soft);max-width:480px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-note{margin-top:26px;font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:10px}
+  .hero-note svg{flex:none}
+  .hero-visual{position:relative}
+  .hero-photo{
+    aspect-ratio:4/5;border-radius:200px 200px var(--radius) var(--radius);
+    background:
+      radial-gradient(120% 90% at 70% 10%, #e8cba3 0%, transparent 55%),
+      radial-gradient(100% 100% at 20% 90%, #7a5334 0%, transparent 60%),
+      linear-gradient(160deg,#caa374 0%, #a97c50 45%, #6f4b2e 100%);
+    position:relative;overflow:hidden;
+    box-shadow:0 30px 60px rgba(111,75,46,.28);
+  }
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
+    mix-blend-mode:soft-light;
+  }
+  .hero-photo .ph-label{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:rgba(255,253,249,.85);font-family:'Caveat',cursive;font-size:26px;text-align:center;padding:20px;
+  }
+  .hero-card{
+    position:absolute;left:-34px;bottom:38px;
+    background:var(--white);border-radius:16px;padding:16px 22px;
+    box-shadow:0 18px 40px rgba(43,33,28,.14);
+    display:flex;align-items:center;gap:14px;
+  }
+  .hero-card b{font-size:26px;font-family:'Cormorant Garamond',serif;color:var(--caramel-dark)}
+  .hero-card span{font-size:13px;color:var(--ink-soft);line-height:1.35;display:block}
+  .hero-badge{
+    position:absolute;top:26px;right:-14px;
+    background:var(--ink);color:var(--cream);
+    border-radius:999px;padding:10px 20px;font-size:13.5px;font-weight:600;
+    transform:rotate(4deg);
+    box-shadow:0 14px 30px rgba(43,33,28,.25);
+  }
+
+  /* ---------- бегущая строка ---------- */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream-2);overflow:hidden;padding:14px 0}
+  .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
+  .marquee-track span{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--ink-soft);display:flex;align-items:center;gap:48px}
+  .marquee-track span::after{content:"✦";font-style:normal;color:var(--caramel);font-size:14px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- секции ---------- */
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(30px,4vw,44px);margin-top:14px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:16.5px}
+
+  /* ---------- обо мне ---------- */
+  .about{background:var(--white)}
+  .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+  .about-photo{
+    aspect-ratio:3/4;border-radius:var(--radius);
+    background:
+      radial-gradient(90% 70% at 30% 20%, #efd9b8 0%, transparent 55%),
+      linear-gradient(200deg,#d9b98d 0%, #a67c4f 55%, #7b5533 100%);
+    position:relative;overflow:hidden;
+    box-shadow:14px 14px 0 var(--cream-2);
+  }
+  .about-photo .ph-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,253,249,.85);font-family:'Caveat',cursive;font-size:24px;text-align:center;padding:20px}
+  .about h2{font-size:clamp(30px,4vw,42px);margin:14px 0 20px}
+  .about p{color:var(--ink-soft);margin-bottom:16px}
+  .about .sign{font-family:'Caveat',cursive;font-size:30px;color:var(--caramel-dark);margin-top:10px}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .fact{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
+  .fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--caramel-dark)}
+  .fact span{font-size:13px;color:var(--ink-soft)}
+
+  /* ---------- услуги ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .service{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 28px;position:relative;overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+    display:flex;flex-direction:column;
+  }
+  .service:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(43,33,28,.12)}
+  .service .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold)}
+  .service h3{font-size:26px;margin:10px 0 12px}
+  .service p{font-size:14.5px;color:var(--ink-soft);flex:1}
+  .service .meta{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline}
+  .service .price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--caramel-dark)}
+  .service .time{font-size:13px;color:var(--ink-soft)}
+  .service--star{background:linear-gradient(165deg,#33271f 0%, #241b15 100%);color:var(--cream);border:none}
+  .service--star p{color:#cbbba9}
+  .service--star .meta{border-color:#4d3f33}
+  .service--star .price{color:var(--gold)}
+  .service--star .time{color:#a8988a}
+  .service--star .tag{
+    position:absolute;top:20px;right:-38px;transform:rotate(38deg);
+    background:var(--caramel);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+    padding:5px 44px;
+  }
+  .services-note{margin-top:30px;font-size:14.5px;color:var(--ink-soft);max-width:640px}
+
+  /* ---------- этапы ---------- */
+  .steps{background:var(--white)}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step;position:relative}
+  .step{padding:0 26px;position:relative;counter-increment:step}
+  .step + .step{border-left:1px solid var(--line)}
+  .step::before{
+    content:"0" counter(step);
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:44px;color:var(--gold);display:block;margin-bottom:14px;
+  }
+  .step h3{font-size:21px;margin-bottom:10px}
+  .step p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* ---------- до/после ---------- */
+  .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .result{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:4/5;box-shadow:0 16px 36px rgba(43,33,28,.12)}
+  .result .half{position:absolute;top:0;bottom:0;width:50%}
+  .result .half.before{left:0;background:linear-gradient(160deg,#9c7a55 0%,#6e4e30 100%)}
+  .result .half.after{right:0;background:linear-gradient(200deg,#e3c294 0%,#b3854f 100%)}
+  .result .half::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+  .result .lbl{position:absolute;bottom:14px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(43,33,28,.55);padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+  .result .lbl.b{left:14px}
+  .result .lbl.a{right:14px}
+  .result .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,253,249,.7);z-index:2}
+  .result .cap{position:absolute;top:14px;left:14px;right:14px;color:#fff;font-family:'Caveat',cursive;font-size:20px;text-shadow:0 2px 8px rgba(0,0,0,.3);z-index:2}
+  .results-note{margin-top:26px;font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- отзывы ---------- */
+  .reviews{background:var(--cream-2)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .review{background:var(--white);border-radius:var(--radius);padding:30px 28px;position:relative;box-shadow:0 10px 26px rgba(43,33,28,.07)}
+  .review::before{content:"„";position:absolute;top:6px;right:22px;font-family:'Cormorant Garamond',serif;font-size:80px;line-height:1;color:var(--line)}
+  .review .stars{color:var(--caramel);letter-spacing:3px;font-size:14px;margin-bottom:14px}
+  .review p{font-size:14.5px;color:var(--ink-soft);font-style:italic}
+  .review .who{margin-top:18px;display:flex;align-items:center;gap:12px}
+  .review .ava{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px}
+  .review .who b{display:block;font-size:14.5px}
+  .review .who span{font-size:12.5px;color:var(--ink-soft)}
+
+  /* ---------- вопросы ---------- */
+  .faq-list{max-width:760px}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:22px 0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{
+    content:"+";font-family:'Manrope',sans-serif;font-weight:300;font-size:26px;color:var(--caramel);
+    transition:transform .3s;flex:none;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item .ans{padding:0 40px 24px 0;color:var(--ink-soft);font-size:15px}
+
+  /* ---------- запись ---------- */
+  .contact{background:linear-gradient(165deg,#33271f 0%,#241b15 100%);color:var(--cream)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .contact h2{font-size:clamp(30px,4vw,44px);margin:14px 0 18px}
+  .contact p{color:#cbbba9;margin-bottom:26px;max-width:440px}
+  .contact .kicker{color:var(--gold)}
+  .contact .kicker::before{background:var(--gold)}
+  .contact-list{display:grid;gap:16px}
+  .contact-list a{display:flex;align-items:center;gap:16px;background:rgba(255,253,249,.06);border:1px solid rgba(255,253,249,.12);border-radius:16px;padding:18px 22px;transition:background .25s,transform .25s}
+  .contact-list a:hover{background:rgba(255,253,249,.12);transform:translateX(6px)}
+  .contact-list .ico{width:44px;height:44px;border-radius:12px;background:var(--caramel);display:flex;align-items:center;justify-content:center;flex:none}
+  .contact-list b{display:block;font-size:16px}
+  .contact-list span{font-size:13px;color:#a8988a}
+  .work-hours{margin-top:28px;font-size:14px;color:#a8988a;display:flex;gap:10px;align-items:flex-start}
+
+  footer{padding:34px 0;background:#1c1510;color:#8d7b6c;font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  footer .logo{color:var(--cream);font-size:19px}
+
+  /* ---------- появление при скролле ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  /* ---------- мобильная версия ---------- */
+  @media (max-width:960px){
+    .hero .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+    .hero{padding:50px 0 64px}
+    .hero-visual{max-width:420px;margin:0 auto}
+    .hero-card{left:0}
+    .services-grid,.results-grid,.reviews-grid{grid-template-columns:1fr 1fr}
+    .steps-grid{grid-template-columns:1fr 1fr;gap:36px 0}
+    .step:nth-child(3){border-left:none}
+    .step{margin-bottom:6px}
+    .about-photo{max-width:380px}
+  }
+  @media (max-width:640px){
+    section{padding:64px 0}
+    .services-grid,.results-grid,.reviews-grid{grid-template-columns:1fr}
+    .steps-grid{grid-template-columns:1fr}
+    .step + .step{border-left:none;border-top:1px solid var(--line);padding-top:28px;margin-top:8px}
+    .step{padding:0 6px}
+    .nav-links,.nav-phone{display:none}
+    .burger{display:flex}
+    .nav-links.open{
+      display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;
+      background:var(--cream);border-bottom:1px solid var(--line);padding:22px;gap:18px;
+    }
+    .facts{grid-template-columns:1fr 1fr}
+    .fact:last-child{grid-column:1/-1}
+    .hero-card{position:static;margin-top:18px}
+    .hero-badge{right:6px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Марина <em>·</em> Кератин</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги и цены</a>
+      <a href="#results">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Запись</a>
+    </nav>
+    <a class="nav-phone" href="tel:+79000000000">+7 900 000-00-00</a>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ГЕРОЙ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Мастер по восстановлению волос</span>
+      <h1>
+        <span class="line">Гладкие, блестящие</span>
+        <span class="line">волосы — <em>без утюжка</em></span>
+        <span class="line">каждое утро</span>
+      </h1>
+      <p class="lead">Кератиновое выпрямление, ботокс и нанопластика на оригинальных составах. Подбираю состав под ваш тип волос, а не «один для всех» — поэтому эффект держится от 3 до 6 месяцев.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Записаться на процедуру</a>
+        <a class="btn btn--light" href="#services">Смотреть цены</a>
+      </div>
+      <div class="hero-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8f6238" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Бесплатная консультация и диагностика волос перед процедурой
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-photo">
+        <span class="ph-label">сюда — ваше фото<br>с результатом работы</span>
+      </div>
+      <div class="hero-badge">Запись на эту неделю открыта</div>
+      <div class="hero-card">
+        <b>7&nbsp;лет</b>
+        <span>работаю с волосами.<br>Больше 900 довольных клиенток</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>кератиновое выпрямление</span><span>ботокс для волос</span><span>нанопластика</span><span>холодное восстановление</span><span>полировка волос</span><span>уход после процедуры</span>
+    <span>кератиновое выпрямление</span><span>ботокс для волос</span><span>нанопластика</span><span>холодное восстановление</span><span>полировка волос</span><span>уход после процедуры</span>
+  </div>
+</div>
+
+<!-- ОБО МНЕ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-photo reveal">
+      <span class="ph-label">сюда — портрет мастера</span>
+    </div>
+    <div class="reveal d1">
+      <span class="kicker">Немного о себе</span>
+      <h2>Привет! Меня зовут Марина</h2>
+      <p>Я занимаюсь восстановлением и выпрямлением волос уже 7 лет. Начинала как парикмахер-универсал, но однажды влюбилась в кератиновые процедуры — в тот момент, когда увидела, как у клиентки с «одуванчиком» на голове глаза загорелись от собственного отражения.</p>
+      <p>Я не работаю «на поток». Перед каждой процедурой провожу диагностику: смотрю пористость, историю окрашиваний, состояние кожи головы — и только потом подбираю состав и температуру. Именно поэтому мои клиентки возвращаются годами и приводят мам, сестёр и подруг.</p>
+      <p>Работаю только на оригинальных составах с сертификатами — их можно посмотреть и понюхать лично на процедуре 🙂</p>
+      <div class="sign">С заботой о ваших волосах, Марина</div>
+      <div class="facts">
+        <div class="fact"><b>7 лет</b><span>опыта работы</span></div>
+        <div class="fact"><b>900+</b><span>довольных клиенток</span></div>
+        <div class="fact"><b>12</b><span>пройденных курсов повышения</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- УСЛУГИ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Услуги и цены</span>
+      <h2>Что я могу сделать для ваших волос</h2>
+      <p>Цена зависит от длины и густоты волос — точную стоимость назову после бесплатной диагностики. Ниже указаны цены «от», на среднюю длину.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service service--star reveal">
+        <span class="tag">хит</span>
+        <span class="num">№ 01</span>
+        <h3>Кератиновое выпрямление</h3>
+        <p>Полностью убирает пушистость и завиток, волосы становятся гладкими, послушными и блестящими. Укладка занимает 5 минут, а не 40. Эффект держится 3–6 месяцев.</p>
+        <div class="meta">
+          <span class="price">от 3 500 ₽</span>
+          <span class="time">2,5–4 часа</span>
+        </div>
+      </div>
+      <div class="service reveal d1">
+        <span class="num">№ 02</span>
+        <h3>Ботокс для волос</h3>
+        <p>Лечебная процедура: заполняет повреждённые участки, убирает ломкость и сечение, возвращает плотность и блеск. Подходит даже осветлённым и тонким волосам.</p>
+        <div class="meta">
+          <span class="price">от 2 800 ₽</span>
+          <span class="time">1,5–2 часа</span>
+        </div>
+      </div>
+      <div class="service reveal d2">
+        <span class="num">№ 03</span>
+        <h3>Нанопластика</h3>
+        <p>Выпрямление нового поколения без резкого запаха и дыма. Более щадящий состав — можно делать беременным и кормящим. Результат — идеально гладкое полотно волос.</p>
+        <div class="meta">
+          <span class="price">от 4 000 ₽</span>
+          <span class="time">3–4 часа</span>
+        </div>
+      </div>
+      <div class="service reveal">
+        <span class="num">№ 04</span>
+        <h3>Холодное восстановление</h3>
+        <p>Работает изнутри волоса без нагрева утюжком. Для тех, кто хочет здоровые волосы, но сохранить свой естественный завиток и объём.</p>
+        <div class="meta">
+          <span class="price">от 2 500 ₽</span>
+          <span class="time">1–1,5 часа</span>
+        </div>
+      </div>
+      <div class="service reveal d1">
+        <span class="num">№ 05</span>
+        <h3>Полировка волос</h3>
+        <p>Аккуратно срезает секущиеся кончики по всей длине, сохраняя её. Волосы сразу выглядят ухоженнее — отличное дополнение к любой процедуре.</p>
+        <div class="meta">
+          <span class="price">от 1 200 ₽</span>
+          <span class="time">40–60 минут</span>
+        </div>
+      </div>
+      <div class="service reveal d2">
+        <span class="num">№ 06</span>
+        <h3>Комплекс «Выпрямление + уход»</h3>
+        <p>Кератиновое выпрямление + полировка + домашний набор для ухода (шампунь и маска). Самый выгодный вариант для стойкого результата.</p>
+        <div class="meta">
+          <span class="price">от 5 500 ₽</span>
+          <span class="time">3–4,5 часа</span>
+        </div>
+      </div>
+    </div>
+    <p class="services-note">💛 Действует скидка 10% на первое посещение и накопительная система для постоянных клиенток. Подробности — при записи.</p>
+  </div>
+</section>
+
+<!-- КАК ПРОХОДИТ -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Как всё проходит</span>
+      <h2>Процедура от и до — без сюрпризов</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <h3>Диагностика</h3>
+        <p>Смотрю состояние волос, обсуждаем ожидания. Честно скажу, если процедура вам не нужна или нужна другая.</p>
+      </div>
+      <div class="step reveal d1">
+        <h3>Подготовка</h3>
+        <p>Глубокое очищение специальным шампунем — раскрываем кутикулу волоса, чтобы состав лёг равномерно.</p>
+      </div>
+      <div class="step reveal d2">
+        <h3>Нанесение состава</h3>
+        <p>Прядь за прядью наношу состав, выдерживаю нужное время и запечатываю утюжком при точно подобранной температуре.</p>
+      </div>
+      <div class="step reveal d3">
+        <h3>Результат и уход</h3>
+        <p>Сушка, укладка, фото на память 🙂 Рассказываю, как ухаживать дома, чтобы эффект держался максимально долго.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- РАБОТЫ -->
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Мои работы</span>
+      <h2>До и после — говорят сами за себя</h2>
+      <p>Все фото — реальные клиентки, публикую только с их разрешения.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result reveal">
+        <div class="cap">кератиновое выпрямление, густые волнистые волосы</div>
+        <div class="half before"></div>
+        <div class="half after"></div>
+        <div class="divider"></div>
+        <span class="lbl b">До</span>
+        <span class="lbl a">После</span>
+      </div>
+      <div class="result reveal d1">
+        <div class="cap">ботокс на осветлённые волосы</div>
+        <div class="half before"></div>
+        <div class="half after"></div>
+        <div class="divider"></div>
+        <span class="lbl b">До</span>
+        <span class="lbl a">После</span>
+      </div>
+      <div class="result reveal d2">
+        <div class="cap">нанопластика, жёсткий завиток</div>
+        <div class="half before"></div>
+        <div class="half after"></div>
+        <div class="divider"></div>
+        <span class="lbl b">До</span>
+        <span class="lbl a">После</span>
+      </div>
+    </div>
+    <p class="results-note">Больше работ — в моём Instagram* и Telegram-канале, ссылки внизу страницы. <em>(замените плашки выше на реальные фото «до/после»)</em></p>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Отзывы</span>
+      <h2>Что говорят мои клиентки</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>Хожу к Марине уже третий год. Волосы после осветления были как мочалка — сейчас все спрашивают, что я с ними делаю. А я просто раз в 4 месяца прихожу на кератин и всё!</p>
+        <div class="who">
+          <div class="ava" style="background:#b07d4f">А</div>
+          <div><b>Анастасия</b><span>кератиновое выпрямление</span></div>
+        </div>
+      </div>
+      <div class="review reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>Очень боялась испортить волосы, начиталась ужасов. Марина полчаса отвечала на все мои вопросы ещё до записи, показала составы и сертификаты. Результат — шёлк! Уже привела маму.</p>
+        <div class="who">
+          <div class="ava" style="background:#8f6238">О</div>
+          <div><b>Ольга</b><span>нанопластика</span></div>
+        </div>
+      </div>
+      <div class="review reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>Делала ботокс перед свадьбой — фотографии получились шикарные, волосы блестят на каждом кадре. Отдельное спасибо за советы по уходу, эффект держится уже 3 месяца.</p>
+        <div class="who">
+          <div class="ava" style="background:#c9a26e">К</div>
+          <div><b>Ксения</b><span>ботокс для волос</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ВОПРОСЫ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Частые вопросы</span>
+      <h2>Спрашивали — отвечаю</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>Кератин портит волосы?</summary>
+        <div class="ans">Нет, если работать правильно. Портит не кератин, а нарушение технологии: слишком высокая температура утюжка, дешёвые составы, работа «на глаз». Я подбираю температуру и состав под конкретные волосы после диагностики, поэтому процедура волосы восстанавливает, а не портит.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько держится эффект?</summary>
+        <div class="ans">В среднем 3–6 месяцев. Зависит от структуры волос, частоты мытья головы и домашнего ухода. После процедуры я даю простые рекомендации — с ними эффект держится заметно дольше.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли делать процедуру на окрашенные волосы?</summary>
+        <div class="ans">Да, можно. Лучше делать кератин через 2 недели после окрашивания. А ботокс, наоборот, отлично «запечатывает» цвет — он дольше остаётся ярким.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Как подготовиться к процедуре?</summary>
+        <div class="ans">Никак 🙂 Приходите с сухими или влажными волосами — мытьё головы входит в процедуру. Единственное: заложите достаточно времени и не планируйте дела впритык.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Что нельзя делать после процедуры?</summary>
+        <div class="ans">Первые 24–72 часа (зависит от состава — скажу точно на процедуре) не мыть голову, не собирать волосы в хвост и не закалывать. Дальше — обычная жизнь, только шампунь лучше использовать бессульфатный.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли беременным и кормящим?</summary>
+        <div class="ans">Классический кератин — нет. Но есть нанопластика и холодное восстановление: составы без формальдегида, без запаха и дыма. Обсудим на консультации, что подойдёт именно вам.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ЗАПИСЬ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Запись</span>
+      <h2>Давайте познакомимся с вашими волосами</h2>
+      <p>Напишите или позвоните — отвечу на вопросы, помогу выбрать процедуру и подберём удобное время. Консультация ни к чему не обязывает.</p>
+      <div class="work-hours">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a26e" stroke-width="2" style="flex:none;margin-top:3px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div>Приём по записи: ежедневно с 10:00 до 20:00.<br>Работаю в уютной студии — адрес пришлю при записи.</div>
+      </div>
+    </div>
+    <div class="contact-list reveal d1">
+      <a href="https://wa.me/79000000000?text=Здравствуйте%2C%20Марина!%20Хочу%20записаться%20на%20процедуру" target="_blank" rel="noopener">
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-2.9-1.3 11.3 11.3 0 0 1-3.9-4.3c-.4-.7-.8-1.7-.8-2.6 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.4c.2 0 .4-.1.6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.3z"/></svg></span>
+        <div><b>Написать в WhatsApp</b><span>отвечаю обычно в течение часа</span></div>
+      </a>
+      <a href="https://t.me/username_master" target="_blank" rel="noopener">
+        <span class="ico" style="background:#4f95b0"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.4 18.9 19c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18.5 7c.4-.3-.1-.5-.6-.2L7.6 13.3l-4.4-1.4c-1-.3-1-1 .2-1.4L20.6 3c.8-.3 1.5.2 1.3 1.4z"/></svg></span>
+        <div><b>Написать в Telegram</b><span>@username_master</span></div>
+      </a>
+      <a href="tel:+79000000000">
+        <span class="ico" style="background:#8f6238"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <div><b>+7 900 000-00-00</b><span>позвонить или отправить СМС</span></div>
+      </a>
+      <a href="https://instagram.com/username_master" target="_blank" rel="noopener">
+        <span class="ico" style="background:#b0577a"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="#fff" stroke="none"/></svg></span>
+        <div><b>Instagram*</b><span>мои работы и живые сторис из студии</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Марина <em style="color:#c9a26e;font-style:normal">·</em> Кератин</span>
+    <span>© 2026 · Кератиновое выпрямление и восстановление волос</span>
+    <span style="font-size:11.5px">*Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в РФ</span>
+  </div>
+</footer>
+
+<script>
+  // плавное появление блоков при прокрутке
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // мобильное меню
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // в FAQ открыт только один вопрос
+  document.querySelectorAll('.faq-item summary').forEach(s => {
+    s.addEventListener('click', () => {
+      document.querySelectorAll('.faq-item[open]').forEach(d => { if (d !== s.parentElement) d.removeAttribute('open'); });
+    });
+  });
+</script>
+</body>
+</html>
