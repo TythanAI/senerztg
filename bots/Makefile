@@ -1,6 +1,6 @@
 # Convenience targets. Run `make help` for the list.
 .DEFAULT_GOAL := help
-.PHONY: help install regen env selfcheck up down restart logs ps
+.PHONY: help install regen env selfcheck catalog archive up down restart logs ps
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -12,7 +12,14 @@ install: ## Install Python dependencies
 regen: ## Regenerate all configs + docker-compose.yml from the templates
 	python tools/gen_tg_configs.py
 	python tools/gen_domain_configs.py
+	python tools/gen_niche_configs.py
 	python tools/gen_compose.py
+
+catalog: ## Regenerate the buyer-facing CATALOG.md from all configs
+	python tools/export_catalog.py
+
+archive: ## Build a .zip of the whole project into dist/ (for backup/flash drive)
+	python tools/make_archive.py
 
 env: ## Scaffold env/<slug>.env for every bot (fill in tokens after)
 	bash tools/init_env.sh

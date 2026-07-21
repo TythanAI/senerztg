@@ -8,6 +8,9 @@ data/
 *.db-wal
 *.db-shm
 
+# Built archives
+dist/
+
 # Python
 __pycache__/
 *.py[cod]
