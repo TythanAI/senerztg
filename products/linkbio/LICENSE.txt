@@ -1,0 +1,27 @@
+Link-in-Bio Kit — Commercial License (template)
+===============================================
+
+NOTE: Ready-to-adapt license you (the owner) can ship to buyers. Replace
+<YOUR NAME / BRAND> and the year, and adjust to how you sell it.
+
+Copyright (c) 2026 <YOUR NAME / BRAND>. All rights reserved.
+
+1. Grant. Upon purchase, the buyer receives a non-exclusive, worldwide,
+   perpetual license to use, modify, and customize these pages to build
+   link-in-bio / landing pages — including commercial ones — for themselves or
+   for their clients.
+
+2. Permitted.
+   - Unlimited personal and commercial pages built from these templates.
+   - Free modification of HTML, CSS, text, colors, icons, and links.
+   - Delivering finished pages to clients.
+
+3. Not permitted.
+   - Reselling or redistributing the templates themselves as a competing
+     template kit or builder.
+   - Publishing the source files as a free download as-is.
+
+4. No warranty. Provided "as is", without warranty of any kind. The author is
+   not liable for any damages arising from use.
+
+For extended / white-label resale rights, contact the owner.

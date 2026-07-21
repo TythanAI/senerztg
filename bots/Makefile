@@ -14,6 +14,7 @@ regen: ## Regenerate all configs + docker-compose.yml from the templates
 	python tools/gen_domain_configs.py
 	python tools/gen_niche_configs.py
 	python tools/gen_pack2.py
+	python tools/gen_mass.py
 	python tools/gen_compose.py
 
 catalog: ## Regenerate the buyer-facing CATALOG.md from all configs

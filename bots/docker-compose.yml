@@ -22,6 +22,272 @@ x-bot: &bot
 
 services:
 
+  ads_001:
+    <<: *bot
+    container_name: bot_ads_001
+    command: ["--config", "config/ads_001.yaml"]
+    env_file:
+      - env/ads_001.env
+
+  ads_002:
+    <<: *bot
+    container_name: bot_ads_002
+    command: ["--config", "config/ads_002.yaml"]
+    env_file:
+      - env/ads_002.env
+
+  ads_003:
+    <<: *bot
+    container_name: bot_ads_003
+    command: ["--config", "config/ads_003.yaml"]
+    env_file:
+      - env/ads_003.env
+
+  ads_004:
+    <<: *bot
+    container_name: bot_ads_004
+    command: ["--config", "config/ads_004.yaml"]
+    env_file:
+      - env/ads_004.env
+
+  ads_005:
+    <<: *bot
+    container_name: bot_ads_005
+    command: ["--config", "config/ads_005.yaml"]
+    env_file:
+      - env/ads_005.env
+
+  ads_006:
+    <<: *bot
+    container_name: bot_ads_006
+    command: ["--config", "config/ads_006.yaml"]
+    env_file:
+      - env/ads_006.env
+
+  ads_007:
+    <<: *bot
+    container_name: bot_ads_007
+    command: ["--config", "config/ads_007.yaml"]
+    env_file:
+      - env/ads_007.env
+
+  ads_008:
+    <<: *bot
+    container_name: bot_ads_008
+    command: ["--config", "config/ads_008.yaml"]
+    env_file:
+      - env/ads_008.env
+
+  ads_009:
+    <<: *bot
+    container_name: bot_ads_009
+    command: ["--config", "config/ads_009.yaml"]
+    env_file:
+      - env/ads_009.env
+
+  ads_010:
+    <<: *bot
+    container_name: bot_ads_010
+    command: ["--config", "config/ads_010.yaml"]
+    env_file:
+      - env/ads_010.env
+
+  ads_011:
+    <<: *bot
+    container_name: bot_ads_011
+    command: ["--config", "config/ads_011.yaml"]
+    env_file:
+      - env/ads_011.env
+
+  ads_012:
+    <<: *bot
+    container_name: bot_ads_012
+    command: ["--config", "config/ads_012.yaml"]
+    env_file:
+      - env/ads_012.env
+
+  ads_013:
+    <<: *bot
+    container_name: bot_ads_013
+    command: ["--config", "config/ads_013.yaml"]
+    env_file:
+      - env/ads_013.env
+
+  ads_014:
+    <<: *bot
+    container_name: bot_ads_014
+    command: ["--config", "config/ads_014.yaml"]
+    env_file:
+      - env/ads_014.env
+
+  ads_015:
+    <<: *bot
+    container_name: bot_ads_015
+    command: ["--config", "config/ads_015.yaml"]
+    env_file:
+      - env/ads_015.env
+
+  ads_016:
+    <<: *bot
+    container_name: bot_ads_016
+    command: ["--config", "config/ads_016.yaml"]
+    env_file:
+      - env/ads_016.env
+
+  ads_017:
+    <<: *bot
+    container_name: bot_ads_017
+    command: ["--config", "config/ads_017.yaml"]
+    env_file:
+      - env/ads_017.env
+
+  ads_018:
+    <<: *bot
+    container_name: bot_ads_018
+    command: ["--config", "config/ads_018.yaml"]
+    env_file:
+      - env/ads_018.env
+
+  ads_019:
+    <<: *bot
+    container_name: bot_ads_019
+    command: ["--config", "config/ads_019.yaml"]
+    env_file:
+      - env/ads_019.env
+
+  ads_020:
+    <<: *bot
+    container_name: bot_ads_020
+    command: ["--config", "config/ads_020.yaml"]
+    env_file:
+      - env/ads_020.env
+
+  ads_021:
+    <<: *bot
+    container_name: bot_ads_021
+    command: ["--config", "config/ads_021.yaml"]
+    env_file:
+      - env/ads_021.env
+
+  ads_022:
+    <<: *bot
+    container_name: bot_ads_022
+    command: ["--config", "config/ads_022.yaml"]
+    env_file:
+      - env/ads_022.env
+
+  ads_023:
+    <<: *bot
+    container_name: bot_ads_023
+    command: ["--config", "config/ads_023.yaml"]
+    env_file:
+      - env/ads_023.env
+
+  ads_024:
+    <<: *bot
+    container_name: bot_ads_024
+    command: ["--config", "config/ads_024.yaml"]
+    env_file:
+      - env/ads_024.env
+
+  ai_001:
+    <<: *bot
+    container_name: bot_ai_001
+    command: ["--config", "config/ai_001.yaml"]
+    env_file:
+      - env/ai_001.env
+
+  ai_002:
+    <<: *bot
+    container_name: bot_ai_002
+    command: ["--config", "config/ai_002.yaml"]
+    env_file:
+      - env/ai_002.env
+
+  ai_003:
+    <<: *bot
+    container_name: bot_ai_003
+    command: ["--config", "config/ai_003.yaml"]
+    env_file:
+      - env/ai_003.env
+
+  ai_004:
+    <<: *bot
+    container_name: bot_ai_004
+    command: ["--config", "config/ai_004.yaml"]
+    env_file:
+      - env/ai_004.env
+
+  ai_005:
+    <<: *bot
+    container_name: bot_ai_005
+    command: ["--config", "config/ai_005.yaml"]
+    env_file:
+      - env/ai_005.env
+
+  ai_006:
+    <<: *bot
+    container_name: bot_ai_006
+    command: ["--config", "config/ai_006.yaml"]
+    env_file:
+      - env/ai_006.env
+
+  ai_007:
+    <<: *bot
+    container_name: bot_ai_007
+    command: ["--config", "config/ai_007.yaml"]
+    env_file:
+      - env/ai_007.env
+
+  ai_008:
+    <<: *bot
+    container_name: bot_ai_008
+    command: ["--config", "config/ai_008.yaml"]
+    env_file:
+      - env/ai_008.env
+
+  ai_009:
+    <<: *bot
+    container_name: bot_ai_009
+    command: ["--config", "config/ai_009.yaml"]
+    env_file:
+      - env/ai_009.env
+
+  ai_010:
+    <<: *bot
+    container_name: bot_ai_010
+    command: ["--config", "config/ai_010.yaml"]
+    env_file:
+      - env/ai_010.env
+
+  ai_011:
+    <<: *bot
+    container_name: bot_ai_011
+    command: ["--config", "config/ai_011.yaml"]
+    env_file:
+      - env/ai_011.env
+
+  ai_012:
+    <<: *bot
+    container_name: bot_ai_012
+    command: ["--config", "config/ai_012.yaml"]
+    env_file:
+      - env/ai_012.env
+
+  ai_013:
+    <<: *bot
+    container_name: bot_ai_013
+    command: ["--config", "config/ai_013.yaml"]
+    env_file:
+      - env/ai_013.env
+
+  ai_014:
+    <<: *bot
+    container_name: bot_ai_014
+    command: ["--config", "config/ai_014.yaml"]
+    env_file:
+      - env/ai_014.env
+
   ai_avatars:
     <<: *bot
     container_name: bot_ai_avatars
@@ -64,12 +330,138 @@ services:
     env_file:
       - env/bbq.env
 
+  branding_001:
+    <<: *bot
+    container_name: bot_branding_001
+    command: ["--config", "config/branding_001.yaml"]
+    env_file:
+      - env/branding_001.env
+
+  branding_002:
+    <<: *bot
+    container_name: bot_branding_002
+    command: ["--config", "config/branding_002.yaml"]
+    env_file:
+      - env/branding_002.env
+
+  branding_003:
+    <<: *bot
+    container_name: bot_branding_003
+    command: ["--config", "config/branding_003.yaml"]
+    env_file:
+      - env/branding_003.env
+
+  branding_004:
+    <<: *bot
+    container_name: bot_branding_004
+    command: ["--config", "config/branding_004.yaml"]
+    env_file:
+      - env/branding_004.env
+
+  branding_005:
+    <<: *bot
+    container_name: bot_branding_005
+    command: ["--config", "config/branding_005.yaml"]
+    env_file:
+      - env/branding_005.env
+
+  branding_006:
+    <<: *bot
+    container_name: bot_branding_006
+    command: ["--config", "config/branding_006.yaml"]
+    env_file:
+      - env/branding_006.env
+
+  branding_007:
+    <<: *bot
+    container_name: bot_branding_007
+    command: ["--config", "config/branding_007.yaml"]
+    env_file:
+      - env/branding_007.env
+
+  branding_008:
+    <<: *bot
+    container_name: bot_branding_008
+    command: ["--config", "config/branding_008.yaml"]
+    env_file:
+      - env/branding_008.env
+
+  branding_009:
+    <<: *bot
+    container_name: bot_branding_009
+    command: ["--config", "config/branding_009.yaml"]
+    env_file:
+      - env/branding_009.env
+
+  branding_010:
+    <<: *bot
+    container_name: bot_branding_010
+    command: ["--config", "config/branding_010.yaml"]
+    env_file:
+      - env/branding_010.env
+
   brows:
     <<: *bot
     container_name: bot_brows
     command: ["--config", "config/brows.yaml"]
     env_file:
       - env/brows.env
+
+  burger_001:
+    <<: *bot
+    container_name: bot_burger_001
+    command: ["--config", "config/burger_001.yaml"]
+    env_file:
+      - env/burger_001.env
+
+  burger_002:
+    <<: *bot
+    container_name: bot_burger_002
+    command: ["--config", "config/burger_002.yaml"]
+    env_file:
+      - env/burger_002.env
+
+  burger_003:
+    <<: *bot
+    container_name: bot_burger_003
+    command: ["--config", "config/burger_003.yaml"]
+    env_file:
+      - env/burger_003.env
+
+  burger_004:
+    <<: *bot
+    container_name: bot_burger_004
+    command: ["--config", "config/burger_004.yaml"]
+    env_file:
+      - env/burger_004.env
+
+  burger_005:
+    <<: *bot
+    container_name: bot_burger_005
+    command: ["--config", "config/burger_005.yaml"]
+    env_file:
+      - env/burger_005.env
+
+  burger_006:
+    <<: *bot
+    container_name: bot_burger_006
+    command: ["--config", "config/burger_006.yaml"]
+    env_file:
+      - env/burger_006.env
+
+  burger_007:
+    <<: *bot
+    container_name: bot_burger_007
+    command: ["--config", "config/burger_007.yaml"]
+    env_file:
+      - env/burger_007.env
+
+  burger_008:
+    <<: *bot
+    container_name: bot_burger_008
+    command: ["--config", "config/burger_008.yaml"]
+    env_file:
+      - env/burger_008.env
 
   burgers:
     <<: *bot
@@ -134,6 +526,146 @@ services:
     env_file:
       - env/coffee.env
 
+  coffee_001:
+    <<: *bot
+    container_name: bot_coffee_001
+    command: ["--config", "config/coffee_001.yaml"]
+    env_file:
+      - env/coffee_001.env
+
+  coffee_002:
+    <<: *bot
+    container_name: bot_coffee_002
+    command: ["--config", "config/coffee_002.yaml"]
+    env_file:
+      - env/coffee_002.env
+
+  consulting_001:
+    <<: *bot
+    container_name: bot_consulting_001
+    command: ["--config", "config/consulting_001.yaml"]
+    env_file:
+      - env/consulting_001.env
+
+  consulting_002:
+    <<: *bot
+    container_name: bot_consulting_002
+    command: ["--config", "config/consulting_002.yaml"]
+    env_file:
+      - env/consulting_002.env
+
+  consulting_003:
+    <<: *bot
+    container_name: bot_consulting_003
+    command: ["--config", "config/consulting_003.yaml"]
+    env_file:
+      - env/consulting_003.env
+
+  consulting_004:
+    <<: *bot
+    container_name: bot_consulting_004
+    command: ["--config", "config/consulting_004.yaml"]
+    env_file:
+      - env/consulting_004.env
+
+  consulting_005:
+    <<: *bot
+    container_name: bot_consulting_005
+    command: ["--config", "config/consulting_005.yaml"]
+    env_file:
+      - env/consulting_005.env
+
+  consulting_006:
+    <<: *bot
+    container_name: bot_consulting_006
+    command: ["--config", "config/consulting_006.yaml"]
+    env_file:
+      - env/consulting_006.env
+
+  consulting_007:
+    <<: *bot
+    container_name: bot_consulting_007
+    command: ["--config", "config/consulting_007.yaml"]
+    env_file:
+      - env/consulting_007.env
+
+  consulting_008:
+    <<: *bot
+    container_name: bot_consulting_008
+    command: ["--config", "config/consulting_008.yaml"]
+    env_file:
+      - env/consulting_008.env
+
+  content_001:
+    <<: *bot
+    container_name: bot_content_001
+    command: ["--config", "config/content_001.yaml"]
+    env_file:
+      - env/content_001.env
+
+  content_002:
+    <<: *bot
+    container_name: bot_content_002
+    command: ["--config", "config/content_002.yaml"]
+    env_file:
+      - env/content_002.env
+
+  content_003:
+    <<: *bot
+    container_name: bot_content_003
+    command: ["--config", "config/content_003.yaml"]
+    env_file:
+      - env/content_003.env
+
+  content_004:
+    <<: *bot
+    container_name: bot_content_004
+    command: ["--config", "config/content_004.yaml"]
+    env_file:
+      - env/content_004.env
+
+  content_005:
+    <<: *bot
+    container_name: bot_content_005
+    command: ["--config", "config/content_005.yaml"]
+    env_file:
+      - env/content_005.env
+
+  content_006:
+    <<: *bot
+    container_name: bot_content_006
+    command: ["--config", "config/content_006.yaml"]
+    env_file:
+      - env/content_006.env
+
+  content_007:
+    <<: *bot
+    container_name: bot_content_007
+    command: ["--config", "config/content_007.yaml"]
+    env_file:
+      - env/content_007.env
+
+  content_008:
+    <<: *bot
+    container_name: bot_content_008
+    command: ["--config", "config/content_008.yaml"]
+    env_file:
+      - env/content_008.env
+
+  content_009:
+    <<: *bot
+    container_name: bot_content_009
+    command: ["--config", "config/content_009.yaml"]
+    env_file:
+      - env/content_009.env
+
+  content_010:
+    <<: *bot
+    container_name: bot_content_010
+    command: ["--config", "config/content_010.yaml"]
+    env_file:
+      - env/content_010.env
+
   copywriting:
     <<: *bot
     container_name: bot_copywriting
@@ -147,6 +679,146 @@ services:
     command: ["--config", "config/courier.yaml"]
     env_file:
       - env/courier.env
+
+  course_001:
+    <<: *bot
+    container_name: bot_course_001
+    command: ["--config", "config/course_001.yaml"]
+    env_file:
+      - env/course_001.env
+
+  course_002:
+    <<: *bot
+    container_name: bot_course_002
+    command: ["--config", "config/course_002.yaml"]
+    env_file:
+      - env/course_002.env
+
+  course_003:
+    <<: *bot
+    container_name: bot_course_003
+    command: ["--config", "config/course_003.yaml"]
+    env_file:
+      - env/course_003.env
+
+  course_004:
+    <<: *bot
+    container_name: bot_course_004
+    command: ["--config", "config/course_004.yaml"]
+    env_file:
+      - env/course_004.env
+
+  course_005:
+    <<: *bot
+    container_name: bot_course_005
+    command: ["--config", "config/course_005.yaml"]
+    env_file:
+      - env/course_005.env
+
+  course_006:
+    <<: *bot
+    container_name: bot_course_006
+    command: ["--config", "config/course_006.yaml"]
+    env_file:
+      - env/course_006.env
+
+  course_007:
+    <<: *bot
+    container_name: bot_course_007
+    command: ["--config", "config/course_007.yaml"]
+    env_file:
+      - env/course_007.env
+
+  course_008:
+    <<: *bot
+    container_name: bot_course_008
+    command: ["--config", "config/course_008.yaml"]
+    env_file:
+      - env/course_008.env
+
+  course_009:
+    <<: *bot
+    container_name: bot_course_009
+    command: ["--config", "config/course_009.yaml"]
+    env_file:
+      - env/course_009.env
+
+  course_010:
+    <<: *bot
+    container_name: bot_course_010
+    command: ["--config", "config/course_010.yaml"]
+    env_file:
+      - env/course_010.env
+
+  course_011:
+    <<: *bot
+    container_name: bot_course_011
+    command: ["--config", "config/course_011.yaml"]
+    env_file:
+      - env/course_011.env
+
+  course_012:
+    <<: *bot
+    container_name: bot_course_012
+    command: ["--config", "config/course_012.yaml"]
+    env_file:
+      - env/course_012.env
+
+  course_013:
+    <<: *bot
+    container_name: bot_course_013
+    command: ["--config", "config/course_013.yaml"]
+    env_file:
+      - env/course_013.env
+
+  course_014:
+    <<: *bot
+    container_name: bot_course_014
+    command: ["--config", "config/course_014.yaml"]
+    env_file:
+      - env/course_014.env
+
+  course_015:
+    <<: *bot
+    container_name: bot_course_015
+    command: ["--config", "config/course_015.yaml"]
+    env_file:
+      - env/course_015.env
+
+  course_016:
+    <<: *bot
+    container_name: bot_course_016
+    command: ["--config", "config/course_016.yaml"]
+    env_file:
+      - env/course_016.env
+
+  course_017:
+    <<: *bot
+    container_name: bot_course_017
+    command: ["--config", "config/course_017.yaml"]
+    env_file:
+      - env/course_017.env
+
+  course_018:
+    <<: *bot
+    container_name: bot_course_018
+    command: ["--config", "config/course_018.yaml"]
+    env_file:
+      - env/course_018.env
+
+  course_019:
+    <<: *bot
+    container_name: bot_course_019
+    command: ["--config", "config/course_019.yaml"]
+    env_file:
+      - env/course_019.env
+
+  course_020:
+    <<: *bot
+    container_name: bot_course_020
+    command: ["--config", "config/course_020.yaml"]
+    env_file:
+      - env/course_020.env
 
   courses:
     <<: *bot
@@ -176,6 +848,90 @@ services:
     env_file:
       - env/design.env
 
+  design_001:
+    <<: *bot
+    container_name: bot_design_001
+    command: ["--config", "config/design_001.yaml"]
+    env_file:
+      - env/design_001.env
+
+  design_002:
+    <<: *bot
+    container_name: bot_design_002
+    command: ["--config", "config/design_002.yaml"]
+    env_file:
+      - env/design_002.env
+
+  design_003:
+    <<: *bot
+    container_name: bot_design_003
+    command: ["--config", "config/design_003.yaml"]
+    env_file:
+      - env/design_003.env
+
+  design_004:
+    <<: *bot
+    container_name: bot_design_004
+    command: ["--config", "config/design_004.yaml"]
+    env_file:
+      - env/design_004.env
+
+  design_005:
+    <<: *bot
+    container_name: bot_design_005
+    command: ["--config", "config/design_005.yaml"]
+    env_file:
+      - env/design_005.env
+
+  design_006:
+    <<: *bot
+    container_name: bot_design_006
+    command: ["--config", "config/design_006.yaml"]
+    env_file:
+      - env/design_006.env
+
+  design_007:
+    <<: *bot
+    container_name: bot_design_007
+    command: ["--config", "config/design_007.yaml"]
+    env_file:
+      - env/design_007.env
+
+  design_008:
+    <<: *bot
+    container_name: bot_design_008
+    command: ["--config", "config/design_008.yaml"]
+    env_file:
+      - env/design_008.env
+
+  design_009:
+    <<: *bot
+    container_name: bot_design_009
+    command: ["--config", "config/design_009.yaml"]
+    env_file:
+      - env/design_009.env
+
+  design_010:
+    <<: *bot
+    container_name: bot_design_010
+    command: ["--config", "config/design_010.yaml"]
+    env_file:
+      - env/design_010.env
+
+  design_011:
+    <<: *bot
+    container_name: bot_design_011
+    command: ["--config", "config/design_011.yaml"]
+    env_file:
+      - env/design_011.env
+
+  design_012:
+    <<: *bot
+    container_name: bot_design_012
+    command: ["--config", "config/design_012.yaml"]
+    env_file:
+      - env/design_012.env
+
   discord:
     <<: *bot
     container_name: bot_discord
@@ -189,6 +945,90 @@ services:
     command: ["--config", "config/discord_accounts.yaml"]
     env_file:
       - env/discord_accounts.env
+
+  dom_001:
+    <<: *bot
+    container_name: bot_dom_001
+    command: ["--config", "config/dom_001.yaml"]
+    env_file:
+      - env/dom_001.env
+
+  dom_002:
+    <<: *bot
+    container_name: bot_dom_002
+    command: ["--config", "config/dom_002.yaml"]
+    env_file:
+      - env/dom_002.env
+
+  dom_003:
+    <<: *bot
+    container_name: bot_dom_003
+    command: ["--config", "config/dom_003.yaml"]
+    env_file:
+      - env/dom_003.env
+
+  dom_004:
+    <<: *bot
+    container_name: bot_dom_004
+    command: ["--config", "config/dom_004.yaml"]
+    env_file:
+      - env/dom_004.env
+
+  dom_005:
+    <<: *bot
+    container_name: bot_dom_005
+    command: ["--config", "config/dom_005.yaml"]
+    env_file:
+      - env/dom_005.env
+
+  dom_006:
+    <<: *bot
+    container_name: bot_dom_006
+    command: ["--config", "config/dom_006.yaml"]
+    env_file:
+      - env/dom_006.env
+
+  dom_007:
+    <<: *bot
+    container_name: bot_dom_007
+    command: ["--config", "config/dom_007.yaml"]
+    env_file:
+      - env/dom_007.env
+
+  dom_008:
+    <<: *bot
+    container_name: bot_dom_008
+    command: ["--config", "config/dom_008.yaml"]
+    env_file:
+      - env/dom_008.env
+
+  dom_009:
+    <<: *bot
+    container_name: bot_dom_009
+    command: ["--config", "config/dom_009.yaml"]
+    env_file:
+      - env/dom_009.env
+
+  dom_010:
+    <<: *bot
+    container_name: bot_dom_010
+    command: ["--config", "config/dom_010.yaml"]
+    env_file:
+      - env/dom_010.env
+
+  dom_011:
+    <<: *bot
+    container_name: bot_dom_011
+    command: ["--config", "config/dom_011.yaml"]
+    env_file:
+      - env/dom_011.env
+
+  dom_012:
+    <<: *bot
+    container_name: bot_dom_012
+    command: ["--config", "config/dom_012.yaml"]
+    env_file:
+      - env/dom_012.env
 
   domains:
     <<: *bot
@@ -225,6 +1065,258 @@ services:
     env_file:
       - env/esim.env
 
+  esim_001:
+    <<: *bot
+    container_name: bot_esim_001
+    command: ["--config", "config/esim_001.yaml"]
+    env_file:
+      - env/esim_001.env
+
+  esim_002:
+    <<: *bot
+    container_name: bot_esim_002
+    command: ["--config", "config/esim_002.yaml"]
+    env_file:
+      - env/esim_002.env
+
+  esim_003:
+    <<: *bot
+    container_name: bot_esim_003
+    command: ["--config", "config/esim_003.yaml"]
+    env_file:
+      - env/esim_003.env
+
+  esim_004:
+    <<: *bot
+    container_name: bot_esim_004
+    command: ["--config", "config/esim_004.yaml"]
+    env_file:
+      - env/esim_004.env
+
+  esim_005:
+    <<: *bot
+    container_name: bot_esim_005
+    command: ["--config", "config/esim_005.yaml"]
+    env_file:
+      - env/esim_005.env
+
+  esim_006:
+    <<: *bot
+    container_name: bot_esim_006
+    command: ["--config", "config/esim_006.yaml"]
+    env_file:
+      - env/esim_006.env
+
+  esim_007:
+    <<: *bot
+    container_name: bot_esim_007
+    command: ["--config", "config/esim_007.yaml"]
+    env_file:
+      - env/esim_007.env
+
+  esim_008:
+    <<: *bot
+    container_name: bot_esim_008
+    command: ["--config", "config/esim_008.yaml"]
+    env_file:
+      - env/esim_008.env
+
+  esim_009:
+    <<: *bot
+    container_name: bot_esim_009
+    command: ["--config", "config/esim_009.yaml"]
+    env_file:
+      - env/esim_009.env
+
+  esim_010:
+    <<: *bot
+    container_name: bot_esim_010
+    command: ["--config", "config/esim_010.yaml"]
+    env_file:
+      - env/esim_010.env
+
+  esim_011:
+    <<: *bot
+    container_name: bot_esim_011
+    command: ["--config", "config/esim_011.yaml"]
+    env_file:
+      - env/esim_011.env
+
+  esim_012:
+    <<: *bot
+    container_name: bot_esim_012
+    command: ["--config", "config/esim_012.yaml"]
+    env_file:
+      - env/esim_012.env
+
+  fb_001:
+    <<: *bot
+    container_name: bot_fb_001
+    command: ["--config", "config/fb_001.yaml"]
+    env_file:
+      - env/fb_001.env
+
+  fb_002:
+    <<: *bot
+    container_name: bot_fb_002
+    command: ["--config", "config/fb_002.yaml"]
+    env_file:
+      - env/fb_002.env
+
+  fb_003:
+    <<: *bot
+    container_name: bot_fb_003
+    command: ["--config", "config/fb_003.yaml"]
+    env_file:
+      - env/fb_003.env
+
+  fb_004:
+    <<: *bot
+    container_name: bot_fb_004
+    command: ["--config", "config/fb_004.yaml"]
+    env_file:
+      - env/fb_004.env
+
+  fb_005:
+    <<: *bot
+    container_name: bot_fb_005
+    command: ["--config", "config/fb_005.yaml"]
+    env_file:
+      - env/fb_005.env
+
+  fb_006:
+    <<: *bot
+    container_name: bot_fb_006
+    command: ["--config", "config/fb_006.yaml"]
+    env_file:
+      - env/fb_006.env
+
+  fb_007:
+    <<: *bot
+    container_name: bot_fb_007
+    command: ["--config", "config/fb_007.yaml"]
+    env_file:
+      - env/fb_007.env
+
+  fb_008:
+    <<: *bot
+    container_name: bot_fb_008
+    command: ["--config", "config/fb_008.yaml"]
+    env_file:
+      - env/fb_008.env
+
+  fb_009:
+    <<: *bot
+    container_name: bot_fb_009
+    command: ["--config", "config/fb_009.yaml"]
+    env_file:
+      - env/fb_009.env
+
+  fb_010:
+    <<: *bot
+    container_name: bot_fb_010
+    command: ["--config", "config/fb_010.yaml"]
+    env_file:
+      - env/fb_010.env
+
+  fb_011:
+    <<: *bot
+    container_name: bot_fb_011
+    command: ["--config", "config/fb_011.yaml"]
+    env_file:
+      - env/fb_011.env
+
+  fb_012:
+    <<: *bot
+    container_name: bot_fb_012
+    command: ["--config", "config/fb_012.yaml"]
+    env_file:
+      - env/fb_012.env
+
+  fb_013:
+    <<: *bot
+    container_name: bot_fb_013
+    command: ["--config", "config/fb_013.yaml"]
+    env_file:
+      - env/fb_013.env
+
+  fb_014:
+    <<: *bot
+    container_name: bot_fb_014
+    command: ["--config", "config/fb_014.yaml"]
+    env_file:
+      - env/fb_014.env
+
+  fb_015:
+    <<: *bot
+    container_name: bot_fb_015
+    command: ["--config", "config/fb_015.yaml"]
+    env_file:
+      - env/fb_015.env
+
+  fb_016:
+    <<: *bot
+    container_name: bot_fb_016
+    command: ["--config", "config/fb_016.yaml"]
+    env_file:
+      - env/fb_016.env
+
+  fb_017:
+    <<: *bot
+    container_name: bot_fb_017
+    command: ["--config", "config/fb_017.yaml"]
+    env_file:
+      - env/fb_017.env
+
+  fb_018:
+    <<: *bot
+    container_name: bot_fb_018
+    command: ["--config", "config/fb_018.yaml"]
+    env_file:
+      - env/fb_018.env
+
+  fb_019:
+    <<: *bot
+    container_name: bot_fb_019
+    command: ["--config", "config/fb_019.yaml"]
+    env_file:
+      - env/fb_019.env
+
+  fb_020:
+    <<: *bot
+    container_name: bot_fb_020
+    command: ["--config", "config/fb_020.yaml"]
+    env_file:
+      - env/fb_020.env
+
+  fb_021:
+    <<: *bot
+    container_name: bot_fb_021
+    command: ["--config", "config/fb_021.yaml"]
+    env_file:
+      - env/fb_021.env
+
+  fb_022:
+    <<: *bot
+    container_name: bot_fb_022
+    command: ["--config", "config/fb_022.yaml"]
+    env_file:
+      - env/fb_022.env
+
+  fb_023:
+    <<: *bot
+    container_name: bot_fb_023
+    command: ["--config", "config/fb_023.yaml"]
+    env_file:
+      - env/fb_023.env
+
+  fb_024:
+    <<: *bot
+    container_name: bot_fb_024
+    command: ["--config", "config/fb_024.yaml"]
+    env_file:
+      - env/fb_024.env
+
   flowers:
     <<: *bot
     container_name: bot_flowers
@@ -260,6 +1352,258 @@ services:
     env_file:
       - env/game_keys.env
 
+  gameacc_001:
+    <<: *bot
+    container_name: bot_gameacc_001
+    command: ["--config", "config/gameacc_001.yaml"]
+    env_file:
+      - env/gameacc_001.env
+
+  gameacc_002:
+    <<: *bot
+    container_name: bot_gameacc_002
+    command: ["--config", "config/gameacc_002.yaml"]
+    env_file:
+      - env/gameacc_002.env
+
+  gameacc_003:
+    <<: *bot
+    container_name: bot_gameacc_003
+    command: ["--config", "config/gameacc_003.yaml"]
+    env_file:
+      - env/gameacc_003.env
+
+  gameacc_004:
+    <<: *bot
+    container_name: bot_gameacc_004
+    command: ["--config", "config/gameacc_004.yaml"]
+    env_file:
+      - env/gameacc_004.env
+
+  gameacc_005:
+    <<: *bot
+    container_name: bot_gameacc_005
+    command: ["--config", "config/gameacc_005.yaml"]
+    env_file:
+      - env/gameacc_005.env
+
+  gameacc_006:
+    <<: *bot
+    container_name: bot_gameacc_006
+    command: ["--config", "config/gameacc_006.yaml"]
+    env_file:
+      - env/gameacc_006.env
+
+  gameacc_007:
+    <<: *bot
+    container_name: bot_gameacc_007
+    command: ["--config", "config/gameacc_007.yaml"]
+    env_file:
+      - env/gameacc_007.env
+
+  gameacc_008:
+    <<: *bot
+    container_name: bot_gameacc_008
+    command: ["--config", "config/gameacc_008.yaml"]
+    env_file:
+      - env/gameacc_008.env
+
+  gameacc_009:
+    <<: *bot
+    container_name: bot_gameacc_009
+    command: ["--config", "config/gameacc_009.yaml"]
+    env_file:
+      - env/gameacc_009.env
+
+  gameacc_010:
+    <<: *bot
+    container_name: bot_gameacc_010
+    command: ["--config", "config/gameacc_010.yaml"]
+    env_file:
+      - env/gameacc_010.env
+
+  gameacc_011:
+    <<: *bot
+    container_name: bot_gameacc_011
+    command: ["--config", "config/gameacc_011.yaml"]
+    env_file:
+      - env/gameacc_011.env
+
+  gameacc_012:
+    <<: *bot
+    container_name: bot_gameacc_012
+    command: ["--config", "config/gameacc_012.yaml"]
+    env_file:
+      - env/gameacc_012.env
+
+  gameacc_013:
+    <<: *bot
+    container_name: bot_gameacc_013
+    command: ["--config", "config/gameacc_013.yaml"]
+    env_file:
+      - env/gameacc_013.env
+
+  gameacc_014:
+    <<: *bot
+    container_name: bot_gameacc_014
+    command: ["--config", "config/gameacc_014.yaml"]
+    env_file:
+      - env/gameacc_014.env
+
+  gameacc_015:
+    <<: *bot
+    container_name: bot_gameacc_015
+    command: ["--config", "config/gameacc_015.yaml"]
+    env_file:
+      - env/gameacc_015.env
+
+  gameacc_016:
+    <<: *bot
+    container_name: bot_gameacc_016
+    command: ["--config", "config/gameacc_016.yaml"]
+    env_file:
+      - env/gameacc_016.env
+
+  gameacc_017:
+    <<: *bot
+    container_name: bot_gameacc_017
+    command: ["--config", "config/gameacc_017.yaml"]
+    env_file:
+      - env/gameacc_017.env
+
+  gameacc_018:
+    <<: *bot
+    container_name: bot_gameacc_018
+    command: ["--config", "config/gameacc_018.yaml"]
+    env_file:
+      - env/gameacc_018.env
+
+  gift_001:
+    <<: *bot
+    container_name: bot_gift_001
+    command: ["--config", "config/gift_001.yaml"]
+    env_file:
+      - env/gift_001.env
+
+  gift_002:
+    <<: *bot
+    container_name: bot_gift_002
+    command: ["--config", "config/gift_002.yaml"]
+    env_file:
+      - env/gift_002.env
+
+  gift_003:
+    <<: *bot
+    container_name: bot_gift_003
+    command: ["--config", "config/gift_003.yaml"]
+    env_file:
+      - env/gift_003.env
+
+  gift_004:
+    <<: *bot
+    container_name: bot_gift_004
+    command: ["--config", "config/gift_004.yaml"]
+    env_file:
+      - env/gift_004.env
+
+  gift_005:
+    <<: *bot
+    container_name: bot_gift_005
+    command: ["--config", "config/gift_005.yaml"]
+    env_file:
+      - env/gift_005.env
+
+  gift_006:
+    <<: *bot
+    container_name: bot_gift_006
+    command: ["--config", "config/gift_006.yaml"]
+    env_file:
+      - env/gift_006.env
+
+  gift_007:
+    <<: *bot
+    container_name: bot_gift_007
+    command: ["--config", "config/gift_007.yaml"]
+    env_file:
+      - env/gift_007.env
+
+  gift_008:
+    <<: *bot
+    container_name: bot_gift_008
+    command: ["--config", "config/gift_008.yaml"]
+    env_file:
+      - env/gift_008.env
+
+  gift_009:
+    <<: *bot
+    container_name: bot_gift_009
+    command: ["--config", "config/gift_009.yaml"]
+    env_file:
+      - env/gift_009.env
+
+  gift_010:
+    <<: *bot
+    container_name: bot_gift_010
+    command: ["--config", "config/gift_010.yaml"]
+    env_file:
+      - env/gift_010.env
+
+  gift_011:
+    <<: *bot
+    container_name: bot_gift_011
+    command: ["--config", "config/gift_011.yaml"]
+    env_file:
+      - env/gift_011.env
+
+  gift_012:
+    <<: *bot
+    container_name: bot_gift_012
+    command: ["--config", "config/gift_012.yaml"]
+    env_file:
+      - env/gift_012.env
+
+  gift_013:
+    <<: *bot
+    container_name: bot_gift_013
+    command: ["--config", "config/gift_013.yaml"]
+    env_file:
+      - env/gift_013.env
+
+  gift_014:
+    <<: *bot
+    container_name: bot_gift_014
+    command: ["--config", "config/gift_014.yaml"]
+    env_file:
+      - env/gift_014.env
+
+  gift_015:
+    <<: *bot
+    container_name: bot_gift_015
+    command: ["--config", "config/gift_015.yaml"]
+    env_file:
+      - env/gift_015.env
+
+  gift_016:
+    <<: *bot
+    container_name: bot_gift_016
+    command: ["--config", "config/gift_016.yaml"]
+    env_file:
+      - env/gift_016.env
+
+  gift_017:
+    <<: *bot
+    container_name: bot_gift_017
+    command: ["--config", "config/gift_017.yaml"]
+    env_file:
+      - env/gift_017.env
+
+  gift_018:
+    <<: *bot
+    container_name: bot_gift_018
+    command: ["--config", "config/gift_018.yaml"]
+    env_file:
+      - env/gift_018.env
+
   gift_boxes:
     <<: *bot
     container_name: bot_gift_boxes
@@ -273,6 +1617,160 @@ services:
     command: ["--config", "config/giftcards.yaml"]
     env_file:
       - env/giftcards.env
+
+  goog_001:
+    <<: *bot
+    container_name: bot_goog_001
+    command: ["--config", "config/goog_001.yaml"]
+    env_file:
+      - env/goog_001.env
+
+  goog_002:
+    <<: *bot
+    container_name: bot_goog_002
+    command: ["--config", "config/goog_002.yaml"]
+    env_file:
+      - env/goog_002.env
+
+  goog_003:
+    <<: *bot
+    container_name: bot_goog_003
+    command: ["--config", "config/goog_003.yaml"]
+    env_file:
+      - env/goog_003.env
+
+  goog_004:
+    <<: *bot
+    container_name: bot_goog_004
+    command: ["--config", "config/goog_004.yaml"]
+    env_file:
+      - env/goog_004.env
+
+  goog_005:
+    <<: *bot
+    container_name: bot_goog_005
+    command: ["--config", "config/goog_005.yaml"]
+    env_file:
+      - env/goog_005.env
+
+  goog_006:
+    <<: *bot
+    container_name: bot_goog_006
+    command: ["--config", "config/goog_006.yaml"]
+    env_file:
+      - env/goog_006.env
+
+  goog_007:
+    <<: *bot
+    container_name: bot_goog_007
+    command: ["--config", "config/goog_007.yaml"]
+    env_file:
+      - env/goog_007.env
+
+  goog_008:
+    <<: *bot
+    container_name: bot_goog_008
+    command: ["--config", "config/goog_008.yaml"]
+    env_file:
+      - env/goog_008.env
+
+  goog_009:
+    <<: *bot
+    container_name: bot_goog_009
+    command: ["--config", "config/goog_009.yaml"]
+    env_file:
+      - env/goog_009.env
+
+  goog_010:
+    <<: *bot
+    container_name: bot_goog_010
+    command: ["--config", "config/goog_010.yaml"]
+    env_file:
+      - env/goog_010.env
+
+  goog_011:
+    <<: *bot
+    container_name: bot_goog_011
+    command: ["--config", "config/goog_011.yaml"]
+    env_file:
+      - env/goog_011.env
+
+  goog_012:
+    <<: *bot
+    container_name: bot_goog_012
+    command: ["--config", "config/goog_012.yaml"]
+    env_file:
+      - env/goog_012.env
+
+  goog_013:
+    <<: *bot
+    container_name: bot_goog_013
+    command: ["--config", "config/goog_013.yaml"]
+    env_file:
+      - env/goog_013.env
+
+  goog_014:
+    <<: *bot
+    container_name: bot_goog_014
+    command: ["--config", "config/goog_014.yaml"]
+    env_file:
+      - env/goog_014.env
+
+  goog_015:
+    <<: *bot
+    container_name: bot_goog_015
+    command: ["--config", "config/goog_015.yaml"]
+    env_file:
+      - env/goog_015.env
+
+  goog_016:
+    <<: *bot
+    container_name: bot_goog_016
+    command: ["--config", "config/goog_016.yaml"]
+    env_file:
+      - env/goog_016.env
+
+  goog_017:
+    <<: *bot
+    container_name: bot_goog_017
+    command: ["--config", "config/goog_017.yaml"]
+    env_file:
+      - env/goog_017.env
+
+  goog_018:
+    <<: *bot
+    container_name: bot_goog_018
+    command: ["--config", "config/goog_018.yaml"]
+    env_file:
+      - env/goog_018.env
+
+  goog_019:
+    <<: *bot
+    container_name: bot_goog_019
+    command: ["--config", "config/goog_019.yaml"]
+    env_file:
+      - env/goog_019.env
+
+  goog_020:
+    <<: *bot
+    container_name: bot_goog_020
+    command: ["--config", "config/goog_020.yaml"]
+    env_file:
+      - env/goog_020.env
+
+  goog_021:
+    <<: *bot
+    container_name: bot_goog_021
+    command: ["--config", "config/goog_021.yaml"]
+    env_file:
+      - env/goog_021.env
+
+  goog_022:
+    <<: *bot
+    container_name: bot_goog_022
+    command: ["--config", "config/goog_022.yaml"]
+    env_file:
+      - env/goog_022.env
 
   google_accounts:
     <<: *bot
@@ -288,6 +1786,160 @@ services:
     env_file:
       - env/groceries.env
 
+  host_001:
+    <<: *bot
+    container_name: bot_host_001
+    command: ["--config", "config/host_001.yaml"]
+    env_file:
+      - env/host_001.env
+
+  host_002:
+    <<: *bot
+    container_name: bot_host_002
+    command: ["--config", "config/host_002.yaml"]
+    env_file:
+      - env/host_002.env
+
+  host_003:
+    <<: *bot
+    container_name: bot_host_003
+    command: ["--config", "config/host_003.yaml"]
+    env_file:
+      - env/host_003.env
+
+  host_004:
+    <<: *bot
+    container_name: bot_host_004
+    command: ["--config", "config/host_004.yaml"]
+    env_file:
+      - env/host_004.env
+
+  host_005:
+    <<: *bot
+    container_name: bot_host_005
+    command: ["--config", "config/host_005.yaml"]
+    env_file:
+      - env/host_005.env
+
+  host_006:
+    <<: *bot
+    container_name: bot_host_006
+    command: ["--config", "config/host_006.yaml"]
+    env_file:
+      - env/host_006.env
+
+  host_007:
+    <<: *bot
+    container_name: bot_host_007
+    command: ["--config", "config/host_007.yaml"]
+    env_file:
+      - env/host_007.env
+
+  host_008:
+    <<: *bot
+    container_name: bot_host_008
+    command: ["--config", "config/host_008.yaml"]
+    env_file:
+      - env/host_008.env
+
+  host_009:
+    <<: *bot
+    container_name: bot_host_009
+    command: ["--config", "config/host_009.yaml"]
+    env_file:
+      - env/host_009.env
+
+  host_010:
+    <<: *bot
+    container_name: bot_host_010
+    command: ["--config", "config/host_010.yaml"]
+    env_file:
+      - env/host_010.env
+
+  host_011:
+    <<: *bot
+    container_name: bot_host_011
+    command: ["--config", "config/host_011.yaml"]
+    env_file:
+      - env/host_011.env
+
+  host_012:
+    <<: *bot
+    container_name: bot_host_012
+    command: ["--config", "config/host_012.yaml"]
+    env_file:
+      - env/host_012.env
+
+  host_013:
+    <<: *bot
+    container_name: bot_host_013
+    command: ["--config", "config/host_013.yaml"]
+    env_file:
+      - env/host_013.env
+
+  host_014:
+    <<: *bot
+    container_name: bot_host_014
+    command: ["--config", "config/host_014.yaml"]
+    env_file:
+      - env/host_014.env
+
+  host_015:
+    <<: *bot
+    container_name: bot_host_015
+    command: ["--config", "config/host_015.yaml"]
+    env_file:
+      - env/host_015.env
+
+  host_016:
+    <<: *bot
+    container_name: bot_host_016
+    command: ["--config", "config/host_016.yaml"]
+    env_file:
+      - env/host_016.env
+
+  host_017:
+    <<: *bot
+    container_name: bot_host_017
+    command: ["--config", "config/host_017.yaml"]
+    env_file:
+      - env/host_017.env
+
+  host_018:
+    <<: *bot
+    container_name: bot_host_018
+    command: ["--config", "config/host_018.yaml"]
+    env_file:
+      - env/host_018.env
+
+  host_019:
+    <<: *bot
+    container_name: bot_host_019
+    command: ["--config", "config/host_019.yaml"]
+    env_file:
+      - env/host_019.env
+
+  host_020:
+    <<: *bot
+    container_name: bot_host_020
+    command: ["--config", "config/host_020.yaml"]
+    env_file:
+      - env/host_020.env
+
+  host_021:
+    <<: *bot
+    container_name: bot_host_021
+    command: ["--config", "config/host_021.yaml"]
+    env_file:
+      - env/host_021.env
+
+  host_022:
+    <<: *bot
+    container_name: bot_host_022
+    command: ["--config", "config/host_022.yaml"]
+    env_file:
+      - env/host_022.env
+
   hosting:
     <<: *bot
     container_name: bot_hosting
@@ -301,6 +1953,188 @@ services:
     command: ["--config", "config/icecream.yaml"]
     env_file:
       - env/icecream.env
+
+  ig_001:
+    <<: *bot
+    container_name: bot_ig_001
+    command: ["--config", "config/ig_001.yaml"]
+    env_file:
+      - env/ig_001.env
+
+  ig_002:
+    <<: *bot
+    container_name: bot_ig_002
+    command: ["--config", "config/ig_002.yaml"]
+    env_file:
+      - env/ig_002.env
+
+  ig_003:
+    <<: *bot
+    container_name: bot_ig_003
+    command: ["--config", "config/ig_003.yaml"]
+    env_file:
+      - env/ig_003.env
+
+  ig_004:
+    <<: *bot
+    container_name: bot_ig_004
+    command: ["--config", "config/ig_004.yaml"]
+    env_file:
+      - env/ig_004.env
+
+  ig_005:
+    <<: *bot
+    container_name: bot_ig_005
+    command: ["--config", "config/ig_005.yaml"]
+    env_file:
+      - env/ig_005.env
+
+  ig_006:
+    <<: *bot
+    container_name: bot_ig_006
+    command: ["--config", "config/ig_006.yaml"]
+    env_file:
+      - env/ig_006.env
+
+  ig_007:
+    <<: *bot
+    container_name: bot_ig_007
+    command: ["--config", "config/ig_007.yaml"]
+    env_file:
+      - env/ig_007.env
+
+  ig_008:
+    <<: *bot
+    container_name: bot_ig_008
+    command: ["--config", "config/ig_008.yaml"]
+    env_file:
+      - env/ig_008.env
+
+  ig_009:
+    <<: *bot
+    container_name: bot_ig_009
+    command: ["--config", "config/ig_009.yaml"]
+    env_file:
+      - env/ig_009.env
+
+  ig_010:
+    <<: *bot
+    container_name: bot_ig_010
+    command: ["--config", "config/ig_010.yaml"]
+    env_file:
+      - env/ig_010.env
+
+  ig_011:
+    <<: *bot
+    container_name: bot_ig_011
+    command: ["--config", "config/ig_011.yaml"]
+    env_file:
+      - env/ig_011.env
+
+  ig_012:
+    <<: *bot
+    container_name: bot_ig_012
+    command: ["--config", "config/ig_012.yaml"]
+    env_file:
+      - env/ig_012.env
+
+  ig_013:
+    <<: *bot
+    container_name: bot_ig_013
+    command: ["--config", "config/ig_013.yaml"]
+    env_file:
+      - env/ig_013.env
+
+  ig_014:
+    <<: *bot
+    container_name: bot_ig_014
+    command: ["--config", "config/ig_014.yaml"]
+    env_file:
+      - env/ig_014.env
+
+  ig_015:
+    <<: *bot
+    container_name: bot_ig_015
+    command: ["--config", "config/ig_015.yaml"]
+    env_file:
+      - env/ig_015.env
+
+  ig_016:
+    <<: *bot
+    container_name: bot_ig_016
+    command: ["--config", "config/ig_016.yaml"]
+    env_file:
+      - env/ig_016.env
+
+  ig_017:
+    <<: *bot
+    container_name: bot_ig_017
+    command: ["--config", "config/ig_017.yaml"]
+    env_file:
+      - env/ig_017.env
+
+  ig_018:
+    <<: *bot
+    container_name: bot_ig_018
+    command: ["--config", "config/ig_018.yaml"]
+    env_file:
+      - env/ig_018.env
+
+  ig_019:
+    <<: *bot
+    container_name: bot_ig_019
+    command: ["--config", "config/ig_019.yaml"]
+    env_file:
+      - env/ig_019.env
+
+  ig_020:
+    <<: *bot
+    container_name: bot_ig_020
+    command: ["--config", "config/ig_020.yaml"]
+    env_file:
+      - env/ig_020.env
+
+  ig_021:
+    <<: *bot
+    container_name: bot_ig_021
+    command: ["--config", "config/ig_021.yaml"]
+    env_file:
+      - env/ig_021.env
+
+  ig_022:
+    <<: *bot
+    container_name: bot_ig_022
+    command: ["--config", "config/ig_022.yaml"]
+    env_file:
+      - env/ig_022.env
+
+  ig_023:
+    <<: *bot
+    container_name: bot_ig_023
+    command: ["--config", "config/ig_023.yaml"]
+    env_file:
+      - env/ig_023.env
+
+  ig_024:
+    <<: *bot
+    container_name: bot_ig_024
+    command: ["--config", "config/ig_024.yaml"]
+    env_file:
+      - env/ig_024.env
+
+  ig_025:
+    <<: *bot
+    container_name: bot_ig_025
+    command: ["--config", "config/ig_025.yaml"]
+    env_file:
+      - env/ig_025.env
+
+  ig_026:
+    <<: *bot
+    container_name: bot_ig_026
+    command: ["--config", "config/ig_026.yaml"]
+    env_file:
+      - env/ig_026.env
 
   instagram_accounts:
     <<: *bot
@@ -337,12 +2171,236 @@ services:
     env_file:
       - env/luts.env
 
+  mail_001:
+    <<: *bot
+    container_name: bot_mail_001
+    command: ["--config", "config/mail_001.yaml"]
+    env_file:
+      - env/mail_001.env
+
+  mail_002:
+    <<: *bot
+    container_name: bot_mail_002
+    command: ["--config", "config/mail_002.yaml"]
+    env_file:
+      - env/mail_002.env
+
+  mail_003:
+    <<: *bot
+    container_name: bot_mail_003
+    command: ["--config", "config/mail_003.yaml"]
+    env_file:
+      - env/mail_003.env
+
+  mail_004:
+    <<: *bot
+    container_name: bot_mail_004
+    command: ["--config", "config/mail_004.yaml"]
+    env_file:
+      - env/mail_004.env
+
+  mail_005:
+    <<: *bot
+    container_name: bot_mail_005
+    command: ["--config", "config/mail_005.yaml"]
+    env_file:
+      - env/mail_005.env
+
+  mail_006:
+    <<: *bot
+    container_name: bot_mail_006
+    command: ["--config", "config/mail_006.yaml"]
+    env_file:
+      - env/mail_006.env
+
+  mail_007:
+    <<: *bot
+    container_name: bot_mail_007
+    command: ["--config", "config/mail_007.yaml"]
+    env_file:
+      - env/mail_007.env
+
+  mail_008:
+    <<: *bot
+    container_name: bot_mail_008
+    command: ["--config", "config/mail_008.yaml"]
+    env_file:
+      - env/mail_008.env
+
+  mail_009:
+    <<: *bot
+    container_name: bot_mail_009
+    command: ["--config", "config/mail_009.yaml"]
+    env_file:
+      - env/mail_009.env
+
+  mail_010:
+    <<: *bot
+    container_name: bot_mail_010
+    command: ["--config", "config/mail_010.yaml"]
+    env_file:
+      - env/mail_010.env
+
+  mail_011:
+    <<: *bot
+    container_name: bot_mail_011
+    command: ["--config", "config/mail_011.yaml"]
+    env_file:
+      - env/mail_011.env
+
+  mail_012:
+    <<: *bot
+    container_name: bot_mail_012
+    command: ["--config", "config/mail_012.yaml"]
+    env_file:
+      - env/mail_012.env
+
+  marketing_001:
+    <<: *bot
+    container_name: bot_marketing_001
+    command: ["--config", "config/marketing_001.yaml"]
+    env_file:
+      - env/marketing_001.env
+
+  marketing_002:
+    <<: *bot
+    container_name: bot_marketing_002
+    command: ["--config", "config/marketing_002.yaml"]
+    env_file:
+      - env/marketing_002.env
+
+  marketing_003:
+    <<: *bot
+    container_name: bot_marketing_003
+    command: ["--config", "config/marketing_003.yaml"]
+    env_file:
+      - env/marketing_003.env
+
+  marketing_004:
+    <<: *bot
+    container_name: bot_marketing_004
+    command: ["--config", "config/marketing_004.yaml"]
+    env_file:
+      - env/marketing_004.env
+
+  marketing_005:
+    <<: *bot
+    container_name: bot_marketing_005
+    command: ["--config", "config/marketing_005.yaml"]
+    env_file:
+      - env/marketing_005.env
+
+  marketing_006:
+    <<: *bot
+    container_name: bot_marketing_006
+    command: ["--config", "config/marketing_006.yaml"]
+    env_file:
+      - env/marketing_006.env
+
+  marketing_007:
+    <<: *bot
+    container_name: bot_marketing_007
+    command: ["--config", "config/marketing_007.yaml"]
+    env_file:
+      - env/marketing_007.env
+
+  marketing_008:
+    <<: *bot
+    container_name: bot_marketing_008
+    command: ["--config", "config/marketing_008.yaml"]
+    env_file:
+      - env/marketing_008.env
+
+  marketing_009:
+    <<: *bot
+    container_name: bot_marketing_009
+    command: ["--config", "config/marketing_009.yaml"]
+    env_file:
+      - env/marketing_009.env
+
+  marketing_010:
+    <<: *bot
+    container_name: bot_marketing_010
+    command: ["--config", "config/marketing_010.yaml"]
+    env_file:
+      - env/marketing_010.env
+
   massage:
     <<: *bot
     container_name: bot_massage
     command: ["--config", "config/massage.yaml"]
     env_file:
       - env/massage.env
+
+  media_001:
+    <<: *bot
+    container_name: bot_media_001
+    command: ["--config", "config/media_001.yaml"]
+    env_file:
+      - env/media_001.env
+
+  media_002:
+    <<: *bot
+    container_name: bot_media_002
+    command: ["--config", "config/media_002.yaml"]
+    env_file:
+      - env/media_002.env
+
+  media_003:
+    <<: *bot
+    container_name: bot_media_003
+    command: ["--config", "config/media_003.yaml"]
+    env_file:
+      - env/media_003.env
+
+  media_004:
+    <<: *bot
+    container_name: bot_media_004
+    command: ["--config", "config/media_004.yaml"]
+    env_file:
+      - env/media_004.env
+
+  media_005:
+    <<: *bot
+    container_name: bot_media_005
+    command: ["--config", "config/media_005.yaml"]
+    env_file:
+      - env/media_005.env
+
+  media_006:
+    <<: *bot
+    container_name: bot_media_006
+    command: ["--config", "config/media_006.yaml"]
+    env_file:
+      - env/media_006.env
+
+  media_007:
+    <<: *bot
+    container_name: bot_media_007
+    command: ["--config", "config/media_007.yaml"]
+    env_file:
+      - env/media_007.env
+
+  media_008:
+    <<: *bot
+    container_name: bot_media_008
+    command: ["--config", "config/media_008.yaml"]
+    env_file:
+      - env/media_008.env
+
+  media_009:
+    <<: *bot
+    container_name: bot_media_009
+    command: ["--config", "config/media_009.yaml"]
+    env_file:
+      - env/media_009.env
+
+  media_010:
+    <<: *bot
+    container_name: bot_media_010
+    command: ["--config", "config/media_010.yaml"]
+    env_file:
+      - env/media_010.env
 
   merch:
     <<: *bot
@@ -421,6 +2479,76 @@ services:
     env_file:
       - env/pizza.env
 
+  pizza_001:
+    <<: *bot
+    container_name: bot_pizza_001
+    command: ["--config", "config/pizza_001.yaml"]
+    env_file:
+      - env/pizza_001.env
+
+  pizza_002:
+    <<: *bot
+    container_name: bot_pizza_002
+    command: ["--config", "config/pizza_002.yaml"]
+    env_file:
+      - env/pizza_002.env
+
+  pizza_003:
+    <<: *bot
+    container_name: bot_pizza_003
+    command: ["--config", "config/pizza_003.yaml"]
+    env_file:
+      - env/pizza_003.env
+
+  pizza_004:
+    <<: *bot
+    container_name: bot_pizza_004
+    command: ["--config", "config/pizza_004.yaml"]
+    env_file:
+      - env/pizza_004.env
+
+  pizza_005:
+    <<: *bot
+    container_name: bot_pizza_005
+    command: ["--config", "config/pizza_005.yaml"]
+    env_file:
+      - env/pizza_005.env
+
+  pizza_006:
+    <<: *bot
+    container_name: bot_pizza_006
+    command: ["--config", "config/pizza_006.yaml"]
+    env_file:
+      - env/pizza_006.env
+
+  pizza_007:
+    <<: *bot
+    container_name: bot_pizza_007
+    command: ["--config", "config/pizza_007.yaml"]
+    env_file:
+      - env/pizza_007.env
+
+  pizza_008:
+    <<: *bot
+    container_name: bot_pizza_008
+    command: ["--config", "config/pizza_008.yaml"]
+    env_file:
+      - env/pizza_008.env
+
+  pizza_009:
+    <<: *bot
+    container_name: bot_pizza_009
+    command: ["--config", "config/pizza_009.yaml"]
+    env_file:
+      - env/pizza_009.env
+
+  pizza_010:
+    <<: *bot
+    container_name: bot_pizza_010
+    command: ["--config", "config/pizza_010.yaml"]
+    env_file:
+      - env/pizza_010.env
+
   plants:
     <<: *bot
     container_name: bot_plants
@@ -441,6 +2569,146 @@ services:
     command: ["--config", "config/presets.yaml"]
     env_file:
       - env/presets.env
+
+  prox_001:
+    <<: *bot
+    container_name: bot_prox_001
+    command: ["--config", "config/prox_001.yaml"]
+    env_file:
+      - env/prox_001.env
+
+  prox_002:
+    <<: *bot
+    container_name: bot_prox_002
+    command: ["--config", "config/prox_002.yaml"]
+    env_file:
+      - env/prox_002.env
+
+  prox_003:
+    <<: *bot
+    container_name: bot_prox_003
+    command: ["--config", "config/prox_003.yaml"]
+    env_file:
+      - env/prox_003.env
+
+  prox_004:
+    <<: *bot
+    container_name: bot_prox_004
+    command: ["--config", "config/prox_004.yaml"]
+    env_file:
+      - env/prox_004.env
+
+  prox_005:
+    <<: *bot
+    container_name: bot_prox_005
+    command: ["--config", "config/prox_005.yaml"]
+    env_file:
+      - env/prox_005.env
+
+  prox_006:
+    <<: *bot
+    container_name: bot_prox_006
+    command: ["--config", "config/prox_006.yaml"]
+    env_file:
+      - env/prox_006.env
+
+  prox_007:
+    <<: *bot
+    container_name: bot_prox_007
+    command: ["--config", "config/prox_007.yaml"]
+    env_file:
+      - env/prox_007.env
+
+  prox_008:
+    <<: *bot
+    container_name: bot_prox_008
+    command: ["--config", "config/prox_008.yaml"]
+    env_file:
+      - env/prox_008.env
+
+  prox_009:
+    <<: *bot
+    container_name: bot_prox_009
+    command: ["--config", "config/prox_009.yaml"]
+    env_file:
+      - env/prox_009.env
+
+  prox_010:
+    <<: *bot
+    container_name: bot_prox_010
+    command: ["--config", "config/prox_010.yaml"]
+    env_file:
+      - env/prox_010.env
+
+  prox_011:
+    <<: *bot
+    container_name: bot_prox_011
+    command: ["--config", "config/prox_011.yaml"]
+    env_file:
+      - env/prox_011.env
+
+  prox_012:
+    <<: *bot
+    container_name: bot_prox_012
+    command: ["--config", "config/prox_012.yaml"]
+    env_file:
+      - env/prox_012.env
+
+  prox_013:
+    <<: *bot
+    container_name: bot_prox_013
+    command: ["--config", "config/prox_013.yaml"]
+    env_file:
+      - env/prox_013.env
+
+  prox_014:
+    <<: *bot
+    container_name: bot_prox_014
+    command: ["--config", "config/prox_014.yaml"]
+    env_file:
+      - env/prox_014.env
+
+  prox_015:
+    <<: *bot
+    container_name: bot_prox_015
+    command: ["--config", "config/prox_015.yaml"]
+    env_file:
+      - env/prox_015.env
+
+  prox_016:
+    <<: *bot
+    container_name: bot_prox_016
+    command: ["--config", "config/prox_016.yaml"]
+    env_file:
+      - env/prox_016.env
+
+  prox_017:
+    <<: *bot
+    container_name: bot_prox_017
+    command: ["--config", "config/prox_017.yaml"]
+    env_file:
+      - env/prox_017.env
+
+  prox_018:
+    <<: *bot
+    container_name: bot_prox_018
+    command: ["--config", "config/prox_018.yaml"]
+    env_file:
+      - env/prox_018.env
+
+  prox_019:
+    <<: *bot
+    container_name: bot_prox_019
+    command: ["--config", "config/prox_019.yaml"]
+    env_file:
+      - env/prox_019.env
+
+  prox_020:
+    <<: *bot
+    container_name: bot_prox_020
+    command: ["--config", "config/prox_020.yaml"]
+    env_file:
+      - env/prox_020.env
 
   proxies:
     <<: *bot
@@ -477,6 +2745,174 @@ services:
     env_file:
       - env/roblox_accounts.env
 
+  saas_001:
+    <<: *bot
+    container_name: bot_saas_001
+    command: ["--config", "config/saas_001.yaml"]
+    env_file:
+      - env/saas_001.env
+
+  saas_002:
+    <<: *bot
+    container_name: bot_saas_002
+    command: ["--config", "config/saas_002.yaml"]
+    env_file:
+      - env/saas_002.env
+
+  saas_003:
+    <<: *bot
+    container_name: bot_saas_003
+    command: ["--config", "config/saas_003.yaml"]
+    env_file:
+      - env/saas_003.env
+
+  saas_004:
+    <<: *bot
+    container_name: bot_saas_004
+    command: ["--config", "config/saas_004.yaml"]
+    env_file:
+      - env/saas_004.env
+
+  saas_005:
+    <<: *bot
+    container_name: bot_saas_005
+    command: ["--config", "config/saas_005.yaml"]
+    env_file:
+      - env/saas_005.env
+
+  saas_006:
+    <<: *bot
+    container_name: bot_saas_006
+    command: ["--config", "config/saas_006.yaml"]
+    env_file:
+      - env/saas_006.env
+
+  saas_007:
+    <<: *bot
+    container_name: bot_saas_007
+    command: ["--config", "config/saas_007.yaml"]
+    env_file:
+      - env/saas_007.env
+
+  saas_008:
+    <<: *bot
+    container_name: bot_saas_008
+    command: ["--config", "config/saas_008.yaml"]
+    env_file:
+      - env/saas_008.env
+
+  saas_009:
+    <<: *bot
+    container_name: bot_saas_009
+    command: ["--config", "config/saas_009.yaml"]
+    env_file:
+      - env/saas_009.env
+
+  saas_010:
+    <<: *bot
+    container_name: bot_saas_010
+    command: ["--config", "config/saas_010.yaml"]
+    env_file:
+      - env/saas_010.env
+
+  saas_011:
+    <<: *bot
+    container_name: bot_saas_011
+    command: ["--config", "config/saas_011.yaml"]
+    env_file:
+      - env/saas_011.env
+
+  saas_012:
+    <<: *bot
+    container_name: bot_saas_012
+    command: ["--config", "config/saas_012.yaml"]
+    env_file:
+      - env/saas_012.env
+
+  seo_001:
+    <<: *bot
+    container_name: bot_seo_001
+    command: ["--config", "config/seo_001.yaml"]
+    env_file:
+      - env/seo_001.env
+
+  seo_002:
+    <<: *bot
+    container_name: bot_seo_002
+    command: ["--config", "config/seo_002.yaml"]
+    env_file:
+      - env/seo_002.env
+
+  seo_003:
+    <<: *bot
+    container_name: bot_seo_003
+    command: ["--config", "config/seo_003.yaml"]
+    env_file:
+      - env/seo_003.env
+
+  seo_004:
+    <<: *bot
+    container_name: bot_seo_004
+    command: ["--config", "config/seo_004.yaml"]
+    env_file:
+      - env/seo_004.env
+
+  seo_005:
+    <<: *bot
+    container_name: bot_seo_005
+    command: ["--config", "config/seo_005.yaml"]
+    env_file:
+      - env/seo_005.env
+
+  seo_006:
+    <<: *bot
+    container_name: bot_seo_006
+    command: ["--config", "config/seo_006.yaml"]
+    env_file:
+      - env/seo_006.env
+
+  seo_007:
+    <<: *bot
+    container_name: bot_seo_007
+    command: ["--config", "config/seo_007.yaml"]
+    env_file:
+      - env/seo_007.env
+
+  seo_008:
+    <<: *bot
+    container_name: bot_seo_008
+    command: ["--config", "config/seo_008.yaml"]
+    env_file:
+      - env/seo_008.env
+
+  seo_009:
+    <<: *bot
+    container_name: bot_seo_009
+    command: ["--config", "config/seo_009.yaml"]
+    env_file:
+      - env/seo_009.env
+
+  seo_010:
+    <<: *bot
+    container_name: bot_seo_010
+    command: ["--config", "config/seo_010.yaml"]
+    env_file:
+      - env/seo_010.env
+
+  seo_011:
+    <<: *bot
+    container_name: bot_seo_011
+    command: ["--config", "config/seo_011.yaml"]
+    env_file:
+      - env/seo_011.env
+
+  seo_012:
+    <<: *bot
+    container_name: bot_seo_012
+    command: ["--config", "config/seo_012.yaml"]
+    env_file:
+      - env/seo_012.env
+
   seo_tools:
     <<: *bot
     container_name: bot_seo_tools
@@ -498,6 +2934,132 @@ services:
     env_file:
       - env/smm.env
 
+  smm_001:
+    <<: *bot
+    container_name: bot_smm_001
+    command: ["--config", "config/smm_001.yaml"]
+    env_file:
+      - env/smm_001.env
+
+  smm_002:
+    <<: *bot
+    container_name: bot_smm_002
+    command: ["--config", "config/smm_002.yaml"]
+    env_file:
+      - env/smm_002.env
+
+  smm_003:
+    <<: *bot
+    container_name: bot_smm_003
+    command: ["--config", "config/smm_003.yaml"]
+    env_file:
+      - env/smm_003.env
+
+  smm_004:
+    <<: *bot
+    container_name: bot_smm_004
+    command: ["--config", "config/smm_004.yaml"]
+    env_file:
+      - env/smm_004.env
+
+  smm_005:
+    <<: *bot
+    container_name: bot_smm_005
+    command: ["--config", "config/smm_005.yaml"]
+    env_file:
+      - env/smm_005.env
+
+  smm_006:
+    <<: *bot
+    container_name: bot_smm_006
+    command: ["--config", "config/smm_006.yaml"]
+    env_file:
+      - env/smm_006.env
+
+  smm_007:
+    <<: *bot
+    container_name: bot_smm_007
+    command: ["--config", "config/smm_007.yaml"]
+    env_file:
+      - env/smm_007.env
+
+  smm_008:
+    <<: *bot
+    container_name: bot_smm_008
+    command: ["--config", "config/smm_008.yaml"]
+    env_file:
+      - env/smm_008.env
+
+  smm_009:
+    <<: *bot
+    container_name: bot_smm_009
+    command: ["--config", "config/smm_009.yaml"]
+    env_file:
+      - env/smm_009.env
+
+  smm_010:
+    <<: *bot
+    container_name: bot_smm_010
+    command: ["--config", "config/smm_010.yaml"]
+    env_file:
+      - env/smm_010.env
+
+  smm_011:
+    <<: *bot
+    container_name: bot_smm_011
+    command: ["--config", "config/smm_011.yaml"]
+    env_file:
+      - env/smm_011.env
+
+  smm_012:
+    <<: *bot
+    container_name: bot_smm_012
+    command: ["--config", "config/smm_012.yaml"]
+    env_file:
+      - env/smm_012.env
+
+  smm_013:
+    <<: *bot
+    container_name: bot_smm_013
+    command: ["--config", "config/smm_013.yaml"]
+    env_file:
+      - env/smm_013.env
+
+  smm_014:
+    <<: *bot
+    container_name: bot_smm_014
+    command: ["--config", "config/smm_014.yaml"]
+    env_file:
+      - env/smm_014.env
+
+  smm_015:
+    <<: *bot
+    container_name: bot_smm_015
+    command: ["--config", "config/smm_015.yaml"]
+    env_file:
+      - env/smm_015.env
+
+  smm_016:
+    <<: *bot
+    container_name: bot_smm_016
+    command: ["--config", "config/smm_016.yaml"]
+    env_file:
+      - env/smm_016.env
+
+  smm_017:
+    <<: *bot
+    container_name: bot_smm_017
+    command: ["--config", "config/smm_017.yaml"]
+    env_file:
+      - env/smm_017.env
+
+  smm_018:
+    <<: *bot
+    container_name: bot_smm_018
+    command: ["--config", "config/smm_018.yaml"]
+    env_file:
+      - env/smm_018.env
+
   sneakers:
     <<: *bot
     container_name: bot_sneakers
@@ -511,6 +3073,174 @@ services:
     command: ["--config", "config/social_templates.yaml"]
     env_file:
       - env/social_templates.env
+
+  soft_001:
+    <<: *bot
+    container_name: bot_soft_001
+    command: ["--config", "config/soft_001.yaml"]
+    env_file:
+      - env/soft_001.env
+
+  soft_002:
+    <<: *bot
+    container_name: bot_soft_002
+    command: ["--config", "config/soft_002.yaml"]
+    env_file:
+      - env/soft_002.env
+
+  soft_003:
+    <<: *bot
+    container_name: bot_soft_003
+    command: ["--config", "config/soft_003.yaml"]
+    env_file:
+      - env/soft_003.env
+
+  soft_004:
+    <<: *bot
+    container_name: bot_soft_004
+    command: ["--config", "config/soft_004.yaml"]
+    env_file:
+      - env/soft_004.env
+
+  soft_005:
+    <<: *bot
+    container_name: bot_soft_005
+    command: ["--config", "config/soft_005.yaml"]
+    env_file:
+      - env/soft_005.env
+
+  soft_006:
+    <<: *bot
+    container_name: bot_soft_006
+    command: ["--config", "config/soft_006.yaml"]
+    env_file:
+      - env/soft_006.env
+
+  soft_007:
+    <<: *bot
+    container_name: bot_soft_007
+    command: ["--config", "config/soft_007.yaml"]
+    env_file:
+      - env/soft_007.env
+
+  soft_008:
+    <<: *bot
+    container_name: bot_soft_008
+    command: ["--config", "config/soft_008.yaml"]
+    env_file:
+      - env/soft_008.env
+
+  soft_009:
+    <<: *bot
+    container_name: bot_soft_009
+    command: ["--config", "config/soft_009.yaml"]
+    env_file:
+      - env/soft_009.env
+
+  soft_010:
+    <<: *bot
+    container_name: bot_soft_010
+    command: ["--config", "config/soft_010.yaml"]
+    env_file:
+      - env/soft_010.env
+
+  soft_011:
+    <<: *bot
+    container_name: bot_soft_011
+    command: ["--config", "config/soft_011.yaml"]
+    env_file:
+      - env/soft_011.env
+
+  soft_012:
+    <<: *bot
+    container_name: bot_soft_012
+    command: ["--config", "config/soft_012.yaml"]
+    env_file:
+      - env/soft_012.env
+
+  soft_013:
+    <<: *bot
+    container_name: bot_soft_013
+    command: ["--config", "config/soft_013.yaml"]
+    env_file:
+      - env/soft_013.env
+
+  soft_014:
+    <<: *bot
+    container_name: bot_soft_014
+    command: ["--config", "config/soft_014.yaml"]
+    env_file:
+      - env/soft_014.env
+
+  soft_015:
+    <<: *bot
+    container_name: bot_soft_015
+    command: ["--config", "config/soft_015.yaml"]
+    env_file:
+      - env/soft_015.env
+
+  soft_016:
+    <<: *bot
+    container_name: bot_soft_016
+    command: ["--config", "config/soft_016.yaml"]
+    env_file:
+      - env/soft_016.env
+
+  soft_017:
+    <<: *bot
+    container_name: bot_soft_017
+    command: ["--config", "config/soft_017.yaml"]
+    env_file:
+      - env/soft_017.env
+
+  soft_018:
+    <<: *bot
+    container_name: bot_soft_018
+    command: ["--config", "config/soft_018.yaml"]
+    env_file:
+      - env/soft_018.env
+
+  soft_019:
+    <<: *bot
+    container_name: bot_soft_019
+    command: ["--config", "config/soft_019.yaml"]
+    env_file:
+      - env/soft_019.env
+
+  soft_020:
+    <<: *bot
+    container_name: bot_soft_020
+    command: ["--config", "config/soft_020.yaml"]
+    env_file:
+      - env/soft_020.env
+
+  soft_021:
+    <<: *bot
+    container_name: bot_soft_021
+    command: ["--config", "config/soft_021.yaml"]
+    env_file:
+      - env/soft_021.env
+
+  soft_022:
+    <<: *bot
+    container_name: bot_soft_022
+    command: ["--config", "config/soft_022.yaml"]
+    env_file:
+      - env/soft_022.env
+
+  soft_023:
+    <<: *bot
+    container_name: bot_soft_023
+    command: ["--config", "config/soft_023.yaml"]
+    env_file:
+      - env/soft_023.env
+
+  soft_024:
+    <<: *bot
+    container_name: bot_soft_024
+    command: ["--config", "config/soft_024.yaml"]
+    env_file:
+      - env/soft_024.env
 
   software_keys:
     <<: *bot
@@ -560,6 +3290,76 @@ services:
     command: ["--config", "config/sushi.yaml"]
     env_file:
       - env/sushi.env
+
+  sushi_001:
+    <<: *bot
+    container_name: bot_sushi_001
+    command: ["--config", "config/sushi_001.yaml"]
+    env_file:
+      - env/sushi_001.env
+
+  sushi_002:
+    <<: *bot
+    container_name: bot_sushi_002
+    command: ["--config", "config/sushi_002.yaml"]
+    env_file:
+      - env/sushi_002.env
+
+  sushi_003:
+    <<: *bot
+    container_name: bot_sushi_003
+    command: ["--config", "config/sushi_003.yaml"]
+    env_file:
+      - env/sushi_003.env
+
+  sushi_004:
+    <<: *bot
+    container_name: bot_sushi_004
+    command: ["--config", "config/sushi_004.yaml"]
+    env_file:
+      - env/sushi_004.env
+
+  sushi_005:
+    <<: *bot
+    container_name: bot_sushi_005
+    command: ["--config", "config/sushi_005.yaml"]
+    env_file:
+      - env/sushi_005.env
+
+  sushi_006:
+    <<: *bot
+    container_name: bot_sushi_006
+    command: ["--config", "config/sushi_006.yaml"]
+    env_file:
+      - env/sushi_006.env
+
+  sushi_007:
+    <<: *bot
+    container_name: bot_sushi_007
+    command: ["--config", "config/sushi_007.yaml"]
+    env_file:
+      - env/sushi_007.env
+
+  sushi_008:
+    <<: *bot
+    container_name: bot_sushi_008
+    command: ["--config", "config/sushi_008.yaml"]
+    env_file:
+      - env/sushi_008.env
+
+  sushi_009:
+    <<: *bot
+    container_name: bot_sushi_009
+    command: ["--config", "config/sushi_009.yaml"]
+    env_file:
+      - env/sushi_009.env
+
+  sushi_010:
+    <<: *bot
+    container_name: bot_sushi_010
+    command: ["--config", "config/sushi_010.yaml"]
+    env_file:
+      - env/sushi_010.env
 
   tea:
     <<: *bot
@@ -638,12 +3438,2896 @@ services:
     env_file:
       - env/tg_accounts_10.env
 
+  tg_m001:
+    <<: *bot
+    container_name: bot_tg_m001
+    command: ["--config", "config/tg_m001.yaml"]
+    env_file:
+      - env/tg_m001.env
+
+  tg_m002:
+    <<: *bot
+    container_name: bot_tg_m002
+    command: ["--config", "config/tg_m002.yaml"]
+    env_file:
+      - env/tg_m002.env
+
+  tg_m003:
+    <<: *bot
+    container_name: bot_tg_m003
+    command: ["--config", "config/tg_m003.yaml"]
+    env_file:
+      - env/tg_m003.env
+
+  tg_m004:
+    <<: *bot
+    container_name: bot_tg_m004
+    command: ["--config", "config/tg_m004.yaml"]
+    env_file:
+      - env/tg_m004.env
+
+  tg_m005:
+    <<: *bot
+    container_name: bot_tg_m005
+    command: ["--config", "config/tg_m005.yaml"]
+    env_file:
+      - env/tg_m005.env
+
+  tg_m006:
+    <<: *bot
+    container_name: bot_tg_m006
+    command: ["--config", "config/tg_m006.yaml"]
+    env_file:
+      - env/tg_m006.env
+
+  tg_m007:
+    <<: *bot
+    container_name: bot_tg_m007
+    command: ["--config", "config/tg_m007.yaml"]
+    env_file:
+      - env/tg_m007.env
+
+  tg_m008:
+    <<: *bot
+    container_name: bot_tg_m008
+    command: ["--config", "config/tg_m008.yaml"]
+    env_file:
+      - env/tg_m008.env
+
+  tg_m009:
+    <<: *bot
+    container_name: bot_tg_m009
+    command: ["--config", "config/tg_m009.yaml"]
+    env_file:
+      - env/tg_m009.env
+
+  tg_m010:
+    <<: *bot
+    container_name: bot_tg_m010
+    command: ["--config", "config/tg_m010.yaml"]
+    env_file:
+      - env/tg_m010.env
+
+  tg_m011:
+    <<: *bot
+    container_name: bot_tg_m011
+    command: ["--config", "config/tg_m011.yaml"]
+    env_file:
+      - env/tg_m011.env
+
+  tg_m012:
+    <<: *bot
+    container_name: bot_tg_m012
+    command: ["--config", "config/tg_m012.yaml"]
+    env_file:
+      - env/tg_m012.env
+
+  tg_m013:
+    <<: *bot
+    container_name: bot_tg_m013
+    command: ["--config", "config/tg_m013.yaml"]
+    env_file:
+      - env/tg_m013.env
+
+  tg_m014:
+    <<: *bot
+    container_name: bot_tg_m014
+    command: ["--config", "config/tg_m014.yaml"]
+    env_file:
+      - env/tg_m014.env
+
+  tg_m015:
+    <<: *bot
+    container_name: bot_tg_m015
+    command: ["--config", "config/tg_m015.yaml"]
+    env_file:
+      - env/tg_m015.env
+
+  tg_m016:
+    <<: *bot
+    container_name: bot_tg_m016
+    command: ["--config", "config/tg_m016.yaml"]
+    env_file:
+      - env/tg_m016.env
+
+  tg_m017:
+    <<: *bot
+    container_name: bot_tg_m017
+    command: ["--config", "config/tg_m017.yaml"]
+    env_file:
+      - env/tg_m017.env
+
+  tg_m018:
+    <<: *bot
+    container_name: bot_tg_m018
+    command: ["--config", "config/tg_m018.yaml"]
+    env_file:
+      - env/tg_m018.env
+
+  tg_m019:
+    <<: *bot
+    container_name: bot_tg_m019
+    command: ["--config", "config/tg_m019.yaml"]
+    env_file:
+      - env/tg_m019.env
+
+  tg_m020:
+    <<: *bot
+    container_name: bot_tg_m020
+    command: ["--config", "config/tg_m020.yaml"]
+    env_file:
+      - env/tg_m020.env
+
+  tg_m021:
+    <<: *bot
+    container_name: bot_tg_m021
+    command: ["--config", "config/tg_m021.yaml"]
+    env_file:
+      - env/tg_m021.env
+
+  tg_m022:
+    <<: *bot
+    container_name: bot_tg_m022
+    command: ["--config", "config/tg_m022.yaml"]
+    env_file:
+      - env/tg_m022.env
+
+  tg_m023:
+    <<: *bot
+    container_name: bot_tg_m023
+    command: ["--config", "config/tg_m023.yaml"]
+    env_file:
+      - env/tg_m023.env
+
+  tg_m024:
+    <<: *bot
+    container_name: bot_tg_m024
+    command: ["--config", "config/tg_m024.yaml"]
+    env_file:
+      - env/tg_m024.env
+
+  tg_m025:
+    <<: *bot
+    container_name: bot_tg_m025
+    command: ["--config", "config/tg_m025.yaml"]
+    env_file:
+      - env/tg_m025.env
+
+  tg_m026:
+    <<: *bot
+    container_name: bot_tg_m026
+    command: ["--config", "config/tg_m026.yaml"]
+    env_file:
+      - env/tg_m026.env
+
+  tg_m027:
+    <<: *bot
+    container_name: bot_tg_m027
+    command: ["--config", "config/tg_m027.yaml"]
+    env_file:
+      - env/tg_m027.env
+
+  tg_m028:
+    <<: *bot
+    container_name: bot_tg_m028
+    command: ["--config", "config/tg_m028.yaml"]
+    env_file:
+      - env/tg_m028.env
+
+  tg_m029:
+    <<: *bot
+    container_name: bot_tg_m029
+    command: ["--config", "config/tg_m029.yaml"]
+    env_file:
+      - env/tg_m029.env
+
+  tg_m030:
+    <<: *bot
+    container_name: bot_tg_m030
+    command: ["--config", "config/tg_m030.yaml"]
+    env_file:
+      - env/tg_m030.env
+
+  tg_m031:
+    <<: *bot
+    container_name: bot_tg_m031
+    command: ["--config", "config/tg_m031.yaml"]
+    env_file:
+      - env/tg_m031.env
+
+  tg_m032:
+    <<: *bot
+    container_name: bot_tg_m032
+    command: ["--config", "config/tg_m032.yaml"]
+    env_file:
+      - env/tg_m032.env
+
+  tg_m033:
+    <<: *bot
+    container_name: bot_tg_m033
+    command: ["--config", "config/tg_m033.yaml"]
+    env_file:
+      - env/tg_m033.env
+
+  tg_m034:
+    <<: *bot
+    container_name: bot_tg_m034
+    command: ["--config", "config/tg_m034.yaml"]
+    env_file:
+      - env/tg_m034.env
+
+  tg_m035:
+    <<: *bot
+    container_name: bot_tg_m035
+    command: ["--config", "config/tg_m035.yaml"]
+    env_file:
+      - env/tg_m035.env
+
+  tg_m036:
+    <<: *bot
+    container_name: bot_tg_m036
+    command: ["--config", "config/tg_m036.yaml"]
+    env_file:
+      - env/tg_m036.env
+
+  tg_m037:
+    <<: *bot
+    container_name: bot_tg_m037
+    command: ["--config", "config/tg_m037.yaml"]
+    env_file:
+      - env/tg_m037.env
+
+  tg_m038:
+    <<: *bot
+    container_name: bot_tg_m038
+    command: ["--config", "config/tg_m038.yaml"]
+    env_file:
+      - env/tg_m038.env
+
+  tg_m039:
+    <<: *bot
+    container_name: bot_tg_m039
+    command: ["--config", "config/tg_m039.yaml"]
+    env_file:
+      - env/tg_m039.env
+
+  tg_m040:
+    <<: *bot
+    container_name: bot_tg_m040
+    command: ["--config", "config/tg_m040.yaml"]
+    env_file:
+      - env/tg_m040.env
+
+  tg_m041:
+    <<: *bot
+    container_name: bot_tg_m041
+    command: ["--config", "config/tg_m041.yaml"]
+    env_file:
+      - env/tg_m041.env
+
+  tg_m042:
+    <<: *bot
+    container_name: bot_tg_m042
+    command: ["--config", "config/tg_m042.yaml"]
+    env_file:
+      - env/tg_m042.env
+
+  tg_m043:
+    <<: *bot
+    container_name: bot_tg_m043
+    command: ["--config", "config/tg_m043.yaml"]
+    env_file:
+      - env/tg_m043.env
+
+  tg_m044:
+    <<: *bot
+    container_name: bot_tg_m044
+    command: ["--config", "config/tg_m044.yaml"]
+    env_file:
+      - env/tg_m044.env
+
+  tg_m045:
+    <<: *bot
+    container_name: bot_tg_m045
+    command: ["--config", "config/tg_m045.yaml"]
+    env_file:
+      - env/tg_m045.env
+
+  tg_m046:
+    <<: *bot
+    container_name: bot_tg_m046
+    command: ["--config", "config/tg_m046.yaml"]
+    env_file:
+      - env/tg_m046.env
+
+  tg_m047:
+    <<: *bot
+    container_name: bot_tg_m047
+    command: ["--config", "config/tg_m047.yaml"]
+    env_file:
+      - env/tg_m047.env
+
+  tg_m048:
+    <<: *bot
+    container_name: bot_tg_m048
+    command: ["--config", "config/tg_m048.yaml"]
+    env_file:
+      - env/tg_m048.env
+
+  tg_m049:
+    <<: *bot
+    container_name: bot_tg_m049
+    command: ["--config", "config/tg_m049.yaml"]
+    env_file:
+      - env/tg_m049.env
+
+  tg_m050:
+    <<: *bot
+    container_name: bot_tg_m050
+    command: ["--config", "config/tg_m050.yaml"]
+    env_file:
+      - env/tg_m050.env
+
+  tg_m051:
+    <<: *bot
+    container_name: bot_tg_m051
+    command: ["--config", "config/tg_m051.yaml"]
+    env_file:
+      - env/tg_m051.env
+
+  tg_m052:
+    <<: *bot
+    container_name: bot_tg_m052
+    command: ["--config", "config/tg_m052.yaml"]
+    env_file:
+      - env/tg_m052.env
+
+  tg_m053:
+    <<: *bot
+    container_name: bot_tg_m053
+    command: ["--config", "config/tg_m053.yaml"]
+    env_file:
+      - env/tg_m053.env
+
+  tg_m054:
+    <<: *bot
+    container_name: bot_tg_m054
+    command: ["--config", "config/tg_m054.yaml"]
+    env_file:
+      - env/tg_m054.env
+
+  tg_m055:
+    <<: *bot
+    container_name: bot_tg_m055
+    command: ["--config", "config/tg_m055.yaml"]
+    env_file:
+      - env/tg_m055.env
+
+  tg_m056:
+    <<: *bot
+    container_name: bot_tg_m056
+    command: ["--config", "config/tg_m056.yaml"]
+    env_file:
+      - env/tg_m056.env
+
+  tg_m057:
+    <<: *bot
+    container_name: bot_tg_m057
+    command: ["--config", "config/tg_m057.yaml"]
+    env_file:
+      - env/tg_m057.env
+
+  tg_m058:
+    <<: *bot
+    container_name: bot_tg_m058
+    command: ["--config", "config/tg_m058.yaml"]
+    env_file:
+      - env/tg_m058.env
+
+  tg_m059:
+    <<: *bot
+    container_name: bot_tg_m059
+    command: ["--config", "config/tg_m059.yaml"]
+    env_file:
+      - env/tg_m059.env
+
+  tg_m060:
+    <<: *bot
+    container_name: bot_tg_m060
+    command: ["--config", "config/tg_m060.yaml"]
+    env_file:
+      - env/tg_m060.env
+
+  tg_m061:
+    <<: *bot
+    container_name: bot_tg_m061
+    command: ["--config", "config/tg_m061.yaml"]
+    env_file:
+      - env/tg_m061.env
+
+  tg_m062:
+    <<: *bot
+    container_name: bot_tg_m062
+    command: ["--config", "config/tg_m062.yaml"]
+    env_file:
+      - env/tg_m062.env
+
+  tg_m063:
+    <<: *bot
+    container_name: bot_tg_m063
+    command: ["--config", "config/tg_m063.yaml"]
+    env_file:
+      - env/tg_m063.env
+
+  tg_m064:
+    <<: *bot
+    container_name: bot_tg_m064
+    command: ["--config", "config/tg_m064.yaml"]
+    env_file:
+      - env/tg_m064.env
+
+  tg_m065:
+    <<: *bot
+    container_name: bot_tg_m065
+    command: ["--config", "config/tg_m065.yaml"]
+    env_file:
+      - env/tg_m065.env
+
+  tg_m066:
+    <<: *bot
+    container_name: bot_tg_m066
+    command: ["--config", "config/tg_m066.yaml"]
+    env_file:
+      - env/tg_m066.env
+
+  tg_m067:
+    <<: *bot
+    container_name: bot_tg_m067
+    command: ["--config", "config/tg_m067.yaml"]
+    env_file:
+      - env/tg_m067.env
+
+  tg_m068:
+    <<: *bot
+    container_name: bot_tg_m068
+    command: ["--config", "config/tg_m068.yaml"]
+    env_file:
+      - env/tg_m068.env
+
+  tg_m069:
+    <<: *bot
+    container_name: bot_tg_m069
+    command: ["--config", "config/tg_m069.yaml"]
+    env_file:
+      - env/tg_m069.env
+
+  tg_m070:
+    <<: *bot
+    container_name: bot_tg_m070
+    command: ["--config", "config/tg_m070.yaml"]
+    env_file:
+      - env/tg_m070.env
+
+  tg_m071:
+    <<: *bot
+    container_name: bot_tg_m071
+    command: ["--config", "config/tg_m071.yaml"]
+    env_file:
+      - env/tg_m071.env
+
+  tg_m072:
+    <<: *bot
+    container_name: bot_tg_m072
+    command: ["--config", "config/tg_m072.yaml"]
+    env_file:
+      - env/tg_m072.env
+
+  tg_m073:
+    <<: *bot
+    container_name: bot_tg_m073
+    command: ["--config", "config/tg_m073.yaml"]
+    env_file:
+      - env/tg_m073.env
+
+  tg_m074:
+    <<: *bot
+    container_name: bot_tg_m074
+    command: ["--config", "config/tg_m074.yaml"]
+    env_file:
+      - env/tg_m074.env
+
+  tg_m075:
+    <<: *bot
+    container_name: bot_tg_m075
+    command: ["--config", "config/tg_m075.yaml"]
+    env_file:
+      - env/tg_m075.env
+
+  tg_m076:
+    <<: *bot
+    container_name: bot_tg_m076
+    command: ["--config", "config/tg_m076.yaml"]
+    env_file:
+      - env/tg_m076.env
+
+  tg_m077:
+    <<: *bot
+    container_name: bot_tg_m077
+    command: ["--config", "config/tg_m077.yaml"]
+    env_file:
+      - env/tg_m077.env
+
+  tg_m078:
+    <<: *bot
+    container_name: bot_tg_m078
+    command: ["--config", "config/tg_m078.yaml"]
+    env_file:
+      - env/tg_m078.env
+
+  tg_m079:
+    <<: *bot
+    container_name: bot_tg_m079
+    command: ["--config", "config/tg_m079.yaml"]
+    env_file:
+      - env/tg_m079.env
+
+  tg_m080:
+    <<: *bot
+    container_name: bot_tg_m080
+    command: ["--config", "config/tg_m080.yaml"]
+    env_file:
+      - env/tg_m080.env
+
+  tg_m081:
+    <<: *bot
+    container_name: bot_tg_m081
+    command: ["--config", "config/tg_m081.yaml"]
+    env_file:
+      - env/tg_m081.env
+
+  tg_m082:
+    <<: *bot
+    container_name: bot_tg_m082
+    command: ["--config", "config/tg_m082.yaml"]
+    env_file:
+      - env/tg_m082.env
+
+  tg_m083:
+    <<: *bot
+    container_name: bot_tg_m083
+    command: ["--config", "config/tg_m083.yaml"]
+    env_file:
+      - env/tg_m083.env
+
+  tg_m084:
+    <<: *bot
+    container_name: bot_tg_m084
+    command: ["--config", "config/tg_m084.yaml"]
+    env_file:
+      - env/tg_m084.env
+
+  tg_m085:
+    <<: *bot
+    container_name: bot_tg_m085
+    command: ["--config", "config/tg_m085.yaml"]
+    env_file:
+      - env/tg_m085.env
+
+  tg_m086:
+    <<: *bot
+    container_name: bot_tg_m086
+    command: ["--config", "config/tg_m086.yaml"]
+    env_file:
+      - env/tg_m086.env
+
+  tg_m087:
+    <<: *bot
+    container_name: bot_tg_m087
+    command: ["--config", "config/tg_m087.yaml"]
+    env_file:
+      - env/tg_m087.env
+
+  tg_m088:
+    <<: *bot
+    container_name: bot_tg_m088
+    command: ["--config", "config/tg_m088.yaml"]
+    env_file:
+      - env/tg_m088.env
+
+  tg_m089:
+    <<: *bot
+    container_name: bot_tg_m089
+    command: ["--config", "config/tg_m089.yaml"]
+    env_file:
+      - env/tg_m089.env
+
+  tg_m090:
+    <<: *bot
+    container_name: bot_tg_m090
+    command: ["--config", "config/tg_m090.yaml"]
+    env_file:
+      - env/tg_m090.env
+
+  tg_m091:
+    <<: *bot
+    container_name: bot_tg_m091
+    command: ["--config", "config/tg_m091.yaml"]
+    env_file:
+      - env/tg_m091.env
+
+  tg_m092:
+    <<: *bot
+    container_name: bot_tg_m092
+    command: ["--config", "config/tg_m092.yaml"]
+    env_file:
+      - env/tg_m092.env
+
+  tg_m093:
+    <<: *bot
+    container_name: bot_tg_m093
+    command: ["--config", "config/tg_m093.yaml"]
+    env_file:
+      - env/tg_m093.env
+
+  tg_m094:
+    <<: *bot
+    container_name: bot_tg_m094
+    command: ["--config", "config/tg_m094.yaml"]
+    env_file:
+      - env/tg_m094.env
+
+  tg_m095:
+    <<: *bot
+    container_name: bot_tg_m095
+    command: ["--config", "config/tg_m095.yaml"]
+    env_file:
+      - env/tg_m095.env
+
+  tg_m096:
+    <<: *bot
+    container_name: bot_tg_m096
+    command: ["--config", "config/tg_m096.yaml"]
+    env_file:
+      - env/tg_m096.env
+
+  tg_m097:
+    <<: *bot
+    container_name: bot_tg_m097
+    command: ["--config", "config/tg_m097.yaml"]
+    env_file:
+      - env/tg_m097.env
+
+  tg_m098:
+    <<: *bot
+    container_name: bot_tg_m098
+    command: ["--config", "config/tg_m098.yaml"]
+    env_file:
+      - env/tg_m098.env
+
+  tg_m099:
+    <<: *bot
+    container_name: bot_tg_m099
+    command: ["--config", "config/tg_m099.yaml"]
+    env_file:
+      - env/tg_m099.env
+
+  tg_m100:
+    <<: *bot
+    container_name: bot_tg_m100
+    command: ["--config", "config/tg_m100.yaml"]
+    env_file:
+      - env/tg_m100.env
+
+  tg_m101:
+    <<: *bot
+    container_name: bot_tg_m101
+    command: ["--config", "config/tg_m101.yaml"]
+    env_file:
+      - env/tg_m101.env
+
+  tg_m102:
+    <<: *bot
+    container_name: bot_tg_m102
+    command: ["--config", "config/tg_m102.yaml"]
+    env_file:
+      - env/tg_m102.env
+
+  tg_m103:
+    <<: *bot
+    container_name: bot_tg_m103
+    command: ["--config", "config/tg_m103.yaml"]
+    env_file:
+      - env/tg_m103.env
+
+  tg_m104:
+    <<: *bot
+    container_name: bot_tg_m104
+    command: ["--config", "config/tg_m104.yaml"]
+    env_file:
+      - env/tg_m104.env
+
+  tg_m105:
+    <<: *bot
+    container_name: bot_tg_m105
+    command: ["--config", "config/tg_m105.yaml"]
+    env_file:
+      - env/tg_m105.env
+
+  tg_m106:
+    <<: *bot
+    container_name: bot_tg_m106
+    command: ["--config", "config/tg_m106.yaml"]
+    env_file:
+      - env/tg_m106.env
+
+  tg_m107:
+    <<: *bot
+    container_name: bot_tg_m107
+    command: ["--config", "config/tg_m107.yaml"]
+    env_file:
+      - env/tg_m107.env
+
+  tg_m108:
+    <<: *bot
+    container_name: bot_tg_m108
+    command: ["--config", "config/tg_m108.yaml"]
+    env_file:
+      - env/tg_m108.env
+
+  tg_m109:
+    <<: *bot
+    container_name: bot_tg_m109
+    command: ["--config", "config/tg_m109.yaml"]
+    env_file:
+      - env/tg_m109.env
+
+  tg_m110:
+    <<: *bot
+    container_name: bot_tg_m110
+    command: ["--config", "config/tg_m110.yaml"]
+    env_file:
+      - env/tg_m110.env
+
+  tg_m111:
+    <<: *bot
+    container_name: bot_tg_m111
+    command: ["--config", "config/tg_m111.yaml"]
+    env_file:
+      - env/tg_m111.env
+
+  tg_m112:
+    <<: *bot
+    container_name: bot_tg_m112
+    command: ["--config", "config/tg_m112.yaml"]
+    env_file:
+      - env/tg_m112.env
+
+  tg_m113:
+    <<: *bot
+    container_name: bot_tg_m113
+    command: ["--config", "config/tg_m113.yaml"]
+    env_file:
+      - env/tg_m113.env
+
+  tg_m114:
+    <<: *bot
+    container_name: bot_tg_m114
+    command: ["--config", "config/tg_m114.yaml"]
+    env_file:
+      - env/tg_m114.env
+
+  tg_m115:
+    <<: *bot
+    container_name: bot_tg_m115
+    command: ["--config", "config/tg_m115.yaml"]
+    env_file:
+      - env/tg_m115.env
+
+  tg_m116:
+    <<: *bot
+    container_name: bot_tg_m116
+    command: ["--config", "config/tg_m116.yaml"]
+    env_file:
+      - env/tg_m116.env
+
+  tg_m117:
+    <<: *bot
+    container_name: bot_tg_m117
+    command: ["--config", "config/tg_m117.yaml"]
+    env_file:
+      - env/tg_m117.env
+
+  tg_m118:
+    <<: *bot
+    container_name: bot_tg_m118
+    command: ["--config", "config/tg_m118.yaml"]
+    env_file:
+      - env/tg_m118.env
+
+  tg_m119:
+    <<: *bot
+    container_name: bot_tg_m119
+    command: ["--config", "config/tg_m119.yaml"]
+    env_file:
+      - env/tg_m119.env
+
+  tg_m120:
+    <<: *bot
+    container_name: bot_tg_m120
+    command: ["--config", "config/tg_m120.yaml"]
+    env_file:
+      - env/tg_m120.env
+
+  tg_m121:
+    <<: *bot
+    container_name: bot_tg_m121
+    command: ["--config", "config/tg_m121.yaml"]
+    env_file:
+      - env/tg_m121.env
+
+  tg_m122:
+    <<: *bot
+    container_name: bot_tg_m122
+    command: ["--config", "config/tg_m122.yaml"]
+    env_file:
+      - env/tg_m122.env
+
+  tg_m123:
+    <<: *bot
+    container_name: bot_tg_m123
+    command: ["--config", "config/tg_m123.yaml"]
+    env_file:
+      - env/tg_m123.env
+
+  tg_m124:
+    <<: *bot
+    container_name: bot_tg_m124
+    command: ["--config", "config/tg_m124.yaml"]
+    env_file:
+      - env/tg_m124.env
+
+  tg_m125:
+    <<: *bot
+    container_name: bot_tg_m125
+    command: ["--config", "config/tg_m125.yaml"]
+    env_file:
+      - env/tg_m125.env
+
+  tg_m126:
+    <<: *bot
+    container_name: bot_tg_m126
+    command: ["--config", "config/tg_m126.yaml"]
+    env_file:
+      - env/tg_m126.env
+
+  tg_m127:
+    <<: *bot
+    container_name: bot_tg_m127
+    command: ["--config", "config/tg_m127.yaml"]
+    env_file:
+      - env/tg_m127.env
+
+  tg_m128:
+    <<: *bot
+    container_name: bot_tg_m128
+    command: ["--config", "config/tg_m128.yaml"]
+    env_file:
+      - env/tg_m128.env
+
+  tg_m129:
+    <<: *bot
+    container_name: bot_tg_m129
+    command: ["--config", "config/tg_m129.yaml"]
+    env_file:
+      - env/tg_m129.env
+
+  tg_m130:
+    <<: *bot
+    container_name: bot_tg_m130
+    command: ["--config", "config/tg_m130.yaml"]
+    env_file:
+      - env/tg_m130.env
+
+  tg_m131:
+    <<: *bot
+    container_name: bot_tg_m131
+    command: ["--config", "config/tg_m131.yaml"]
+    env_file:
+      - env/tg_m131.env
+
+  tg_m132:
+    <<: *bot
+    container_name: bot_tg_m132
+    command: ["--config", "config/tg_m132.yaml"]
+    env_file:
+      - env/tg_m132.env
+
+  tg_m133:
+    <<: *bot
+    container_name: bot_tg_m133
+    command: ["--config", "config/tg_m133.yaml"]
+    env_file:
+      - env/tg_m133.env
+
+  tg_m134:
+    <<: *bot
+    container_name: bot_tg_m134
+    command: ["--config", "config/tg_m134.yaml"]
+    env_file:
+      - env/tg_m134.env
+
+  tg_m135:
+    <<: *bot
+    container_name: bot_tg_m135
+    command: ["--config", "config/tg_m135.yaml"]
+    env_file:
+      - env/tg_m135.env
+
+  tg_m136:
+    <<: *bot
+    container_name: bot_tg_m136
+    command: ["--config", "config/tg_m136.yaml"]
+    env_file:
+      - env/tg_m136.env
+
+  tg_m137:
+    <<: *bot
+    container_name: bot_tg_m137
+    command: ["--config", "config/tg_m137.yaml"]
+    env_file:
+      - env/tg_m137.env
+
+  tg_m138:
+    <<: *bot
+    container_name: bot_tg_m138
+    command: ["--config", "config/tg_m138.yaml"]
+    env_file:
+      - env/tg_m138.env
+
+  tg_m139:
+    <<: *bot
+    container_name: bot_tg_m139
+    command: ["--config", "config/tg_m139.yaml"]
+    env_file:
+      - env/tg_m139.env
+
+  tg_m140:
+    <<: *bot
+    container_name: bot_tg_m140
+    command: ["--config", "config/tg_m140.yaml"]
+    env_file:
+      - env/tg_m140.env
+
+  tg_m141:
+    <<: *bot
+    container_name: bot_tg_m141
+    command: ["--config", "config/tg_m141.yaml"]
+    env_file:
+      - env/tg_m141.env
+
+  tg_m142:
+    <<: *bot
+    container_name: bot_tg_m142
+    command: ["--config", "config/tg_m142.yaml"]
+    env_file:
+      - env/tg_m142.env
+
+  tg_m143:
+    <<: *bot
+    container_name: bot_tg_m143
+    command: ["--config", "config/tg_m143.yaml"]
+    env_file:
+      - env/tg_m143.env
+
+  tg_m144:
+    <<: *bot
+    container_name: bot_tg_m144
+    command: ["--config", "config/tg_m144.yaml"]
+    env_file:
+      - env/tg_m144.env
+
+  tg_m145:
+    <<: *bot
+    container_name: bot_tg_m145
+    command: ["--config", "config/tg_m145.yaml"]
+    env_file:
+      - env/tg_m145.env
+
+  tg_m146:
+    <<: *bot
+    container_name: bot_tg_m146
+    command: ["--config", "config/tg_m146.yaml"]
+    env_file:
+      - env/tg_m146.env
+
+  tg_m147:
+    <<: *bot
+    container_name: bot_tg_m147
+    command: ["--config", "config/tg_m147.yaml"]
+    env_file:
+      - env/tg_m147.env
+
+  tg_m148:
+    <<: *bot
+    container_name: bot_tg_m148
+    command: ["--config", "config/tg_m148.yaml"]
+    env_file:
+      - env/tg_m148.env
+
+  tg_m149:
+    <<: *bot
+    container_name: bot_tg_m149
+    command: ["--config", "config/tg_m149.yaml"]
+    env_file:
+      - env/tg_m149.env
+
+  tg_m150:
+    <<: *bot
+    container_name: bot_tg_m150
+    command: ["--config", "config/tg_m150.yaml"]
+    env_file:
+      - env/tg_m150.env
+
+  tg_m151:
+    <<: *bot
+    container_name: bot_tg_m151
+    command: ["--config", "config/tg_m151.yaml"]
+    env_file:
+      - env/tg_m151.env
+
+  tg_m152:
+    <<: *bot
+    container_name: bot_tg_m152
+    command: ["--config", "config/tg_m152.yaml"]
+    env_file:
+      - env/tg_m152.env
+
+  tg_m153:
+    <<: *bot
+    container_name: bot_tg_m153
+    command: ["--config", "config/tg_m153.yaml"]
+    env_file:
+      - env/tg_m153.env
+
+  tg_m154:
+    <<: *bot
+    container_name: bot_tg_m154
+    command: ["--config", "config/tg_m154.yaml"]
+    env_file:
+      - env/tg_m154.env
+
+  tg_m155:
+    <<: *bot
+    container_name: bot_tg_m155
+    command: ["--config", "config/tg_m155.yaml"]
+    env_file:
+      - env/tg_m155.env
+
+  tg_m156:
+    <<: *bot
+    container_name: bot_tg_m156
+    command: ["--config", "config/tg_m156.yaml"]
+    env_file:
+      - env/tg_m156.env
+
+  tg_m157:
+    <<: *bot
+    container_name: bot_tg_m157
+    command: ["--config", "config/tg_m157.yaml"]
+    env_file:
+      - env/tg_m157.env
+
+  tg_m158:
+    <<: *bot
+    container_name: bot_tg_m158
+    command: ["--config", "config/tg_m158.yaml"]
+    env_file:
+      - env/tg_m158.env
+
+  tg_m159:
+    <<: *bot
+    container_name: bot_tg_m159
+    command: ["--config", "config/tg_m159.yaml"]
+    env_file:
+      - env/tg_m159.env
+
+  tg_m160:
+    <<: *bot
+    container_name: bot_tg_m160
+    command: ["--config", "config/tg_m160.yaml"]
+    env_file:
+      - env/tg_m160.env
+
+  tg_m161:
+    <<: *bot
+    container_name: bot_tg_m161
+    command: ["--config", "config/tg_m161.yaml"]
+    env_file:
+      - env/tg_m161.env
+
+  tg_m162:
+    <<: *bot
+    container_name: bot_tg_m162
+    command: ["--config", "config/tg_m162.yaml"]
+    env_file:
+      - env/tg_m162.env
+
+  tg_m163:
+    <<: *bot
+    container_name: bot_tg_m163
+    command: ["--config", "config/tg_m163.yaml"]
+    env_file:
+      - env/tg_m163.env
+
+  tg_m164:
+    <<: *bot
+    container_name: bot_tg_m164
+    command: ["--config", "config/tg_m164.yaml"]
+    env_file:
+      - env/tg_m164.env
+
+  tg_m165:
+    <<: *bot
+    container_name: bot_tg_m165
+    command: ["--config", "config/tg_m165.yaml"]
+    env_file:
+      - env/tg_m165.env
+
+  tg_m166:
+    <<: *bot
+    container_name: bot_tg_m166
+    command: ["--config", "config/tg_m166.yaml"]
+    env_file:
+      - env/tg_m166.env
+
+  tg_m167:
+    <<: *bot
+    container_name: bot_tg_m167
+    command: ["--config", "config/tg_m167.yaml"]
+    env_file:
+      - env/tg_m167.env
+
+  tg_m168:
+    <<: *bot
+    container_name: bot_tg_m168
+    command: ["--config", "config/tg_m168.yaml"]
+    env_file:
+      - env/tg_m168.env
+
+  tg_m169:
+    <<: *bot
+    container_name: bot_tg_m169
+    command: ["--config", "config/tg_m169.yaml"]
+    env_file:
+      - env/tg_m169.env
+
+  tg_m170:
+    <<: *bot
+    container_name: bot_tg_m170
+    command: ["--config", "config/tg_m170.yaml"]
+    env_file:
+      - env/tg_m170.env
+
+  tg_m171:
+    <<: *bot
+    container_name: bot_tg_m171
+    command: ["--config", "config/tg_m171.yaml"]
+    env_file:
+      - env/tg_m171.env
+
+  tg_m172:
+    <<: *bot
+    container_name: bot_tg_m172
+    command: ["--config", "config/tg_m172.yaml"]
+    env_file:
+      - env/tg_m172.env
+
+  tg_m173:
+    <<: *bot
+    container_name: bot_tg_m173
+    command: ["--config", "config/tg_m173.yaml"]
+    env_file:
+      - env/tg_m173.env
+
+  tg_m174:
+    <<: *bot
+    container_name: bot_tg_m174
+    command: ["--config", "config/tg_m174.yaml"]
+    env_file:
+      - env/tg_m174.env
+
+  tg_m175:
+    <<: *bot
+    container_name: bot_tg_m175
+    command: ["--config", "config/tg_m175.yaml"]
+    env_file:
+      - env/tg_m175.env
+
+  tg_m176:
+    <<: *bot
+    container_name: bot_tg_m176
+    command: ["--config", "config/tg_m176.yaml"]
+    env_file:
+      - env/tg_m176.env
+
+  tg_m177:
+    <<: *bot
+    container_name: bot_tg_m177
+    command: ["--config", "config/tg_m177.yaml"]
+    env_file:
+      - env/tg_m177.env
+
+  tg_m178:
+    <<: *bot
+    container_name: bot_tg_m178
+    command: ["--config", "config/tg_m178.yaml"]
+    env_file:
+      - env/tg_m178.env
+
+  tg_m179:
+    <<: *bot
+    container_name: bot_tg_m179
+    command: ["--config", "config/tg_m179.yaml"]
+    env_file:
+      - env/tg_m179.env
+
+  tg_m180:
+    <<: *bot
+    container_name: bot_tg_m180
+    command: ["--config", "config/tg_m180.yaml"]
+    env_file:
+      - env/tg_m180.env
+
+  tg_m181:
+    <<: *bot
+    container_name: bot_tg_m181
+    command: ["--config", "config/tg_m181.yaml"]
+    env_file:
+      - env/tg_m181.env
+
+  tg_m182:
+    <<: *bot
+    container_name: bot_tg_m182
+    command: ["--config", "config/tg_m182.yaml"]
+    env_file:
+      - env/tg_m182.env
+
+  tg_m183:
+    <<: *bot
+    container_name: bot_tg_m183
+    command: ["--config", "config/tg_m183.yaml"]
+    env_file:
+      - env/tg_m183.env
+
+  tg_m184:
+    <<: *bot
+    container_name: bot_tg_m184
+    command: ["--config", "config/tg_m184.yaml"]
+    env_file:
+      - env/tg_m184.env
+
+  tg_m185:
+    <<: *bot
+    container_name: bot_tg_m185
+    command: ["--config", "config/tg_m185.yaml"]
+    env_file:
+      - env/tg_m185.env
+
+  tg_m186:
+    <<: *bot
+    container_name: bot_tg_m186
+    command: ["--config", "config/tg_m186.yaml"]
+    env_file:
+      - env/tg_m186.env
+
+  tg_m187:
+    <<: *bot
+    container_name: bot_tg_m187
+    command: ["--config", "config/tg_m187.yaml"]
+    env_file:
+      - env/tg_m187.env
+
+  tg_m188:
+    <<: *bot
+    container_name: bot_tg_m188
+    command: ["--config", "config/tg_m188.yaml"]
+    env_file:
+      - env/tg_m188.env
+
+  tg_m189:
+    <<: *bot
+    container_name: bot_tg_m189
+    command: ["--config", "config/tg_m189.yaml"]
+    env_file:
+      - env/tg_m189.env
+
+  tg_m190:
+    <<: *bot
+    container_name: bot_tg_m190
+    command: ["--config", "config/tg_m190.yaml"]
+    env_file:
+      - env/tg_m190.env
+
+  tg_m191:
+    <<: *bot
+    container_name: bot_tg_m191
+    command: ["--config", "config/tg_m191.yaml"]
+    env_file:
+      - env/tg_m191.env
+
+  tg_m192:
+    <<: *bot
+    container_name: bot_tg_m192
+    command: ["--config", "config/tg_m192.yaml"]
+    env_file:
+      - env/tg_m192.env
+
+  tg_m193:
+    <<: *bot
+    container_name: bot_tg_m193
+    command: ["--config", "config/tg_m193.yaml"]
+    env_file:
+      - env/tg_m193.env
+
+  tg_m194:
+    <<: *bot
+    container_name: bot_tg_m194
+    command: ["--config", "config/tg_m194.yaml"]
+    env_file:
+      - env/tg_m194.env
+
+  tg_m195:
+    <<: *bot
+    container_name: bot_tg_m195
+    command: ["--config", "config/tg_m195.yaml"]
+    env_file:
+      - env/tg_m195.env
+
+  tg_m196:
+    <<: *bot
+    container_name: bot_tg_m196
+    command: ["--config", "config/tg_m196.yaml"]
+    env_file:
+      - env/tg_m196.env
+
+  tg_m197:
+    <<: *bot
+    container_name: bot_tg_m197
+    command: ["--config", "config/tg_m197.yaml"]
+    env_file:
+      - env/tg_m197.env
+
+  tg_m198:
+    <<: *bot
+    container_name: bot_tg_m198
+    command: ["--config", "config/tg_m198.yaml"]
+    env_file:
+      - env/tg_m198.env
+
+  tg_m199:
+    <<: *bot
+    container_name: bot_tg_m199
+    command: ["--config", "config/tg_m199.yaml"]
+    env_file:
+      - env/tg_m199.env
+
+  tg_m200:
+    <<: *bot
+    container_name: bot_tg_m200
+    command: ["--config", "config/tg_m200.yaml"]
+    env_file:
+      - env/tg_m200.env
+
+  tg_m201:
+    <<: *bot
+    container_name: bot_tg_m201
+    command: ["--config", "config/tg_m201.yaml"]
+    env_file:
+      - env/tg_m201.env
+
+  tg_m202:
+    <<: *bot
+    container_name: bot_tg_m202
+    command: ["--config", "config/tg_m202.yaml"]
+    env_file:
+      - env/tg_m202.env
+
+  tg_m203:
+    <<: *bot
+    container_name: bot_tg_m203
+    command: ["--config", "config/tg_m203.yaml"]
+    env_file:
+      - env/tg_m203.env
+
+  tg_m204:
+    <<: *bot
+    container_name: bot_tg_m204
+    command: ["--config", "config/tg_m204.yaml"]
+    env_file:
+      - env/tg_m204.env
+
+  tg_m205:
+    <<: *bot
+    container_name: bot_tg_m205
+    command: ["--config", "config/tg_m205.yaml"]
+    env_file:
+      - env/tg_m205.env
+
+  tg_m206:
+    <<: *bot
+    container_name: bot_tg_m206
+    command: ["--config", "config/tg_m206.yaml"]
+    env_file:
+      - env/tg_m206.env
+
+  tg_m207:
+    <<: *bot
+    container_name: bot_tg_m207
+    command: ["--config", "config/tg_m207.yaml"]
+    env_file:
+      - env/tg_m207.env
+
+  tg_m208:
+    <<: *bot
+    container_name: bot_tg_m208
+    command: ["--config", "config/tg_m208.yaml"]
+    env_file:
+      - env/tg_m208.env
+
+  tg_m209:
+    <<: *bot
+    container_name: bot_tg_m209
+    command: ["--config", "config/tg_m209.yaml"]
+    env_file:
+      - env/tg_m209.env
+
+  tg_m210:
+    <<: *bot
+    container_name: bot_tg_m210
+    command: ["--config", "config/tg_m210.yaml"]
+    env_file:
+      - env/tg_m210.env
+
+  tg_m211:
+    <<: *bot
+    container_name: bot_tg_m211
+    command: ["--config", "config/tg_m211.yaml"]
+    env_file:
+      - env/tg_m211.env
+
+  tg_m212:
+    <<: *bot
+    container_name: bot_tg_m212
+    command: ["--config", "config/tg_m212.yaml"]
+    env_file:
+      - env/tg_m212.env
+
+  tg_m213:
+    <<: *bot
+    container_name: bot_tg_m213
+    command: ["--config", "config/tg_m213.yaml"]
+    env_file:
+      - env/tg_m213.env
+
+  tg_m214:
+    <<: *bot
+    container_name: bot_tg_m214
+    command: ["--config", "config/tg_m214.yaml"]
+    env_file:
+      - env/tg_m214.env
+
+  tg_m215:
+    <<: *bot
+    container_name: bot_tg_m215
+    command: ["--config", "config/tg_m215.yaml"]
+    env_file:
+      - env/tg_m215.env
+
+  tg_m216:
+    <<: *bot
+    container_name: bot_tg_m216
+    command: ["--config", "config/tg_m216.yaml"]
+    env_file:
+      - env/tg_m216.env
+
+  tg_m217:
+    <<: *bot
+    container_name: bot_tg_m217
+    command: ["--config", "config/tg_m217.yaml"]
+    env_file:
+      - env/tg_m217.env
+
+  tg_m218:
+    <<: *bot
+    container_name: bot_tg_m218
+    command: ["--config", "config/tg_m218.yaml"]
+    env_file:
+      - env/tg_m218.env
+
+  tg_m219:
+    <<: *bot
+    container_name: bot_tg_m219
+    command: ["--config", "config/tg_m219.yaml"]
+    env_file:
+      - env/tg_m219.env
+
+  tg_m220:
+    <<: *bot
+    container_name: bot_tg_m220
+    command: ["--config", "config/tg_m220.yaml"]
+    env_file:
+      - env/tg_m220.env
+
+  tg_m221:
+    <<: *bot
+    container_name: bot_tg_m221
+    command: ["--config", "config/tg_m221.yaml"]
+    env_file:
+      - env/tg_m221.env
+
+  tg_m222:
+    <<: *bot
+    container_name: bot_tg_m222
+    command: ["--config", "config/tg_m222.yaml"]
+    env_file:
+      - env/tg_m222.env
+
+  tg_m223:
+    <<: *bot
+    container_name: bot_tg_m223
+    command: ["--config", "config/tg_m223.yaml"]
+    env_file:
+      - env/tg_m223.env
+
+  tg_m224:
+    <<: *bot
+    container_name: bot_tg_m224
+    command: ["--config", "config/tg_m224.yaml"]
+    env_file:
+      - env/tg_m224.env
+
+  tg_m225:
+    <<: *bot
+    container_name: bot_tg_m225
+    command: ["--config", "config/tg_m225.yaml"]
+    env_file:
+      - env/tg_m225.env
+
+  tg_m226:
+    <<: *bot
+    container_name: bot_tg_m226
+    command: ["--config", "config/tg_m226.yaml"]
+    env_file:
+      - env/tg_m226.env
+
+  tg_m227:
+    <<: *bot
+    container_name: bot_tg_m227
+    command: ["--config", "config/tg_m227.yaml"]
+    env_file:
+      - env/tg_m227.env
+
+  tg_m228:
+    <<: *bot
+    container_name: bot_tg_m228
+    command: ["--config", "config/tg_m228.yaml"]
+    env_file:
+      - env/tg_m228.env
+
+  tg_m229:
+    <<: *bot
+    container_name: bot_tg_m229
+    command: ["--config", "config/tg_m229.yaml"]
+    env_file:
+      - env/tg_m229.env
+
+  tg_m230:
+    <<: *bot
+    container_name: bot_tg_m230
+    command: ["--config", "config/tg_m230.yaml"]
+    env_file:
+      - env/tg_m230.env
+
+  tg_m231:
+    <<: *bot
+    container_name: bot_tg_m231
+    command: ["--config", "config/tg_m231.yaml"]
+    env_file:
+      - env/tg_m231.env
+
+  tg_m232:
+    <<: *bot
+    container_name: bot_tg_m232
+    command: ["--config", "config/tg_m232.yaml"]
+    env_file:
+      - env/tg_m232.env
+
+  tg_m233:
+    <<: *bot
+    container_name: bot_tg_m233
+    command: ["--config", "config/tg_m233.yaml"]
+    env_file:
+      - env/tg_m233.env
+
+  tg_m234:
+    <<: *bot
+    container_name: bot_tg_m234
+    command: ["--config", "config/tg_m234.yaml"]
+    env_file:
+      - env/tg_m234.env
+
+  tg_m235:
+    <<: *bot
+    container_name: bot_tg_m235
+    command: ["--config", "config/tg_m235.yaml"]
+    env_file:
+      - env/tg_m235.env
+
+  tg_m236:
+    <<: *bot
+    container_name: bot_tg_m236
+    command: ["--config", "config/tg_m236.yaml"]
+    env_file:
+      - env/tg_m236.env
+
+  tg_m237:
+    <<: *bot
+    container_name: bot_tg_m237
+    command: ["--config", "config/tg_m237.yaml"]
+    env_file:
+      - env/tg_m237.env
+
+  tg_m238:
+    <<: *bot
+    container_name: bot_tg_m238
+    command: ["--config", "config/tg_m238.yaml"]
+    env_file:
+      - env/tg_m238.env
+
+  tg_m239:
+    <<: *bot
+    container_name: bot_tg_m239
+    command: ["--config", "config/tg_m239.yaml"]
+    env_file:
+      - env/tg_m239.env
+
+  tg_m240:
+    <<: *bot
+    container_name: bot_tg_m240
+    command: ["--config", "config/tg_m240.yaml"]
+    env_file:
+      - env/tg_m240.env
+
+  tg_m241:
+    <<: *bot
+    container_name: bot_tg_m241
+    command: ["--config", "config/tg_m241.yaml"]
+    env_file:
+      - env/tg_m241.env
+
+  tg_m242:
+    <<: *bot
+    container_name: bot_tg_m242
+    command: ["--config", "config/tg_m242.yaml"]
+    env_file:
+      - env/tg_m242.env
+
+  tg_m243:
+    <<: *bot
+    container_name: bot_tg_m243
+    command: ["--config", "config/tg_m243.yaml"]
+    env_file:
+      - env/tg_m243.env
+
+  tg_m244:
+    <<: *bot
+    container_name: bot_tg_m244
+    command: ["--config", "config/tg_m244.yaml"]
+    env_file:
+      - env/tg_m244.env
+
+  tg_m245:
+    <<: *bot
+    container_name: bot_tg_m245
+    command: ["--config", "config/tg_m245.yaml"]
+    env_file:
+      - env/tg_m245.env
+
+  tg_m246:
+    <<: *bot
+    container_name: bot_tg_m246
+    command: ["--config", "config/tg_m246.yaml"]
+    env_file:
+      - env/tg_m246.env
+
+  tg_m247:
+    <<: *bot
+    container_name: bot_tg_m247
+    command: ["--config", "config/tg_m247.yaml"]
+    env_file:
+      - env/tg_m247.env
+
+  tg_m248:
+    <<: *bot
+    container_name: bot_tg_m248
+    command: ["--config", "config/tg_m248.yaml"]
+    env_file:
+      - env/tg_m248.env
+
+  tg_m249:
+    <<: *bot
+    container_name: bot_tg_m249
+    command: ["--config", "config/tg_m249.yaml"]
+    env_file:
+      - env/tg_m249.env
+
+  tg_m250:
+    <<: *bot
+    container_name: bot_tg_m250
+    command: ["--config", "config/tg_m250.yaml"]
+    env_file:
+      - env/tg_m250.env
+
+  tg_m251:
+    <<: *bot
+    container_name: bot_tg_m251
+    command: ["--config", "config/tg_m251.yaml"]
+    env_file:
+      - env/tg_m251.env
+
+  tg_m252:
+    <<: *bot
+    container_name: bot_tg_m252
+    command: ["--config", "config/tg_m252.yaml"]
+    env_file:
+      - env/tg_m252.env
+
+  tg_m253:
+    <<: *bot
+    container_name: bot_tg_m253
+    command: ["--config", "config/tg_m253.yaml"]
+    env_file:
+      - env/tg_m253.env
+
+  tg_m254:
+    <<: *bot
+    container_name: bot_tg_m254
+    command: ["--config", "config/tg_m254.yaml"]
+    env_file:
+      - env/tg_m254.env
+
+  tg_m255:
+    <<: *bot
+    container_name: bot_tg_m255
+    command: ["--config", "config/tg_m255.yaml"]
+    env_file:
+      - env/tg_m255.env
+
+  tg_m256:
+    <<: *bot
+    container_name: bot_tg_m256
+    command: ["--config", "config/tg_m256.yaml"]
+    env_file:
+      - env/tg_m256.env
+
+  tg_m257:
+    <<: *bot
+    container_name: bot_tg_m257
+    command: ["--config", "config/tg_m257.yaml"]
+    env_file:
+      - env/tg_m257.env
+
+  tg_m258:
+    <<: *bot
+    container_name: bot_tg_m258
+    command: ["--config", "config/tg_m258.yaml"]
+    env_file:
+      - env/tg_m258.env
+
+  tg_m259:
+    <<: *bot
+    container_name: bot_tg_m259
+    command: ["--config", "config/tg_m259.yaml"]
+    env_file:
+      - env/tg_m259.env
+
+  tg_m260:
+    <<: *bot
+    container_name: bot_tg_m260
+    command: ["--config", "config/tg_m260.yaml"]
+    env_file:
+      - env/tg_m260.env
+
+  tg_m261:
+    <<: *bot
+    container_name: bot_tg_m261
+    command: ["--config", "config/tg_m261.yaml"]
+    env_file:
+      - env/tg_m261.env
+
+  tg_m262:
+    <<: *bot
+    container_name: bot_tg_m262
+    command: ["--config", "config/tg_m262.yaml"]
+    env_file:
+      - env/tg_m262.env
+
+  tg_m263:
+    <<: *bot
+    container_name: bot_tg_m263
+    command: ["--config", "config/tg_m263.yaml"]
+    env_file:
+      - env/tg_m263.env
+
+  tg_m264:
+    <<: *bot
+    container_name: bot_tg_m264
+    command: ["--config", "config/tg_m264.yaml"]
+    env_file:
+      - env/tg_m264.env
+
+  tg_m265:
+    <<: *bot
+    container_name: bot_tg_m265
+    command: ["--config", "config/tg_m265.yaml"]
+    env_file:
+      - env/tg_m265.env
+
+  tg_m266:
+    <<: *bot
+    container_name: bot_tg_m266
+    command: ["--config", "config/tg_m266.yaml"]
+    env_file:
+      - env/tg_m266.env
+
+  tg_m267:
+    <<: *bot
+    container_name: bot_tg_m267
+    command: ["--config", "config/tg_m267.yaml"]
+    env_file:
+      - env/tg_m267.env
+
+  tg_m268:
+    <<: *bot
+    container_name: bot_tg_m268
+    command: ["--config", "config/tg_m268.yaml"]
+    env_file:
+      - env/tg_m268.env
+
+  tg_m269:
+    <<: *bot
+    container_name: bot_tg_m269
+    command: ["--config", "config/tg_m269.yaml"]
+    env_file:
+      - env/tg_m269.env
+
+  tg_m270:
+    <<: *bot
+    container_name: bot_tg_m270
+    command: ["--config", "config/tg_m270.yaml"]
+    env_file:
+      - env/tg_m270.env
+
+  tg_m271:
+    <<: *bot
+    container_name: bot_tg_m271
+    command: ["--config", "config/tg_m271.yaml"]
+    env_file:
+      - env/tg_m271.env
+
+  tg_m272:
+    <<: *bot
+    container_name: bot_tg_m272
+    command: ["--config", "config/tg_m272.yaml"]
+    env_file:
+      - env/tg_m272.env
+
+  tg_m273:
+    <<: *bot
+    container_name: bot_tg_m273
+    command: ["--config", "config/tg_m273.yaml"]
+    env_file:
+      - env/tg_m273.env
+
+  tg_m274:
+    <<: *bot
+    container_name: bot_tg_m274
+    command: ["--config", "config/tg_m274.yaml"]
+    env_file:
+      - env/tg_m274.env
+
+  tg_m275:
+    <<: *bot
+    container_name: bot_tg_m275
+    command: ["--config", "config/tg_m275.yaml"]
+    env_file:
+      - env/tg_m275.env
+
+  tg_m276:
+    <<: *bot
+    container_name: bot_tg_m276
+    command: ["--config", "config/tg_m276.yaml"]
+    env_file:
+      - env/tg_m276.env
+
+  tg_m277:
+    <<: *bot
+    container_name: bot_tg_m277
+    command: ["--config", "config/tg_m277.yaml"]
+    env_file:
+      - env/tg_m277.env
+
+  tg_m278:
+    <<: *bot
+    container_name: bot_tg_m278
+    command: ["--config", "config/tg_m278.yaml"]
+    env_file:
+      - env/tg_m278.env
+
+  tg_m279:
+    <<: *bot
+    container_name: bot_tg_m279
+    command: ["--config", "config/tg_m279.yaml"]
+    env_file:
+      - env/tg_m279.env
+
+  tg_m280:
+    <<: *bot
+    container_name: bot_tg_m280
+    command: ["--config", "config/tg_m280.yaml"]
+    env_file:
+      - env/tg_m280.env
+
+  tg_m281:
+    <<: *bot
+    container_name: bot_tg_m281
+    command: ["--config", "config/tg_m281.yaml"]
+    env_file:
+      - env/tg_m281.env
+
+  tg_m282:
+    <<: *bot
+    container_name: bot_tg_m282
+    command: ["--config", "config/tg_m282.yaml"]
+    env_file:
+      - env/tg_m282.env
+
+  tg_m283:
+    <<: *bot
+    container_name: bot_tg_m283
+    command: ["--config", "config/tg_m283.yaml"]
+    env_file:
+      - env/tg_m283.env
+
+  tg_m284:
+    <<: *bot
+    container_name: bot_tg_m284
+    command: ["--config", "config/tg_m284.yaml"]
+    env_file:
+      - env/tg_m284.env
+
+  tg_m285:
+    <<: *bot
+    container_name: bot_tg_m285
+    command: ["--config", "config/tg_m285.yaml"]
+    env_file:
+      - env/tg_m285.env
+
+  tg_m286:
+    <<: *bot
+    container_name: bot_tg_m286
+    command: ["--config", "config/tg_m286.yaml"]
+    env_file:
+      - env/tg_m286.env
+
+  tg_m287:
+    <<: *bot
+    container_name: bot_tg_m287
+    command: ["--config", "config/tg_m287.yaml"]
+    env_file:
+      - env/tg_m287.env
+
+  tg_m288:
+    <<: *bot
+    container_name: bot_tg_m288
+    command: ["--config", "config/tg_m288.yaml"]
+    env_file:
+      - env/tg_m288.env
+
+  tg_m289:
+    <<: *bot
+    container_name: bot_tg_m289
+    command: ["--config", "config/tg_m289.yaml"]
+    env_file:
+      - env/tg_m289.env
+
+  tg_m290:
+    <<: *bot
+    container_name: bot_tg_m290
+    command: ["--config", "config/tg_m290.yaml"]
+    env_file:
+      - env/tg_m290.env
+
+  tg_m291:
+    <<: *bot
+    container_name: bot_tg_m291
+    command: ["--config", "config/tg_m291.yaml"]
+    env_file:
+      - env/tg_m291.env
+
+  tg_m292:
+    <<: *bot
+    container_name: bot_tg_m292
+    command: ["--config", "config/tg_m292.yaml"]
+    env_file:
+      - env/tg_m292.env
+
+  tg_m293:
+    <<: *bot
+    container_name: bot_tg_m293
+    command: ["--config", "config/tg_m293.yaml"]
+    env_file:
+      - env/tg_m293.env
+
+  tg_m294:
+    <<: *bot
+    container_name: bot_tg_m294
+    command: ["--config", "config/tg_m294.yaml"]
+    env_file:
+      - env/tg_m294.env
+
+  tg_m295:
+    <<: *bot
+    container_name: bot_tg_m295
+    command: ["--config", "config/tg_m295.yaml"]
+    env_file:
+      - env/tg_m295.env
+
+  tg_m296:
+    <<: *bot
+    container_name: bot_tg_m296
+    command: ["--config", "config/tg_m296.yaml"]
+    env_file:
+      - env/tg_m296.env
+
+  tg_m297:
+    <<: *bot
+    container_name: bot_tg_m297
+    command: ["--config", "config/tg_m297.yaml"]
+    env_file:
+      - env/tg_m297.env
+
+  tg_m298:
+    <<: *bot
+    container_name: bot_tg_m298
+    command: ["--config", "config/tg_m298.yaml"]
+    env_file:
+      - env/tg_m298.env
+
+  tg_m299:
+    <<: *bot
+    container_name: bot_tg_m299
+    command: ["--config", "config/tg_m299.yaml"]
+    env_file:
+      - env/tg_m299.env
+
+  tg_m300:
+    <<: *bot
+    container_name: bot_tg_m300
+    command: ["--config", "config/tg_m300.yaml"]
+    env_file:
+      - env/tg_m300.env
+
+  tg_m301:
+    <<: *bot
+    container_name: bot_tg_m301
+    command: ["--config", "config/tg_m301.yaml"]
+    env_file:
+      - env/tg_m301.env
+
+  tg_m302:
+    <<: *bot
+    container_name: bot_tg_m302
+    command: ["--config", "config/tg_m302.yaml"]
+    env_file:
+      - env/tg_m302.env
+
+  tg_m303:
+    <<: *bot
+    container_name: bot_tg_m303
+    command: ["--config", "config/tg_m303.yaml"]
+    env_file:
+      - env/tg_m303.env
+
+  tg_m304:
+    <<: *bot
+    container_name: bot_tg_m304
+    command: ["--config", "config/tg_m304.yaml"]
+    env_file:
+      - env/tg_m304.env
+
+  tg_m305:
+    <<: *bot
+    container_name: bot_tg_m305
+    command: ["--config", "config/tg_m305.yaml"]
+    env_file:
+      - env/tg_m305.env
+
+  tg_m306:
+    <<: *bot
+    container_name: bot_tg_m306
+    command: ["--config", "config/tg_m306.yaml"]
+    env_file:
+      - env/tg_m306.env
+
+  tg_m307:
+    <<: *bot
+    container_name: bot_tg_m307
+    command: ["--config", "config/tg_m307.yaml"]
+    env_file:
+      - env/tg_m307.env
+
+  tg_m308:
+    <<: *bot
+    container_name: bot_tg_m308
+    command: ["--config", "config/tg_m308.yaml"]
+    env_file:
+      - env/tg_m308.env
+
+  tg_m309:
+    <<: *bot
+    container_name: bot_tg_m309
+    command: ["--config", "config/tg_m309.yaml"]
+    env_file:
+      - env/tg_m309.env
+
+  tg_m310:
+    <<: *bot
+    container_name: bot_tg_m310
+    command: ["--config", "config/tg_m310.yaml"]
+    env_file:
+      - env/tg_m310.env
+
+  tg_m311:
+    <<: *bot
+    container_name: bot_tg_m311
+    command: ["--config", "config/tg_m311.yaml"]
+    env_file:
+      - env/tg_m311.env
+
+  tg_m312:
+    <<: *bot
+    container_name: bot_tg_m312
+    command: ["--config", "config/tg_m312.yaml"]
+    env_file:
+      - env/tg_m312.env
+
+  tg_m313:
+    <<: *bot
+    container_name: bot_tg_m313
+    command: ["--config", "config/tg_m313.yaml"]
+    env_file:
+      - env/tg_m313.env
+
+  tg_m314:
+    <<: *bot
+    container_name: bot_tg_m314
+    command: ["--config", "config/tg_m314.yaml"]
+    env_file:
+      - env/tg_m314.env
+
+  tg_m315:
+    <<: *bot
+    container_name: bot_tg_m315
+    command: ["--config", "config/tg_m315.yaml"]
+    env_file:
+      - env/tg_m315.env
+
+  tg_m316:
+    <<: *bot
+    container_name: bot_tg_m316
+    command: ["--config", "config/tg_m316.yaml"]
+    env_file:
+      - env/tg_m316.env
+
+  tg_m317:
+    <<: *bot
+    container_name: bot_tg_m317
+    command: ["--config", "config/tg_m317.yaml"]
+    env_file:
+      - env/tg_m317.env
+
+  tg_m318:
+    <<: *bot
+    container_name: bot_tg_m318
+    command: ["--config", "config/tg_m318.yaml"]
+    env_file:
+      - env/tg_m318.env
+
+  tg_m319:
+    <<: *bot
+    container_name: bot_tg_m319
+    command: ["--config", "config/tg_m319.yaml"]
+    env_file:
+      - env/tg_m319.env
+
+  tg_m320:
+    <<: *bot
+    container_name: bot_tg_m320
+    command: ["--config", "config/tg_m320.yaml"]
+    env_file:
+      - env/tg_m320.env
+
+  tg_m321:
+    <<: *bot
+    container_name: bot_tg_m321
+    command: ["--config", "config/tg_m321.yaml"]
+    env_file:
+      - env/tg_m321.env
+
+  tg_m322:
+    <<: *bot
+    container_name: bot_tg_m322
+    command: ["--config", "config/tg_m322.yaml"]
+    env_file:
+      - env/tg_m322.env
+
+  tg_m323:
+    <<: *bot
+    container_name: bot_tg_m323
+    command: ["--config", "config/tg_m323.yaml"]
+    env_file:
+      - env/tg_m323.env
+
+  tg_m324:
+    <<: *bot
+    container_name: bot_tg_m324
+    command: ["--config", "config/tg_m324.yaml"]
+    env_file:
+      - env/tg_m324.env
+
+  tg_m325:
+    <<: *bot
+    container_name: bot_tg_m325
+    command: ["--config", "config/tg_m325.yaml"]
+    env_file:
+      - env/tg_m325.env
+
+  tg_m326:
+    <<: *bot
+    container_name: bot_tg_m326
+    command: ["--config", "config/tg_m326.yaml"]
+    env_file:
+      - env/tg_m326.env
+
+  tg_m327:
+    <<: *bot
+    container_name: bot_tg_m327
+    command: ["--config", "config/tg_m327.yaml"]
+    env_file:
+      - env/tg_m327.env
+
+  tg_m328:
+    <<: *bot
+    container_name: bot_tg_m328
+    command: ["--config", "config/tg_m328.yaml"]
+    env_file:
+      - env/tg_m328.env
+
+  tg_m329:
+    <<: *bot
+    container_name: bot_tg_m329
+    command: ["--config", "config/tg_m329.yaml"]
+    env_file:
+      - env/tg_m329.env
+
+  tg_m330:
+    <<: *bot
+    container_name: bot_tg_m330
+    command: ["--config", "config/tg_m330.yaml"]
+    env_file:
+      - env/tg_m330.env
+
+  tg_m331:
+    <<: *bot
+    container_name: bot_tg_m331
+    command: ["--config", "config/tg_m331.yaml"]
+    env_file:
+      - env/tg_m331.env
+
+  tg_m332:
+    <<: *bot
+    container_name: bot_tg_m332
+    command: ["--config", "config/tg_m332.yaml"]
+    env_file:
+      - env/tg_m332.env
+
+  tg_m333:
+    <<: *bot
+    container_name: bot_tg_m333
+    command: ["--config", "config/tg_m333.yaml"]
+    env_file:
+      - env/tg_m333.env
+
+  tg_m334:
+    <<: *bot
+    container_name: bot_tg_m334
+    command: ["--config", "config/tg_m334.yaml"]
+    env_file:
+      - env/tg_m334.env
+
+  tg_m335:
+    <<: *bot
+    container_name: bot_tg_m335
+    command: ["--config", "config/tg_m335.yaml"]
+    env_file:
+      - env/tg_m335.env
+
+  tg_m336:
+    <<: *bot
+    container_name: bot_tg_m336
+    command: ["--config", "config/tg_m336.yaml"]
+    env_file:
+      - env/tg_m336.env
+
+  tg_m337:
+    <<: *bot
+    container_name: bot_tg_m337
+    command: ["--config", "config/tg_m337.yaml"]
+    env_file:
+      - env/tg_m337.env
+
+  tg_m338:
+    <<: *bot
+    container_name: bot_tg_m338
+    command: ["--config", "config/tg_m338.yaml"]
+    env_file:
+      - env/tg_m338.env
+
+  tg_m339:
+    <<: *bot
+    container_name: bot_tg_m339
+    command: ["--config", "config/tg_m339.yaml"]
+    env_file:
+      - env/tg_m339.env
+
+  tg_m340:
+    <<: *bot
+    container_name: bot_tg_m340
+    command: ["--config", "config/tg_m340.yaml"]
+    env_file:
+      - env/tg_m340.env
+
+  tg_m341:
+    <<: *bot
+    container_name: bot_tg_m341
+    command: ["--config", "config/tg_m341.yaml"]
+    env_file:
+      - env/tg_m341.env
+
+  tg_m342:
+    <<: *bot
+    container_name: bot_tg_m342
+    command: ["--config", "config/tg_m342.yaml"]
+    env_file:
+      - env/tg_m342.env
+
+  tg_m343:
+    <<: *bot
+    container_name: bot_tg_m343
+    command: ["--config", "config/tg_m343.yaml"]
+    env_file:
+      - env/tg_m343.env
+
+  tg_m344:
+    <<: *bot
+    container_name: bot_tg_m344
+    command: ["--config", "config/tg_m344.yaml"]
+    env_file:
+      - env/tg_m344.env
+
+  tg_m345:
+    <<: *bot
+    container_name: bot_tg_m345
+    command: ["--config", "config/tg_m345.yaml"]
+    env_file:
+      - env/tg_m345.env
+
+  tg_m346:
+    <<: *bot
+    container_name: bot_tg_m346
+    command: ["--config", "config/tg_m346.yaml"]
+    env_file:
+      - env/tg_m346.env
+
+  tg_m347:
+    <<: *bot
+    container_name: bot_tg_m347
+    command: ["--config", "config/tg_m347.yaml"]
+    env_file:
+      - env/tg_m347.env
+
+  tg_m348:
+    <<: *bot
+    container_name: bot_tg_m348
+    command: ["--config", "config/tg_m348.yaml"]
+    env_file:
+      - env/tg_m348.env
+
+  tg_m349:
+    <<: *bot
+    container_name: bot_tg_m349
+    command: ["--config", "config/tg_m349.yaml"]
+    env_file:
+      - env/tg_m349.env
+
+  tg_m350:
+    <<: *bot
+    container_name: bot_tg_m350
+    command: ["--config", "config/tg_m350.yaml"]
+    env_file:
+      - env/tg_m350.env
+
+  tg_m351:
+    <<: *bot
+    container_name: bot_tg_m351
+    command: ["--config", "config/tg_m351.yaml"]
+    env_file:
+      - env/tg_m351.env
+
+  tg_m352:
+    <<: *bot
+    container_name: bot_tg_m352
+    command: ["--config", "config/tg_m352.yaml"]
+    env_file:
+      - env/tg_m352.env
+
+  tg_m353:
+    <<: *bot
+    container_name: bot_tg_m353
+    command: ["--config", "config/tg_m353.yaml"]
+    env_file:
+      - env/tg_m353.env
+
+  tg_m354:
+    <<: *bot
+    container_name: bot_tg_m354
+    command: ["--config", "config/tg_m354.yaml"]
+    env_file:
+      - env/tg_m354.env
+
+  tg_m355:
+    <<: *bot
+    container_name: bot_tg_m355
+    command: ["--config", "config/tg_m355.yaml"]
+    env_file:
+      - env/tg_m355.env
+
+  tg_m356:
+    <<: *bot
+    container_name: bot_tg_m356
+    command: ["--config", "config/tg_m356.yaml"]
+    env_file:
+      - env/tg_m356.env
+
+  tg_m357:
+    <<: *bot
+    container_name: bot_tg_m357
+    command: ["--config", "config/tg_m357.yaml"]
+    env_file:
+      - env/tg_m357.env
+
+  tg_m358:
+    <<: *bot
+    container_name: bot_tg_m358
+    command: ["--config", "config/tg_m358.yaml"]
+    env_file:
+      - env/tg_m358.env
+
+  tg_m359:
+    <<: *bot
+    container_name: bot_tg_m359
+    command: ["--config", "config/tg_m359.yaml"]
+    env_file:
+      - env/tg_m359.env
+
+  tg_m360:
+    <<: *bot
+    container_name: bot_tg_m360
+    command: ["--config", "config/tg_m360.yaml"]
+    env_file:
+      - env/tg_m360.env
+
+  tg_m361:
+    <<: *bot
+    container_name: bot_tg_m361
+    command: ["--config", "config/tg_m361.yaml"]
+    env_file:
+      - env/tg_m361.env
+
+  tg_m362:
+    <<: *bot
+    container_name: bot_tg_m362
+    command: ["--config", "config/tg_m362.yaml"]
+    env_file:
+      - env/tg_m362.env
+
+  tg_m363:
+    <<: *bot
+    container_name: bot_tg_m363
+    command: ["--config", "config/tg_m363.yaml"]
+    env_file:
+      - env/tg_m363.env
+
+  tg_m364:
+    <<: *bot
+    container_name: bot_tg_m364
+    command: ["--config", "config/tg_m364.yaml"]
+    env_file:
+      - env/tg_m364.env
+
+  tg_m365:
+    <<: *bot
+    container_name: bot_tg_m365
+    command: ["--config", "config/tg_m365.yaml"]
+    env_file:
+      - env/tg_m365.env
+
+  tg_m366:
+    <<: *bot
+    container_name: bot_tg_m366
+    command: ["--config", "config/tg_m366.yaml"]
+    env_file:
+      - env/tg_m366.env
+
+  tg_m367:
+    <<: *bot
+    container_name: bot_tg_m367
+    command: ["--config", "config/tg_m367.yaml"]
+    env_file:
+      - env/tg_m367.env
+
+  tg_m368:
+    <<: *bot
+    container_name: bot_tg_m368
+    command: ["--config", "config/tg_m368.yaml"]
+    env_file:
+      - env/tg_m368.env
+
+  tg_m369:
+    <<: *bot
+    container_name: bot_tg_m369
+    command: ["--config", "config/tg_m369.yaml"]
+    env_file:
+      - env/tg_m369.env
+
+  tg_m370:
+    <<: *bot
+    container_name: bot_tg_m370
+    command: ["--config", "config/tg_m370.yaml"]
+    env_file:
+      - env/tg_m370.env
+
+  tg_m371:
+    <<: *bot
+    container_name: bot_tg_m371
+    command: ["--config", "config/tg_m371.yaml"]
+    env_file:
+      - env/tg_m371.env
+
+  tg_m372:
+    <<: *bot
+    container_name: bot_tg_m372
+    command: ["--config", "config/tg_m372.yaml"]
+    env_file:
+      - env/tg_m372.env
+
+  tg_m373:
+    <<: *bot
+    container_name: bot_tg_m373
+    command: ["--config", "config/tg_m373.yaml"]
+    env_file:
+      - env/tg_m373.env
+
+  tg_m374:
+    <<: *bot
+    container_name: bot_tg_m374
+    command: ["--config", "config/tg_m374.yaml"]
+    env_file:
+      - env/tg_m374.env
+
+  tg_m375:
+    <<: *bot
+    container_name: bot_tg_m375
+    command: ["--config", "config/tg_m375.yaml"]
+    env_file:
+      - env/tg_m375.env
+
+  tg_m376:
+    <<: *bot
+    container_name: bot_tg_m376
+    command: ["--config", "config/tg_m376.yaml"]
+    env_file:
+      - env/tg_m376.env
+
+  tg_m377:
+    <<: *bot
+    container_name: bot_tg_m377
+    command: ["--config", "config/tg_m377.yaml"]
+    env_file:
+      - env/tg_m377.env
+
+  tg_m378:
+    <<: *bot
+    container_name: bot_tg_m378
+    command: ["--config", "config/tg_m378.yaml"]
+    env_file:
+      - env/tg_m378.env
+
+  tg_m379:
+    <<: *bot
+    container_name: bot_tg_m379
+    command: ["--config", "config/tg_m379.yaml"]
+    env_file:
+      - env/tg_m379.env
+
+  tg_m380:
+    <<: *bot
+    container_name: bot_tg_m380
+    command: ["--config", "config/tg_m380.yaml"]
+    env_file:
+      - env/tg_m380.env
+
+  tg_m381:
+    <<: *bot
+    container_name: bot_tg_m381
+    command: ["--config", "config/tg_m381.yaml"]
+    env_file:
+      - env/tg_m381.env
+
+  tg_m382:
+    <<: *bot
+    container_name: bot_tg_m382
+    command: ["--config", "config/tg_m382.yaml"]
+    env_file:
+      - env/tg_m382.env
+
+  tg_m383:
+    <<: *bot
+    container_name: bot_tg_m383
+    command: ["--config", "config/tg_m383.yaml"]
+    env_file:
+      - env/tg_m383.env
+
+  tg_m384:
+    <<: *bot
+    container_name: bot_tg_m384
+    command: ["--config", "config/tg_m384.yaml"]
+    env_file:
+      - env/tg_m384.env
+
+  tg_m385:
+    <<: *bot
+    container_name: bot_tg_m385
+    command: ["--config", "config/tg_m385.yaml"]
+    env_file:
+      - env/tg_m385.env
+
+  tg_m386:
+    <<: *bot
+    container_name: bot_tg_m386
+    command: ["--config", "config/tg_m386.yaml"]
+    env_file:
+      - env/tg_m386.env
+
+  tg_m387:
+    <<: *bot
+    container_name: bot_tg_m387
+    command: ["--config", "config/tg_m387.yaml"]
+    env_file:
+      - env/tg_m387.env
+
+  tg_m388:
+    <<: *bot
+    container_name: bot_tg_m388
+    command: ["--config", "config/tg_m388.yaml"]
+    env_file:
+      - env/tg_m388.env
+
+  tg_m389:
+    <<: *bot
+    container_name: bot_tg_m389
+    command: ["--config", "config/tg_m389.yaml"]
+    env_file:
+      - env/tg_m389.env
+
+  tg_m390:
+    <<: *bot
+    container_name: bot_tg_m390
+    command: ["--config", "config/tg_m390.yaml"]
+    env_file:
+      - env/tg_m390.env
+
   tiktok_accounts:
     <<: *bot
     container_name: bot_tiktok_accounts
     command: ["--config", "config/tiktok_accounts.yaml"]
     env_file:
       - env/tiktok_accounts.env
+
+  tradeedu_001:
+    <<: *bot
+    container_name: bot_tradeedu_001
+    command: ["--config", "config/tradeedu_001.yaml"]
+    env_file:
+      - env/tradeedu_001.env
+
+  tradeedu_002:
+    <<: *bot
+    container_name: bot_tradeedu_002
+    command: ["--config", "config/tradeedu_002.yaml"]
+    env_file:
+      - env/tradeedu_002.env
+
+  tradeedu_003:
+    <<: *bot
+    container_name: bot_tradeedu_003
+    command: ["--config", "config/tradeedu_003.yaml"]
+    env_file:
+      - env/tradeedu_003.env
+
+  tradeedu_004:
+    <<: *bot
+    container_name: bot_tradeedu_004
+    command: ["--config", "config/tradeedu_004.yaml"]
+    env_file:
+      - env/tradeedu_004.env
+
+  tradeedu_005:
+    <<: *bot
+    container_name: bot_tradeedu_005
+    command: ["--config", "config/tradeedu_005.yaml"]
+    env_file:
+      - env/tradeedu_005.env
+
+  tradeedu_006:
+    <<: *bot
+    container_name: bot_tradeedu_006
+    command: ["--config", "config/tradeedu_006.yaml"]
+    env_file:
+      - env/tradeedu_006.env
+
+  tradeedu_007:
+    <<: *bot
+    container_name: bot_tradeedu_007
+    command: ["--config", "config/tradeedu_007.yaml"]
+    env_file:
+      - env/tradeedu_007.env
+
+  tradeedu_008:
+    <<: *bot
+    container_name: bot_tradeedu_008
+    command: ["--config", "config/tradeedu_008.yaml"]
+    env_file:
+      - env/tradeedu_008.env
+
+  tradeedu_009:
+    <<: *bot
+    container_name: bot_tradeedu_009
+    command: ["--config", "config/tradeedu_009.yaml"]
+    env_file:
+      - env/tradeedu_009.env
+
+  tradeedu_010:
+    <<: *bot
+    container_name: bot_tradeedu_010
+    command: ["--config", "config/tradeedu_010.yaml"]
+    env_file:
+      - env/tradeedu_010.env
+
+  tradeedu_011:
+    <<: *bot
+    container_name: bot_tradeedu_011
+    command: ["--config", "config/tradeedu_011.yaml"]
+    env_file:
+      - env/tradeedu_011.env
+
+  tradeedu_012:
+    <<: *bot
+    container_name: bot_tradeedu_012
+    command: ["--config", "config/tradeedu_012.yaml"]
+    env_file:
+      - env/tradeedu_012.env
+
+  tradeedu_013:
+    <<: *bot
+    container_name: bot_tradeedu_013
+    command: ["--config", "config/tradeedu_013.yaml"]
+    env_file:
+      - env/tradeedu_013.env
+
+  tradeedu_014:
+    <<: *bot
+    container_name: bot_tradeedu_014
+    command: ["--config", "config/tradeedu_014.yaml"]
+    env_file:
+      - env/tradeedu_014.env
+
+  tradeedu_015:
+    <<: *bot
+    container_name: bot_tradeedu_015
+    command: ["--config", "config/tradeedu_015.yaml"]
+    env_file:
+      - env/tradeedu_015.env
+
+  tradeedu_016:
+    <<: *bot
+    container_name: bot_tradeedu_016
+    command: ["--config", "config/tradeedu_016.yaml"]
+    env_file:
+      - env/tradeedu_016.env
+
+  tradeedu_017:
+    <<: *bot
+    container_name: bot_tradeedu_017
+    command: ["--config", "config/tradeedu_017.yaml"]
+    env_file:
+      - env/tradeedu_017.env
+
+  tradeedu_018:
+    <<: *bot
+    container_name: bot_tradeedu_018
+    command: ["--config", "config/tradeedu_018.yaml"]
+    env_file:
+      - env/tradeedu_018.env
+
+  tradeedu_019:
+    <<: *bot
+    container_name: bot_tradeedu_019
+    command: ["--config", "config/tradeedu_019.yaml"]
+    env_file:
+      - env/tradeedu_019.env
+
+  tradeedu_020:
+    <<: *bot
+    container_name: bot_tradeedu_020
+    command: ["--config", "config/tradeedu_020.yaml"]
+    env_file:
+      - env/tradeedu_020.env
+
+  tradeedu_021:
+    <<: *bot
+    container_name: bot_tradeedu_021
+    command: ["--config", "config/tradeedu_021.yaml"]
+    env_file:
+      - env/tradeedu_021.env
+
+  tradeedu_022:
+    <<: *bot
+    container_name: bot_tradeedu_022
+    command: ["--config", "config/tradeedu_022.yaml"]
+    env_file:
+      - env/tradeedu_022.env
 
   trading_edu:
     <<: *bot
@@ -666,6 +6350,216 @@ services:
     env_file:
       - env/twitter_accounts.env
 
+  verified_001:
+    <<: *bot
+    container_name: bot_verified_001
+    command: ["--config", "config/verified_001.yaml"]
+    env_file:
+      - env/verified_001.env
+
+  verified_002:
+    <<: *bot
+    container_name: bot_verified_002
+    command: ["--config", "config/verified_002.yaml"]
+    env_file:
+      - env/verified_002.env
+
+  verified_003:
+    <<: *bot
+    container_name: bot_verified_003
+    command: ["--config", "config/verified_003.yaml"]
+    env_file:
+      - env/verified_003.env
+
+  verified_004:
+    <<: *bot
+    container_name: bot_verified_004
+    command: ["--config", "config/verified_004.yaml"]
+    env_file:
+      - env/verified_004.env
+
+  verified_005:
+    <<: *bot
+    container_name: bot_verified_005
+    command: ["--config", "config/verified_005.yaml"]
+    env_file:
+      - env/verified_005.env
+
+  verified_006:
+    <<: *bot
+    container_name: bot_verified_006
+    command: ["--config", "config/verified_006.yaml"]
+    env_file:
+      - env/verified_006.env
+
+  verified_007:
+    <<: *bot
+    container_name: bot_verified_007
+    command: ["--config", "config/verified_007.yaml"]
+    env_file:
+      - env/verified_007.env
+
+  verified_008:
+    <<: *bot
+    container_name: bot_verified_008
+    command: ["--config", "config/verified_008.yaml"]
+    env_file:
+      - env/verified_008.env
+
+  verified_009:
+    <<: *bot
+    container_name: bot_verified_009
+    command: ["--config", "config/verified_009.yaml"]
+    env_file:
+      - env/verified_009.env
+
+  verified_010:
+    <<: *bot
+    container_name: bot_verified_010
+    command: ["--config", "config/verified_010.yaml"]
+    env_file:
+      - env/verified_010.env
+
+  verified_011:
+    <<: *bot
+    container_name: bot_verified_011
+    command: ["--config", "config/verified_011.yaml"]
+    env_file:
+      - env/verified_011.env
+
+  verified_012:
+    <<: *bot
+    container_name: bot_verified_012
+    command: ["--config", "config/verified_012.yaml"]
+    env_file:
+      - env/verified_012.env
+
+  verified_013:
+    <<: *bot
+    container_name: bot_verified_013
+    command: ["--config", "config/verified_013.yaml"]
+    env_file:
+      - env/verified_013.env
+
+  verified_014:
+    <<: *bot
+    container_name: bot_verified_014
+    command: ["--config", "config/verified_014.yaml"]
+    env_file:
+      - env/verified_014.env
+
+  verified_015:
+    <<: *bot
+    container_name: bot_verified_015
+    command: ["--config", "config/verified_015.yaml"]
+    env_file:
+      - env/verified_015.env
+
+  verified_016:
+    <<: *bot
+    container_name: bot_verified_016
+    command: ["--config", "config/verified_016.yaml"]
+    env_file:
+      - env/verified_016.env
+
+  verified_017:
+    <<: *bot
+    container_name: bot_verified_017
+    command: ["--config", "config/verified_017.yaml"]
+    env_file:
+      - env/verified_017.env
+
+  verified_018:
+    <<: *bot
+    container_name: bot_verified_018
+    command: ["--config", "config/verified_018.yaml"]
+    env_file:
+      - env/verified_018.env
+
+  verified_019:
+    <<: *bot
+    container_name: bot_verified_019
+    command: ["--config", "config/verified_019.yaml"]
+    env_file:
+      - env/verified_019.env
+
+  verified_020:
+    <<: *bot
+    container_name: bot_verified_020
+    command: ["--config", "config/verified_020.yaml"]
+    env_file:
+      - env/verified_020.env
+
+  video_001:
+    <<: *bot
+    container_name: bot_video_001
+    command: ["--config", "config/video_001.yaml"]
+    env_file:
+      - env/video_001.env
+
+  video_002:
+    <<: *bot
+    container_name: bot_video_002
+    command: ["--config", "config/video_002.yaml"]
+    env_file:
+      - env/video_002.env
+
+  video_003:
+    <<: *bot
+    container_name: bot_video_003
+    command: ["--config", "config/video_003.yaml"]
+    env_file:
+      - env/video_003.env
+
+  video_004:
+    <<: *bot
+    container_name: bot_video_004
+    command: ["--config", "config/video_004.yaml"]
+    env_file:
+      - env/video_004.env
+
+  video_005:
+    <<: *bot
+    container_name: bot_video_005
+    command: ["--config", "config/video_005.yaml"]
+    env_file:
+      - env/video_005.env
+
+  video_006:
+    <<: *bot
+    container_name: bot_video_006
+    command: ["--config", "config/video_006.yaml"]
+    env_file:
+      - env/video_006.env
+
+  video_007:
+    <<: *bot
+    container_name: bot_video_007
+    command: ["--config", "config/video_007.yaml"]
+    env_file:
+      - env/video_007.env
+
+  video_008:
+    <<: *bot
+    container_name: bot_video_008
+    command: ["--config", "config/video_008.yaml"]
+    env_file:
+      - env/video_008.env
+
+  video_009:
+    <<: *bot
+    container_name: bot_video_009
+    command: ["--config", "config/video_009.yaml"]
+    env_file:
+      - env/video_009.env
+
+  video_010:
+    <<: *bot
+    container_name: bot_video_010
+    command: ["--config", "config/video_010.yaml"]
+    env_file:
+      - env/video_010.env
+
   video_editing:
     <<: *bot
     container_name: bot_video_editing
@@ -687,6 +6581,328 @@ services:
     env_file:
       - env/vpn.env
 
+  vpn_001:
+    <<: *bot
+    container_name: bot_vpn_001
+    command: ["--config", "config/vpn_001.yaml"]
+    env_file:
+      - env/vpn_001.env
+
+  vpn_002:
+    <<: *bot
+    container_name: bot_vpn_002
+    command: ["--config", "config/vpn_002.yaml"]
+    env_file:
+      - env/vpn_002.env
+
+  vpn_003:
+    <<: *bot
+    container_name: bot_vpn_003
+    command: ["--config", "config/vpn_003.yaml"]
+    env_file:
+      - env/vpn_003.env
+
+  vpn_004:
+    <<: *bot
+    container_name: bot_vpn_004
+    command: ["--config", "config/vpn_004.yaml"]
+    env_file:
+      - env/vpn_004.env
+
+  vpn_005:
+    <<: *bot
+    container_name: bot_vpn_005
+    command: ["--config", "config/vpn_005.yaml"]
+    env_file:
+      - env/vpn_005.env
+
+  vpn_006:
+    <<: *bot
+    container_name: bot_vpn_006
+    command: ["--config", "config/vpn_006.yaml"]
+    env_file:
+      - env/vpn_006.env
+
+  vpn_007:
+    <<: *bot
+    container_name: bot_vpn_007
+    command: ["--config", "config/vpn_007.yaml"]
+    env_file:
+      - env/vpn_007.env
+
+  vpn_008:
+    <<: *bot
+    container_name: bot_vpn_008
+    command: ["--config", "config/vpn_008.yaml"]
+    env_file:
+      - env/vpn_008.env
+
+  vpn_009:
+    <<: *bot
+    container_name: bot_vpn_009
+    command: ["--config", "config/vpn_009.yaml"]
+    env_file:
+      - env/vpn_009.env
+
+  vpn_010:
+    <<: *bot
+    container_name: bot_vpn_010
+    command: ["--config", "config/vpn_010.yaml"]
+    env_file:
+      - env/vpn_010.env
+
+  vpn_011:
+    <<: *bot
+    container_name: bot_vpn_011
+    command: ["--config", "config/vpn_011.yaml"]
+    env_file:
+      - env/vpn_011.env
+
+  vpn_012:
+    <<: *bot
+    container_name: bot_vpn_012
+    command: ["--config", "config/vpn_012.yaml"]
+    env_file:
+      - env/vpn_012.env
+
+  vpn_013:
+    <<: *bot
+    container_name: bot_vpn_013
+    command: ["--config", "config/vpn_013.yaml"]
+    env_file:
+      - env/vpn_013.env
+
+  vpn_014:
+    <<: *bot
+    container_name: bot_vpn_014
+    command: ["--config", "config/vpn_014.yaml"]
+    env_file:
+      - env/vpn_014.env
+
+  vpn_015:
+    <<: *bot
+    container_name: bot_vpn_015
+    command: ["--config", "config/vpn_015.yaml"]
+    env_file:
+      - env/vpn_015.env
+
+  vpn_016:
+    <<: *bot
+    container_name: bot_vpn_016
+    command: ["--config", "config/vpn_016.yaml"]
+    env_file:
+      - env/vpn_016.env
+
+  vpn_017:
+    <<: *bot
+    container_name: bot_vpn_017
+    command: ["--config", "config/vpn_017.yaml"]
+    env_file:
+      - env/vpn_017.env
+
+  vpn_018:
+    <<: *bot
+    container_name: bot_vpn_018
+    command: ["--config", "config/vpn_018.yaml"]
+    env_file:
+      - env/vpn_018.env
+
+  vpn_019:
+    <<: *bot
+    container_name: bot_vpn_019
+    command: ["--config", "config/vpn_019.yaml"]
+    env_file:
+      - env/vpn_019.env
+
+  vpn_020:
+    <<: *bot
+    container_name: bot_vpn_020
+    command: ["--config", "config/vpn_020.yaml"]
+    env_file:
+      - env/vpn_020.env
+
+  wa_001:
+    <<: *bot
+    container_name: bot_wa_001
+    command: ["--config", "config/wa_001.yaml"]
+    env_file:
+      - env/wa_001.env
+
+  wa_002:
+    <<: *bot
+    container_name: bot_wa_002
+    command: ["--config", "config/wa_002.yaml"]
+    env_file:
+      - env/wa_002.env
+
+  wa_003:
+    <<: *bot
+    container_name: bot_wa_003
+    command: ["--config", "config/wa_003.yaml"]
+    env_file:
+      - env/wa_003.env
+
+  wa_004:
+    <<: *bot
+    container_name: bot_wa_004
+    command: ["--config", "config/wa_004.yaml"]
+    env_file:
+      - env/wa_004.env
+
+  wa_005:
+    <<: *bot
+    container_name: bot_wa_005
+    command: ["--config", "config/wa_005.yaml"]
+    env_file:
+      - env/wa_005.env
+
+  wa_006:
+    <<: *bot
+    container_name: bot_wa_006
+    command: ["--config", "config/wa_006.yaml"]
+    env_file:
+      - env/wa_006.env
+
+  wa_007:
+    <<: *bot
+    container_name: bot_wa_007
+    command: ["--config", "config/wa_007.yaml"]
+    env_file:
+      - env/wa_007.env
+
+  wa_008:
+    <<: *bot
+    container_name: bot_wa_008
+    command: ["--config", "config/wa_008.yaml"]
+    env_file:
+      - env/wa_008.env
+
+  wa_009:
+    <<: *bot
+    container_name: bot_wa_009
+    command: ["--config", "config/wa_009.yaml"]
+    env_file:
+      - env/wa_009.env
+
+  wa_010:
+    <<: *bot
+    container_name: bot_wa_010
+    command: ["--config", "config/wa_010.yaml"]
+    env_file:
+      - env/wa_010.env
+
+  wa_011:
+    <<: *bot
+    container_name: bot_wa_011
+    command: ["--config", "config/wa_011.yaml"]
+    env_file:
+      - env/wa_011.env
+
+  wa_012:
+    <<: *bot
+    container_name: bot_wa_012
+    command: ["--config", "config/wa_012.yaml"]
+    env_file:
+      - env/wa_012.env
+
+  wa_013:
+    <<: *bot
+    container_name: bot_wa_013
+    command: ["--config", "config/wa_013.yaml"]
+    env_file:
+      - env/wa_013.env
+
+  wa_014:
+    <<: *bot
+    container_name: bot_wa_014
+    command: ["--config", "config/wa_014.yaml"]
+    env_file:
+      - env/wa_014.env
+
+  wa_015:
+    <<: *bot
+    container_name: bot_wa_015
+    command: ["--config", "config/wa_015.yaml"]
+    env_file:
+      - env/wa_015.env
+
+  wa_016:
+    <<: *bot
+    container_name: bot_wa_016
+    command: ["--config", "config/wa_016.yaml"]
+    env_file:
+      - env/wa_016.env
+
+  wa_017:
+    <<: *bot
+    container_name: bot_wa_017
+    command: ["--config", "config/wa_017.yaml"]
+    env_file:
+      - env/wa_017.env
+
+  wa_018:
+    <<: *bot
+    container_name: bot_wa_018
+    command: ["--config", "config/wa_018.yaml"]
+    env_file:
+      - env/wa_018.env
+
+  wa_019:
+    <<: *bot
+    container_name: bot_wa_019
+    command: ["--config", "config/wa_019.yaml"]
+    env_file:
+      - env/wa_019.env
+
+  wa_020:
+    <<: *bot
+    container_name: bot_wa_020
+    command: ["--config", "config/wa_020.yaml"]
+    env_file:
+      - env/wa_020.env
+
+  wa_021:
+    <<: *bot
+    container_name: bot_wa_021
+    command: ["--config", "config/wa_021.yaml"]
+    env_file:
+      - env/wa_021.env
+
+  wa_022:
+    <<: *bot
+    container_name: bot_wa_022
+    command: ["--config", "config/wa_022.yaml"]
+    env_file:
+      - env/wa_022.env
+
+  wa_023:
+    <<: *bot
+    container_name: bot_wa_023
+    command: ["--config", "config/wa_023.yaml"]
+    env_file:
+      - env/wa_023.env
+
+  wa_024:
+    <<: *bot
+    container_name: bot_wa_024
+    command: ["--config", "config/wa_024.yaml"]
+    env_file:
+      - env/wa_024.env
+
+  wa_025:
+    <<: *bot
+    container_name: bot_wa_025
+    command: ["--config", "config/wa_025.yaml"]
+    env_file:
+      - env/wa_025.env
+
+  wa_026:
+    <<: *bot
+    container_name: bot_wa_026
+    command: ["--config", "config/wa_026.yaml"]
+    env_file:
+      - env/wa_026.env
+
   wallpapers:
     <<: *bot
     container_name: bot_wallpapers
@@ -700,6 +6916,90 @@ services:
     command: ["--config", "config/webinar_access.yaml"]
     env_file:
       - env/webinar_access.env
+
+  websites_001:
+    <<: *bot
+    container_name: bot_websites_001
+    command: ["--config", "config/websites_001.yaml"]
+    env_file:
+      - env/websites_001.env
+
+  websites_002:
+    <<: *bot
+    container_name: bot_websites_002
+    command: ["--config", "config/websites_002.yaml"]
+    env_file:
+      - env/websites_002.env
+
+  websites_003:
+    <<: *bot
+    container_name: bot_websites_003
+    command: ["--config", "config/websites_003.yaml"]
+    env_file:
+      - env/websites_003.env
+
+  websites_004:
+    <<: *bot
+    container_name: bot_websites_004
+    command: ["--config", "config/websites_004.yaml"]
+    env_file:
+      - env/websites_004.env
+
+  websites_005:
+    <<: *bot
+    container_name: bot_websites_005
+    command: ["--config", "config/websites_005.yaml"]
+    env_file:
+      - env/websites_005.env
+
+  websites_006:
+    <<: *bot
+    container_name: bot_websites_006
+    command: ["--config", "config/websites_006.yaml"]
+    env_file:
+      - env/websites_006.env
+
+  websites_007:
+    <<: *bot
+    container_name: bot_websites_007
+    command: ["--config", "config/websites_007.yaml"]
+    env_file:
+      - env/websites_007.env
+
+  websites_008:
+    <<: *bot
+    container_name: bot_websites_008
+    command: ["--config", "config/websites_008.yaml"]
+    env_file:
+      - env/websites_008.env
+
+  websites_009:
+    <<: *bot
+    container_name: bot_websites_009
+    command: ["--config", "config/websites_009.yaml"]
+    env_file:
+      - env/websites_009.env
+
+  websites_010:
+    <<: *bot
+    container_name: bot_websites_010
+    command: ["--config", "config/websites_010.yaml"]
+    env_file:
+      - env/websites_010.env
+
+  websites_011:
+    <<: *bot
+    container_name: bot_websites_011
+    command: ["--config", "config/websites_011.yaml"]
+    env_file:
+      - env/websites_011.env
+
+  websites_012:
+    <<: *bot
+    container_name: bot_websites_012
+    command: ["--config", "config/websites_012.yaml"]
+    env_file:
+      - env/websites_012.env
 
   whatsapp_accounts:
     <<: *bot
