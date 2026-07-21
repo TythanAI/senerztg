@@ -1,0 +1,27 @@
+name: bots-selfcheck
+
+on:
+  push:
+    paths:
+      - "bots/**"
+  pull_request:
+    paths:
+      - "bots/**"
+
+jobs:
+  selfcheck:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bots
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Compile all sources
+        run: python -m compileall -q core tools
+      - name: Offline self-check (configs + DB logic + wiring)
+        run: python tools/selfcheck.py

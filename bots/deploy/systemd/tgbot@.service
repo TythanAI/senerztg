@@ -1,0 +1,40 @@
+# systemd template unit — run bots without Docker.
+#
+# Install (as root):
+#   adduser --system --group botuser
+#   mkdir -p /opt/senerztg && cp -r <repo>/bots /opt/senerztg/
+#   python3 -m venv /opt/senerztg/bots/.venv
+#   /opt/senerztg/bots/.venv/bin/pip install -r /opt/senerztg/bots/requirements.txt
+#   mkdir -p /etc/senerztg-bots
+#   cp /opt/senerztg/bots/env/example.env /etc/senerztg-bots/tg_accounts_01.env   # then edit
+#   cp /opt/senerztg/bots/deploy/systemd/tgbot@.service /etc/systemd/system/
+#   chown -R botuser:botuser /opt/senerztg/bots/data
+#   systemctl daemon-reload
+#   systemctl enable --now tgbot@tg_accounts_01
+#
+# The instance name after @ is the config slug, e.g. tgbot@vpn, tgbot@food_rolls.
+
+[Unit]
+Description=Telegram shop bot (%i)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botuser
+Group=botuser
+WorkingDirectory=/opt/senerztg/bots
+EnvironmentFile=/etc/senerztg-bots/%i.env
+Environment=DATA_DIR=/opt/senerztg/bots/data
+ExecStart=/opt/senerztg/bots/.venv/bin/python -m core --config config/%i.yaml
+Restart=on-failure
+RestartSec=5
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/senerztg/bots/data
+
+[Install]
+WantedBy=multi-user.target

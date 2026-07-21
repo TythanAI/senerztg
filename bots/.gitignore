@@ -1,0 +1,15 @@
+# Secrets — never commit filled-in env files
+env/*.env
+!env/example.env
+
+# Runtime data (SQLite + WAL sidecars)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
