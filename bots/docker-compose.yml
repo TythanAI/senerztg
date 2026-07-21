@@ -22,6 +22,13 @@ x-bot: &bot
 
 services:
 
+  ai_avatars:
+    <<: *bot
+    container_name: bot_ai_avatars
+    command: ["--config", "config/ai_avatars.yaml"]
+    env_file:
+      - env/ai_avatars.env
+
   ai_tools:
     <<: *bot
     container_name: bot_ai_tools
@@ -49,6 +56,27 @@ services:
     command: ["--config", "config/barbershop.yaml"]
     env_file:
       - env/barbershop.env
+
+  bbq:
+    <<: *bot
+    container_name: bot_bbq
+    command: ["--config", "config/bbq.yaml"]
+    env_file:
+      - env/bbq.env
+
+  brows:
+    <<: *bot
+    container_name: bot_brows
+    command: ["--config", "config/brows.yaml"]
+    env_file:
+      - env/brows.env
+
+  burgers:
+    <<: *bot
+    container_name: bot_burgers
+    command: ["--config", "config/burgers.yaml"]
+    env_file:
+      - env/burgers.env
 
   business_email:
     <<: *bot
@@ -78,6 +106,20 @@ services:
     env_file:
       - env/cleaning.env
 
+  cleaning_car:
+    <<: *bot
+    container_name: bot_cleaning_car
+    command: ["--config", "config/cleaning_car.yaml"]
+    env_file:
+      - env/cleaning_car.env
+
+  cloud_gaming:
+    <<: *bot
+    container_name: bot_cloud_gaming
+    command: ["--config", "config/cloud_gaming.yaml"]
+    env_file:
+      - env/cloud_gaming.env
+
   cloud_storage:
     <<: *bot
     container_name: bot_cloud_storage
@@ -92,12 +134,40 @@ services:
     env_file:
       - env/coffee.env
 
+  copywriting:
+    <<: *bot
+    container_name: bot_copywriting
+    command: ["--config", "config/copywriting.yaml"]
+    env_file:
+      - env/copywriting.env
+
+  courier:
+    <<: *bot
+    container_name: bot_courier
+    command: ["--config", "config/courier.yaml"]
+    env_file:
+      - env/courier.env
+
   courses:
     <<: *bot
     container_name: bot_courses
     command: ["--config", "config/courses.yaml"]
     env_file:
       - env/courses.env
+
+  crm_access:
+    <<: *bot
+    container_name: bot_crm_access
+    command: ["--config", "config/crm_access.yaml"]
+    env_file:
+      - env/crm_access.env
+
+  cv_templates:
+    <<: *bot
+    container_name: bot_cv_templates
+    command: ["--config", "config/cv_templates.yaml"]
+    env_file:
+      - env/cv_templates.env
 
   design:
     <<: *bot
@@ -113,6 +183,13 @@ services:
     env_file:
       - env/discord.env
 
+  discord_accounts:
+    <<: *bot
+    container_name: bot_discord_accounts
+    command: ["--config", "config/discord_accounts.yaml"]
+    env_file:
+      - env/discord_accounts.env
+
   domains:
     <<: *bot
     container_name: bot_domains
@@ -120,12 +197,26 @@ services:
     env_file:
       - env/domains.env
 
+  ebook_templates:
+    <<: *bot
+    container_name: bot_ebook_templates
+    command: ["--config", "config/ebook_templates.yaml"]
+    env_file:
+      - env/ebook_templates.env
+
   electronics:
     <<: *bot
     container_name: bot_electronics
     command: ["--config", "config/electronics.yaml"]
     env_file:
       - env/electronics.env
+
+  email_templates:
+    <<: *bot
+    container_name: bot_email_templates
+    command: ["--config", "config/email_templates.yaml"]
+    env_file:
+      - env/email_templates.env
 
   esim:
     <<: *bot
@@ -155,6 +246,13 @@ services:
     env_file:
       - env/food_rolls.env
 
+  game_hosting:
+    <<: *bot
+    container_name: bot_game_hosting
+    command: ["--config", "config/game_hosting.yaml"]
+    env_file:
+      - env/game_hosting.env
+
   game_keys:
     <<: *bot
     container_name: bot_game_keys
@@ -176,6 +274,13 @@ services:
     env_file:
       - env/giftcards.env
 
+  google_accounts:
+    <<: *bot
+    container_name: bot_google_accounts
+    command: ["--config", "config/google_accounts.yaml"]
+    env_file:
+      - env/google_accounts.env
+
   groceries:
     <<: *bot
     container_name: bot_groceries
@@ -190,12 +295,68 @@ services:
     env_file:
       - env/hosting.env
 
+  icecream:
+    <<: *bot
+    container_name: bot_icecream
+    command: ["--config", "config/icecream.yaml"]
+    env_file:
+      - env/icecream.env
+
+  instagram_accounts:
+    <<: *bot
+    container_name: bot_instagram_accounts
+    command: ["--config", "config/instagram_accounts.yaml"]
+    env_file:
+      - env/instagram_accounts.env
+
+  laundry:
+    <<: *bot
+    container_name: bot_laundry
+    command: ["--config", "config/laundry.yaml"]
+    env_file:
+      - env/laundry.env
+
+  linkedin_accounts:
+    <<: *bot
+    container_name: bot_linkedin_accounts
+    command: ["--config", "config/linkedin_accounts.yaml"]
+    env_file:
+      - env/linkedin_accounts.env
+
+  logo_design:
+    <<: *bot
+    container_name: bot_logo_design
+    command: ["--config", "config/logo_design.yaml"]
+    env_file:
+      - env/logo_design.env
+
+  luts:
+    <<: *bot
+    container_name: bot_luts
+    command: ["--config", "config/luts.yaml"]
+    env_file:
+      - env/luts.env
+
+  massage:
+    <<: *bot
+    container_name: bot_massage
+    command: ["--config", "config/massage.yaml"]
+    env_file:
+      - env/massage.env
+
   merch:
     <<: *bot
     container_name: bot_merch
     command: ["--config", "config/merch.yaml"]
     env_file:
       - env/merch.env
+
+  minecraft_accounts:
+    <<: *bot
+    container_name: bot_minecraft_accounts
+    command: ["--config", "config/minecraft_accounts.yaml"]
+    env_file:
+      - env/minecraft_accounts.env
 
   mobile_topup:
     <<: *bot
@@ -218,6 +379,20 @@ services:
     env_file:
       - env/mystery_box.env
 
+  nails:
+    <<: *bot
+    container_name: bot_nails
+    command: ["--config", "config/nails.yaml"]
+    env_file:
+      - env/nails.env
+
+  netflix_gift:
+    <<: *bot
+    container_name: bot_netflix_gift
+    command: ["--config", "config/netflix_gift.yaml"]
+    env_file:
+      - env/netflix_gift.env
+
   notion_templates:
     <<: *bot
     container_name: bot_notion_templates
@@ -225,12 +400,40 @@ services:
     env_file:
       - env/notion_templates.env
 
+  online_tutoring:
+    <<: *bot
+    container_name: bot_online_tutoring
+    command: ["--config", "config/online_tutoring.yaml"]
+    env_file:
+      - env/online_tutoring.env
+
+  photographer:
+    <<: *bot
+    container_name: bot_photographer
+    command: ["--config", "config/photographer.yaml"]
+    env_file:
+      - env/photographer.env
+
   pizza:
     <<: *bot
     container_name: bot_pizza
     command: ["--config", "config/pizza.yaml"]
     env_file:
       - env/pizza.env
+
+  plants:
+    <<: *bot
+    container_name: bot_plants
+    command: ["--config", "config/plants.yaml"]
+    env_file:
+      - env/plants.env
+
+  premium_domains:
+    <<: *bot
+    container_name: bot_premium_domains
+    command: ["--config", "config/premium_domains.yaml"]
+    env_file:
+      - env/premium_domains.env
 
   presets:
     <<: *bot
@@ -246,12 +449,47 @@ services:
     env_file:
       - env/proxies.env
 
+  proxy_mobile:
+    <<: *bot
+    container_name: bot_proxy_mobile
+    command: ["--config", "config/proxy_mobile.yaml"]
+    env_file:
+      - env/proxy_mobile.env
+
+  resume_writing:
+    <<: *bot
+    container_name: bot_resume_writing
+    command: ["--config", "config/resume_writing.yaml"]
+    env_file:
+      - env/resume_writing.env
+
+  ringtones:
+    <<: *bot
+    container_name: bot_ringtones
+    command: ["--config", "config/ringtones.yaml"]
+    env_file:
+      - env/ringtones.env
+
+  roblox_accounts:
+    <<: *bot
+    container_name: bot_roblox_accounts
+    command: ["--config", "config/roblox_accounts.yaml"]
+    env_file:
+      - env/roblox_accounts.env
+
   seo_tools:
     <<: *bot
     container_name: bot_seo_tools
     command: ["--config", "config/seo_tools.yaml"]
     env_file:
       - env/seo_tools.env
+
+  shawarma:
+    <<: *bot
+    container_name: bot_shawarma
+    command: ["--config", "config/shawarma.yaml"]
+    env_file:
+      - env/shawarma.env
 
   smm:
     <<: *bot
@@ -267,6 +505,13 @@ services:
     env_file:
       - env/sneakers.env
 
+  social_templates:
+    <<: *bot
+    container_name: bot_social_templates
+    command: ["--config", "config/social_templates.yaml"]
+    env_file:
+      - env/social_templates.env
+
   software_keys:
     <<: *bot
     container_name: bot_software_keys
@@ -274,12 +519,54 @@ services:
     env_file:
       - env/software_keys.env
 
+  sound_effects:
+    <<: *bot
+    container_name: bot_sound_effects
+    command: ["--config", "config/sound_effects.yaml"]
+    env_file:
+      - env/sound_effects.env
+
+  spotify_gift:
+    <<: *bot
+    container_name: bot_spotify_gift
+    command: ["--config", "config/spotify_gift.yaml"]
+    env_file:
+      - env/spotify_gift.env
+
+  steam_accounts:
+    <<: *bot
+    container_name: bot_steam_accounts
+    command: ["--config", "config/steam_accounts.yaml"]
+    env_file:
+      - env/steam_accounts.env
+
+  sticker_packs:
+    <<: *bot
+    container_name: bot_sticker_packs
+    command: ["--config", "config/sticker_packs.yaml"]
+    env_file:
+      - env/sticker_packs.env
+
   stock_media:
     <<: *bot
     container_name: bot_stock_media
     command: ["--config", "config/stock_media.yaml"]
     env_file:
       - env/stock_media.env
+
+  sushi:
+    <<: *bot
+    container_name: bot_sushi
+    command: ["--config", "config/sushi.yaml"]
+    env_file:
+      - env/sushi.env
+
+  tea:
+    <<: *bot
+    container_name: bot_tea
+    command: ["--config", "config/tea.yaml"]
+    env_file:
+      - env/tea.env
 
   tg_accounts_01:
     <<: *bot
@@ -351,6 +638,13 @@ services:
     env_file:
       - env/tg_accounts_10.env
 
+  tiktok_accounts:
+    <<: *bot
+    container_name: bot_tiktok_accounts
+    command: ["--config", "config/tiktok_accounts.yaml"]
+    env_file:
+      - env/tiktok_accounts.env
+
   trading_edu:
     <<: *bot
     container_name: bot_trading_edu
@@ -358,12 +652,68 @@ services:
     env_file:
       - env/trading_edu.env
 
+  translation:
+    <<: *bot
+    container_name: bot_translation
+    command: ["--config", "config/translation.yaml"]
+    env_file:
+      - env/translation.env
+
+  twitter_accounts:
+    <<: *bot
+    container_name: bot_twitter_accounts
+    command: ["--config", "config/twitter_accounts.yaml"]
+    env_file:
+      - env/twitter_accounts.env
+
+  video_editing:
+    <<: *bot
+    container_name: bot_video_editing
+    command: ["--config", "config/video_editing.yaml"]
+    env_file:
+      - env/video_editing.env
+
+  voiceover:
+    <<: *bot
+    container_name: bot_voiceover
+    command: ["--config", "config/voiceover.yaml"]
+    env_file:
+      - env/voiceover.env
+
   vpn:
     <<: *bot
     container_name: bot_vpn
     command: ["--config", "config/vpn.yaml"]
     env_file:
       - env/vpn.env
+
+  wallpapers:
+    <<: *bot
+    container_name: bot_wallpapers
+    command: ["--config", "config/wallpapers.yaml"]
+    env_file:
+      - env/wallpapers.env
+
+  webinar_access:
+    <<: *bot
+    container_name: bot_webinar_access
+    command: ["--config", "config/webinar_access.yaml"]
+    env_file:
+      - env/webinar_access.env
+
+  whatsapp_accounts:
+    <<: *bot
+    container_name: bot_whatsapp_accounts
+    command: ["--config", "config/whatsapp_accounts.yaml"]
+    env_file:
+      - env/whatsapp_accounts.env
+
+  wok:
+    <<: *bot
+    container_name: bot_wok
+    command: ["--config", "config/wok.yaml"]
+    env_file:
+      - env/wok.env
 
   wp_themes:
     <<: *bot

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Package the whole bot project into one .zip for backup / handoff / flash drive.
+"""Package everything (bots + standalone products) into one .zip.
 
-Includes every git-tracked and new (non-ignored) file under bots/, with the
-current working-tree content — and therefore **excludes** secrets (env/*.env),
-databases, caches and previous archives, since those are git-ignored.
+Includes every git-tracked and new (non-ignored) file under bots/ and products/,
+with the current working-tree content — and therefore **excludes** secrets
+(env/*.env), databases, caches and previous archives, since those are
+git-ignored.
 
     python tools/make_archive.py
-    -> bots/dist/senerztg-telegram-bots-YYYYMMDD.zip
+    -> bots/dist/senerztg-all-YYYYMMDD.zip
 """
 from __future__ import annotations
 
@@ -17,7 +18,8 @@ import zipfile
 
 BOTS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # .../bots
 REPO = os.path.dirname(BOTS)                                          # repo root
-TOP = "senerztg-telegram-bots"
+TOP = "senerztg"                                                      # top folder in the zip
+INCLUDE_DIRS = ["bots", "products"]
 
 
 def _git(*args: str) -> list[str]:
@@ -28,11 +30,12 @@ def _git(*args: str) -> list[str]:
 
 
 def collect_files() -> list[str]:
-    tracked = _git("ls-files", "bots")
-    new = _git("ls-files", "--others", "--exclude-standard", "bots")
-    files = sorted(set(tracked) | set(new))
-    # Never include the dist/ folder (previous archives) in a new archive.
-    return [f for f in files if not f.startswith("bots/dist/")]
+    files: set[str] = set()
+    for d in INCLUDE_DIRS:
+        files |= set(_git("ls-files", d))
+        files |= set(_git("ls-files", "--others", "--exclude-standard", d))
+    # Never include previous archives.
+    return sorted(f for f in files if not f.startswith("bots/dist/"))
 
 
 def main() -> None:
@@ -40,7 +43,7 @@ def main() -> None:
     dist = os.path.join(BOTS, "dist")
     os.makedirs(dist, exist_ok=True)
     stamp = dt.date.today().strftime("%Y%m%d")
-    out_path = os.path.join(dist, f"{TOP}-{stamp}.zip")
+    out_path = os.path.join(dist, f"{TOP}-all-{stamp}.zip")
 
     written = 0
     with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -48,9 +51,8 @@ def main() -> None:
             abs_path = os.path.join(REPO, rel)
             if not os.path.isfile(abs_path):
                 continue
-            # rel looks like "bots/core/app.py" -> "senerztg-telegram-bots/core/app.py"
-            arcname = os.path.join(TOP, os.path.relpath(rel, "bots"))
-            zf.write(abs_path, arcname)
+            # rel is repo-relative, e.g. "bots/core/app.py" -> "senerztg/bots/core/app.py"
+            zf.write(abs_path, os.path.join(TOP, rel))
             written += 1
 
     size_kb = os.path.getsize(out_path) / 1024

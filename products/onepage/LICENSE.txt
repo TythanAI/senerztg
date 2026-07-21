@@ -1,0 +1,29 @@
+OnePage Kit — Commercial License (template)
+===========================================
+
+NOTE: This is a ready-to-adapt license you (the owner of the kit) can ship to
+your buyers. Replace <YOUR NAME / BRAND> and the year, and adjust the terms to
+match how you sell it.
+
+Copyright (c) 2026 <YOUR NAME / BRAND>. All rights reserved.
+
+1. Grant. Upon purchase, the buyer receives a non-exclusive, worldwide,
+   perpetual license to use, modify, and customize the templates in this kit to
+   build websites — including commercial websites — for themselves or for their
+   clients.
+
+2. Permitted.
+   - Use the templates for unlimited personal and commercial websites.
+   - Modify the HTML, CSS, JS, text, images, and colors freely.
+   - Deliver finished websites built from these templates to clients.
+
+3. Not permitted.
+   - Reselling or redistributing the templates themselves as a template kit,
+     theme, or builder that competes with this product.
+   - Sharing the source files publicly (e.g. free download) as-is.
+
+4. No warranty. The templates are provided "as is", without warranty of any
+   kind. The author is not liable for any damages arising from their use.
+
+For a different arrangement (e.g. extended/white-label resale rights), contact
+the owner.
