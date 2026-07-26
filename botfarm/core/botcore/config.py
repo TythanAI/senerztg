@@ -22,6 +22,10 @@ REGION_PROVIDERS = {
 }
 
 
+#: Marker the generator leaves wherever the owner must supply their own value.
+PLACEHOLDER_MARK = "REPLACE"
+
+
 class ConfigError(ValueError):
     """Raised when a niche spec is structurally invalid."""
 
@@ -78,6 +82,32 @@ class Product:
 
     def is_free(self) -> bool:
         return self.price <= 0
+
+    def missing_delivery(self) -> list[str]:
+        """Delivery fields the owner has not filled in yet.
+
+        A shipped config carries placeholders on purpose — nobody can guess a
+        buyer's download link. But taking money for a product whose delivery
+        is still `REPLACE-WITH-...` means the customer pays and receives a
+        dead link, so the catalog hides these until they are real.
+
+        Stock-backed goods are exempt: what they deliver comes from inventory,
+        not from the config, and emptiness is already handled as "sold out".
+        """
+        if self.kind == "account":
+            return []
+
+        found: list[str] = []
+        for key, value in self.delivery.items():
+            values = value if isinstance(value, (list, tuple)) else [value]
+            for item in values:
+                if PLACEHOLDER_MARK in str(item):
+                    found.append(key)
+                    break
+        return found
+
+    def is_deliverable(self) -> bool:
+        return not self.missing_delivery()
 
 
 @dataclass(slots=True)
@@ -180,10 +210,29 @@ class NicheConfig:
                 return item
         return None
 
-    def active_products(self) -> list[Product]:
-        return sorted(
-            (p for p in self.catalog if p.active), key=lambda p: (p.sort, p.price, p.sku)
-        )
+    def active_products(self, *, sellable_only: bool = True) -> list[Product]:
+        """What the storefront shows.
+
+        `sellable_only` drops products whose delivery is still a placeholder,
+        so the bot cannot charge for something it has no way to hand over.
+        Pass False to list the full catalog (admin views, doctor checks).
+        """
+        items = [p for p in self.catalog if p.active]
+        if sellable_only:
+            items = [p for p in items if p.is_deliverable()]
+        return sorted(items, key=lambda p: (p.sort, p.price, p.sku))
+
+    def blocked_products(self) -> list[Product]:
+        """Active products held back because their delivery is unfinished."""
+        return [p for p in self.catalog if p.active and not p.is_deliverable()]
+
+    def has_placeholder_support(self) -> bool:
+        return PLACEHOLDER_MARK in self.support_username
+
+    def manual_requisites(self) -> str:
+        """Payment details for the manual rail, empty when still a placeholder."""
+        value = str(self.raw.get("manual_requisites", ""))
+        return "" if PLACEHOLDER_MARK in value.upper() else value
 
     def has(self, module: str) -> bool:
         return module in self.modules

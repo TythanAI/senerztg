@@ -205,11 +205,10 @@ def shop_delivery(archetype: str, lang: str, kind: str) -> dict[str, Any]:
         }
     if kind == "subscription":
         return {
-            "invite_link": "https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE",
             "text": (
-                "Доступ открыт. Уведомления начнут приходить сразу."
+                "Доступ открыт. Уведомления начнут приходить в этот чат."
                 if lang == "ru"
-                else "Access granted. Alerts start arriving right away."
+                else "Access granted. Alerts start arriving in this chat."
             ),
         }
     return {

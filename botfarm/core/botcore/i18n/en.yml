@@ -35,6 +35,7 @@ catalog:
   item_stock: "<b>{title}</b>\n\n{description}\n\n💰 Price: <b>{price}</b>\n📦 In stock: <b>{stock}</b>\n\nHow many?"
   sold_out: "<b>{title}</b>\n\n😔 Out of stock. We restock regularly — check back soon or message support."
   sold_out_short: "Out of stock"
+  unavailable: "This item is temporarily unavailable. Please check back soon."
   only_left: "Only {count} left"
   period: "⏳ Access: {days} days"
 

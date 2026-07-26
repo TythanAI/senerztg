@@ -564,27 +564,38 @@ def _delivery_for(kind: str, entry: dict) -> dict:
     if entry["archetype"] in SHOP_TEMPLATES:
         return shop_delivery(entry["archetype"], entry["lang"], kind)
     if kind == "subscription":
+        # No invite_link by default. Access is granted in the database either
+        # way; the owner adds a channel invite here once they have a channel.
         return {
-            "invite_link": "https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE",
             "text": _t(
                 entry["lang"],
-                ru="Добро пожаловать! Доступ открыт — ссылка на закрытый канал выше.",
-                en="Welcome aboard! Your private channel invite is above.",
-                de="Willkommen! Der Einladungslink zum privaten Kanal steht oben.",
-                es="¡Bienvenido! Arriba tienes el enlace al canal privado.",
+                ru="Добро пожаловать! Доступ открыт. Материалы приходят в этот чат.",
+                en="Welcome aboard! Your access is active. Material arrives in this chat.",
+                de="Willkommen! Ihr Zugang ist aktiv. Inhalte kommen in diesen Chat.",
+                es="¡Bienvenido! Tu acceso está activo. El material llega a este chat.",
             ),
         }
     if kind in {"service", "consult"}:
+        # No booking_url by default either: the order already creates a lead
+        # and pings the admin, which is a complete flow on its own.
         return {
-            "booking_url": "https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK",
+            "text": _t(
+                entry["lang"],
+                ru="Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.",
+                en="Your request is in. We will message you here to agree the details.",
+                de="Ihre Anfrage ist eingegangen. Wir melden uns hier zur Abstimmung.",
+                es="Solicitud recibida. Te escribimos aquí para acordar los detalles.",
+            ),
         }
+    # Digital goods are the one case that genuinely cannot ship ready: the
+    # material is the seller's. The product stays hidden until they add it.
     return {
         "text": _t(
             entry["lang"],
-            ru="Ваши материалы готовы. Ссылка на скачивание — ниже. Вопросы задавайте в поддержке.",
-            en="Your materials are ready. The download link is below — support is one tap away.",
-            de="Ihre Unterlagen sind fertig. Der Download-Link steht unten.",
-            es="Tus materiales están listos. El enlace de descarga está abajo.",
+            ru="Ваши материалы готовы. Вопросы — в поддержку.",
+            en="Your materials are ready. Support is one tap away.",
+            de="Ihre Unterlagen sind fertig. Der Support ist einen Tipp entfernt.",
+            es="Tus materiales están listos. El soporte está a un toque.",
         ),
         "links": ["https://REPLACE-WITH-YOUR-DELIVERY-LINK"],
     }

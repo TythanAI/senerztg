@@ -118,6 +118,16 @@ async def open_product(
         await callback.answer(t("errors.not_found"), show_alert=True)
         return
 
+    # A stale keyboard can still point at a product whose delivery is not
+    # configured. Never take money for something we cannot hand over.
+    if not product.is_deliverable():
+        log.error(
+            "%s: purchase of %s blocked — delivery fields %s are placeholders",
+            config.id, product.sku, product.missing_delivery(),
+        )
+        await callback.answer(t("catalog.unavailable"), show_alert=True)
+        return
+
     await repos.misc.track(user.tg_id, "product_view", product.sku)
 
     # Stock-backed goods: never let someone start paying for an empty shelf.
@@ -164,7 +174,7 @@ async def choose_quantity(
     checkout: CheckoutService,
 ) -> None:
     product = config.product(callback_data.sku)
-    if product is None or not product.active:
+    if product is None or not product.active or not product.is_deliverable():
         await callback.answer(t("errors.not_found"), show_alert=True)
         return
 

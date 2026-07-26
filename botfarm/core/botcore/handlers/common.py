@@ -78,7 +78,7 @@ async def cmd_help(message: Message, config: NicheConfig, t: Translator) -> None
     ]
     if config.has("support"):
         lines.append("/support — " + t("menu.support"))
-    if config.support_username:
+    if config.support_username and not config.has_placeholder_support():
         lines.append("")
         lines.append(t("support.contact", username=esc(config.support_username)))
     await message.answer("\n".join(lines), reply_markup=back_button(t))

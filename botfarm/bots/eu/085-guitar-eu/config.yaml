@@ -41,7 +41,7 @@ catalog:
     access.'
   sort: 0
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pro
@@ -52,7 +52,7 @@ catalog:
   description: 'The complete guitar programme: case studies, graded assignments and a private chat.'
   sort: 1
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: vip
@@ -63,7 +63,7 @@ catalog:
   description: Everything in the full course plus three one-to-one sessions applied to your own situation.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 faq:
 - q: How long does it take?
   a: Everything unlocks immediately and you set the pace. Most people finish in 4-6 weeks.
@@ -115,6 +115,6 @@ quiz:
   - Understanding the basics
   - Getting results fast
   - One-to-one guidance
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

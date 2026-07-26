@@ -40,7 +40,7 @@ catalog:
   description: Быстрый разбор одного вопроса по теме «земельные участки» с конкретными рекомендациями.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: consult60
   title: Консультация 60 минут
   price: 8810.0
@@ -49,7 +49,7 @@ catalog:
   description: 'Полноценная встреча: разбор ситуации, план действий и запись встречи.'
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: pack5
   title: Пакет из 5 встреч
   price: 36740.0
@@ -58,7 +58,7 @@ catalog:
   description: Пять встреч со скидкой и сопровождение в переписке между ними.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 faq:
 - q: Как проходит встреча?
   a: Видеозвонок в удобное время. Ссылка приходит после согласования слота.
@@ -95,6 +95,6 @@ texts:
 
 
     <i>Замените текст своими материалами.</i>'
-manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (ЗАМЕНИТЕ НА СВОИ РЕКВИЗИТЫ)
+manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (REPLACE — впишите свои реквизиты)
 
-  Получатель: Имя Ф.'
+  Получатель: REPLACE'

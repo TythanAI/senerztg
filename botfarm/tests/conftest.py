@@ -45,6 +45,7 @@ def make_config(**overrides: Any) -> NicheConfig:
             {"sku": "call", "title": "Консультация", "price": 5000, "kind": "consult"},
         ],
         "faq": [{"q": "Вопрос?", "a": "Ответ."}],
+        "manual_requisites": "Карта 1111 2222 3333 4444",
     }
     base.update(overrides)
     return NicheConfig.from_dict(base)

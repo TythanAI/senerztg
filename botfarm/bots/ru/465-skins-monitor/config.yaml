@@ -42,8 +42,7 @@ catalog:
   description: Мониторинг цен на скины — пробная неделя со всеми уведомлениями.
   sort: 0
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Доступ открыт. Уведомления начнут приходить сразу.
+    text: Доступ открыт. Уведомления начнут приходить в этот чат.
 - sku: month
   title: Месяц
   price: 2230.0
@@ -52,8 +51,7 @@ catalog:
   description: 'Месяц мониторинга: уведомления приходят в этот чат в реальном времени.'
   sort: 1
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Доступ открыт. Уведомления начнут приходить сразу.
+    text: Доступ открыт. Уведомления начнут приходить в этот чат.
 - sku: quarter
   title: Три месяца
   price: 5350.0
@@ -62,8 +60,7 @@ catalog:
   description: Три месяца со скидкой плюс приоритетная скорость уведомлений.
   sort: 2
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Доступ открыт. Уведомления начнут приходить сразу.
+    text: Доступ открыт. Уведомления начнут приходить в этот чат.
 faq:
 - q: Как быстро приходят уведомления?
   a: В течение минуты после появления события. Приоритетный тариф — до 15 секунд.
@@ -100,6 +97,6 @@ texts:
 
 
     <i>Замените текст своими материалами.</i>'
-manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (ЗАМЕНИТЕ НА СВОИ РЕКВИЗИТЫ)
+manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (REPLACE — впишите свои реквизиты)
 
-  Получатель: Имя Ф.'
+  Получатель: REPLACE'

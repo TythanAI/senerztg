@@ -41,7 +41,7 @@ catalog:
     Dauerhafter Zugang.'
   sort: 0
   delivery:
-    text: Ihre Unterlagen sind fertig. Der Download-Link steht unten.
+    text: Ihre Unterlagen sind fertig. Der Support ist einen Tipp entfernt.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pro
@@ -53,7 +53,7 @@ catalog:
     ein privater Chat.'
   sort: 1
   delivery:
-    text: Ihre Unterlagen sind fertig. Der Download-Link steht unten.
+    text: Ihre Unterlagen sind fertig. Der Support ist einen Tipp entfernt.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: vip
@@ -64,7 +64,7 @@ catalog:
   description: Alles aus dem Komplettkurs plus drei persönliche Termine zu Ihrer Situation.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Ihre Anfrage ist eingegangen. Wir melden uns hier zur Abstimmung.
 faq:
 - q: Wie lange dauert der Kurs?
   a: Alle Inhalte sind sofort verfügbar, das Tempo bestimmen Sie. Üblich sind 4-6 Wochen.
@@ -107,6 +107,6 @@ quiz:
   - Grundlagen verstehen
   - Schnelle Ergebnisse
   - Persönliche Betreuung
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

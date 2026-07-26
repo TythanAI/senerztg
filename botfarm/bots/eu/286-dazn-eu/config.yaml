@@ -109,6 +109,6 @@ texts:
 
 
     <i>Replace with your own content.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

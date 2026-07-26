@@ -10,6 +10,7 @@ import logging
 import signal
 import sys
 from pathlib import Path
+from typing import Any
 
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
@@ -31,6 +32,7 @@ from .middlewares import (
     UserMiddleware,
 )
 from .payments import build_registry
+from .utils import esc
 from .services import BackgroundJobs, CheckoutService, DeliveryService
 from .webapp import build_webapp, run_webapp
 
@@ -161,16 +163,89 @@ class BotApp:
                 app, self.secrets.web_host, self.secrets.web_port
             )
 
+        report = self.readiness_report()
+        for line in report["log"]:
+            log.warning("%s", line)
+
         for admin_id in self.secrets.admin_ids:
             try:
-                await self.bot.send_message(
-                    admin_id,
-                    f"✅ <b>{self.config.name}</b> запущен\n"
-                    f"Способы оплаты: {', '.join(self.registry.names) or '—'}\n"
-                    f"Команда панели: /admin",
-                )
+                await self.bot.send_message(admin_id, report["message"])
             except Exception:  # pragma: no cover
                 log.info("could not greet admin %s", admin_id)
+
+    def readiness_report(self) -> dict[str, Any]:
+        """What is sellable right now, and what is blocking the rest.
+
+        Sent to the admin at every start. The point is that nobody discovers
+        a half-configured shop from a customer complaint.
+        """
+        sellable = self.config.active_products()
+        blocked = self.config.blocked_products()
+        rails = self.registry.names
+
+        lines = [f"{'✅' if sellable and rails else '⚠️'} <b>{esc(self.config.name)}</b> запущен"]
+        lines.append(f"🛒 К продаже: <b>{len(sellable)}</b> из {len(self.config.catalog)}")
+        lines.append(f"💳 Оплата: {', '.join(rails) if rails else '—'}")
+
+        problems: list[str] = []
+        log_lines: list[str] = []
+
+        if not rails:
+            problems.append(
+                "Не подключён ни один способ оплаты. Задайте ключи в .env — "
+                "быстрее всего CRYPTOBOT_TOKEN."
+            )
+            log_lines.append("no payment rail configured — the bot cannot take money")
+
+        if blocked:
+            names = ", ".join(f"<code>{esc(p.sku)}</code>" for p in blocked[:6])
+            more = f" и ещё {len(blocked) - 6}" if len(blocked) > 6 else ""
+            problems.append(
+                f"Скрыто товаров: {len(blocked)} ({names}{more}) — в config.yaml "
+                "не заменены ссылки выдачи в <code>catalog[].delivery</code>. "
+                "Пока они скрыты от покупателей, чтобы не продать пустоту."
+            )
+            for product in blocked:
+                log_lines.append(
+                    f"product {product.sku} hidden: delivery fields "
+                    f"{product.missing_delivery()} are still placeholders"
+                )
+
+        if self.config.has_placeholder_support():
+            problems.append(
+                "Не задан контакт поддержки (<code>support_username</code>). "
+                "Сообщения всё равно приходят вам, но контакт покупателю не показывается."
+            )
+
+        if self.config.has("stock"):
+            problems.append(
+                "Магазин со складом: загрузите товар командой <code>/stock SKU</code>, "
+                "иначе покупатели видят «нет в наличии»."
+            )
+
+        if not sellable:
+            problems.insert(
+                0,
+                "⛔️ <b>Сейчас купить нечего.</b> Пока не заменены ссылки выдачи "
+                "или не загружен склад, каталог пуст.",
+            )
+
+        if problems:
+            lines.append("")
+            lines.append("<b>Что доделать:</b>")
+            lines.extend(f"• {p}" for p in problems)
+
+        lines.append("")
+        lines.append("Панель: /admin · Проверка: /status")
+
+        return {
+            "message": "\n".join(lines),
+            "log": log_lines,
+            "sellable": len(sellable),
+            "blocked": len(blocked),
+            "rails": list(rails),
+            "ready": bool(sellable and rails),
+        }
 
     async def run_polling(self) -> None:
         await self.bot.delete_webhook(drop_pending_updates=True)

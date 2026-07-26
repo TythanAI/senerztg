@@ -151,9 +151,16 @@ def _build_one(
     if name == "ton":
         return TonProvider(secrets.ton_wallet, api_key=secrets.tonapi_key)
     if name == "manual":
-        return ManualProvider(
-            requisites=config.raw.get("manual_requisites", ""), lang=config.lang
-        )
+        requisites = config.manual_requisites()
+        if not requisites:
+            # Placeholder requisites would send a paying customer's money
+            # nowhere. Better to hide the rail than to take the payment.
+            raise PaymentError(
+                "manual_requisites in config.yaml are still a placeholder — "
+                "put your real payment details there to enable this rail",
+                provider="manual",
+            )
+        return ManualProvider(requisites=requisites, lang=config.lang)
 
     log.warning("unknown payment provider %r in %s", name, config.id)
     return None

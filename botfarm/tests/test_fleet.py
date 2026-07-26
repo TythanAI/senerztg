@@ -56,13 +56,61 @@ def test_names_are_unique(fleet):
 
 def test_every_bot_has_a_catalog(fleet):
     for config in fleet:
-        assert config.active_products(), f"{config.id} has no sellable product"
+        assert config.active_products(sellable_only=False), f"{config.id} has no product"
+
+
+def test_most_of_the_fleet_sells_on_day_one(fleet):
+    """A bot whose delivery is fully configured should need no content work."""
+    ready = [c for c in fleet if not c.blocked_products()]
+    assert len(ready) >= 850, f"only {len(ready)} bots are sellable as shipped"
+
+
+def test_stock_and_service_bots_are_sellable_as_shipped(fleet):
+    """These models deliver from inventory or an operator — never from a link."""
+    instant = {"accounts", "keys", "topup", "monitor", "consult", "leadgen"}
+    for config in fleet:
+        archetype = config.niche.split("/")[0]
+        if archetype not in instant:
+            continue
+        assert not config.blocked_products(), (
+            f"{config.id} ({archetype}) has unsellable products: "
+            f"{[(p.sku, p.missing_delivery()) for p in config.blocked_products()]}"
+        )
+        assert config.active_products(), config.id
+
+
+def test_blocked_products_name_the_field_to_fix(fleet):
+    """When something is held back the owner must be told exactly what to set."""
+    for config in fleet:
+        for product in config.blocked_products():
+            missing = product.missing_delivery()
+            assert missing, f"{config.id}/{product.sku} blocked for no stated reason"
+            for field in missing:
+                assert field in product.delivery, f"{config.id}/{product.sku}: {field}"
+
+
+def test_account_products_are_never_blocked_by_placeholders(fleet):
+    """Stock goods deliver from inventory, so config text cannot block them."""
+    for config in fleet:
+        for product in config.catalog:
+            if product.kind == "account":
+                assert product.is_deliverable(), f"{config.id}/{product.sku}"
 
 
 def test_prices_are_positive(fleet):
     for config in fleet:
         for product in config.catalog:
             assert product.price > 0, f"{config.id}/{product.sku} is not priced"
+
+
+def test_no_customer_ever_sees_a_placeholder(fleet):
+    """Whatever the storefront shows must be fully deliverable."""
+    for config in fleet:
+        for product in config.active_products():
+            for value in product.delivery.values():
+                items = value if isinstance(value, (list, tuple)) else [value]
+                for item in items:
+                    assert "REPLACE" not in str(item), f"{config.id}/{product.sku}"
 
 
 def test_every_bot_takes_money(fleet):
@@ -108,6 +156,15 @@ def test_trials_only_with_subscriptions(fleet):
     for config in fleet:
         if config.trial_days:
             assert config.has("subscription"), f"{config.id} offers a trial but sells no subscription"
+
+
+def test_manual_rail_is_disabled_while_requisites_are_placeholders(fleet):
+    """Printing fake card details to a paying customer must be impossible."""
+    for config in fleet:
+        if "manual" in config.payments.providers:
+            assert config.manual_requisites() == "", (
+                f"{config.id} ships real-looking manual requisites"
+            )
 
 
 def test_quiz_module_has_questions(fleet):

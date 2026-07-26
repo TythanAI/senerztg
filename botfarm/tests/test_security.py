@@ -479,3 +479,80 @@ class TestPaymentGuards:
         assert order.status != "delivered"
         assert any("нет на складе" in text for text in fake_bot.texts_for(1))
         assert any("Оплата получена" in text for text in fake_bot.texts_for(42))
+
+
+# --------------------------------------------------- selling only what exists
+
+
+class TestDeliverabilityGate:
+    """A bot must never take money for something it cannot hand over."""
+
+    def test_placeholder_delivery_blocks_a_product(self):
+        config = make_config(
+            modules=["catalog", "support"],
+            catalog=[{"sku": "guide", "title": "Гайд", "price": 500, "kind": "digital",
+                      "delivery": {"links": ["https://REPLACE-WITH-YOUR-LINK"]}}],
+        )
+        product = config.product("guide")
+        assert product.is_deliverable() is False
+        assert product.missing_delivery() == ["links"]
+        assert config.active_products() == []
+        assert [p.sku for p in config.blocked_products()] == ["guide"]
+
+    def test_real_delivery_is_sellable(self):
+        config = make_config(
+            modules=["catalog", "support"],
+            catalog=[{"sku": "guide", "title": "Гайд", "price": 500, "kind": "digital",
+                      "delivery": {"links": ["https://example.com/real"]}}],
+        )
+        assert [p.sku for p in config.active_products()] == ["guide"]
+        assert config.blocked_products() == []
+
+    def test_stock_goods_are_never_blocked_by_config_text(self):
+        """Account delivery comes from inventory, not from the config."""
+        config = account_config()
+        assert len(config.active_products()) == 2
+        assert config.blocked_products() == []
+
+    def test_full_catalog_is_still_reachable_for_admin_views(self):
+        config = make_config(
+            modules=["catalog", "support"],
+            catalog=[{"sku": "a", "title": "A", "price": 100, "kind": "digital",
+                      "delivery": {"links": ["https://REPLACE-ME"]}}],
+        )
+        assert config.active_products() == []
+        assert len(config.active_products(sellable_only=False)) == 1
+
+    def test_placeholder_support_contact_is_detected(self):
+        config = make_config(support_username="@REPLACE_WITH_YOUR_SUPPORT")
+        assert config.has_placeholder_support() is True
+        assert make_config(support_username="@real_shop").has_placeholder_support() is False
+
+    def test_placeholder_requisites_are_withheld(self):
+        config = make_config(manual_requisites="Карта 0000 (REPLACE)")
+        assert config.manual_requisites() == ""
+
+    def test_real_requisites_are_returned(self):
+        config = make_config(manual_requisites="Карта 1234 5678")
+        assert config.manual_requisites() == "Карта 1234 5678"
+
+    def test_manual_rail_is_disabled_without_requisites(self):
+        from botcore.config import Secrets
+        from botcore.payments import build_registry
+
+        config = make_config(
+            payments={"providers": ["manual"], "default": "manual"},
+            manual_requisites="0000 0000 (REPLACE)",
+        )
+        registry = build_registry(config, Secrets())
+        assert "manual" not in registry, "a buyer would be shown fake payment details"
+
+    def test_manual_rail_works_with_real_requisites(self):
+        from botcore.config import Secrets
+        from botcore.payments import build_registry
+
+        config = make_config(
+            payments={"providers": ["manual"], "default": "manual"},
+            manual_requisites="Сбер 1234 5678 9012 3456",
+        )
+        assert "manual" in build_registry(config, Secrets())

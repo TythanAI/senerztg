@@ -439,6 +439,53 @@ async def confirm_order(
     await callback.answer(t("admin.order_confirmed", id=order_id), show_alert=True)
 
 
+@router.message(Command("status"))
+async def cmd_status(
+    message: Message,
+    config: NicheConfig,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    admin_ids: tuple[int, ...],
+) -> None:
+    """Readiness at a glance: what is sellable and what is still blocking."""
+    if not _is_admin(user, admin_ids):
+        return
+
+    sellable = config.active_products()
+    blocked = config.blocked_products()
+    lines = [f"<b>{esc(config.name)}</b>", ""]
+    lines.append(f"🛒 К продаже: <b>{len(sellable)}</b> из {len(config.catalog)}")
+
+    if config.has("stock"):
+        counts = await repos.stock.counts()
+        total = sum(counts.values())
+        lines.append(f"📦 На складе: <b>{total}</b> шт.")
+        for product in config.catalog:
+            if product.kind == "account":
+                left = counts.get(product.sku, 0)
+                mark = "🟢" if left > 10 else "🟡" if left else "🔴"
+                lines.append(f"   {mark} <code>{esc(product.sku)}</code> — {left}")
+
+    if blocked:
+        lines.append("")
+        lines.append("<b>Скрыто из каталога:</b>")
+        for product in blocked[:10]:
+            fields = ", ".join(product.missing_delivery())
+            lines.append(f"• <code>{esc(product.sku)}</code> — не задано: {esc(fields)}")
+        lines.append("Замените значения в config.yaml и перезапустите бота.")
+
+    if config.has_placeholder_support():
+        lines.append("")
+        lines.append("⚠️ Не задан <code>support_username</code>.")
+
+    if sellable:
+        lines.append("")
+        lines.append("✅ Бот готов принимать заказы.")
+
+    await message.answer(truncate("\n".join(lines)))
+
+
 @router.message(Command("reply"))
 async def reply_to_user(
     message: Message,

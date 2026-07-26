@@ -38,7 +38,7 @@ catalog:
   description: A compact van conversion set — a low-risk way to try the format.
   sort: 0
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pack-main
@@ -49,7 +49,7 @@ catalog:
   description: 'The flagship product: the complete, ready-to-use collection.'
   sort: 1
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pack-pro
@@ -60,7 +60,7 @@ catalog:
   description: The extended library plus a year of updates.
   sort: 2
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pack-all
@@ -71,7 +71,7 @@ catalog:
   description: Full access to every pack, including future additions.
   sort: 3
   delivery:
-    text: Your materials are ready. The download link is below — support is one tap away.
+    text: Your materials are ready. Support is one tap away.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 faq:
@@ -109,6 +109,6 @@ texts:
 
 
     <i>Replace with your own content.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

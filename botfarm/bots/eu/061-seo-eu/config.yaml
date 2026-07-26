@@ -39,7 +39,7 @@ catalog:
   description: SEO — core scope of work. Timeline and deliverables agreed before we start.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 - sku: standard
   title: Standard
   price: 477.0
@@ -48,7 +48,7 @@ catalog:
   description: Extended scope, priority turnaround and two rounds of revisions.
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 - sku: premium
   title: Done for you
   price: 994.0
@@ -57,7 +57,7 @@ catalog:
   description: Full delivery with a dedicated manager and results guaranteed in the contract.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 faq:
 - q: How does it start?
   a: After payment a manager contacts you within one business day to agree the brief.
@@ -93,6 +93,6 @@ texts:
 
 
     <i>Replace with your own content.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

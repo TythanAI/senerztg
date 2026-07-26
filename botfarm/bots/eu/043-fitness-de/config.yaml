@@ -40,8 +40,7 @@ catalog:
   description: '30 Tage Zugang zum Heimtraining-Club: privater Kanal, wöchentliche Inhalte und Q&A.'
   sort: 0
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Willkommen! Der Einladungslink zum privaten Kanal steht oben.
+    text: Willkommen! Ihr Zugang ist aktiv. Inhalte kommen in diesen Chat.
 - sku: quarter
   title: Drei Monate
   price: 22.0
@@ -50,8 +49,7 @@ catalog:
   description: Drei Monate vergünstigt. Alle Inhalte plus komplettes Archiv.
   sort: 1
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Willkommen! Der Einladungslink zum privaten Kanal steht oben.
+    text: Willkommen! Ihr Zugang ist aktiv. Inhalte kommen in diesen Chat.
 - sku: year
   title: Zwölf Monate
   price: 71.0
@@ -60,8 +58,7 @@ catalog:
   description: Ein Jahr zum besten Preis, inklusive persönlichem Onboarding.
   sort: 2
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Willkommen! Der Einladungslink zum privaten Kanal steht oben.
+    text: Willkommen! Ihr Zugang ist aktiv. Inhalte kommen in diesen Chat.
 faq:
 - q: Was ist enthalten?
   a: Privater Kanal, wöchentliche Inhalte, Archiv und Antworten auf Ihre Fragen.
@@ -88,6 +85,6 @@ texts:
 
 
     <i>Ersetzen Sie diesen Block durch echte Kundenstimmen.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

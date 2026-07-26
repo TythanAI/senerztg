@@ -40,7 +40,7 @@ catalog:
   description: Ein Fachmann kommt vorbei, prüft den Umfang und erstellt ein schriftliches Angebot.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Ihre Anfrage ist eingegangen. Wir melden uns hier zur Abstimmung.
 - sku: package
   title: Standardauftrag
   price: 45.0
@@ -49,7 +49,7 @@ catalog:
   description: Standardumfang zum Festpreis, mit Garantie.
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Ihre Anfrage ist eingegangen. Wir melden uns hier zur Abstimmung.
 - sku: turnkey
   title: Komplettservice
   price: 115.0
@@ -58,7 +58,7 @@ catalog:
   description: 'Alles aus einer Hand: Material, Arbeit, Entsorgung und vertragliche Garantie.'
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Ihre Anfrage ist eingegangen. Wir melden uns hier zur Abstimmung.
 faq:
 - q: Was kostet die Besichtigung?
   a: Die Anfahrt wird bei Auftragserteilung verrechnet.
@@ -101,6 +101,6 @@ quiz:
   - Habe eigenes
   - Teilweise
   - Bitte alles stellen
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

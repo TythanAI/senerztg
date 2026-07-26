@@ -40,8 +40,7 @@ catalog:
   description: Steam Deals alerts — a trial week with every alert enabled.
   sort: 0
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Access granted. Alerts start arriving right away.
+    text: Access granted. Alerts start arriving in this chat.
 - sku: month
   title: One month
   price: 43.0
@@ -50,8 +49,7 @@ catalog:
   description: 'A month of monitoring: alerts arrive in this chat in real time.'
   sort: 1
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Access granted. Alerts start arriving right away.
+    text: Access granted. Alerts start arriving in this chat.
 - sku: quarter
   title: Three months
   price: 103.0
@@ -60,8 +58,7 @@ catalog:
   description: Three months at a discount, with priority alert speed.
   sort: 2
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: Access granted. Alerts start arriving right away.
+    text: Access granted. Alerts start arriving in this chat.
 faq:
 - q: How fast are alerts?
   a: Within a minute of the event. The priority tier delivers in under 15 seconds.
@@ -97,6 +94,6 @@ texts:
 
 
     <i>Replace with your own content.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

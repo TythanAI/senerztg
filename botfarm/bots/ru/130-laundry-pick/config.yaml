@@ -42,7 +42,7 @@ catalog:
   description: Специалист приезжает, оценивает объём работ и составляет смету по теме «химчистка».
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: package
   title: Стандартный заказ
   price: 770.0
@@ -51,7 +51,7 @@ catalog:
   description: Работы стандартного объёма с фиксированной ценой и гарантией.
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: turnkey
   title: Под ключ
   price: 1950.0
@@ -60,7 +60,7 @@ catalog:
   description: 'Полный цикл: материалы, работы, вывоз мусора, гарантия в договоре.'
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 faq:
 - q: Сколько стоит выезд?
   a: Стоимость выезда засчитывается в счёт заказа, если работы согласованы.
@@ -112,6 +112,6 @@ quiz:
   - Есть свои
   - Частично
   - Полностью ваши
-manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (ЗАМЕНИТЕ НА СВОИ РЕКВИЗИТЫ)
+manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (REPLACE — впишите свои реквизиты)
 
-  Получатель: Имя Ф.'
+  Получатель: REPLACE'

@@ -35,7 +35,9 @@ async def open_support(
 ) -> None:
     await state.set_state(SupportFlow.waiting_message)
     text = t("support.prompt")
-    if config.support_username:
+    # Showing "@REPLACE_WITH_YOUR_SUPPORT" to a customer is worse than showing
+    # no contact at all — messages still reach the admin either way.
+    if config.support_username and not config.has_placeholder_support():
         text += "\n\n" + t("support.contact", username=esc(config.support_username))
     await _edit(callback, text, back_button(t))
     await callback.answer()
@@ -47,7 +49,7 @@ async def cmd_support(
 ) -> None:
     await state.set_state(SupportFlow.waiting_message)
     text = t("support.prompt")
-    if config.support_username:
+    if config.support_username and not config.has_placeholder_support():
         text += "\n\n" + t("support.contact", username=esc(config.support_username))
     await message.answer(text)
 

@@ -117,14 +117,16 @@ def build_config(entry: dict, index: int) -> dict[str, Any]:
     if quiz:
         config["quiz"] = quiz
     if entry["region"] == "ru":
+        # The REPLACE marker is load-bearing: the engine disables the manual
+        # rail while it is present, so a buyer can never be shown fake details.
         config["manual_requisites"] = (
-            "Карта: <code>0000 0000 0000 0000</code> (ЗАМЕНИТЕ НА СВОИ РЕКВИЗИТЫ)\n"
-            "Получатель: Имя Ф."
+            "Карта: <code>0000 0000 0000 0000</code> (REPLACE — впишите свои реквизиты)\n"
+            "Получатель: REPLACE"
         )
     else:
         config["manual_requisites"] = (
-            "IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)\n"
-            "Beneficiary: Your Name"
+            "IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)\n"
+            "Beneficiary: REPLACE"
         )
     return config
 

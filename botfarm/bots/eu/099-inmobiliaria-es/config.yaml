@@ -40,7 +40,7 @@ catalog:
   description: Un especialista acude, evalúa el alcance y prepara un presupuesto por escrito.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Solicitud recibida. Te escribimos aquí para acordar los detalles.
 - sku: package
   title: Encargo estándar
   price: 125.0
@@ -49,7 +49,7 @@ catalog:
   description: Alcance estándar a precio cerrado, con garantía.
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Solicitud recibida. Te escribimos aquí para acordar los detalles.
 - sku: turnkey
   title: Llave en mano
   price: 315.0
@@ -58,7 +58,7 @@ catalog:
   description: 'Ciclo completo: materiales, trabajo, limpieza y garantía en contrato.'
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Solicitud recibida. Te escribimos aquí para acordar los detalles.
 faq:
 - q: ¿Cuánto cuesta la visita?
   a: El coste se descuenta del encargo si sigues adelante.
@@ -101,6 +101,6 @@ quiz:
   - Tengo los míos
   - En parte
   - Ponedlo todo
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

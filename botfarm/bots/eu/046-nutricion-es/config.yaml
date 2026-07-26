@@ -41,7 +41,7 @@ catalog:
     por vida.'
   sort: 0
   delivery:
-    text: Tus materiales están listos. El enlace de descarga está abajo.
+    text: Tus materiales están listos. El soporte está a un toque.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: pro
@@ -52,7 +52,7 @@ catalog:
   description: 'El programa completo de nutrición: casos prácticos, ejercicios corregidos y chat privado.'
   sort: 1
   delivery:
-    text: Tus materiales están listos. El enlace de descarga está abajo.
+    text: Tus materiales están listos. El soporte está a un toque.
     links:
     - https://REPLACE-WITH-YOUR-DELIVERY-LINK
 - sku: vip
@@ -63,7 +63,7 @@ catalog:
   description: Todo el curso completo más tres sesiones individuales sobre tu caso.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Solicitud recibida. Te escribimos aquí para acordar los detalles.
 faq:
 - q: ¿Cuánto dura?
   a: Todo se desbloquea al instante y marcas tu ritmo. La media son 4-6 semanas.
@@ -106,6 +106,6 @@ quiz:
   - Entender la base
   - Resultados rápidos
   - Acompañamiento personal
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

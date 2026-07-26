@@ -40,8 +40,7 @@ catalog:
   description: '30 días en el club de español: canal privado, material semanal y preguntas.'
   sort: 0
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: ¡Bienvenido! Arriba tienes el enlace al canal privado.
+    text: ¡Bienvenido! Tu acceso está activo. El material llega a este chat.
 - sku: quarter
   title: Tres meses
   price: 22.0
@@ -50,8 +49,7 @@ catalog:
   description: Tres meses con descuento. Todo el club más el archivo completo.
   sort: 1
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: ¡Bienvenido! Arriba tienes el enlace al canal privado.
+    text: ¡Bienvenido! Tu acceso está activo. El material llega a este chat.
 - sku: year
   title: Doce meses
   price: 71.0
@@ -60,8 +58,7 @@ catalog:
   description: Un año al mejor precio, con una sesión de bienvenida.
   sort: 2
   delivery:
-    invite_link: https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE
-    text: ¡Bienvenido! Arriba tienes el enlace al canal privado.
+    text: ¡Bienvenido! Tu acceso está activo. El material llega a este chat.
 faq:
 - q: ¿Qué incluye?
   a: Canal privado, material semanal, archivo completo y respuestas a tus dudas.
@@ -88,6 +85,6 @@ texts:
 
 
     <i>Sustituye este bloque por reseñas reales.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

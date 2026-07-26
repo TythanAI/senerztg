@@ -35,6 +35,7 @@ catalog:
   item_stock: "<b>{title}</b>\n\n{description}\n\n💰 Цена: <b>{price}</b>\n📦 В наличии: <b>{stock}</b> шт.\n\nСколько берёте?"
   sold_out: "<b>{title}</b>\n\n😔 Товар закончился. Мы пополняем склад регулярно — загляните позже или напишите в поддержку."
   sold_out_short: "Нет в наличии"
+  unavailable: "Товар временно недоступен. Загляните позже."
   only_left: "Осталось всего {count} шт."
   period: "⏳ Срок: {days} дн."
 

@@ -38,7 +38,7 @@ catalog:
   description: A focused review of one relocation question with concrete next steps.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 - sku: consult60
   title: 60-minute session
   price: 357.0
@@ -47,7 +47,7 @@ catalog:
   description: 'A full session: situation review, action plan and a recording.'
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 - sku: pack5
   title: Five-session package
   price: 1491.0
@@ -56,7 +56,7 @@ catalog:
   description: Five sessions at a discount, with async support in between.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Your request is in. We will message you here to agree the details.
 faq:
 - q: How does the session work?
   a: A video call at a time that suits you. The link arrives once the slot is agreed.
@@ -92,6 +92,6 @@ texts:
 
 
     <i>Replace with your own content.</i>'
-manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE WITH YOUR OWN)
+manual_requisites: 'IBAN: <code>DE00 0000 0000 0000 0000 00</code> (REPLACE with your own)
 
-  Beneficiary: Your Name'
+  Beneficiary: REPLACE'

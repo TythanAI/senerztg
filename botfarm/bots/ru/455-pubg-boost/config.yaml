@@ -40,7 +40,7 @@ catalog:
   description: Буст ранга PUBG — базовый объём работ. Сроки и состав фиксируем до старта.
   sort: 0
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: standard
   title: Стандарт
   price: 3570.0
@@ -49,7 +49,7 @@ catalog:
   description: 'Расширенный пакет: больше объём, приоритетные сроки, две итерации правок.'
   sort: 1
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 - sku: premium
   title: Под ключ
   price: 7440.0
@@ -58,7 +58,7 @@ catalog:
   description: Полное сопровождение под ключ с ответственным менеджером и гарантией результата в договоре.
   sort: 2
   delivery:
-    booking_url: https://calendly.com/REPLACE-WITH-YOUR-BOOKING-LINK
+    text: Заявка принята. Мы свяжемся с вами здесь, чтобы согласовать детали.
 faq:
 - q: Как начинается работа?
   a: После оплаты менеджер связывается в течение рабочего дня и согласует бриф.
@@ -95,6 +95,6 @@ texts:
 
 
     <i>Замените текст своими материалами.</i>'
-manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (ЗАМЕНИТЕ НА СВОИ РЕКВИЗИТЫ)
+manual_requisites: 'Карта: <code>0000 0000 0000 0000</code> (REPLACE — впишите свои реквизиты)
 
-  Получатель: Имя Ф.'
+  Получатель: REPLACE'
