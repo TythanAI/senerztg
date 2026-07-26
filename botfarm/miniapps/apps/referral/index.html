@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Партнёрский кабинет</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, stats = { invited: 0, earned: 0, paid: 0 };
+
+function link() {
+  return `https://t.me/${CFG.app.bot_username}?start=ref${CFG.user.id}`;
+}
+
+function available() { return Math.max(0, stats.earned - stats.paid); }
+
+function render() {
+  const cur = CFG.app.currency;
+  const can = available() >= CFG.app.min_payout;
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <p class="hint">Вы получаете <strong>${CFG.app.percent}%</strong> с каждой покупки приглашённого.</p>
+    <div class="card">
+      <div class="row"><span>Приглашено</span><span class="price">${stats.invited}</span></div>
+      <div class="row"><span>Заработано</span><span class="price">${TG.money(stats.earned, cur)}</span></div>
+      <div class="row"><span>Выплачено</span><span>${TG.money(stats.paid, cur)}</span></div>
+      <div class="row"><span>К выплате</span><span class="price">${TG.money(available(), cur)}</span></div>
+    </div>
+    <h2>Ваша ссылка</h2>
+    <div class="card"><code style="word-break:break-all">${TG.escape(link())}</code></div>
+    <div class="stack">
+      <button id="copy">Скопировать</button>
+      <button class="secondary" id="share">Поделиться</button>
+    </div>
+    <p class="hint" style="margin-top:14px">
+      Минимальная сумма выплаты — ${TG.money(CFG.app.min_payout, cur)}.</p>
+    <button id="payout" style="width:100%;margin-top:8px" ${can ? '' : 'disabled'}>
+      Запросить выплату</button>`;
+
+  root.querySelector('#copy').onclick = async () => {
+    try { await navigator.clipboard.writeText(link()); TG.haptic('success'); TG.alert('Ссылка скопирована'); }
+    catch { TG.alert(link()); }
+  };
+  root.querySelector('#share').onclick = () => {
+    const text = encodeURIComponent('Рекомендую, вот ссылка:');
+    window.open(`https://t.me/share/url?url=${encodeURIComponent(link())}&text=${text}`, '_blank');
+  };
+  root.querySelector('#payout').onclick = payout;
+}
+
+async function payout() {
+  if (!(await TG.confirm(`Запросить выплату ${TG.money(available(), CFG.app.currency)}?`))) return;
+  try {
+    const res = await TG.api('/api/referral/submit', {
+      kind: 'payout', amount: available(), currency: CFG.app.currency
+    });
+    TG.haptic('success');
+    TG.alert(`Заявка #${res.id} принята. Выплата в течение 3 рабочих дней.`);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try {
+    CFG = await TG.api('/api/referral/config');
+    const saved = CFG.profile && CFG.profile.state;
+    if (saved && typeof saved.earned === 'number') stats = saved;
+    render();
+  } catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

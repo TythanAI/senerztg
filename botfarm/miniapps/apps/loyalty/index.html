@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Карта лояльности</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, state = { points: 0, spent: 0 };
+
+function tier() {
+  const list = CFG.app.tiers;
+  let current = list[0];
+  list.forEach(t => { if (state.spent >= t.from) current = t; });
+  return current;
+}
+
+function nextTier() {
+  return CFG.app.tiers.find(t => t.from > state.spent) || null;
+}
+
+function render() {
+  const cur = CFG.app.currency;
+  const t = tier(), next = nextTier();
+  const progress = next
+    ? `<p class="hint">До уровня «${TG.escape(next.name)}» — ${TG.money(next.from - state.spent, cur)}</p>`
+    : '<p class="hint">Максимальный уровень достигнут</p>';
+
+  const rewards = CFG.app.rewards.map(r => {
+    const can = state.points >= r.cost;
+    return `<div class="card"><div class="row">
+      <div><strong>${TG.escape(r.title)}</strong><div class="hint">${r.cost} баллов</div></div>
+      <button data-r="${r.id}" ${can ? '' : 'disabled'}>Списать</button>
+    </div></div>`;
+  }).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.user.name)}</h1>
+    <div class="card">
+      <div class="row"><span>Баллов</span><span class="price">${state.points}</span></div>
+      <div class="row"><span>Уровень</span><span><strong>${TG.escape(t.name)}</strong></span></div>
+      <div class="row"><span>Кэшбэк</span><span>${t.bonus}%</span></div>
+      <div class="row"><span>Всего покупок</span><span>${TG.money(state.spent, cur)}</span></div>
+      ${progress}
+    </div>
+    <h2>Потратить баллы</h2>${rewards}
+    <p class="hint">Баллы начисляются автоматически после каждой покупки в боте.</p>`;
+
+  root.querySelectorAll('[data-r]').forEach(b => b.onclick = () => redeem(b.dataset.r));
+}
+
+async function redeem(id) {
+  const reward = CFG.app.rewards.find(r => r.id === id);
+  if (!reward || state.points < reward.cost) return;
+  if (!(await TG.confirm(`Списать ${reward.cost} баллов на «${reward.title}»?`))) return;
+
+  try {
+    const res = await TG.api('/api/loyalty/submit', {
+      kind: 'redeem', reward: reward.title, cost: reward.cost
+    });
+    // The server owns the balance; this is an optimistic local update only.
+    state.points -= reward.cost;
+    await TG.api('/api/loyalty/state', state);
+    TG.haptic('success');
+    TG.alert(`Промокод придёт в чат. Заявка #${res.id}`);
+    render();
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try {
+    CFG = await TG.api('/api/loyalty/config');
+    const saved = CFG.profile && CFG.profile.state;
+    if (saved && typeof saved.points === 'number') state = saved;
+    render();
+  } catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

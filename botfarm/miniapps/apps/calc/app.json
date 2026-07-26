@@ -1,0 +1,46 @@
+{
+  "title": "Калькулятор стоимости",
+  "summary": "Считает смету по параметрам и отправляет заявку",
+  "submit_kind": "quote",
+  "thanks": "Расчёт отправлен! Менеджер уточнит детали.",
+  "currency": "RUB",
+  "admin": [],
+  "base": 5000,
+  "fields": [
+    {
+      "id": "area",
+      "label": "Площадь, м²",
+      "type": "number",
+      "min": 1,
+      "max": 500,
+      "default": 40,
+      "per_unit": 900
+    },
+    {
+      "id": "rooms",
+      "label": "Комнат",
+      "type": "number",
+      "min": 1,
+      "max": 20,
+      "default": 2,
+      "per_unit": 3000
+    }
+  ],
+  "options": [
+    {
+      "id": "urgent",
+      "label": "Срочно (за 3 дня)",
+      "multiplier": 1.4
+    },
+    {
+      "id": "materials",
+      "label": "С материалами",
+      "add": 18000
+    },
+    {
+      "id": "cleanup",
+      "label": "Вывоз мусора",
+      "add": 4500
+    }
+  ]
+}

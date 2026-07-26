@@ -1,0 +1,11 @@
+{
+  "title": "Партнёрский кабинет",
+  "summary": "Ссылка, статистика приглашений и заявка на выплату",
+  "submit_kind": "payout",
+  "thanks": "Заявка на выплату принята.",
+  "currency": "RUB",
+  "admin": [],
+  "percent": 20,
+  "min_payout": 1000,
+  "bot_username": "REPLACE_WITH_YOUR_BOT"
+}

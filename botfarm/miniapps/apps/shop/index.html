@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Витрина</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null;
+const cart = new Map();
+
+function stockBadge(n) {
+  if (n <= 0) return '<span class="badge out">нет в наличии</span>';
+  if (n <= 5) return `<span class="badge low">осталось ${n}</span>`;
+  return `<span class="badge">в наличии ${n}</span>`;
+}
+
+function total() {
+  let sum = 0;
+  cart.forEach((qty, sku) => {
+    const item = CFG.app.catalog.find(p => p.sku === sku);
+    if (item) sum += item.price * qty;
+  });
+  return sum;
+}
+
+function render() {
+  const cur = CFG.app.currency;
+  const items = CFG.app.catalog.map(p => {
+    const qty = cart.get(p.sku) || 0;
+    const soldOut = p.stock <= 0;
+    return `<div class="card">
+      <div class="row">
+        <div><strong>${TG.escape(p.title)}</strong><div class="hint">${TG.escape(p.desc)}</div></div>
+        <div class="price">${TG.money(p.price, cur)}</div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        ${stockBadge(p.stock)}
+        <div class="stack">
+          <button class="secondary" data-dec="${p.sku}" ${qty ? '' : 'disabled'}>−</button>
+          <span style="min-width:26px;text-align:center;line-height:2.6">${qty}</span>
+          <button data-inc="${p.sku}" ${soldOut || qty >= p.stock ? 'disabled' : ''}>+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <p class="hint">Привет, ${TG.escape(CFG.user.name)}. Выберите товар и количество.</p>
+    <div class="list">${items}</div>`;
+
+  root.querySelectorAll('[data-inc]').forEach(b => b.onclick = () => change(b.dataset.inc, +1));
+  root.querySelectorAll('[data-dec]').forEach(b => b.onclick = () => change(b.dataset.dec, -1));
+  updateButton();
+}
+
+function change(sku, delta) {
+  const item = CFG.app.catalog.find(p => p.sku === sku);
+  const next = Math.max(0, Math.min((cart.get(sku) || 0) + delta, item.stock));
+  if (next === 0) cart.delete(sku); else cart.set(sku, next);
+  TG.haptic('light');
+  render();
+}
+
+function updateButton() {
+  const sum = total();
+  if (sum <= 0) { TG.hideMainButton(); return; }
+  TG.mainButton(`Оформить · ${TG.money(sum, CFG.app.currency)}`, checkout);
+}
+
+async function checkout() {
+  const lines = [...cart.entries()].map(([sku, qty]) => {
+    const item = CFG.app.catalog.find(p => p.sku === sku);
+    return { sku, title: item.title, qty, price: item.price };
+  });
+  if (!lines.length) return;
+
+  TG.hideMainButton();
+  try {
+    const res = await TG.api(`/api/shop/submit`, {
+      kind: 'order', items: lines, total: total(), currency: CFG.app.currency
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Заказ #${res.id}</h2><p>${TG.escape(res.message)}</p></div>`;
+    setTimeout(() => TG.close(), 2500);
+  } catch (err) {
+    TG.haptic('error');
+    TG.alert('Не удалось оформить: ' + err.message);
+    updateButton();
+  }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init({ confirmClose: true });
+  try {
+    CFG = await TG.api('/api/shop/config');
+    render();
+  } catch (err) {
+    root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`;
+  }
+})();
+
+</script>
+</body>
+</html>

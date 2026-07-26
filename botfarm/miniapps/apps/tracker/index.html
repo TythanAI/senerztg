@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Статус заказа</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, orderNo = '';
+
+function demoStage(no) {
+  // Without a live backend the stage is derived from the order number so the
+  // demo behaves consistently. Wire this to your own order API in production.
+  const digits = String(no).replace(/\D/g, '');
+  if (!digits) return 0;
+  return (Number(digits.slice(-1)) % CFG.app.stages.length);
+}
+
+function render(stage) {
+  const steps = CFG.app.stages.map((s, i) => {
+    const done = i <= stage;
+    const mark = done ? '✅' : '⚪️';
+    return `<div class="row" style="padding:8px 0">
+      <span>${mark} ${TG.escape(s)}</span>
+      ${i === stage ? '<span class="badge">сейчас</span>' : ''}
+    </div>`;
+  }).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <label for="no">Номер заказа</label>
+    <input id="no" value="${TG.escape(orderNo)}" placeholder="например, 1042" maxlength="20">
+    ${orderNo ? `<div class="card" style="margin-top:14px">${steps}</div>` : '<p class="hint">Введите номер, чтобы увидеть статус.</p>'}
+    <button class="secondary" id="ask" style="width:100%;margin-top:10px">Написать оператору</button>`;
+
+  const input = root.querySelector('#no');
+  input.oninput = e => {
+    orderNo = e.target.value.trim();
+    const pos = input.selectionStart;
+    render(demoStage(orderNo));
+    const again = root.querySelector('#no');
+    again.focus();
+    again.setSelectionRange(pos, pos);
+  };
+  root.querySelector('#ask').onclick = ask;
+}
+
+async function ask() {
+  try {
+    const res = await TG.api('/api/tracker/submit', { kind: 'inquiry', order: orderNo });
+    TG.haptic('success');
+    TG.alert(`Запрос #${res.id} отправлен. Оператор ответит в чате.`);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try {
+    CFG = await TG.api('/api/tracker/config');
+    if (CFG.start_param) orderNo = CFG.start_param;
+    render(demoStage(orderNo));
+  } catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

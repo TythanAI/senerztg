@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Запись</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null;
+const pick = { service: null, day: null, slot: null, name: '', phone: '' };
+
+function days() {
+  const out = [];
+  const today = new Date();
+  for (let i = 1; i <= CFG.app.days_ahead; i++) {
+    const d = new Date(today.getTime() + i * 86400000);
+    // Weekends are closed by default; the owner changes this line.
+    if (d.getDay() === 0) continue;
+    out.push({
+      iso: d.toISOString().slice(0, 10),
+      label: d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', weekday: 'short' })
+    });
+  }
+  return out;
+}
+
+function render() {
+  const cur = CFG.app.currency;
+  const services = CFG.app.services.map(s =>
+    `<button class="chip" aria-pressed="${pick.service === s.id}" data-svc="${s.id}">
+       ${TG.escape(s.title)} · ${TG.money(s.price, cur)}</button>`).join(' ');
+
+  const dayChips = days().map(d =>
+    `<button class="chip" aria-pressed="${pick.day === d.iso}" data-day="${d.iso}">${d.label}</button>`).join(' ');
+
+  const slotChips = pick.day
+    ? CFG.app.slots.map(t =>
+        `<button class="chip" aria-pressed="${pick.slot === t}" data-slot="${t}">${t}</button>`).join(' ')
+    : '<p class="hint">Сначала выберите день</p>';
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <h2>Услуга</h2><div class="stack">${services}</div>
+    <h2>День</h2><div class="stack">${dayChips}</div>
+    <h2>Время</h2><div class="stack">${slotChips}</div>
+    <label for="nm">Как к вам обращаться</label>
+    <input id="nm" value="${TG.escape(pick.name || CFG.user.name)}" maxlength="60">
+    <label for="ph">Телефон для связи</label>
+    <input id="ph" type="tel" inputmode="tel" placeholder="+7 900 000-00-00" value="${TG.escape(pick.phone)}" maxlength="24">`;
+
+  root.querySelectorAll('[data-svc]').forEach(b => b.onclick = () => { pick.service = b.dataset.svc; save(); });
+  root.querySelectorAll('[data-day]').forEach(b => b.onclick = () => { pick.day = b.dataset.day; pick.slot = null; save(); });
+  root.querySelectorAll('[data-slot]').forEach(b => b.onclick = () => { pick.slot = b.dataset.slot; save(); });
+  root.querySelector('#nm').oninput = e => { pick.name = e.target.value; check(); };
+  root.querySelector('#ph').oninput = e => { pick.phone = e.target.value; check(); };
+  check();
+}
+
+function save() { TG.haptic('light'); render(); }
+
+function check() {
+  const ready = pick.service && pick.day && pick.slot && pick.phone.replace(/\D/g, '').length >= 10;
+  if (ready) TG.mainButton('Записаться', submit);
+  else TG.hideMainButton();
+}
+
+async function submit() {
+  const svc = CFG.app.services.find(s => s.id === pick.service);
+  TG.hideMainButton();
+  try {
+    const res = await TG.api('/api/booking/submit', {
+      kind: 'booking', service: svc.title, price: svc.price,
+      date: pick.day, time: pick.slot, name: pick.name, phone: pick.phone
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Запись #${res.id}</h2>
+      <p>${TG.escape(svc.title)}<br>${pick.day} в ${pick.slot}</p>
+      <p>${TG.escape(res.message)}</p></div>`;
+    setTimeout(() => TG.close(), 2800);
+  } catch (err) {
+    TG.haptic('error');
+    TG.alert('Не удалось записаться: ' + err.message);
+    check();
+  }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/booking/config'); pick.name = CFG.user.name; render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

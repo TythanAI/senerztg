@@ -1,0 +1,18 @@
+# Build from the botfarm root: docker compose -f miniapps/docker-compose.yml up -d
+services:
+  miniapps:
+    build:
+      context: ..
+      dockerfile: miniapps/Dockerfile
+    container_name: miniapps
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8100:8100"
+    volumes:
+      - ./data:/app/miniapps/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

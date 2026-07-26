@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Оценка сервиса</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, score = null, comment = '', allowPublic = true;
+
+function render() {
+  const scale = Array.from({ length: 11 }, (_, n) =>
+    `<button class="chip" aria-pressed="${score === n}" data-n="${n}" style="min-width:38px">${n}</button>`).join(' ');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <p>Насколько вероятно, что вы порекомендуете нас знакомым?</p>
+    <div class="stack" style="margin:12px 0">${scale}</div>
+    <div class="row hint"><span>0 — точно нет</span><span>10 — обязательно</span></div>
+    <label for="cm">Что можно улучшить?</label>
+    <textarea id="cm" rows="4" maxlength="1000" placeholder="Необязательно, но очень помогает">${TG.escape(comment)}</textarea>
+    ${CFG.app.ask_public ? `<label style="display:flex;gap:8px;align-items:center;margin-top:14px">
+      <input type="checkbox" id="pub" ${allowPublic ? 'checked' : ''} style="width:auto">
+      <span>Можно опубликовать мой отзыв</span></label>` : ''}`;
+
+  root.querySelectorAll('[data-n]').forEach(b => b.onclick = () => {
+    score = Number(b.dataset.n); TG.haptic('light'); render();
+  });
+  root.querySelector('#cm').oninput = e => { comment = e.target.value; };
+  const pub = root.querySelector('#pub');
+  if (pub) pub.onchange = e => { allowPublic = e.target.checked; };
+
+  if (score !== null) TG.mainButton('Отправить', submit);
+  else TG.hideMainButton();
+}
+
+function group(n) { return n >= 9 ? 'promoter' : n >= 7 ? 'passive' : 'detractor'; }
+
+async function submit() {
+  TG.hideMainButton();
+  try {
+    const res = await TG.api('/api/feedback/submit', {
+      kind: 'review', score, group: group(score), comment, public: allowPublic
+    });
+    TG.haptic('success');
+    const extra = score >= 9
+      ? '<p class="hint">Если не сложно — оставьте отзыв и в канале, это очень помогает.</p>'
+      : '<p class="hint">Мы разберёмся и вернёмся с ответом.</p>';
+    root.innerHTML = `<div class="notice"><h2>Спасибо!</h2><p>${TG.escape(res.message)}</p>${extra}</div>`;
+    setTimeout(() => TG.close(), 2600);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); TG.mainButton('Отправить', submit); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/feedback/config'); render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

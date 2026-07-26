@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Поддержка</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, category = null, message = '', orderNo = '';
+
+function render() {
+  const cats = CFG.app.categories.map(c =>
+    `<button class="chip" aria-pressed="${category === c.id}" data-c="${c.id}">${TG.escape(c.label)}</button>`
+  ).join(' ');
+
+  const faq = CFG.app.faq.map(f =>
+    `<details class="card"><summary><strong>${TG.escape(f.q)}</strong></summary>
+     <p class="hint">${TG.escape(f.a)}</p></details>`).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <h2>Частые вопросы</h2>${faq}
+    <h2>Новое обращение</h2>
+    <div class="stack">${cats}</div>
+    <label for="ord">Номер заказа (если есть)</label>
+    <input id="ord" maxlength="20" value="${TG.escape(orderNo)}" placeholder="необязательно">
+    <label for="msg">Опишите проблему</label>
+    <textarea id="msg" rows="5" maxlength="2000">${TG.escape(message)}</textarea>
+    <p class="hint">Уже отправлено обращений: ${CFG.profile.submissions}</p>`;
+
+  root.querySelectorAll('[data-c]').forEach(b => b.onclick = () => {
+    category = b.dataset.c; TG.haptic('light'); render();
+  });
+  root.querySelector('#ord').oninput = e => { orderNo = e.target.value.trim(); };
+  root.querySelector('#msg').oninput = e => { message = e.target.value; check(); };
+  check();
+}
+
+function check() {
+  if (category && message.trim().length >= 10) TG.mainButton('Отправить обращение', submit);
+  else TG.hideMainButton();
+}
+
+async function submit() {
+  const cat = CFG.app.categories.find(c => c.id === category);
+  TG.hideMainButton();
+  try {
+    const res = await TG.api('/api/support/submit', {
+      kind: 'ticket', category: cat.label, order: orderNo, message
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Обращение #${res.id}</h2>
+      <p>${TG.escape(res.message)}</p></div>`;
+    setTimeout(() => TG.close(), 2600);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); check(); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/support/config'); render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Регистрация на событие</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, chosen = null, name = '', email = '';
+
+function render() {
+  const cur = CFG.app.currency, ev = CFG.app.event;
+  const tickets = CFG.app.tickets.map(t => {
+    const out = t.left <= 0;
+    return `<div class="card">
+      <div class="row">
+        <div><strong>${TG.escape(t.title)}</strong><div class="hint">${TG.escape(t.perks)}</div></div>
+        <div class="price">${t.price ? TG.money(t.price, cur) : 'бесплатно'}</div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <span class="${out ? 'badge out' : t.left <= 10 ? 'badge low' : 'badge'}">
+          ${out ? 'мест нет' : 'осталось ' + t.left}</span>
+        <button class="chip" aria-pressed="${chosen === t.id}" data-t="${t.id}" ${out ? 'disabled' : ''}>
+          ${chosen === t.id ? 'выбрано' : 'выбрать'}</button>
+      </div></div>`;
+  }).join('');
+
+  root.innerHTML = `<h1>${TG.escape(ev.name)}</h1>
+    <div class="card">
+      <div class="row"><span>Дата</span><span>${TG.escape(ev.date)} в ${TG.escape(ev.time)}</span></div>
+      <div class="row"><span>Место</span><span class="right">${TG.escape(ev.place)}</span></div>
+    </div>
+    <h2>Билет</h2>${tickets}
+    <label for="nm">Имя для бейджа</label>
+    <input id="nm" maxlength="60" value="${TG.escape(name)}">
+    <label for="em">Email для билета</label>
+    <input id="em" type="email" inputmode="email" maxlength="120" value="${TG.escape(email)}">`;
+
+  root.querySelectorAll('[data-t]').forEach(b => b.onclick = () => {
+    chosen = b.dataset.t; TG.haptic('light'); render();
+  });
+  root.querySelector('#nm').oninput = e => { name = e.target.value; check(); };
+  root.querySelector('#em').oninput = e => { email = e.target.value; check(); };
+  check();
+}
+
+function check() {
+  const validEmail = /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email);
+  if (chosen && name.trim().length >= 2 && validEmail) {
+    const t = CFG.app.tickets.find(x => x.id === chosen);
+    TG.mainButton(t.price ? `Оплатить ${TG.money(t.price, CFG.app.currency)}` : 'Зарегистрироваться', submit);
+  } else TG.hideMainButton();
+}
+
+async function submit() {
+  const t = CFG.app.tickets.find(x => x.id === chosen);
+  TG.hideMainButton();
+  try {
+    const res = await TG.api('/api/events/submit', {
+      kind: 'ticket', ticket: t.title, price: t.price, name, email,
+      event: CFG.app.event.name, currency: CFG.app.currency
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Билет #${res.id}</h2>
+      <p>${TG.escape(t.title)} · ${TG.escape(name)}</p>
+      <p>${TG.escape(res.message)}</p></div>`;
+    setTimeout(() => TG.close(), 3000);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); check(); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/events/config'); name = CFG.user.name; render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

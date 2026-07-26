@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Подбор решения</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, step = 0, score = 0;
+const answers = [];
+
+function render() {
+  const qs = CFG.app.questions;
+  if (step >= qs.length) return finish();
+
+  const q = qs[step];
+  const opts = q.options.map((o, i) =>
+    `<button class="secondary" data-i="${i}" style="width:100%;text-align:left;margin-bottom:8px">
+       ${TG.escape(o[0])}</button>`).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <p class="hint">Вопрос ${step + 1} из ${qs.length}</p>
+    <div class="card"><strong>${TG.escape(q.q)}</strong></div>
+    ${opts}`;
+
+  root.querySelectorAll('[data-i]').forEach(b => b.onclick = () => {
+    const i = Number(b.dataset.i);
+    score += q.options[i][1];
+    answers.push({ q: q.q, a: q.options[i][0] });
+    TG.haptic('light');
+    step++;
+    if (step > 0) TG.backButton(back);
+    render();
+  });
+}
+
+function back() {
+  if (step === 0) return;
+  step--;
+  const removed = answers.pop();
+  const q = CFG.app.questions[step];
+  const opt = q.options.find(o => o[0] === removed.a);
+  if (opt) score -= opt[1];
+  if (step === 0) TG.hideBackButton();
+  render();
+}
+
+function finish() {
+  TG.hideBackButton();
+  const res = CFG.app.results.find(r => score <= r.max) || CFG.app.results[CFG.app.results.length - 1];
+  root.innerHTML = `<h1>Вам подходит</h1>
+    <div class="card">
+      <div class="row"><strong>${TG.escape(res.title)}</strong>
+      <span class="price">${TG.money(res.price, CFG.app.currency)}</span></div>
+      <p class="hint">${TG.escape(res.why)}</p>
+    </div>
+    <p class="hint">Набрано баллов: ${score}</p>`;
+  TG.mainButton('Получить подборку', () => submit(res));
+}
+
+async function submit(res) {
+  TG.hideMainButton();
+  try {
+    const out = await TG.api('/api/quiz/submit', {
+      kind: 'lead', score, answers, recommended: res.title, price: res.price
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Готово</h2><p>${TG.escape(out.message)}</p></div>`;
+    setTimeout(() => TG.close(), 2200);
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); TG.mainButton('Получить подборку', () => submit(res)); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/quiz/config'); render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Счёт на компанию</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, bill = 0, people = 2, tip = 10, round = true;
+
+function perPerson() {
+  const withTip = bill * (1 + tip / 100);
+  const share = withTip / Math.max(1, people);
+  return round ? Math.ceil(share / 10) * 10 : Math.round(share * 100) / 100;
+}
+
+function render() {
+  const cur = CFG.app.currency;
+  const tips = CFG.app.tip_options.map(t =>
+    `<button class="chip" aria-pressed="${tip === t}" data-tip="${t}">${t}%</button>`).join(' ');
+
+  const totalWithTip = bill * (1 + tip / 100);
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <label for="bill">Сумма счёта</label>
+    <input id="bill" type="number" inputmode="decimal" min="0" step="10" value="${bill || ''}" placeholder="0">
+    <label for="ppl">Человек</label>
+    <input id="ppl" type="number" inputmode="numeric" min="1" max="50" value="${people}">
+    <h2>Чаевые</h2><div class="stack">${tips}</div>
+    <label style="display:flex;gap:8px;align-items:center;margin-top:14px">
+      <input type="checkbox" id="rnd" ${round ? 'checked' : ''} style="width:auto">
+      <span>Округлять до 10</span></label>
+    <div class="card" style="margin-top:16px">
+      <div class="row"><span>Счёт</span><span>${TG.money(bill, cur)}</span></div>
+      <div class="row"><span>Чаевые ${tip}%</span><span>${TG.money(bill * tip / 100, cur)}</span></div>
+      <div class="row"><span>Итого</span><span>${TG.money(totalWithTip, cur)}</span></div>
+      <hr style="border:0;border-top:1px solid var(--tg-bg);margin:10px 0">
+      <div class="row"><strong>С каждого</strong>
+        <span class="price">${TG.money(perPerson(), cur)}</span></div>
+    </div>
+    <button class="secondary" id="share" style="width:100%">Отправить в чат</button>`;
+
+  root.querySelector('#bill').oninput = e => { bill = Math.max(0, Number(e.target.value) || 0); update(); };
+  root.querySelector('#ppl').oninput = e => {
+    people = Math.max(1, Math.min(50, Number(e.target.value) || 1)); update();
+  };
+  root.querySelector('#rnd').onchange = e => { round = e.target.checked; render(); };
+  root.querySelectorAll('[data-tip]').forEach(b => b.onclick = () => {
+    tip = Number(b.dataset.tip); TG.haptic('light'); render();
+  });
+  root.querySelector('#share').onclick = share;
+}
+
+/** Redraw only the totals so typing does not lose focus. */
+function update() {
+  const cur = CFG.app.currency;
+  const cards = root.querySelectorAll('.card .row');
+  if (!cards.length) return render();
+  cards[0].lastElementChild.textContent = TG.money(bill, cur);
+  cards[1].lastElementChild.textContent = TG.money(bill * tip / 100, cur);
+  cards[2].lastElementChild.textContent = TG.money(bill * (1 + tip / 100), cur);
+  cards[3].lastElementChild.textContent = TG.money(perPerson(), cur);
+}
+
+async function share() {
+  const cur = CFG.app.currency;
+  const text = `Счёт ${TG.money(bill, cur)} + ${tip}% чаевых на ${people} чел. — по ${TG.money(perPerson(), cur)} с каждого`;
+  try {
+    await TG.api('/api/split/submit', { kind: 'split', bill, people, tip, per_person: perPerson() });
+    window.open(`https://t.me/share/url?url=${encodeURIComponent(text)}`, '_blank');
+    TG.haptic('success');
+  } catch (err) { TG.alert(err.message); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init();
+  try { CFG = await TG.api('/api/split/config'); render(); }
+  catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Меню заведения</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/shared/app.css">
+</head>
+<body>
+<div id="root"><div class="spinner"></div></div>
+<script src="/shared/tg.js"></script>
+<script>
+
+const root = document.getElementById('root');
+let CFG = null, table = '';
+const cart = new Map();
+
+function allItems() { return CFG.app.sections.flatMap(s => s.items); }
+
+function total() {
+  let sum = 0;
+  cart.forEach((qty, id) => {
+    const it = allItems().find(i => i.id === id);
+    if (it) sum += it.price * qty;
+  });
+  return sum;
+}
+
+function render() {
+  const cur = CFG.app.currency;
+  const sections = CFG.app.sections.map(s => {
+    const items = s.items.map(i => {
+      const qty = cart.get(i.id) || 0;
+      return `<div class="card">
+        <div class="row">
+          <div><strong>${TG.escape(i.title)}</strong><div class="hint">${TG.escape(i.desc)}</div></div>
+          <div class="price">${TG.money(i.price, cur)}</div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <span class="hint">${qty ? 'в заказе: ' + qty : ''}</span>
+          <div class="stack">
+            <button class="secondary" data-dec="${i.id}" ${qty ? '' : 'disabled'}>−</button>
+            <button data-inc="${i.id}">+</button>
+          </div>
+        </div></div>`;
+    }).join('');
+    return `<h2>${TG.escape(s.name)}</h2>${items}`;
+  }).join('');
+
+  root.innerHTML = `<h1>${TG.escape(CFG.app.title)}</h1>
+    <label for="tbl">Номер столика</label>
+    <input id="tbl" inputmode="numeric" maxlength="4" value="${TG.escape(table)}" placeholder="например, 12">
+    ${sections}`;
+
+  root.querySelector('#tbl').oninput = e => { table = e.target.value.trim(); updateButton(); };
+  root.querySelectorAll('[data-inc]').forEach(b => b.onclick = () => change(b.dataset.inc, 1));
+  root.querySelectorAll('[data-dec]').forEach(b => b.onclick = () => change(b.dataset.dec, -1));
+  updateButton();
+}
+
+function change(id, delta) {
+  const next = Math.max(0, Math.min(30, (cart.get(id) || 0) + delta));
+  if (next === 0) cart.delete(id); else cart.set(id, next);
+  TG.haptic('light');
+  render();
+}
+
+function updateButton() {
+  const sum = total();
+  if (sum > 0 && table) TG.mainButton(`Заказать · ${TG.money(sum, CFG.app.currency)}`, submit);
+  else TG.hideMainButton();
+}
+
+async function submit() {
+  const lines = [...cart.entries()].map(([id, qty]) => {
+    const it = allItems().find(i => i.id === id);
+    return { id, title: it.title, qty, price: it.price };
+  });
+  TG.hideMainButton();
+  try {
+    const res = await TG.api('/api/menu/submit', {
+      kind: 'order', table, items: lines, total: total(), currency: CFG.app.currency
+    });
+    TG.haptic('success');
+    root.innerHTML = `<div class="notice"><h2>Заказ #${res.id}</h2>
+      <p>Столик ${TG.escape(table)}</p><p>${TG.escape(res.message)}</p></div>`;
+  } catch (err) { TG.haptic('error'); TG.alert(err.message); updateButton(); }
+}
+
+(async function start() {
+  if (!TG.requireTelegram(root)) return;
+  TG.init({ confirmClose: true });
+  try {
+    CFG = await TG.api('/api/menu/config');
+    if (CFG.start_param && /^\d{1,4}$/.test(CFG.start_param)) table = CFG.start_param;
+    render();
+  } catch (err) { root.innerHTML = `<div class="notice"><h2>Ошибка</h2><p>${TG.escape(err.message)}</p></div>`; }
+})();
+
+</script>
+</body>
+</html>
