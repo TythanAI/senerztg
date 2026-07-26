@@ -2,7 +2,7 @@
 """Локальный Бизнес — Клиенты из вашего района
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-local-biz
+Run as a unit: systemctl start botfarm-ru-099-local-biz
 """
 
 import sys

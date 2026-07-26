@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/115-nocode-app/docker-compose.yml up -d
 services:
-  botfarm-ru-nocode-app:
+  botfarm-ru-115-nocode-app:
     build:
       context: ../../..
       dockerfile: bots/ru/115-nocode-app/Dockerfile
-    container_name: botfarm-ru-nocode-app
+    container_name: botfarm-ru-115-nocode-app
     restart: unless-stopped
     env_file: .env
     ports:

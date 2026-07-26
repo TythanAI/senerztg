@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/038-marathon-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-marathon-eu:
+  botfarm-eu-038-marathon-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/038-marathon-eu/Dockerfile
-    container_name: botfarm-eu-marathon-eu
+    container_name: botfarm-eu-038-marathon-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9237:9237"
+      - "9537:9537"
     volumes:
       - ./data:/app/bot/data
     logging:

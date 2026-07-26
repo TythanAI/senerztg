@@ -2,7 +2,7 @@
 """DevOps Pipeline — Docker, CI/CD, and IaC in practice
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-devops-eu
+Run as a unit: systemctl start botfarm-eu-028-devops-eu
 """
 
 import sys

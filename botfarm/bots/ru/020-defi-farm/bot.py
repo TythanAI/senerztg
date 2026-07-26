@@ -2,7 +2,7 @@
 """DeFi Ферма — Фарминг и стейкинг с расчётом рисков
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-defi-farm
+Run as a unit: systemctl start botfarm-ru-020-defi-farm
 """
 
 import sys

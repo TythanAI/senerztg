@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/256-kinopoisk/docker-compose.yml up -d
+services:
+  botfarm-ru-256-kinopoisk:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/256-kinopoisk/Dockerfile
+    container_name: botfarm-ru-256-kinopoisk
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9255:9255"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

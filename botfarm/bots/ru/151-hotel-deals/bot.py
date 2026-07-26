@@ -2,7 +2,7 @@
 """Отели Выгодно — Скидки и ошибки бронирования
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-hotel-deals
+Run as a unit: systemctl start botfarm-ru-151-hotel-deals
 """
 
 import sys

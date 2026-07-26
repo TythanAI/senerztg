@@ -2,7 +2,7 @@
 """Экзамен ГИБДД — Теория и площадка с первого раза
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-driving-exam
+Run as a unit: systemctl start botfarm-ru-158-driving-exam
 """
 
 import sys

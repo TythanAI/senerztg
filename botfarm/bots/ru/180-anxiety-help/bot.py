@@ -2,7 +2,7 @@
 """Тревога Под Контроль — Протокол работы с тревогой
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-anxiety-help
+Run as a unit: systemctl start botfarm-ru-180-anxiety-help
 """
 
 import sys

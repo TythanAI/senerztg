@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/018-solidity-dev/docker-compose.yml up -d
 services:
-  botfarm-eu-solidity-dev:
+  botfarm-eu-018-solidity-dev:
     build:
       context: ../../..
       dockerfile: bots/eu/018-solidity-dev/Dockerfile
-    container_name: botfarm-eu-solidity-dev
+    container_name: botfarm-eu-018-solidity-dev
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9217:9217"
+      - "9517:9517"
     volumes:
       - ./data:/app/bot/data
     logging:

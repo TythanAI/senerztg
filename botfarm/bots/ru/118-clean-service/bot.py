@@ -2,7 +2,7 @@
 """Клининг Заказ — Уборка квартир и офисов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-clean-service
+Run as a unit: systemctl start botfarm-ru-118-clean-service
 """
 
 import sys

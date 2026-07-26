@@ -2,7 +2,7 @@
 """Guitar in 30 Days — Your first songs, fast
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-guitar-eu
+Run as a unit: systemctl start botfarm-eu-085-guitar-eu
 """
 
 import sys

@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-ads-audit
+SyslogIdentifier=botfarm-ru-100-ads-audit
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

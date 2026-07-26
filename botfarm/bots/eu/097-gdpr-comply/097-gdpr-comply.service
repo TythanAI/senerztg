@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-eu-gdpr-comply
+SyslogIdentifier=botfarm-eu-097-gdpr-comply
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

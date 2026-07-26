@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/443-tiktok-coins-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-443-tiktok-coins-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/443-tiktok-coins-eu/Dockerfile
+    container_name: botfarm-eu-443-tiktok-coins-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9942:9942"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

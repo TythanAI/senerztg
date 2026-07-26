@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/411-amazon-card/docker-compose.yml up -d
+services:
+  botfarm-ru-411-amazon-card:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/411-amazon-card/Dockerfile
+    container_name: botfarm-ru-411-amazon-card
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9410:9410"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/387-bingx-acc/docker-compose.yml up -d
+services:
+  botfarm-ru-387-bingx-acc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/387-bingx-acc/Dockerfile
+    container_name: botfarm-ru-387-bingx-acc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9386:9386"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

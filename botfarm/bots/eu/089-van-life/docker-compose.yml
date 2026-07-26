@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/089-van-life/docker-compose.yml up -d
 services:
-  botfarm-eu-van-life:
+  botfarm-eu-089-van-life:
     build:
       context: ../../..
       dockerfile: bots/eu/089-van-life/Dockerfile
-    container_name: botfarm-eu-van-life
+    container_name: botfarm-eu-089-van-life
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9288:9288"
+      - "9588:9588"
     volumes:
       - ./data:/app/bot/data
     logging:

@@ -2,7 +2,7 @@
 """Шахматная Школа — Разборы партий и дебютный репертуар
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-chess-school
+Run as a unit: systemctl start botfarm-ru-051-chess-school
 """
 
 import sys

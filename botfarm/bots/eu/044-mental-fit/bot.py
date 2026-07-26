@@ -2,7 +2,7 @@
 """Mental Fitness — Evidence-based habits for a calmer mind
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-mental-fit
+Run as a unit: systemctl start botfarm-eu-044-mental-fit
 """
 
 import sys

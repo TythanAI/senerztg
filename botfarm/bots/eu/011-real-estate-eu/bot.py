@@ -2,7 +2,7 @@
 """EU Property Investing — Buy-to-let across the eurozone
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-real-estate-eu
+Run as a unit: systemctl start botfarm-eu-011-real-estate-eu
 """
 
 import sys

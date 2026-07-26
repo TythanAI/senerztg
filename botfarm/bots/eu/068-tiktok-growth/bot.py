@@ -2,7 +2,7 @@
 """Short-Form Growth — Reels and TikTok that compound
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-tiktok-growth
+Run as a unit: systemctl start botfarm-eu-068-tiktok-growth
 """
 
 import sys

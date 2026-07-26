@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/111-mixpanel-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-111-mixpanel-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/111-mixpanel-eu/Dockerfile
+    container_name: botfarm-eu-111-mixpanel-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9610:9610"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

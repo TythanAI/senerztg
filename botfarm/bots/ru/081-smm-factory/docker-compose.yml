@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/081-smm-factory/docker-compose.yml up -d
 services:
-  botfarm-ru-smm-factory:
+  botfarm-ru-081-smm-factory:
     build:
       context: ../../..
       dockerfile: bots/ru/081-smm-factory/Dockerfile
-    container_name: botfarm-ru-smm-factory
+    container_name: botfarm-ru-081-smm-factory
     restart: unless-stopped
     env_file: .env
     ports:

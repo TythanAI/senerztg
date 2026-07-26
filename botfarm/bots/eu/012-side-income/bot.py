@@ -2,7 +2,7 @@
 """Side Income Lab — A tested income experiment every month
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-side-income
+Run as a unit: systemctl start botfarm-eu-012-side-income
 """
 
 import sys

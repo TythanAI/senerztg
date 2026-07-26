@@ -2,7 +2,7 @@
 """Аналитик Данных — SQL, Python, дашборды
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-data-analyst
+Run as a unit: systemctl start botfarm-ru-105-data-analyst
 """
 
 import sys

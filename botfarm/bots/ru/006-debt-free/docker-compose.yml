@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/006-debt-free/docker-compose.yml up -d
 services:
-  botfarm-ru-debt-free:
+  botfarm-ru-006-debt-free:
     build:
       context: ../../..
       dockerfile: bots/ru/006-debt-free/Dockerfile
-    container_name: botfarm-ru-debt-free
+    container_name: botfarm-ru-006-debt-free
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Dropshipping EU — Suppliers, VAT, and fulfilment
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-dropship-eu
+Run as a unit: systemctl start botfarm-eu-071-dropship-eu
 """
 
 import sys

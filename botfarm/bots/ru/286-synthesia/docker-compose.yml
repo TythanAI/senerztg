@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/286-synthesia/docker-compose.yml up -d
+services:
+  botfarm-ru-286-synthesia:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/286-synthesia/Dockerfile
+    container_name: botfarm-ru-286-synthesia
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9285:9285"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

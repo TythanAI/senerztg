@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-altcoin-scan
+SyslogIdentifier=botfarm-ru-024-altcoin-scan
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

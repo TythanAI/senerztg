@@ -2,7 +2,7 @@
 """Longevity Review — Blood panel analysis and protocol
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-longevity
+Run as a unit: systemctl start botfarm-eu-045-longevity
 """
 
 import sys

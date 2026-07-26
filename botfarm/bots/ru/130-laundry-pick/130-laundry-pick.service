@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-laundry-pick
+SyslogIdentifier=botfarm-ru-130-laundry-pick
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

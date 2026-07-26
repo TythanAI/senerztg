@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/002-dividend-club/docker-compose.yml up -d
 services:
-  botfarm-ru-dividend-club:
+  botfarm-ru-002-dividend-club:
     build:
       context: ../../..
       dockerfile: bots/ru/002-dividend-club/Dockerfile
-    container_name: botfarm-ru-dividend-club
+    container_name: botfarm-ru-002-dividend-club
     restart: unless-stopped
     env_file: .env
     ports:

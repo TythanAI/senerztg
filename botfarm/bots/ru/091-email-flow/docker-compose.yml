@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/091-email-flow/docker-compose.yml up -d
 services:
-  botfarm-ru-email-flow:
+  botfarm-ru-091-email-flow:
     build:
       context: ../../..
       dockerfile: bots/ru/091-email-flow/Dockerfile
-    container_name: botfarm-ru-email-flow
+    container_name: botfarm-ru-091-email-flow
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Fitness Zuhause — Training ohne Studio, täglich
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-fitness-de
+Run as a unit: systemctl start botfarm-eu-043-fitness-de
 """
 
 import sys

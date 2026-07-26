@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fleet manager — operate 300 bots from one command.
+"""Fleet manager — operate 1000 bots from one command.
 
     python tools/fleet.py list --region ru --archetype course
     python tools/fleet.py show ru-001-invest-start
@@ -7,6 +7,8 @@
     python tools/fleet.py status
     python tools/fleet.py doctor
     python tools/fleet.py systemd ru-001-invest-start
+    python tools/fleet.py stock ru-201-steam standard accounts.txt
+    python tools/fleet.py stock-report --archetype accounts
     python tools/fleet.py compose --region ru --limit 20 > docker-compose.ru.yml
 
 `activate` is the one that matters commercially: it turns a dormant bot into a
@@ -197,6 +199,88 @@ def cmd_doctor(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_stock(args: argparse.Namespace) -> int:
+    """Load inventory into an account shop straight from a file.
+
+    The bot can also be restocked from Telegram with /stock, but loading a
+    few thousand lines is far easier here.
+    """
+    import asyncio
+
+    row = _find(args.bot_id)
+    directory = ROOT / row["path"]
+
+    lines = [ln.strip() for ln in Path(args.file).read_text(encoding="utf-8").splitlines()]
+    lines = [ln for ln in lines if ln]
+    if not lines:
+        sys.exit(f"{args.file} contains no usable lines")
+
+    from botcore.app import load
+    from botcore.db import Database, Repos
+
+    config, secrets, base = load(directory)
+    if config.product(args.sku) is None:
+        available = [p.sku for p in config.active_products() if p.kind == "account"]
+        sys.exit(f"{row['id']} has no SKU {args.sku!r}. Available: {', '.join(available) or 'none'}")
+
+    async def run() -> tuple[int, int]:
+        db = Database(secrets.db_url)
+        await db.create_all()
+        async with db.session() as session:
+            repos = Repos(session)
+            added = await repos.stock.add(args.sku, lines, note="loaded by fleet.py")
+            total = await repos.stock.available(args.sku)
+        await db.dispose()
+        return added, total
+
+    added, total = asyncio.run(run())
+    print(f"✓ loaded {added} units into {row['id']}/{args.sku}")
+    print(f"  now available: {total}")
+    return 0
+
+
+def cmd_stock_report(args: argparse.Namespace) -> int:
+    """Show stock levels across every activated account shop."""
+    import asyncio
+
+    from botcore.app import load
+    from botcore.db import Database, Repos
+
+    rows = [r for r in select(load_index(), args) if r["archetype"] in {"accounts", "keys"}]
+    empty = low = 0
+
+    async def counts_for(directory: Path) -> dict[str, int]:
+        config, secrets, _ = load(directory)
+        db = Database(secrets.db_url)
+        await db.create_all()
+        async with db.session() as session:
+            data = await Repos(session).stock.counts()
+        await db.dispose()
+        return {p.sku: data.get(p.sku, 0) for p in config.active_products()
+                if p.kind == "account"}
+
+    for row in rows:
+        directory = ROOT / row["path"]
+        if not (directory / ".env").exists():
+            continue
+        try:
+            counts = asyncio.run(counts_for(directory))
+        except Exception as exc:
+            print(f"🔴 {row['id']:<32} error: {exc}")
+            continue
+        total = sum(counts.values())
+        mark = "🟢" if total > 10 else "🟡" if total else "🔴"
+        if total == 0:
+            empty += 1
+        elif total <= 10:
+            low += 1
+        detail = " ".join(f"{sku}={n}" for sku, n in counts.items())
+        print(f"{mark} {row['id']:<32} {total:>5}  {detail}")
+
+    print(f"\n{empty} sold out, {low} running low")
+    return 0
+
+
 def cmd_compose(args: argparse.Namespace) -> int:
     """Emit one compose file covering a slice of the fleet."""
     rows = select(load_index(), args)
@@ -366,6 +450,16 @@ def main() -> int:
     add_filters(p_doc)
     p_doc.add_argument("--max-issues", type=int, default=25)
     p_doc.set_defaults(func=cmd_doctor)
+
+    p_stock = sub.add_parser("stock", help="load inventory from a file")
+    p_stock.add_argument("bot_id")
+    p_stock.add_argument("sku", help="which product to stock, e.g. 'standard'")
+    p_stock.add_argument("file", help="text file, one unit per line")
+    p_stock.set_defaults(func=cmd_stock)
+
+    p_sreport = sub.add_parser("stock-report", help="stock levels across the fleet")
+    add_filters(p_sreport)
+    p_sreport.set_defaults(func=cmd_stock_report)
 
     p_comp = sub.add_parser("compose", help="emit a docker compose file")
     add_filters(p_comp)

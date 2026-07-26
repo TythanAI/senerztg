@@ -2,7 +2,7 @@
 """Помощь с Работой — Курсовые и дипломы под ключ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-essay-help
+Run as a unit: systemctl start botfarm-ru-043-essay-help
 """
 
 import sys

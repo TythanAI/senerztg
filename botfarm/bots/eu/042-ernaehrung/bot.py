@@ -2,7 +2,7 @@
 """Ernährungsplan — Individueller Plan für Ihr Ziel
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-ernaehrung
+Run as a unit: systemctl start botfarm-eu-042-ernaehrung
 """
 
 import sys

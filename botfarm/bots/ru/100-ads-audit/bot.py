@@ -2,7 +2,7 @@
 """Аудит Рекламы — Находим слив бюджета за час
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ads-audit
+Run as a unit: systemctl start botfarm-ru-100-ads-audit
 """
 
 import sys

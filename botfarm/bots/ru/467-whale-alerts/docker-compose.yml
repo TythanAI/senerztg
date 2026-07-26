@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/467-whale-alerts/docker-compose.yml up -d
+services:
+  botfarm-ru-467-whale-alerts:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/467-whale-alerts/Dockerfile
+    container_name: botfarm-ru-467-whale-alerts
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9466:9466"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

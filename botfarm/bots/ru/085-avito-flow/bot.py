@@ -2,7 +2,7 @@
 """Авито Поток — Продажи на Авито системно
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-avito-flow
+Run as a unit: systemctl start botfarm-ru-085-avito-flow
 """
 
 import sys

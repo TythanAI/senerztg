@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/082-target-ads/docker-compose.yml up -d
 services:
-  botfarm-ru-target-ads:
+  botfarm-ru-082-target-ads:
     build:
       context: ../../..
       dockerfile: bots/ru/082-target-ads/Dockerfile
-    container_name: botfarm-ru-target-ads
+    container_name: botfarm-ru-082-target-ads
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Гитара Старт — Первые песни за 30 дней
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-guitar-start
+Run as a unit: systemctl start botfarm-ru-048-guitar-start
 """
 
 import sys

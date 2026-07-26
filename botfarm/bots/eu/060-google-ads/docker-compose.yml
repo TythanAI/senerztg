@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/060-google-ads/docker-compose.yml up -d
 services:
-  botfarm-eu-google-ads:
+  botfarm-eu-060-google-ads:
     build:
       context: ../../..
       dockerfile: bots/eu/060-google-ads/Dockerfile
-    container_name: botfarm-eu-google-ads
+    container_name: botfarm-eu-060-google-ads
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9259:9259"
+      - "9559:9559"
     volumes:
       - ./data:/app/bot/data
     logging:

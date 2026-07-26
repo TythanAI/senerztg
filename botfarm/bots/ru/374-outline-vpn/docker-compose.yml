@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/374-outline-vpn/docker-compose.yml up -d
+services:
+  botfarm-ru-374-outline-vpn:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/374-outline-vpn/Dockerfile
+    container_name: botfarm-ru-374-outline-vpn
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9373:9373"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

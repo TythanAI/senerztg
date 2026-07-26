@@ -2,7 +2,7 @@
 """Электрик Вызов — Проводка, розетки, щиты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-electric-call
+Run as a unit: systemctl start botfarm-ru-121-electric-call
 """
 
 import sys

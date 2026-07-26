@@ -2,7 +2,7 @@
 """QA Тестировщик — Вход в IT через тестирование
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-qa-manual
+Run as a unit: systemctl start botfarm-ru-103-qa-manual
 """
 
 import sys

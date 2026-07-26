@@ -2,7 +2,7 @@
 """Дом Построить — Каркасник своими силами
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-dacha-build
+Run as a unit: systemctl start botfarm-ru-167-dacha-build
 """
 
 import sys

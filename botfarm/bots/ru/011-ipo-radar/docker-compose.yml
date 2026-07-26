@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/011-ipo-radar/docker-compose.yml up -d
 services:
-  botfarm-ru-ipo-radar:
+  botfarm-ru-011-ipo-radar:
     build:
       context: ../../..
       dockerfile: bots/ru/011-ipo-radar/Dockerfile
-    container_name: botfarm-ru-ipo-radar
+    container_name: botfarm-ru-011-ipo-radar
     restart: unless-stopped
     env_file: .env
     ports:

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/089-brand-pack/docker-compose.yml up -d
 services:
-  botfarm-ru-brand-pack:
+  botfarm-ru-089-brand-pack:
     build:
       context: ../../..
       dockerfile: bots/ru/089-brand-pack/Dockerfile
-    container_name: botfarm-ru-brand-pack
+    container_name: botfarm-ru-089-brand-pack
     restart: unless-stopped
     env_file: .env
     ports:

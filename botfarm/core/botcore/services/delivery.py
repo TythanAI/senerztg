@@ -1,6 +1,7 @@
 """Fulfilment: what the buyer actually receives once the money lands.
 
-Four product kinds, four behaviours:
+Five product kinds, five behaviours:
+  account       — issue N units from stock, exactly once, with a warranty
   digital       — send text / file / link straight away
   subscription  — extend access, then send the welcome payload
   service       — confirm and hand the lead to the operator
@@ -11,13 +12,14 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
+from pathlib import Path
 from typing import Any
 
 from aiogram import Bot
 from aiogram.types import FSInputFile, URLInputFile
 
 from ..config import NicheConfig
-from ..db import Order, Repos, User
+from ..db import Order, OutOfStock, Repos, User
 from ..i18n import Translator
 from ..utils import esc, fmt_date, truncate
 
@@ -32,11 +34,13 @@ class DeliveryService:
         *,
         assets_dir: str = "assets",
         admin_ids: tuple[int, ...] = (),
+        low_stock_threshold: int = 3,
     ) -> None:
         self.config = config
         self.t = t
-        self.assets_dir = assets_dir
+        self.assets_dir = Path(assets_dir).resolve()
         self.admin_ids = admin_ids
+        self.low_stock_threshold = low_stock_threshold
 
     async def deliver(self, repos: Repos, bot: Bot, order: Order, user: User) -> bool:
         """Fulfil a paid order. Never raises — a failure is reported, not fatal."""
@@ -50,12 +54,29 @@ class DeliveryService:
             return False
 
         try:
-            if product.kind == "subscription":
+            if product.kind == "account":
+                await self._deliver_accounts(repos, bot, order, user, product)
+            elif product.kind == "subscription":
                 await self._deliver_subscription(repos, bot, order, user, product)
             elif product.kind in {"service", "consult"}:
                 await self._deliver_service(repos, bot, order, user, product)
             else:
                 await self._deliver_digital(bot, user, product)
+        except OutOfStock as exc:
+            # Money arrived but inventory is gone. Never silently keep it.
+            log.error("order %s: %s", order.id, exc)
+            order.status = "paid"
+            order.note = f"out of stock: {exc.available}/{exc.requested}"
+            await repos.session.flush()
+            await self._safe_send(bot, user.tg_id, self.t("delivery.out_of_stock"))
+            await self._notify_admins(
+                bot,
+                f"🚨 Заказ #{order.id} оплачен, но товара нет на складе "
+                f"({exc.available} из {exc.requested} шт., SKU <code>{esc(exc.sku)}</code>).\n"
+                f"Покупатель: {esc(user.display())} (<code>{user.tg_id}</code>). "
+                "Пополните склад и выдайте вручную или верните деньги.",
+            )
+            return False
         except Exception:
             log.exception("order %s: delivery failed", order.id)
             await self._notify_admins(
@@ -92,6 +113,45 @@ class DeliveryService:
         invite = delivery.get("invite_link")
         if invite:
             await self._safe_send(bot, user.tg_id, f"🔐 {invite}")
+
+    async def _deliver_accounts(
+        self, repos: Repos, bot: Bot, order: Order, user: User, product: Any
+    ) -> None:
+        """Issue N units of stock — the account-shop path.
+
+        Already-issued units are reused so a repeat delivery hands over the
+        same credentials instead of burning fresh inventory.
+        """
+        already = await repos.stock.issued_for(order.id)
+        needed = max(1, order.quantity) - len(already)
+        payloads = list(already)
+        if needed > 0:
+            payloads += await repos.stock.issue(product.sku, needed, order.id)
+
+        header = self.t(
+            "delivery.accounts",
+            title=esc(product.title),
+            count=len(payloads),
+        )
+        # Credentials are user-supplied text going into an HTML message —
+        # escape or a stray '<' silently truncates the whole delivery.
+        body = "\n\n".join(f"<code>{esc(item)}</code>" for item in payloads)
+        await self._safe_send(bot, user.tg_id, f"{header}\n\n{body}")
+
+        instructions = (product.delivery or {}).get("text")
+        if instructions:
+            await self._safe_send(bot, user.tg_id, truncate(str(instructions)))
+
+        warranty = (product.delivery or {}).get("warranty")
+        if warranty:
+            await self._safe_send(bot, user.tg_id, f"🛡 {esc(warranty)}")
+
+        left = await repos.stock.available(product.sku)
+        if left <= self.low_stock_threshold:
+            await self._notify_admins(
+                bot,
+                f"📉 Мало товара: <code>{esc(product.sku)}</code> — осталось {left} шт.",
+            )
 
     async def _deliver_subscription(
         self, repos: Repos, bot: Bot, order: Order, user: User, product: Any
@@ -143,8 +203,12 @@ class DeliveryService:
             if path.startswith(("http://", "https://")):
                 document: Any = URLInputFile(path)
             else:
-                full = f"{self.assets_dir}/{path}" if not path.startswith("/") else path
-                document = FSInputFile(full)
+                # Keep delivery inside assets/: a config saying "../../.env"
+                # must not turn a purchase into a file-read of the server.
+                full = (self.assets_dir / path).resolve()
+                if not full.is_relative_to(self.assets_dir):
+                    raise ValueError(f"{path!r} escapes the assets directory")
+                document = FSInputFile(str(full))
             await bot.send_document(chat_id, document, caption=truncate(caption, 900))
         except Exception as exc:
             log.error("could not send %s to %s: %s", path, chat_id, exc)

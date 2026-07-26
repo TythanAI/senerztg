@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/352-asana/docker-compose.yml up -d
+services:
+  botfarm-ru-352-asana:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/352-asana/Dockerfile
+    container_name: botfarm-ru-352-asana
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9351:9351"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

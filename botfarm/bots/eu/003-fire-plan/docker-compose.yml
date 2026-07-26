@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/003-fire-plan/docker-compose.yml up -d
 services:
-  botfarm-eu-fire-plan:
+  botfarm-eu-003-fire-plan:
     build:
       context: ../../..
       dockerfile: bots/eu/003-fire-plan/Dockerfile
-    container_name: botfarm-eu-fire-plan
+    container_name: botfarm-eu-003-fire-plan
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9202:9202"
+      - "9502:9502"
     volumes:
       - ./data:/app/bot/data
     logging:

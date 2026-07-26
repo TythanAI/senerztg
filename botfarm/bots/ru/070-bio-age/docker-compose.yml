@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/070-bio-age/docker-compose.yml up -d
 services:
-  botfarm-ru-bio-age:
+  botfarm-ru-070-bio-age:
     build:
       context: ../../..
       dockerfile: bots/ru/070-bio-age/Dockerfile
-    container_name: botfarm-ru-bio-age
+    container_name: botfarm-ru-070-bio-age
     restart: unless-stopped
     env_file: .env
     ports:

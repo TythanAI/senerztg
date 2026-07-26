@@ -2,7 +2,7 @@
 """Кошелёк Защита — Как не потерять крипту: безопасность
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-wallet-secure
+Run as a unit: systemctl start botfarm-ru-029-wallet-secure
 """
 
 import sys

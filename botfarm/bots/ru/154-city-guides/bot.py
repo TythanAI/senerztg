@@ -2,7 +2,7 @@
 """Гиды по Городам — Маршруты на 2-3 дня
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-city-guides
+Run as a unit: systemctl start botfarm-ru-154-city-guides
 """
 
 import sys

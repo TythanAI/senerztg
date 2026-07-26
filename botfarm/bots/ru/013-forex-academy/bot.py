@@ -2,7 +2,7 @@
 """Форекс Академия — Валютный рынок: система, а не казино
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-forex-academy
+Run as a unit: systemctl start botfarm-ru-013-forex-academy
 """
 
 import sys

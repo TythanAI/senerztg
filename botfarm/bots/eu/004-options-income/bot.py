@@ -2,7 +2,7 @@
 """Options Income Desk — Weekly premium-selling setups
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-options-income
+Run as a unit: systemctl start botfarm-eu-004-options-income
 """
 
 import sys

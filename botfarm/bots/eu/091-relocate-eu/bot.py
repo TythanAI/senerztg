@@ -2,7 +2,7 @@
 """Relocation to Europe — Visa route, taxes, and settling in
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-relocate-eu
+Run as a unit: systemctl start botfarm-eu-091-relocate-eu
 """
 
 import sys

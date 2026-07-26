@@ -2,7 +2,7 @@
 """Мебель на Заказ — Кухни и шкафы по размерам
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-furniture-make
+Run as a unit: systemctl start botfarm-ru-122-furniture-make
 """
 
 import sys

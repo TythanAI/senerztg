@@ -2,7 +2,7 @@
 """Детская Логика — Задачи для 6-10 лет каждый день
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-kids-logic
+Run as a unit: systemctl start botfarm-ru-040-kids-logic
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/151-hotel-deals/docker-compose.yml up -d
 services:
-  botfarm-ru-hotel-deals:
+  botfarm-ru-151-hotel-deals:
     build:
       context: ../../..
       dockerfile: bots/ru/151-hotel-deals/Dockerfile
-    container_name: botfarm-ru-hotel-deals
+    container_name: botfarm-ru-151-hotel-deals
     restart: unless-stopped
     env_file: .env
     ports:

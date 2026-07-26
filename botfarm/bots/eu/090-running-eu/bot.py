@@ -2,7 +2,7 @@
 """Running Club — Structured plans for every distance
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-running-eu
+Run as a unit: systemctl start botfarm-eu-090-running-eu
 """
 
 import sys

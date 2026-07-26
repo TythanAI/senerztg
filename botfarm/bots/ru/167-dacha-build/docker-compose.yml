@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/167-dacha-build/docker-compose.yml up -d
 services:
-  botfarm-ru-dacha-build:
+  botfarm-ru-167-dacha-build:
     build:
       context: ../../..
       dockerfile: bots/ru/167-dacha-build/Dockerfile
-    container_name: botfarm-ru-dacha-build
+    container_name: botfarm-ru-167-dacha-build
     restart: unless-stopped
     env_file: .env
     ports:

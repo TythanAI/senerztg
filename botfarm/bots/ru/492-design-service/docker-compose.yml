@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/492-design-service/docker-compose.yml up -d
+services:
+  botfarm-ru-492-design-service:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/492-design-service/Dockerfile
+    container_name: botfarm-ru-492-design-service
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9491:9491"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -2,7 +2,7 @@
 """Монтаж Видео — Reels и Shorts, которые смотрят
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-video-edit
+Run as a unit: systemctl start botfarm-ru-134-video-edit
 """
 
 import sys

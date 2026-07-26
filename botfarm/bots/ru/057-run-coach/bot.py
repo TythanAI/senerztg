@@ -2,7 +2,7 @@
 """Беговой Тренер — От нуля до полумарафона
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-run-coach
+Run as a unit: systemctl start botfarm-ru-057-run-coach
 """
 
 import sys

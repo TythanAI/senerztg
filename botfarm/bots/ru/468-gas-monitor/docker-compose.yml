@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/468-gas-monitor/docker-compose.yml up -d
+services:
+  botfarm-ru-468-gas-monitor:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/468-gas-monitor/Dockerfile
+    container_name: botfarm-ru-468-gas-monitor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9467:9467"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

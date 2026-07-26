@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/243-nintendo/docker-compose.yml up -d
+services:
+  botfarm-ru-243-nintendo:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/243-nintendo/Dockerfile
+    container_name: botfarm-ru-243-nintendo
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9242:9242"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

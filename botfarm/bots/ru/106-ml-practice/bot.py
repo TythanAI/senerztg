@@ -2,7 +2,7 @@
 """ML Практика — Разбор задач машинного обучения
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ml-practice
+Run as a unit: systemctl start botfarm-ru-106-ml-practice
 """
 
 import sys

@@ -2,7 +2,7 @@
 """DevOps Лаб — Docker, CI/CD, Kubernetes
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-devops-lab
+Run as a unit: systemctl start botfarm-ru-104-devops-lab
 """
 
 import sys

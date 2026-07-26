@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/291-perplexity-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-291-perplexity-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/291-perplexity-eu/Dockerfile
+    container_name: botfarm-eu-291-perplexity-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9790:9790"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

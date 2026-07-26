@@ -2,7 +2,7 @@
 """Home HIIT — 20-minute sessions, no equipment
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-home-hiit
+Run as a unit: systemctl start botfarm-eu-035-home-hiit
 """
 
 import sys

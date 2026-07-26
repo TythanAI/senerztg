@@ -2,7 +2,7 @@
 """Swing Trader Pro — Daily swing setups on US equities
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-swing-trader
+Run as a unit: systemctl start botfarm-eu-010-swing-trader
 """
 
 import sys

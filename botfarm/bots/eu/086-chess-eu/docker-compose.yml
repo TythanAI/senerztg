@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/086-chess-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-chess-eu:
+  botfarm-eu-086-chess-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/086-chess-eu/Dockerfile
-    container_name: botfarm-eu-chess-eu
+    container_name: botfarm-eu-086-chess-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9285:9285"
+      - "9585:9585"
     volumes:
       - ./data:/app/bot/data
     logging:

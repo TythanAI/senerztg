@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-hunt-gear
+SyslogIdentifier=botfarm-ru-143-hunt-gear
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

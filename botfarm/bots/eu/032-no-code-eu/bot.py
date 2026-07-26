@@ -2,7 +2,7 @@
 """No-Code Founder — Ship a product without engineers
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-no-code-eu
+Run as a unit: systemctl start botfarm-eu-032-no-code-eu
 """
 
 import sys

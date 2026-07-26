@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/182-pluralsight-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-182-pluralsight-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/182-pluralsight-eu/Dockerfile
+    container_name: botfarm-eu-182-pluralsight-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9681:9681"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

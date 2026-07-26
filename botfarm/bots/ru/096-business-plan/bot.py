@@ -2,7 +2,7 @@
 """Бизнес-План — План для банка и инвестора
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-business-plan
+Run as a unit: systemctl start botfarm-ru-096-business-plan
 """
 
 import sys

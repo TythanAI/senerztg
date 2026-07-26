@@ -2,7 +2,7 @@
 """Психолог Онлайн — Сессии в удобное время
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-psy-online
+Run as a unit: systemctl start botfarm-ru-179-psy-online
 """
 
 import sys

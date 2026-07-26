@@ -2,7 +2,7 @@
 """Фит Дома — Тренировки без зала, 20 минут в день
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-fit-home
+Run as a unit: systemctl start botfarm-ru-053-fit-home
 """
 
 import sys

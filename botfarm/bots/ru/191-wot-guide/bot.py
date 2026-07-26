@@ -2,7 +2,7 @@
 """Танки Гайды — Билды и тактика World of Tanks
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-wot-guide
+Run as a unit: systemctl start botfarm-ru-191-wot-guide
 """
 
 import sys

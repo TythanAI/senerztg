@@ -2,7 +2,7 @@
 """Desk Worker Mobility — Undo eight hours of sitting
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-mobility-eu
+Run as a unit: systemctl start botfarm-eu-041-mobility-eu
 """
 
 import sys

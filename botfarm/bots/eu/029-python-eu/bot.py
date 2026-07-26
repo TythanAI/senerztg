@@ -2,7 +2,7 @@
 """Python for Work — Automate the boring parts of your job
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-python-eu
+Run as a unit: systemctl start botfarm-eu-029-python-eu
 """
 
 import sys

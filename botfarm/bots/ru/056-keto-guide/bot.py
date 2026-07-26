@@ -2,7 +2,7 @@
 """Кето Гид — Кето без ошибок и срывов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-keto-guide
+Run as a unit: systemctl start botfarm-ru-056-keto-guide
 """
 
 import sys

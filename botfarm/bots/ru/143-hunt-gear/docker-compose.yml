@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/143-hunt-gear/docker-compose.yml up -d
 services:
-  botfarm-ru-hunt-gear:
+  botfarm-ru-143-hunt-gear:
     build:
       context: ../../..
       dockerfile: bots/ru/143-hunt-gear/Dockerfile
-    container_name: botfarm-ru-hunt-gear
+    container_name: botfarm-ru-143-hunt-gear
     restart: unless-stopped
     env_file: .env
     ports:

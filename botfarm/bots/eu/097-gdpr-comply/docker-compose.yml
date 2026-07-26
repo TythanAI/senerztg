@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/097-gdpr-comply/docker-compose.yml up -d
 services:
-  botfarm-eu-gdpr-comply:
+  botfarm-eu-097-gdpr-comply:
     build:
       context: ../../..
       dockerfile: bots/eu/097-gdpr-comply/Dockerfile
-    container_name: botfarm-eu-gdpr-comply
+    container_name: botfarm-eu-097-gdpr-comply
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9296:9296"
+      - "9596:9596"
     volumes:
       - ./data:/app/bot/data
     logging:

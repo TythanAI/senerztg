@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/021-stablecoin-yield/docker-compose.yml up -d
 services:
-  botfarm-eu-stablecoin-yield:
+  botfarm-eu-021-stablecoin-yield:
     build:
       context: ../../..
       dockerfile: bots/eu/021-stablecoin-yield/Dockerfile
-    container_name: botfarm-eu-stablecoin-yield
+    container_name: botfarm-eu-021-stablecoin-yield
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9220:9220"
+      - "9520:9520"
     volumes:
       - ./data:/app/bot/data
     logging:

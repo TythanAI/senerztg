@@ -2,7 +2,7 @@
 """Linux Админ — Сервер под нагрузкой
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-linux-admin
+Run as a unit: systemctl start botfarm-ru-114-linux-admin
 """
 
 import sys

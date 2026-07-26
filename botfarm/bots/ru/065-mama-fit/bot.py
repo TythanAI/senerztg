@@ -2,7 +2,7 @@
 """Мама в Форме — Восстановление после родов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mama-fit
+Run as a unit: systemctl start botfarm-ru-065-mama-fit
 """
 
 import sys

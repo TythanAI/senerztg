@@ -2,7 +2,7 @@
 """Contract Review — Legal review within 24 hours
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-contract-eu
+Run as a unit: systemctl start botfarm-eu-096-contract-eu
 """
 
 import sys

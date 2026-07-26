@@ -2,7 +2,7 @@
 """Мобильная Разработка — Flutter от нуля до релиза
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mobile-dev
+Run as a unit: systemctl start botfarm-ru-109-mobile-dev
 """
 
 import sys

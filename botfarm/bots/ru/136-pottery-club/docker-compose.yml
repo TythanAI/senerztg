@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/136-pottery-club/docker-compose.yml up -d
 services:
-  botfarm-ru-pottery-club:
+  botfarm-ru-136-pottery-club:
     build:
       context: ../../..
       dockerfile: bots/ru/136-pottery-club/Dockerfile
-    container_name: botfarm-ru-pottery-club
+    container_name: botfarm-ru-136-pottery-club
     restart: unless-stopped
     env_file: .env
     ports:

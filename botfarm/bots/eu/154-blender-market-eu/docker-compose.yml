@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/154-blender-market-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-154-blender-market-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/154-blender-market-eu/Dockerfile
+    container_name: botfarm-eu-154-blender-market-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9653:9653"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

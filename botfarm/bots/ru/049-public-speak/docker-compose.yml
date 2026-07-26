@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/049-public-speak/docker-compose.yml up -d
 services:
-  botfarm-ru-public-speak:
+  botfarm-ru-049-public-speak:
     build:
       context: ../../..
       dockerfile: bots/ru/049-public-speak/Dockerfile
-    container_name: botfarm-ru-public-speak
+    container_name: botfarm-ru-049-public-speak
     restart: unless-stopped
     env_file: .env
     ports:

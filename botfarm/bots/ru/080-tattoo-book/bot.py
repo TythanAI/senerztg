@@ -2,7 +2,7 @@
 """Тату Запись — Портфолио, эскизы и запись к мастеру
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-tattoo-book
+Run as a unit: systemctl start botfarm-ru-080-tattoo-book
 """
 
 import sys

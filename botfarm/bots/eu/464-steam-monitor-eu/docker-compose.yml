@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/464-steam-monitor-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-464-steam-monitor-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/464-steam-monitor-eu/Dockerfile
+    container_name: botfarm-eu-464-steam-monitor-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9963:9963"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

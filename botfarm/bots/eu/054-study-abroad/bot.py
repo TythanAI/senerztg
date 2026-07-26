@@ -2,7 +2,7 @@
 """Study Abroad EU — Applications, visas, and funding
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-study-abroad
+Run as a unit: systemctl start botfarm-eu-054-study-abroad
 """
 
 import sys

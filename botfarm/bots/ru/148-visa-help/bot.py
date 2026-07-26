@@ -2,7 +2,7 @@
 """Виза Помощь — Documents и запись в консульство
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-visa-help
+Run as a unit: systemctl start botfarm-ru-148-visa-help
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/057-run-coach/docker-compose.yml up -d
 services:
-  botfarm-ru-run-coach:
+  botfarm-ru-057-run-coach:
     build:
       context: ../../..
       dockerfile: bots/ru/057-run-coach/Dockerfile
-    container_name: botfarm-ru-run-coach
+    container_name: botfarm-ru-057-run-coach
     restart: unless-stopped
     env_file: .env
     ports:

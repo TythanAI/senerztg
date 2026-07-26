@@ -2,7 +2,7 @@
 """Код Ревью — Разбор вашего кода экспертом
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-code-review
+Run as a unit: systemctl start botfarm-ru-111-code-review
 """
 
 import sys

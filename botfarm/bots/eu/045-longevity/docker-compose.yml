@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/045-longevity/docker-compose.yml up -d
 services:
-  botfarm-eu-longevity:
+  botfarm-eu-045-longevity:
     build:
       context: ../../..
       dockerfile: bots/eu/045-longevity/Dockerfile
-    container_name: botfarm-eu-longevity
+    container_name: botfarm-eu-045-longevity
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9244:9244"
+      - "9544:9544"
     volumes:
       - ./data:/app/bot/data
     logging:

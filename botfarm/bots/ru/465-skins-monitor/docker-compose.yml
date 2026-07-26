@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/465-skins-monitor/docker-compose.yml up -d
+services:
+  botfarm-ru-465-skins-monitor:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/465-skins-monitor/Dockerfile
+    container_name: botfarm-ru-465-skins-monitor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9464:9464"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/183-dating-guide/docker-compose.yml up -d
 services:
-  botfarm-ru-dating-guide:
+  botfarm-ru-183-dating-guide:
     build:
       context: ../../..
       dockerfile: bots/ru/183-dating-guide/Dockerfile
-    container_name: botfarm-ru-dating-guide
+    container_name: botfarm-ru-183-dating-guide
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Español Conversación — Práctica diaria con correcciones
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-spanish-es
+Run as a unit: systemctl start botfarm-eu-052-spanish-es
 """
 
 import sys

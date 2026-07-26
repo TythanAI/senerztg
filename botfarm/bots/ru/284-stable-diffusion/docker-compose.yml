@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/284-stable-diffusion/docker-compose.yml up -d
+services:
+  botfarm-ru-284-stable-diffusion:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/284-stable-diffusion/Dockerfile
+    container_name: botfarm-ru-284-stable-diffusion
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9283:9283"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

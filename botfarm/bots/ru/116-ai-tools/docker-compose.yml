@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/116-ai-tools/docker-compose.yml up -d
 services:
-  botfarm-ru-ai-tools:
+  botfarm-ru-116-ai-tools:
     build:
       context: ../../..
       dockerfile: bots/ru/116-ai-tools/Dockerfile
-    container_name: botfarm-ru-ai-tools
+    container_name: botfarm-ru-116-ai-tools
     restart: unless-stopped
     env_file: .env
     ports:

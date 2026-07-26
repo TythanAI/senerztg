@@ -2,7 +2,7 @@
 """Index Investing 101 — Build a lazy portfolio that beats most funds
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-index-investing
+Run as a unit: systemctl start botfarm-eu-001-index-investing
 """
 
 import sys

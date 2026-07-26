@@ -8,6 +8,7 @@ It is idempotent by construction: the ledger has a unique index on
 
 from __future__ import annotations
 
+import datetime as dt
 import logging
 from decimal import Decimal
 from typing import TYPE_CHECKING, Any
@@ -31,6 +32,17 @@ if TYPE_CHECKING:  # pragma: no cover
     from .delivery import DeliveryService
 
 log = logging.getLogger(__name__)
+
+#: Per-order cap. Bulk buyers go through support, which keeps a scripted
+#: client from draining a whole stock pool in one call.
+MAX_QUANTITY = 20
+#: Unpaid orders a single user may keep open at once.
+MAX_OPEN_ORDERS = 5
+#: Wrong promo guesses tolerated per hour before we stop checking.
+MAX_PROMO_ATTEMPTS = 8
+
+#: SKU reserved for wallet top-ups; never appears in a niche catalog.
+TOPUP_SKU = "__topup__"
 
 
 class CheckoutService:
@@ -59,8 +71,17 @@ class CheckoutService:
         provider: str,
         *,
         discount_percent: int = 0,
+        quantity: int = 1,
+        promo_code: str | None = None,
     ) -> Order:
-        amount = apply_discount(Decimal(product.price), discount_percent)
+        quantity = max(1, min(quantity, MAX_QUANTITY))
+        unit = apply_discount(Decimal(product.price), discount_percent)
+        amount = (unit * quantity).quantize(Decimal("0.01"))
+
+        # Abandoned orders pile up as the user browses. Prune to one below the
+        # cap so that after adding this one the user is exactly at the limit.
+        await repos.orders.drop_stale_pending_for(user.id, keep=MAX_OPEN_ORDERS - 1)
+
         order = await repos.orders.create(
             user=user,
             sku=product.sku,
@@ -69,11 +90,74 @@ class CheckoutService:
             currency=self.config.currency,
             provider=provider,
             ttl_minutes=self.config.payments.invoice_ttl_minutes,
+            quantity=quantity,
+            promo_code=promo_code,
         )
         if discount_percent:
             order.note = f"promo -{discount_percent}%"
         await repos.misc.track(user.tg_id, "checkout_started", product.sku)
         return order
+
+    async def create_topup_order(
+        self, repos: Repos, user: User, amount: Decimal, provider: str
+    ) -> Order:
+        """A wallet top-up is just an order with a reserved SKU."""
+        await repos.orders.drop_stale_pending_for(user.id, keep=MAX_OPEN_ORDERS - 1)
+        order = await repos.orders.create(
+            user=user,
+            sku=TOPUP_SKU,
+            title=self.delivery.t("balance.product_title"),
+            amount=Decimal(amount).quantize(Decimal("0.01")),
+            currency=self.config.currency,
+            provider=provider,
+            ttl_minutes=self.config.payments.invoice_ttl_minutes,
+        )
+        await repos.misc.track(user.tg_id, "topup_started")
+        return order
+
+    async def pay_from_balance(
+        self, repos: Repos, bot: Bot, order: Order, user: User
+    ) -> bool:
+        """Settle an order against the user's wallet. False = not enough funds."""
+        if order.status != "pending":
+            return False
+        if not await repos.users.spend_balance(user.id, Decimal(order.amount)):
+            return False
+
+        result = PaymentResult(
+            status=PaymentStatus.PAID,
+            external_id=f"balance-{order.id}",
+            amount=Decimal(order.amount),
+            currency=order.currency,
+            raw={"source": "balance"},
+        )
+        order.provider = "balance"
+        order.external_id = result.external_id
+        await repos.session.flush()
+
+        settled = await self.settle(repos, bot, order, result)
+
+        # `settle` returning True only means the payment was booked; delivery
+        # can still have failed (empty stock, for instance). For wallet money
+        # we can undo it instantly instead of leaving the buyer out of pocket.
+        if settled and order.status == "delivered":
+            return True
+
+        await repos.users.add_balance(user.id, Decimal(order.amount))
+        order.status = "refunded"
+        order.note = (order.note or "") + " | auto-refunded to balance"
+        await repos.session.flush()
+        log.warning("order %s refunded to balance: %s", order.id, order.note)
+        return False
+
+    async def credit_topup(self, repos: Repos, order: Order, user: User) -> Decimal:
+        """A paid top-up order becomes wallet balance."""
+        amount = Decimal(order.amount)
+        await repos.users.add_balance(user.id, amount)
+        order.status = "delivered"
+        order.delivered_at = dt.datetime.now(dt.timezone.utc)
+        await repos.session.flush()
+        return amount
 
     async def bill(self, repos: Repos, order: Order, user: User) -> Invoice:
         """Ask the provider for an invoice and remember its external id."""
@@ -175,6 +259,20 @@ class CheckoutService:
             order.provider,
             user.tg_id,
         )
+
+        # A promo consumes one of its uses only now, once money has arrived.
+        if order.promo_code:
+            await repos.promos.redeem(order.promo_code)
+
+        if order.sku == TOPUP_SKU:
+            credited = await self.credit_topup(repos, order, user)
+            await self._alert_admins(
+                bot,
+                f"💼 Пополнение #{order.id} на "
+                f"<b>{fmt_money(credited, order.currency)}</b>\n"
+                f"Покупатель: {esc(user.display())} (<code>{user.tg_id}</code>)",
+            )
+            return True
 
         await self._pay_referral(repos, bot, order, user)
 

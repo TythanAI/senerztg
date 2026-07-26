@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/248-hbo-max/docker-compose.yml up -d
+services:
+  botfarm-ru-248-hbo-max:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/248-hbo-max/Dockerfile
+    container_name: botfarm-ru-248-hbo-max
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9247:9247"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

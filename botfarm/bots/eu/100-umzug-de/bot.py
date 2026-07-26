@@ -2,7 +2,7 @@
 """Umzugsservice — Umzug planen und buchen
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-umzug-de
+Run as a unit: systemctl start botfarm-eu-100-umzug-de
 """
 
 import sys

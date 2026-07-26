@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/022-airdrop-hunter/docker-compose.yml up -d
 services:
-  botfarm-ru-airdrop-hunter:
+  botfarm-ru-022-airdrop-hunter:
     build:
       context: ../../..
       dockerfile: bots/ru/022-airdrop-hunter/Dockerfile
-    container_name: botfarm-ru-airdrop-hunter
+    container_name: botfarm-ru-022-airdrop-hunter
     restart: unless-stopped
     env_file: .env
     ports:

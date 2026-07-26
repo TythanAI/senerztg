@@ -2,7 +2,7 @@
 """Вскрытие Замков — Аварийная служба 24/7
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-locksmith-24
+Run as a unit: systemctl start botfarm-ru-131-locksmith-24
 """
 
 import sys

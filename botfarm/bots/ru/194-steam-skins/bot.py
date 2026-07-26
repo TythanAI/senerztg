@@ -2,7 +2,7 @@
 """Скины Сигналы — Движение цен и выгодные лоты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-steam-skins
+Run as a unit: systemctl start botfarm-ru-194-steam-skins
 """
 
 import sys

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/368-socks5-proxy/docker-compose.yml up -d
+services:
+  botfarm-ru-368-socks5-proxy:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/368-socks5-proxy/Dockerfile
+    container_name: botfarm-ru-368-socks5-proxy
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9367:9367"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

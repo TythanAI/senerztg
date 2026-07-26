@@ -2,7 +2,7 @@
 """Стейбл Доход — Доходность на стейблкоинах
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-stables-yield
+Run as a unit: systemctl start botfarm-ru-030-stables-yield
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Дальнобой Работа — Рейсы, ставки, документы
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-truck-work
+Run as a unit: systemctl start botfarm-ru-160-truck-work
 """
 
 import sys

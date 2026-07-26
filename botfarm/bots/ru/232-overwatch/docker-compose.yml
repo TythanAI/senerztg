@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/232-overwatch/docker-compose.yml up -d
+services:
+  botfarm-ru-232-overwatch:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/232-overwatch/Dockerfile
+    container_name: botfarm-ru-232-overwatch
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9231:9231"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

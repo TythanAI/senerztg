@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/428-genshin-crystals/docker-compose.yml up -d
+services:
+  botfarm-ru-428-genshin-crystals:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/428-genshin-crystals/Dockerfile
+    container_name: botfarm-ru-428-genshin-crystals
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9427:9427"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

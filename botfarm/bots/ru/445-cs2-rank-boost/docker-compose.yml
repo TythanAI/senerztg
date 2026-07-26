@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/445-cs2-rank-boost/docker-compose.yml up -d
+services:
+  botfarm-ru-445-cs2-rank-boost:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/445-cs2-rank-boost/Dockerfile
+    container_name: botfarm-ru-445-cs2-rank-boost
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9444:9444"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

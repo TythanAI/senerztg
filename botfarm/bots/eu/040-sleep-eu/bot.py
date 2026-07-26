@@ -2,7 +2,7 @@
 """Sleep Protocol — Fix your sleep in three weeks
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-sleep-eu
+Run as a unit: systemctl start botfarm-eu-040-sleep-eu
 """
 
 import sys

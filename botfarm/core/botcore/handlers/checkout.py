@@ -25,6 +25,7 @@ from ..keyboards import (
 )
 from ..payments import InvoiceKind, PaymentError, PaymentResult, PaymentStatus, ProviderRegistry
 from ..services import CheckoutService
+from ..services.checkout import TOPUP_SKU
 from ..utils import esc, fmt_money, truncate
 from .common import _edit
 
@@ -51,6 +52,23 @@ async def start_payment(
         return
     if order.status != "pending":
         await callback.answer(t("checkout.expired"), show_alert=True)
+        return
+
+    # The wallet is not an external rail — settle it here and skip the acquirer.
+    if callback_data.provider == "balance":
+        if not config.has("balance"):
+            await callback.answer(t("errors.not_found"), show_alert=True)
+            return
+        if order.sku == TOPUP_SKU:
+            # Topping the wallet up from the wallet is a no-op loop.
+            await callback.answer(t("errors.not_found"), show_alert=True)
+            return
+
+        await callback.answer(t("common.loading"))
+        if await checkout.pay_from_balance(repos, bot, order, user):
+            await _edit(callback, t("balance.paid"), back_button(t))
+        else:
+            await callback.answer(t("balance.not_enough"), show_alert=True)
         return
 
     if callback_data.provider not in registry:

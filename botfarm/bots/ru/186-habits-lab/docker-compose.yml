@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/186-habits-lab/docker-compose.yml up -d
 services:
-  botfarm-ru-habits-lab:
+  botfarm-ru-186-habits-lab:
     build:
       context: ../../..
       dockerfile: bots/ru/186-habits-lab/Dockerfile
-    container_name: botfarm-ru-habits-lab
+    container_name: botfarm-ru-186-habits-lab
     restart: unless-stopped
     env_file: .env
     ports:

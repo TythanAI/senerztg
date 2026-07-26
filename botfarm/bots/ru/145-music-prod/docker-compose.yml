@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/145-music-prod/docker-compose.yml up -d
 services:
-  botfarm-ru-music-prod:
+  botfarm-ru-145-music-prod:
     build:
       context: ../../..
       dockerfile: bots/ru/145-music-prod/Dockerfile
-    container_name: botfarm-ru-music-prod
+    container_name: botfarm-ru-145-music-prod
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Chess Improvement — Openings, tactics, and game reviews
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-chess-eu
+Run as a unit: systemctl start botfarm-eu-086-chess-eu
 """
 
 import sys

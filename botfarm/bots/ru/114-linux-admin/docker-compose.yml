@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/114-linux-admin/docker-compose.yml up -d
 services:
-  botfarm-ru-linux-admin:
+  botfarm-ru-114-linux-admin:
     build:
       context: ../../..
       dockerfile: bots/ru/114-linux-admin/Dockerfile
-    container_name: botfarm-ru-linux-admin
+    container_name: botfarm-ru-114-linux-admin
     restart: unless-stopped
     env_file: .env
     ports:

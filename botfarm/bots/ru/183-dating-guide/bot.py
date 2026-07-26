@@ -2,7 +2,7 @@
 """Знакомства Гид — Онлайн-дейтинг без иллюзий
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-dating-guide
+Run as a unit: systemctl start botfarm-ru-183-dating-guide
 """
 
 import sys

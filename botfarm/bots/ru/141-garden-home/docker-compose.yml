@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/141-garden-home/docker-compose.yml up -d
 services:
-  botfarm-ru-garden-home:
+  botfarm-ru-141-garden-home:
     build:
       context: ../../..
       dockerfile: bots/ru/141-garden-home/Dockerfile
-    container_name: botfarm-ru-garden-home
+    container_name: botfarm-ru-141-garden-home
     restart: unless-stopped
     env_file: .env
     ports:

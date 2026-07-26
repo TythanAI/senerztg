@@ -2,7 +2,7 @@
 """Meta Ads Mastery — Profitable campaigns, not vanity metrics
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-meta-ads
+Run as a unit: systemctl start botfarm-eu-059-meta-ads
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/185-self-esteem/docker-compose.yml up -d
 services:
-  botfarm-ru-self-esteem:
+  botfarm-ru-185-self-esteem:
     build:
       context: ../../..
       dockerfile: bots/ru/185-self-esteem/Dockerfile
-    container_name: botfarm-ru-self-esteem
+    container_name: botfarm-ru-185-self-esteem
     restart: unless-stopped
     env_file: .env
     ports:

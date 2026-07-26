@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/042-memory-gym/docker-compose.yml up -d
 services:
-  botfarm-ru-memory-gym:
+  botfarm-ru-042-memory-gym:
     build:
       context: ../../..
       dockerfile: bots/ru/042-memory-gym/Dockerfile
-    container_name: botfarm-ru-memory-gym
+    container_name: botfarm-ru-042-memory-gym
     restart: unless-stopped
     env_file: .env
     ports:

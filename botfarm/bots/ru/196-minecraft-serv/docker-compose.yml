@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/196-minecraft-serv/docker-compose.yml up -d
 services:
-  botfarm-ru-minecraft-serv:
+  botfarm-ru-196-minecraft-serv:
     build:
       context: ../../..
       dockerfile: bots/ru/196-minecraft-serv/Dockerfile
-    container_name: botfarm-ru-minecraft-serv
+    container_name: botfarm-ru-196-minecraft-serv
     restart: unless-stopped
     env_file: .env
     ports:

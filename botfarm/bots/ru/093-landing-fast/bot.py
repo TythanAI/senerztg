@@ -2,7 +2,7 @@
 """Лендинг Быстро — Продающая страница за 72 часа
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-landing-fast
+Run as a unit: systemctl start botfarm-ru-093-landing-fast
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Crypto Tax Report — Compliant reports for EU jurisdictions
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-crypto-tax-eu
+Run as a unit: systemctl start botfarm-eu-017-crypto-tax-eu
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/130-laundry-pick/docker-compose.yml up -d
 services:
-  botfarm-ru-laundry-pick:
+  botfarm-ru-130-laundry-pick:
     build:
       context: ../../..
       dockerfile: bots/ru/130-laundry-pick/Dockerfile
-    container_name: botfarm-ru-laundry-pick
+    container_name: botfarm-ru-130-laundry-pick
     restart: unless-stopped
     env_file: .env
     ports:

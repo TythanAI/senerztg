@@ -2,7 +2,7 @@
 """EU Tax Advisor — Cross-border tax planning for freelancers
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-tax-eu
+Run as a unit: systemctl start botfarm-eu-007-tax-eu
 """
 
 import sys

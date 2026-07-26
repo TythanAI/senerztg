@@ -2,7 +2,7 @@
 """Вязание Схемы — Авторские схемы и описания
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-knit-patterns
+Run as a unit: systemctl start botfarm-ru-137-knit-patterns
 """
 
 import sys

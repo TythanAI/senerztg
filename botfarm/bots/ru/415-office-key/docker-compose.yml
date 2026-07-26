@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/415-office-key/docker-compose.yml up -d
+services:
+  botfarm-ru-415-office-key:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/415-office-key/Dockerfile
+    container_name: botfarm-ru-415-office-key
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9414:9414"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

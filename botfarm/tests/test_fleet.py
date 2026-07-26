@@ -1,4 +1,4 @@
-"""Fleet-wide integrity: all 300 generated bots must be deployable as shipped."""
+"""Fleet-wide integrity: all 1000 generated bots must be deployable as shipped."""
 
 from __future__ import annotations
 
@@ -34,13 +34,13 @@ def index() -> list[dict]:
 
 
 def test_fleet_size(fleet):
-    assert len(fleet) == 300
-    assert sum(1 for c in fleet if c.region == "ru") == 200
-    assert sum(1 for c in fleet if c.region == "eu") == 100
+    assert len(fleet) == 1000
+    assert sum(1 for c in fleet if c.region == "ru") == 500
+    assert sum(1 for c in fleet if c.region == "eu") == 500
 
 
 def test_every_config_parses(fleet):
-    # NicheConfig.load already validates; reaching here means all 300 are legal.
+    # NicheConfig.load already validates; reaching here means all 1000 are legal.
     assert all(c.id for c in fleet)
 
 
@@ -197,6 +197,11 @@ def test_ports_are_unique(index):
     assert len(ports) == len(set(ports)), "two bots would fight over one port"
 
 
+def test_ports_stay_in_the_unprivileged_range(index):
+    for row in index:
+        assert 1024 < row["port"] < 65536, row["id"]
+
+
 def test_systemd_units_are_unique(index):
     units = [row["unit"] for row in index]
     assert len(units) == len(set(units))
@@ -218,8 +223,43 @@ def test_archetype_coverage(index):
     """Every business model we authored is actually represented."""
     used = {row["archetype"] for row in index}
     assert used == {
-        "course", "club", "signals", "service", "consult", "shop", "saas", "leadgen"
+        "course", "club", "signals", "service", "consult", "shop", "saas",
+        "leadgen", "accounts", "keys", "topup", "monitor",
     }
+
+
+def test_account_shops_dominate_the_fleet(index):
+    """The brief asked for a heavy tilt toward account sales."""
+    stock_backed = [r for r in index if r["archetype"] in {"accounts", "keys"}]
+    assert len(stock_backed) >= 400, f"only {len(stock_backed)} stock-backed shops"
+
+
+def test_stock_module_implies_account_products(fleet):
+    for config in fleet:
+        if config.has("stock"):
+            assert any(p.kind == "account" for p in config.catalog), config.id
+
+
+def test_account_products_have_a_warranty(fleet):
+    """A shop selling credentials without a stated warranty invites disputes."""
+    for config in fleet:
+        for product in config.catalog:
+            if product.kind == "account":
+                assert product.delivery.get("warranty"), f"{config.id}/{product.sku}"
+
+
+def test_stock_shops_offer_a_wallet(fleet):
+    """Repeat buyers are the whole economics of an account shop."""
+    for config in fleet:
+        if config.has("stock"):
+            assert config.has("balance"), config.id
+
+
+def test_account_products_have_no_period(fleet):
+    for config in fleet:
+        for product in config.catalog:
+            if product.kind == "account":
+                assert product.period_days == 0, f"{config.id}/{product.sku}"
 
 
 def test_price_tiers_are_spread(index):
@@ -232,3 +272,47 @@ def _dir_for(config: NicheConfig) -> Path:
         if path.parent.name.endswith(config.id.split("-", 2)[2]) and path.parent.parent.name == config.region:
             return path.parent
     raise AssertionError(f"directory for {config.id} not found")
+
+
+def test_router_builds_and_refuses_a_second_build(fleet):
+    """One process hosts one bot; a second build must fail loudly, not subtly."""
+    import botcore.handlers as handlers
+
+    handlers._BUILT = False
+    router = handlers.build_router(fleet[0].modules)
+    assert router.name == "root"
+
+    with pytest.raises(RuntimeError, match="own process"):
+        handlers.build_router(fleet[1].modules)
+
+
+def test_fleet_uses_many_module_combinations(fleet):
+    combos = {tuple(sorted(c.modules)) for c in fleet}
+    assert len(combos) >= 5, f"only {len(combos)} module combinations across the fleet"
+
+
+def test_every_keyboard_renders_for_every_bot(fleet):
+    """Catch a menu that would crash the moment a user taps /start."""
+    from botcore.i18n import Translator
+    from botcore.keyboards import catalog_menu, main_menu
+
+    for config in fleet:
+        t = Translator(config.lang, config.texts)
+        menu = main_menu(config, t)
+        assert menu.inline_keyboard, config.id
+        products = config.active_products()
+        assert catalog_menu(products, config, t).inline_keyboard, config.id
+
+
+def test_wallet_bots_price_within_topup_limits(fleet):
+    """A product nobody can afford with a maximum top-up is a dead end."""
+    from botcore.handlers.balance import MAX_TOPUP
+
+    for config in fleet:
+        if not config.has("balance"):
+            continue
+        ceiling = MAX_TOPUP.get(config.currency)
+        if ceiling is None:
+            continue
+        top = max(p.price for p in config.catalog)
+        assert top <= ceiling, f"{config.id}: {top} exceeds the max top-up {ceiling}"

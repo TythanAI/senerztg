@@ -2,7 +2,7 @@
 """Print on Demand — Designs that actually sell
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-print-demand
+Run as a unit: systemctl start botfarm-eu-072-print-demand
 """
 
 import sys

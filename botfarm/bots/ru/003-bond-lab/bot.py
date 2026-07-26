@@ -2,7 +2,7 @@
 """Облигации Лаб — Облигации и фонды: доход выше вклада
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bond-lab
+Run as a unit: systemctl start botfarm-ru-003-bond-lab
 """
 
 import sys

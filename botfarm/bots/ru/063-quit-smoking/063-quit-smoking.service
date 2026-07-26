@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-quit-smoking
+SyslogIdentifier=botfarm-ru-063-quit-smoking
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

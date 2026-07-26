@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/400-yandex-go/docker-compose.yml up -d
+services:
+  botfarm-ru-400-yandex-go:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/400-yandex-go/Dockerfile
+    container_name: botfarm-ru-400-yandex-go
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9399:9399"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

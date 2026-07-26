@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/014-options-desk/docker-compose.yml up -d
 services:
-  botfarm-ru-options-desk:
+  botfarm-ru-014-options-desk:
     build:
       context: ../../..
       dockerfile: bots/ru/014-options-desk/Dockerfile
-    container_name: botfarm-ru-options-desk
+    container_name: botfarm-ru-014-options-desk
     restart: unless-stopped
     env_file: .env
     ports:

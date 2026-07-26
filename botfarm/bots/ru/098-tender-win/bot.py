@@ -2,7 +2,7 @@
 """Тендеры 44-ФЗ — Выигрываем госзакупки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-tender-win
+Run as a unit: systemctl start botfarm-ru-098-tender-win
 """
 
 import sys

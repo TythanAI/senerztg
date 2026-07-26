@@ -2,7 +2,7 @@
 """Найм Без Боли — Подбор команды на потоке
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-hr-hiring
+Run as a unit: systemctl start botfarm-ru-094-hr-hiring
 """
 
 import sys

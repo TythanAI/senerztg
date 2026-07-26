@@ -2,7 +2,7 @@
 """Крипта Налог — Декларация по криптоактивам
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-crypto-tax-ru
+Run as a unit: systemctl start botfarm-ru-028-crypto-tax-ru
 """
 
 import sys

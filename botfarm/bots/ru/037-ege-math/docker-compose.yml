@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/037-ege-math/docker-compose.yml up -d
 services:
-  botfarm-ru-ege-math:
+  botfarm-ru-037-ege-math:
     build:
       context: ../../..
       dockerfile: bots/ru/037-ege-math/Dockerfile
-    container_name: botfarm-ru-ege-math
+    container_name: botfarm-ru-037-ege-math
     restart: unless-stopped
     env_file: .env
     ports:

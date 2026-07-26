@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/044-uni-abroad/docker-compose.yml up -d
 services:
-  botfarm-ru-uni-abroad:
+  botfarm-ru-044-uni-abroad:
     build:
       context: ../../..
       dockerfile: bots/ru/044-uni-abroad/Dockerfile
-    container_name: botfarm-ru-uni-abroad
+    container_name: botfarm-ru-044-uni-abroad
     restart: unless-stopped
     env_file: .env
     ports:

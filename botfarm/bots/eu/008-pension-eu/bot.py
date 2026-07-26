@@ -2,7 +2,7 @@
 """Private Pension EU — Second and third pillar, explained
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-pension-eu
+Run as a unit: systemctl start botfarm-eu-008-pension-eu
 """
 
 import sys

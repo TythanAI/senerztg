@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/113-cyber-def/docker-compose.yml up -d
 services:
-  botfarm-ru-cyber-def:
+  botfarm-ru-113-cyber-def:
     build:
       context: ../../..
       dockerfile: bots/ru/113-cyber-def/Dockerfile
-    container_name: botfarm-ru-cyber-def
+    container_name: botfarm-ru-113-cyber-def
     restart: unless-stopped
     env_file: .env
     ports:

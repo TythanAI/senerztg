@@ -2,7 +2,7 @@
 """Фотограф Запись — Съёмка и обработка
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-photo-book
+Run as a unit: systemctl start botfarm-ru-127-photo-book
 """
 
 import sys

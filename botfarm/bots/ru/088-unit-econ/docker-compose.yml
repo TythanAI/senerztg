@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/088-unit-econ/docker-compose.yml up -d
 services:
-  botfarm-ru-unit-econ:
+  botfarm-ru-088-unit-econ:
     build:
       context: ../../..
       dockerfile: bots/ru/088-unit-econ/Dockerfile
-    container_name: botfarm-ru-unit-econ
+    container_name: botfarm-ru-088-unit-econ
     restart: unless-stopped
     env_file: .env
     ports:

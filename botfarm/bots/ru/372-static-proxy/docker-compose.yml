@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/372-static-proxy/docker-compose.yml up -d
+services:
+  botfarm-ru-372-static-proxy:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/372-static-proxy/Dockerfile
+    container_name: botfarm-ru-372-static-proxy
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9371:9371"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

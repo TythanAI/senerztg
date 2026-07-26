@@ -2,7 +2,7 @@
 """Марафон Подготовка — 42 км: план на 16 недель
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-marathon-prep
+Run as a unit: systemctl start botfarm-ru-068-marathon-prep
 """
 
 import sys

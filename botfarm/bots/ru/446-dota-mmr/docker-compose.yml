@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/446-dota-mmr/docker-compose.yml up -d
+services:
+  botfarm-ru-446-dota-mmr:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/446-dota-mmr/Dockerfile
+    container_name: botfarm-ru-446-dota-mmr
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9445:9445"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

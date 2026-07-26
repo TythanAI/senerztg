@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/015-bank-deals/docker-compose.yml up -d
 services:
-  botfarm-ru-bank-deals:
+  botfarm-ru-015-bank-deals:
     build:
       context: ../../..
       dockerfile: bots/ru/015-bank-deals/Dockerfile
-    container_name: botfarm-ru-bank-deals
+    container_name: botfarm-ru-015-bank-deals
     restart: unless-stopped
     env_file: .env
     ports:

@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/059-meta-ads/docker-compose.yml up -d
 services:
-  botfarm-eu-meta-ads:
+  botfarm-eu-059-meta-ads:
     build:
       context: ../../..
       dockerfile: bots/eu/059-meta-ads/Dockerfile
-    container_name: botfarm-eu-meta-ads
+    container_name: botfarm-eu-059-meta-ads
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9258:9258"
+      - "9558:9558"
     volumes:
       - ./data:/app/bot/data
     logging:

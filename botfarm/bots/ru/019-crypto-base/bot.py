@@ -2,7 +2,7 @@
 """Крипта База — Первая крипта: кошельки, биржи, безопасность
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-crypto-base
+Run as a unit: systemctl start botfarm-ru-019-crypto-base
 """
 
 import sys

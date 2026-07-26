@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/171-1password-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-171-1password-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/171-1password-eu/Dockerfile
+    container_name: botfarm-eu-171-1password-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9670:9670"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

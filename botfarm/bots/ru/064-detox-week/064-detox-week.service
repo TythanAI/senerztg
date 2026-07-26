@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-detox-week
+SyslogIdentifier=botfarm-ru-064-detox-week
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

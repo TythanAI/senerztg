@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/020-defi-farm/docker-compose.yml up -d
 services:
-  botfarm-ru-defi-farm:
+  botfarm-ru-020-defi-farm:
     build:
       context: ../../..
       dockerfile: bots/ru/020-defi-farm/Dockerfile
-    container_name: botfarm-ru-defi-farm
+    container_name: botfarm-ru-020-defi-farm
     restart: unless-stopped
     env_file: .env
     ports:

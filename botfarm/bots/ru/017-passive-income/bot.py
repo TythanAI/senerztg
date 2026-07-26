@@ -2,7 +2,7 @@
 """Пассивный Доход — Пять потоков дохода за год
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-passive-income
+Run as a unit: systemctl start botfarm-ru-017-passive-income
 """
 
 import sys

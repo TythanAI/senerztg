@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/030-stables-yield/docker-compose.yml up -d
 services:
-  botfarm-ru-stables-yield:
+  botfarm-ru-030-stables-yield:
     build:
       context: ../../..
       dockerfile: bots/ru/030-stables-yield/Dockerfile
-    container_name: botfarm-ru-stables-yield
+    container_name: botfarm-ru-030-stables-yield
     restart: unless-stopped
     env_file: .env
     ports:

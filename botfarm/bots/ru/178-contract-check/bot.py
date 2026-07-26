@@ -2,7 +2,7 @@
 """Проверка Договора — Правки и риски за 24 часа
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-contract-check
+Run as a unit: systemctl start botfarm-ru-178-contract-check
 """
 
 import sys

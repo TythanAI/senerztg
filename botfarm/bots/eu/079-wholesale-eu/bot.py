@@ -2,7 +2,7 @@
 """Wholesale Deals — Verified B2B lots, weekly
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-wholesale-eu
+Run as a unit: systemctl start botfarm-eu-079-wholesale-eu
 """
 
 import sys

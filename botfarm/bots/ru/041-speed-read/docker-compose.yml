@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/041-speed-read/docker-compose.yml up -d
 services:
-  botfarm-ru-speed-read:
+  botfarm-ru-041-speed-read:
     build:
       context: ../../..
       dockerfile: bots/ru/041-speed-read/Dockerfile
-    container_name: botfarm-ru-speed-read
+    container_name: botfarm-ru-041-speed-read
     restart: unless-stopped
     env_file: .env
     ports:

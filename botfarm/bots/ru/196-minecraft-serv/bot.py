@@ -2,7 +2,7 @@
 """Майнкрафт Сервер — Свой сервер за пять минут
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-minecraft-serv
+Run as a unit: systemctl start botfarm-ru-196-minecraft-serv
 """
 
 import sys

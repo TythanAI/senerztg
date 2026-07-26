@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/264-ffxiv-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-264-ffxiv-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/264-ffxiv-eu/Dockerfile
+    container_name: botfarm-eu-264-ffxiv-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9763:9763"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

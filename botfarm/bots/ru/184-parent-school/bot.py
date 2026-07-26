@@ -2,7 +2,7 @@
 """Школа Родителей — Возрастные кризисы без криков
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-parent-school
+Run as a unit: systemctl start botfarm-ru-184-parent-school
 """
 
 import sys

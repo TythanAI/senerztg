@@ -2,7 +2,7 @@
 """Кулинарная Школа — Новое блюдо каждую неделю
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-cook-school
+Run as a unit: systemctl start botfarm-ru-138-cook-school
 """
 
 import sys

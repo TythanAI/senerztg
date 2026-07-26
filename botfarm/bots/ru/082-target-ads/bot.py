@@ -2,7 +2,7 @@
 """Таргет Про — Реклама во ВК и Telegram Ads
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-target-ads
+Run as a unit: systemctl start botfarm-ru-082-target-ads
 """
 
 import sys

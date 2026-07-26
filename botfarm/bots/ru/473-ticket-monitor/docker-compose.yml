@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/473-ticket-monitor/docker-compose.yml up -d
+services:
+  botfarm-ru-473-ticket-monitor:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/473-ticket-monitor/Dockerfile
+    container_name: botfarm-ru-473-ticket-monitor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9472:9472"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

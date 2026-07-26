@@ -2,7 +2,7 @@
 """Prompt Library — Battle-tested prompts by profession
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-ai-prompts
+Run as a unit: systemctl start botfarm-eu-031-ai-prompts
 """
 
 import sys

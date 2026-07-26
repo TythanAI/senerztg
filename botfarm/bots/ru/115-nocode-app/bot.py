@@ -2,7 +2,7 @@
 """Nocode Приложения — Продукт без единой строки кода
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-nocode-app
+Run as a unit: systemctl start botfarm-ru-115-nocode-app
 """
 
 import sys

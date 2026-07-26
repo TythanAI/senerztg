@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/477-stock-monitor/docker-compose.yml up -d
+services:
+  botfarm-ru-477-stock-monitor:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/477-stock-monitor/Dockerfile
+    container_name: botfarm-ru-477-stock-monitor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9476:9476"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

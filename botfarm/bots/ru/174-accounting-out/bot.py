@@ -2,7 +2,7 @@
 """Бухгалтерия Аутсорс — Отчётность и зарплата
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-accounting-out
+Run as a unit: systemctl start botfarm-ru-174-accounting-out
 """
 
 import sys

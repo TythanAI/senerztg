@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/455-pubg-boost-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-455-pubg-boost-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/455-pubg-boost-eu/Dockerfile
+    container_name: botfarm-eu-455-pubg-boost-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9954:9954"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

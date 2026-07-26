@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/052-math-olymp/docker-compose.yml up -d
 services:
-  botfarm-ru-math-olymp:
+  botfarm-ru-052-math-olymp:
     build:
       context: ../../..
       dockerfile: bots/ru/052-math-olymp/Dockerfile
-    container_name: botfarm-ru-math-olymp
+    container_name: botfarm-ru-052-math-olymp
     restart: unless-stopped
     env_file: .env
     ports:

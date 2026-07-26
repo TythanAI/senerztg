@@ -2,7 +2,7 @@
 """Email Воронки — Письма, которые продают
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-email-flow
+Run as a unit: systemctl start botfarm-ru-091-email-flow
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/029-wallet-secure/docker-compose.yml up -d
 services:
-  botfarm-ru-wallet-secure:
+  botfarm-ru-029-wallet-secure:
     build:
       context: ../../..
       dockerfile: bots/ru/029-wallet-secure/Dockerfile
-    container_name: botfarm-ru-wallet-secure
+    container_name: botfarm-ru-029-wallet-secure
     restart: unless-stopped
     env_file: .env
     ports:

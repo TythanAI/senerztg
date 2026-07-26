@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/139-bake-pro/docker-compose.yml up -d
 services:
-  botfarm-ru-bake-pro:
+  botfarm-ru-139-bake-pro:
     build:
       context: ../../..
       dockerfile: bots/ru/139-bake-pro/Dockerfile
-    container_name: botfarm-ru-bake-pro
+    container_name: botfarm-ru-139-bake-pro
     restart: unless-stopped
     env_file: .env
     ports:

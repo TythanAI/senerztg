@@ -2,7 +2,7 @@
 """Школа Риелтора — Профессия с нуля до сделок
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-realtor-school
+Run as a unit: systemctl start botfarm-ru-169-realtor-school
 """
 
 import sys

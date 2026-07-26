@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/180-anxiety-help/docker-compose.yml up -d
 services:
-  botfarm-ru-anxiety-help:
+  botfarm-ru-180-anxiety-help:
     build:
       context: ../../..
       dockerfile: bots/ru/180-anxiety-help/Dockerfile
-    container_name: botfarm-ru-anxiety-help
+    container_name: botfarm-ru-180-anxiety-help
     restart: unless-stopped
     env_file: .env
     ports:

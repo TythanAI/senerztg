@@ -44,6 +44,11 @@ class QuizCB(CallbackData, prefix="qz"):
     option: int
 
 
+class QtyCB(CallbackData, prefix="qty"):
+    sku: str
+    qty: int
+
+
 class AdminCB(CallbackData, prefix="adm"):
     action: str
     arg: str = ""
@@ -52,6 +57,7 @@ class AdminCB(CallbackData, prefix="adm"):
 #: Which main-menu buttons a module contributes.
 MODULE_BUTTONS: dict[str, tuple[str, str]] = {
     "catalog": ("menu.catalog", "catalog"),
+    "balance": ("menu.balance", "balance"),
     "subscription": ("menu.subscription", "subscription"),
     "content": ("menu.content", "content"),
     "quiz": ("menu.quiz", "quiz"),
@@ -65,13 +71,16 @@ MODULE_BUTTONS: dict[str, tuple[str, str]] = {
 
 def main_menu(config: "NicheConfig", t: "Translator") -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
+    count = 0
     for module, (key, action) in MODULE_BUTTONS.items():
         if config.has(module):
             builder.button(text=t(key), callback_data=MenuCB(action=action).pack())
+            count += 1
     builder.button(text=t("menu.profile"), callback_data=MenuCB(action="profile").pack())
+    count += 1
 
     # Two per row reads best on a phone; a lone last button spans the width.
-    count = len(builder.buttons)
+    # `builder.buttons` is a generator, so the count is tracked as we go.
     builder.adjust(*([2] * (count // 2) + ([1] if count % 2 else [])))
     return builder.as_markup()
 
@@ -163,6 +172,61 @@ def subscribe_keyboard(
     return builder.as_markup()
 
 
+def topup_keyboard(
+    presets: Sequence[int], config: "NicheConfig", t: "Translator"
+) -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    for amount in presets:
+        builder.button(
+            text=fmt_money(Decimal(amount), config.currency),
+            callback_data=MenuCB(action=f"topup:{amount}").pack(),
+        )
+    builder.button(text=t("balance.custom"), callback_data=MenuCB(action="topup_custom").pack())
+    builder.button(text=t("common.menu"), callback_data=MenuCB(action="home").pack())
+
+    rows = [3] * (len(presets) // 3)
+    if len(presets) % 3:
+        rows.append(len(presets) % 3)
+    builder.adjust(*rows, 1, 1)
+    return builder.as_markup()
+
+
+def quantity_keyboard(
+    sku: str, options: Sequence[int], t: "Translator"
+) -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    for count in options:
+        builder.button(text=f"{count} шт." if t.lang == "ru" else f"{count} pcs",
+                       callback_data=QtyCB(sku=sku, qty=count).pack())
+    builder.button(text=t("common.back"), callback_data=MenuCB(action="catalog").pack())
+    builder.adjust(3)
+    return builder.as_markup()
+
+
+def checkout_keyboard(
+    order_id: int,
+    registry: "ProviderRegistry",
+    t: "Translator",
+    *,
+    balance_enough: bool = False,
+) -> InlineKeyboardMarkup:
+    """Payment methods, with the wallet first when it can cover the order."""
+    builder = InlineKeyboardBuilder()
+    if balance_enough:
+        builder.button(
+            text=t("balance.pay_with"),
+            callback_data=PayCB(order_id=order_id, provider="balance").pack(),
+        )
+    for name in registry.names:
+        builder.button(
+            text=registry.label(name),
+            callback_data=PayCB(order_id=order_id, provider=name).pack(),
+        )
+    builder.button(text=t("common.cancel"), callback_data=MenuCB(action="catalog").pack())
+    builder.adjust(1)
+    return builder.as_markup()
+
+
 def quiz_keyboard(step: int, options: Sequence[str]) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     for index, option in enumerate(options):
@@ -184,6 +248,7 @@ def admin_menu(t: "Translator") -> InlineKeyboardMarkup:
         ("admin.broadcast", "broadcast"),
         ("admin.promos", "promos"),
         ("admin.orders", "orders"),
+        ("admin.stock", "stock"),
         ("admin.leads", "leads"),
     ):
         builder.button(text=t(key), callback_data=AdminCB(action=action).pack())

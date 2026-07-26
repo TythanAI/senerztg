@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/174-accounting-out/docker-compose.yml up -d
 services:
-  botfarm-ru-accounting-out:
+  botfarm-ru-174-accounting-out:
     build:
       context: ../../..
       dockerfile: bots/ru/174-accounting-out/Dockerfile
-    container_name: botfarm-ru-accounting-out
+    container_name: botfarm-ru-174-accounting-out
     restart: unless-stopped
     env_file: .env
     ports:

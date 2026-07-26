@@ -2,7 +2,7 @@
 """Company Formation — GmbH, LTD, or estonian OÜ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-gmbh-setup
+Run as a unit: systemctl start botfarm-eu-095-gmbh-setup
 """
 
 import sys

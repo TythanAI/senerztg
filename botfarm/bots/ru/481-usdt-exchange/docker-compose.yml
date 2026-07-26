@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/481-usdt-exchange/docker-compose.yml up -d
+services:
+  botfarm-ru-481-usdt-exchange:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/481-usdt-exchange/Dockerfile
+    container_name: botfarm-ru-481-usdt-exchange
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9480:9480"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

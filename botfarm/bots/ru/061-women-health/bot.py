@@ -2,7 +2,7 @@
 """Женское Здоровье — Цикл, гормоны, самочувствие
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-women-health
+Run as a unit: systemctl start botfarm-ru-061-women-health
 """
 
 import sys

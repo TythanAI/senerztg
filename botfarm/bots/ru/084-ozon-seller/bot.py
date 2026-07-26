@@ -2,7 +2,7 @@
 """Ozon Продавец — Карточки, реклама, юнит-экономика
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ozon-seller
+Run as a unit: systemctl start botfarm-ru-084-ozon-seller
 """
 
 import sys

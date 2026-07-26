@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/476-tender-monitor/docker-compose.yml up -d
+services:
+  botfarm-ru-476-tender-monitor:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/476-tender-monitor/Dockerfile
+    container_name: botfarm-ru-476-tender-monitor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9475:9475"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

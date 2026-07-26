@@ -2,7 +2,7 @@
 """Flight Deal Alerts — Error fares and award sweet spots
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-travel-hack
+Run as a unit: systemctl start botfarm-eu-088-travel-hack
 """
 
 import sys

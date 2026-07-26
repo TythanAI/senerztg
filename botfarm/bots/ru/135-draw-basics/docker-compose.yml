@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/135-draw-basics/docker-compose.yml up -d
 services:
-  botfarm-ru-draw-basics:
+  botfarm-ru-135-draw-basics:
     build:
       context: ../../..
       dockerfile: bots/ru/135-draw-basics/Dockerfile
-    container_name: botfarm-ru-draw-basics
+    container_name: botfarm-ru-135-draw-basics
     restart: unless-stopped
     env_file: .env
     ports:

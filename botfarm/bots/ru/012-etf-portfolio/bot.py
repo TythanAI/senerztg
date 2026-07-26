@@ -2,7 +2,7 @@
 """ETF Портфель — Пассивный портфель на фондах
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-etf-portfolio
+Run as a unit: systemctl start botfarm-ru-012-etf-portfolio
 """
 
 import sys

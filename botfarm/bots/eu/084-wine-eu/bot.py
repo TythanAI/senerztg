@@ -2,7 +2,7 @@
 """Wine Discovery — Tastings and bottles worth buying
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-wine-eu
+Run as a unit: systemctl start botfarm-eu-084-wine-eu
 """
 
 import sys

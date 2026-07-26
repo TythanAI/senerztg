@@ -2,7 +2,7 @@
 """Speak with Impact — Presentations people remember
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-public-speaking-eu
+Run as a unit: systemctl start botfarm-eu-057-public-speaking-eu
 """
 
 import sys

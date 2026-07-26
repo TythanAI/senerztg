@@ -2,7 +2,7 @@
 """Парфюм Клуб — Разборы ароматов и находки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-perfume-club
+Run as a unit: systemctl start botfarm-ru-077-perfume-club
 """
 
 import sys

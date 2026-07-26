@@ -2,7 +2,7 @@
 """Brand Identity — Logo, system, and guidelines
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-branding-eu
+Run as a unit: systemctl start botfarm-eu-067-branding-eu
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Семейный Бюджет — Учёт денег семьи без таблиц
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-budget-family
+Run as a unit: systemctl start botfarm-ru-007-budget-family
 """
 
 import sys

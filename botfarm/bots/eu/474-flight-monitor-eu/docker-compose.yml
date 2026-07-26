@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/474-flight-monitor-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-474-flight-monitor-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/474-flight-monitor-eu/Dockerfile
+    container_name: botfarm-eu-474-flight-monitor-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9973:9973"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

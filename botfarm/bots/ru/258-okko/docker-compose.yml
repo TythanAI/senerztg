@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/258-okko/docker-compose.yml up -d
+services:
+  botfarm-ru-258-okko:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/258-okko/Dockerfile
+    container_name: botfarm-ru-258-okko
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9257:9257"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

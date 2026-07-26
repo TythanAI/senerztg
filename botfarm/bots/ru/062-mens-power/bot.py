@@ -2,7 +2,7 @@
 """Мужская Форма — Тестостерон, сила, выносливость
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mens-power
+Run as a unit: systemctl start botfarm-ru-062-mens-power
 """
 
 import sys

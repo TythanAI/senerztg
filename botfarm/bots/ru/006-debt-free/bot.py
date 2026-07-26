@@ -2,7 +2,7 @@
 """Долги Стоп — Пошаговый выход из кредитной ямы
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-debt-free
+Run as a unit: systemctl start botfarm-ru-006-debt-free
 """
 
 import sys

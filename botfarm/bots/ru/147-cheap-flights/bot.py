@@ -2,7 +2,7 @@
 """Дешёвые Билеты — Ошибочные тарифы и распродажи
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-cheap-flights
+Run as a unit: systemctl start botfarm-ru-147-cheap-flights
 """
 
 import sys

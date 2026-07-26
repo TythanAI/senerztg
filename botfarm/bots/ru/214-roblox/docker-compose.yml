@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/214-roblox/docker-compose.yml up -d
+services:
+  botfarm-ru-214-roblox:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/214-roblox/Dockerfile
+    container_name: botfarm-ru-214-roblox
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9213:9213"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

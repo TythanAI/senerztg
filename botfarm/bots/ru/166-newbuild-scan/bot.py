@@ -2,7 +2,7 @@
 """Новостройки Скан — Старты продаж и скидки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-newbuild-scan
+Run as a unit: systemctl start botfarm-ru-166-newbuild-scan
 """
 
 import sys

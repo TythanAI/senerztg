@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/406-psn-card/docker-compose.yml up -d
+services:
+  botfarm-ru-406-psn-card:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/406-psn-card/Dockerfile
+    container_name: botfarm-ru-406-psn-card
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9405:9405"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

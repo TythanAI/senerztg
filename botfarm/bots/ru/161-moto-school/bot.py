@@ -2,7 +2,7 @@
 """Мотошкола — Первый сезон без падений
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-moto-school
+Run as a unit: systemctl start botfarm-ru-161-moto-school
 """
 
 import sys

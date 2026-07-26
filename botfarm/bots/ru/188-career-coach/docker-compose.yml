@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/188-career-coach/docker-compose.yml up -d
 services:
-  botfarm-ru-career-coach:
+  botfarm-ru-188-career-coach:
     build:
       context: ../../..
       dockerfile: bots/ru/188-career-coach/Dockerfile
-    container_name: botfarm-ru-career-coach
+    container_name: botfarm-ru-188-career-coach
     restart: unless-stopped
     env_file: .env
     ports:

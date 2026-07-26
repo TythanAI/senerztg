@@ -2,7 +2,7 @@
 """IELTS Цель — Подготовка к IELTS на 7.0+
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ielts-target
+Run as a unit: systemctl start botfarm-ru-034-ielts-target
 """
 
 import sys

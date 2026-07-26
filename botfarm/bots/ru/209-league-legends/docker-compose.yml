@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/209-league-legends/docker-compose.yml up -d
+services:
+  botfarm-ru-209-league-legends:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/209-league-legends/Dockerfile
+    container_name: botfarm-ru-209-league-legends
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9208:9208"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

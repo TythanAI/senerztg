@@ -2,7 +2,7 @@
 """BTC Цикл — Циклический анализ биткоина
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-btc-cycle
+Run as a unit: systemctl start botfarm-ru-023-btc-cycle
 """
 
 import sys

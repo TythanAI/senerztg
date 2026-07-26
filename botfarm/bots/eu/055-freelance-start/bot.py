@@ -2,7 +2,7 @@
 """Freelance Launch — First five clients in 90 days
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-freelance-start
+Run as a unit: systemctl start botfarm-eu-055-freelance-start
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Винный Клуб — Дегустации и подбор вин
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-wine-club
+Run as a unit: systemctl start botfarm-ru-140-wine-club
 """
 
 import sys

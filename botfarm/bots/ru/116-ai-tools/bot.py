@@ -2,7 +2,7 @@
 """Нейросети Практика — Инструменты и промпты для работы
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ai-tools
+Run as a unit: systemctl start botfarm-ru-116-ai-tools
 """
 
 import sys

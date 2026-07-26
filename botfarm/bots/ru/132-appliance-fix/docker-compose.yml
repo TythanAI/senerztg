@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/132-appliance-fix/docker-compose.yml up -d
 services:
-  botfarm-ru-appliance-fix:
+  botfarm-ru-132-appliance-fix:
     build:
       context: ../../..
       dockerfile: bots/ru/132-appliance-fix/Dockerfile
-    container_name: botfarm-ru-appliance-fix
+    container_name: botfarm-ru-132-appliance-fix
     restart: unless-stopped
     env_file: .env
     ports:

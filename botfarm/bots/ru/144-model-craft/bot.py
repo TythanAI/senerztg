@@ -2,7 +2,7 @@
 """Моделизм — Схемы и наборы для сборки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-model-craft
+Run as a unit: systemctl start botfarm-ru-144-model-craft
 """
 
 import sys

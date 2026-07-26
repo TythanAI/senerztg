@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/295-pika/docker-compose.yml up -d
+services:
+  botfarm-ru-295-pika:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/295-pika/Dockerfile
+    container_name: botfarm-ru-295-pika
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9294:9294"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

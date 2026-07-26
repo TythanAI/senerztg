@@ -2,7 +2,7 @@
 """Уход за Волосами — Восстановление после окрашивания
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-hair-care
+Run as a unit: systemctl start botfarm-ru-073-hair-care
 """
 
 import sys

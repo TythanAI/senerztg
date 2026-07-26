@@ -2,7 +2,7 @@
 """Трейдер Сигналы — Сигналы по фьючерсам МосБиржи
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-trader-signals
+Run as a unit: systemctl start botfarm-ru-004-trader-signals
 """
 
 import sys

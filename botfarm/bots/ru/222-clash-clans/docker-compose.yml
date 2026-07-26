@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/222-clash-clans/docker-compose.yml up -d
+services:
+  botfarm-ru-222-clash-clans:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/222-clash-clans/Dockerfile
+    container_name: botfarm-ru-222-clash-clans
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9221:9221"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

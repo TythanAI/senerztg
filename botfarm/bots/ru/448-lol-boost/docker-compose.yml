@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/448-lol-boost/docker-compose.yml up -d
+services:
+  botfarm-ru-448-lol-boost:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/448-lol-boost/Dockerfile
+    container_name: botfarm-ru-448-lol-boost
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9447:9447"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

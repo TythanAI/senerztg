@@ -2,7 +2,7 @@
 """Автопутешествия — Маршруты по России с точками
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-road-trip
+Run as a unit: systemctl start botfarm-ru-150-road-trip
 """
 
 import sys

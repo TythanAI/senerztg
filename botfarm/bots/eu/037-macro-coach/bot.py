@@ -2,7 +2,7 @@
 """Macro Coaching — Your numbers, recalculated weekly
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-macro-coach
+Run as a unit: systemctl start botfarm-eu-037-macro-coach
 """
 
 import sys

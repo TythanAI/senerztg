@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/142-fish-spots/docker-compose.yml up -d
 services:
-  botfarm-ru-fish-spots:
+  botfarm-ru-142-fish-spots:
     build:
       context: ../../..
       dockerfile: bots/ru/142-fish-spots/Dockerfile
-    container_name: botfarm-ru-fish-spots
+    container_name: botfarm-ru-142-fish-spots
     restart: unless-stopped
     env_file: .env
     ports:

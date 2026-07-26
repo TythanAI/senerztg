@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/360-envato-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-360-envato-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/360-envato-eu/Dockerfile
+    container_name: botfarm-eu-360-envato-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9859:9859"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

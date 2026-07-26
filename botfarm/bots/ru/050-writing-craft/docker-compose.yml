@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/050-writing-craft/docker-compose.yml up -d
 services:
-  botfarm-ru-writing-craft:
+  botfarm-ru-050-writing-craft:
     build:
       context: ../../..
       dockerfile: bots/ru/050-writing-craft/Dockerfile
-    container_name: botfarm-ru-writing-craft
+    container_name: botfarm-ru-050-writing-craft
     restart: unless-stopped
     env_file: .env
     ports:

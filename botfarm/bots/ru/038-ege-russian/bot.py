@@ -2,7 +2,7 @@
 """ЕГЭ Русский — Сочинение и тест без ошибок
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ege-russian
+Run as a unit: systemctl start botfarm-ru-038-ege-russian
 """
 
 import sys

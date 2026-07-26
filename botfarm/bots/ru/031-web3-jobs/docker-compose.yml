@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/031-web3-jobs/docker-compose.yml up -d
 services:
-  botfarm-ru-web3-jobs:
+  botfarm-ru-031-web3-jobs:
     build:
       context: ../../..
       dockerfile: bots/ru/031-web3-jobs/Dockerfile
-    container_name: botfarm-ru-web3-jobs
+    container_name: botfarm-ru-031-web3-jobs
     restart: unless-stopped
     env_file: .env
     ports:

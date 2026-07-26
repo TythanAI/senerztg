@@ -2,7 +2,7 @@
 """IT Фриланс — Заказы, чеки, переговоры
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-freelance-it
+Run as a unit: systemctl start botfarm-ru-112-freelance-it
 """
 
 import sys

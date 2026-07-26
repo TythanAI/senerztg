@@ -2,7 +2,7 @@
 """Video Editing — Edit like a professional
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-video-eu
+Run as a unit: systemctl start botfarm-eu-082-video-eu
 """
 
 import sys

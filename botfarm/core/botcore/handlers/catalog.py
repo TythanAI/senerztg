@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+from decimal import Decimal
 
 from aiogram import F, Router
 from aiogram.filters import Command
@@ -15,14 +16,17 @@ from ..i18n import Translator
 from ..keyboards import (
     BuyCB,
     MenuCB,
+    QtyCB,
     back_button,
     catalog_menu,
-    payment_methods,
+    checkout_keyboard,
     product_card,
+    quantity_keyboard,
     subscribe_keyboard,
 )
 from ..payments import ProviderRegistry
 from ..services import CheckoutService
+from ..services.checkout import MAX_PROMO_ATTEMPTS, MAX_QUANTITY
 from ..utils import apply_discount, esc, fmt_date, fmt_money
 from .common import _edit
 
@@ -116,29 +120,116 @@ async def open_product(
 
     await repos.misc.track(user.tg_id, "product_view", product.sku)
 
-    if len(registry) == 0:
+    # Stock-backed goods: never let someone start paying for an empty shelf.
+    if product.kind == "account":
+        left = await repos.stock.available(product.sku)
+        if left <= 0:
+            await _edit(
+                callback,
+                t("catalog.sold_out", title=esc(product.title)),
+                back_button(t, "catalog"),
+            )
+            await callback.answer(t("catalog.sold_out_short"), show_alert=True)
+            return
+        if left > 1:
+            options = [n for n in (1, 2, 3, 5, 10) if n <= min(left, MAX_QUANTITY)]
+            await _edit(
+                callback,
+                t(
+                    "catalog.item_stock",
+                    title=esc(product.title),
+                    description=esc(product.description),
+                    price=fmt_money(product.price, config.currency),
+                    stock=left,
+                ),
+                quantity_keyboard(product.sku, options, t),
+            )
+            await callback.answer()
+            return
+
+    await _start_checkout(callback, state, config, t, repos, user, registry, checkout,
+                          product, quantity=1)
+
+
+@router.callback_query(QtyCB.filter())
+async def choose_quantity(
+    callback: CallbackQuery,
+    callback_data: QtyCB,
+    state: FSMContext,
+    config: NicheConfig,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    registry: ProviderRegistry,
+    checkout: CheckoutService,
+) -> None:
+    product = config.product(callback_data.sku)
+    if product is None or not product.active:
+        await callback.answer(t("errors.not_found"), show_alert=True)
+        return
+
+    quantity = max(1, min(callback_data.qty, MAX_QUANTITY))
+    if product.kind == "account":
+        left = await repos.stock.available(product.sku)
+        if left < quantity:
+            await callback.answer(t("catalog.only_left", count=left), show_alert=True)
+            return
+
+    await _start_checkout(callback, state, config, t, repos, user, registry, checkout,
+                          product, quantity=quantity)
+
+
+async def _start_checkout(
+    callback: CallbackQuery,
+    state: FSMContext,
+    config: NicheConfig,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    registry: ProviderRegistry,
+    checkout: CheckoutService,
+    product,
+    *,
+    quantity: int,
+) -> None:
+    if len(registry) == 0 and not config.has("balance"):
         await _edit(callback, t("checkout.no_methods"), back_button(t))
         await callback.answer()
         return
 
     data = await state.get_data()
     discount = int(data.get("promo_percent", 0) or 0)
-    amount = apply_discount(product.price, discount)
+    promo_code = data.get("promo_code") or None
+    unit = apply_discount(product.price, discount)
+    total = unit * quantity
 
-    order = await checkout.create_order(repos, user, product, registry.default,
-                                        discount_percent=discount)
-
-    body = t(
-        "checkout.choose_method",
-        title=esc(product.title),
-        price=fmt_money(amount, config.currency),
+    order = await checkout.create_order(
+        repos,
+        user,
+        product,
+        registry.default,
+        discount_percent=discount,
+        quantity=quantity,
+        promo_code=promo_code,
     )
+
+    title = esc(product.title)
+    if quantity > 1:
+        title += f" × {quantity}"
+    body = t("checkout.choose_method", title=title,
+             price=fmt_money(order.amount, config.currency))
     if discount:
-        body += f"\n<s>{fmt_money(product.price, config.currency)}</s> · −{discount}%"
+        body += f"\n<s>{fmt_money(product.price * quantity, config.currency)}</s> · −{discount}%"
     elif config.has("catalog"):
         body += "\n\n" + t("checkout.promo_hint")
 
-    await _edit(callback, body, payment_methods(order.id, registry, t))
+    enough = config.has("balance") and Decimal(user.balance) >= Decimal(order.amount)
+    if config.has("balance"):
+        body += "\n\n" + t("balance.current",
+                           balance=fmt_money(user.balance, config.currency))
+
+    await _edit(callback, body, checkout_keyboard(order.id, registry, t,
+                                                  balance_enough=enough))
     await callback.answer()
 
 
@@ -161,15 +252,27 @@ async def maybe_promo(
     config: NicheConfig,
     t: Translator,
     repos: Repos,
+    user: User,
 ) -> None:
-    """A bare word might be a promo code — check before ignoring it."""
+    """A bare word might be a promo code — check before ignoring it.
+
+    Two things matter here. The attempt is rate limited, because this handler
+    would otherwise be a free oracle for brute-forcing codes. And a valid code
+    is only *remembered*, not consumed: the use is spent in `settle()` when the
+    order is actually paid, so nobody can exhaust a limited promo for free.
+    """
     code = (message.text or "").strip()
+
+    attempts = await repos.misc.count_recent_events(user.tg_id, "promo_try", minutes=60)
+    if attempts >= MAX_PROMO_ATTEMPTS:
+        return
+
     promo = await repos.promos.get(code)
     if promo is None or not promo.is_usable():
+        await repos.misc.track(user.tg_id, "promo_try", code[:32])
         return  # not a promo; let other routers have it
 
-    await repos.promos.redeem(code)
-    await state.update_data(promo_percent=promo.percent)
+    await state.update_data(promo_percent=promo.percent, promo_code=promo.code)
     await message.answer(t("promo.ok", percent=promo.percent))
 
     products = config.active_products()

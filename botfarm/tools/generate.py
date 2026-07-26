@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expand the niche catalogue into 300 deployable bots.
+"""Expand the niche catalogue into 1000 deployable bots.
 
     python tools/generate.py            # write everything
     python tools/generate.py --check    # validate without writing
@@ -33,6 +33,7 @@ from archetypes import (  # noqa: E402
     build_quiz,
 )
 from niches import eu_entries, ru_entries  # noqa: E402
+from niches_shop import eu_shop_entries, ru_shop_entries  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 BOTS = ROOT / "bots"
@@ -464,7 +465,9 @@ def write_bot(entry: dict, index: int, port: int, *, check_only: bool) -> dict:
     config = build_config(entry, index)
     dirname = f"{index:03d}-{entry['slug']}"
     target = BOTS / entry["region"] / dirname
-    unit = f"botfarm-{entry['region']}-{entry['slug']}"
+    # Built from the directory name, which is unique by construction —
+    # a slug alone is not, and a shared unit name breaks both deployments.
+    unit = f"botfarm-{entry['region']}-{dirname}"
 
     # Validate through the real loader before anything touches disk.
     from botcore.config import NicheConfig
@@ -563,7 +566,11 @@ def main() -> int:
     if args.clean and BOTS.exists() and not args.check:
         shutil.rmtree(BOTS)
 
-    entries = ru_entries() + eu_entries()
+    # Order matters: the original 300 keep their numbering, the shop
+    # niches are appended after them.
+    entries = (
+        ru_entries() + ru_shop_entries() + eu_entries() + eu_shop_entries()
+    )
     index: list[dict] = []
     port = BASE_PORT
 

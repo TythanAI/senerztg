@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/075-brows-master/docker-compose.yml up -d
 services:
-  botfarm-ru-brows-master:
+  botfarm-ru-075-brows-master:
     build:
       context: ../../..
       dockerfile: bots/ru/075-brows-master/Dockerfile
-    container_name: botfarm-ru-brows-master
+    container_name: botfarm-ru-075-brows-master
     restart: unless-stopped
     env_file: .env
     ports:

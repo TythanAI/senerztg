@@ -2,7 +2,7 @@
 """Семейный Юрист — Развод, алименты, раздел
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-family-law
+Run as a unit: systemctl start botfarm-ru-176-family-law
 """
 
 import sys

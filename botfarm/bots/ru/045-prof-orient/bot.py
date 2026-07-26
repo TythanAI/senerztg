@@ -2,7 +2,7 @@
 """Профориентация — Выбор профессии по данным, а не по интуиции
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-prof-orient
+Run as a unit: systemctl start botfarm-ru-045-prof-orient
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Скрипты Продаж — Готовые скрипты для отдела продаж
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-sales-script
+Run as a unit: systemctl start botfarm-ru-086-sales-script
 """
 
 import sys

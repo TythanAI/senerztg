@@ -2,7 +2,7 @@
 """Аирдроп Хантер — Ретродропы: чек-листы и активности
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-airdrop-hunter
+Run as a unit: systemctl start botfarm-ru-022-airdrop-hunter
 """
 
 import sys

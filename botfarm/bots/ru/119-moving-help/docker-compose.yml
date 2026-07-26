@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/119-moving-help/docker-compose.yml up -d
 services:
-  botfarm-ru-moving-help:
+  botfarm-ru-119-moving-help:
     build:
       context: ../../..
       dockerfile: bots/ru/119-moving-help/Dockerfile
-    container_name: botfarm-ru-moving-help
+    container_name: botfarm-ru-119-moving-help
     restart: unless-stopped
     env_file: .env
     ports:

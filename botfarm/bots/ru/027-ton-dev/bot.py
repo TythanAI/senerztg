@@ -2,7 +2,7 @@
 """TON Разработка — Смарт-контракты и мини-аппы TON
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ton-dev
+Run as a unit: systemctl start botfarm-ru-027-ton-dev
 """
 
 import sys

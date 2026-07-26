@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/409-itunes-card/docker-compose.yml up -d
+services:
+  botfarm-ru-409-itunes-card:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/409-itunes-card/Dockerfile
+    container_name: botfarm-ru-409-itunes-card
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9408:9408"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

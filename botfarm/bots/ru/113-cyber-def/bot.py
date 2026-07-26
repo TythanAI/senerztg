@@ -2,7 +2,7 @@
 """Кибербезопасность — Защита инфраструктуры на практике
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-cyber-def
+Run as a unit: systemctl start botfarm-ru-113-cyber-def
 """
 
 import sys

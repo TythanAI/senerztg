@@ -2,7 +2,7 @@
 """Карьерный Коуч — Рост, оффер, переговоры о зарплате
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-career-coach
+Run as a unit: systemctl start botfarm-ru-188-career-coach
 """
 
 import sys

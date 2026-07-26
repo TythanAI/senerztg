@@ -2,7 +2,7 @@
 """Inmobiliaria Directa — Encuentra tu piso sin comisiones
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-inmobiliaria-es
+Run as a unit: systemctl start botfarm-eu-099-inmobiliaria-es
 """
 
 import sys

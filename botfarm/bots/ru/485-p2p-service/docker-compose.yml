@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/485-p2p-service/docker-compose.yml up -d
+services:
+  botfarm-ru-485-p2p-service:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/485-p2p-service/Dockerfile
+    container_name: botfarm-ru-485-p2p-service
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9484:9484"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

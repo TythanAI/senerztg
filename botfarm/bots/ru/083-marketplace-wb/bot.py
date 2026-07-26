@@ -2,7 +2,7 @@
 """Wildberries Старт — Первая поставка и выход в прибыль
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-marketplace-wb
+Run as a unit: systemctl start botfarm-ru-083-marketplace-wb
 """
 
 import sys

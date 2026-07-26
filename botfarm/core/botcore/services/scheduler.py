@@ -37,6 +37,8 @@ class BackgroundJobs:
         *,
         poll_interval: int = 60,
         renew_interval: int = 6 * 3600,
+        throttle=None,
+        keep_events_days: int = 90,
     ) -> None:
         self.db = db
         self.bot = bot
@@ -45,6 +47,8 @@ class BackgroundJobs:
         self.t = t
         self.poll_interval = poll_interval
         self.renew_interval = renew_interval
+        self.throttle = throttle
+        self.keep_events_days = keep_events_days
         self._tasks: list[asyncio.Task] = []
 
     def start(self) -> None:
@@ -55,8 +59,28 @@ class BackgroundJobs:
             asyncio.create_task(
                 self._loop(self.subscription_reminders, self.renew_interval, "renewals")
             ),
+            asyncio.create_task(self._loop(self.housekeeping, 3600, "housekeeping")),
         ]
         log.info("background jobs started")
+
+    async def housekeeping(self) -> int:
+        """Reclaim what would otherwise grow without bound.
+
+        A long-running bot accumulates two things forever: per-user throttle
+        buckets in memory, and analytics rows on disk. Neither is dangerous in
+        a day and both are a slow denial of service over a year.
+        """
+        dropped = 0
+        if self.throttle is not None:
+            dropped = self.throttle.prune()
+
+        async with self.db.session() as session:
+            repos = Repos(session)
+            events = await repos.misc.prune_events(keep_days=self.keep_events_days)
+
+        if dropped or events:
+            log.info("housekeeping: %s throttle buckets, %s old events", dropped, events)
+        return dropped + events
 
     async def stop(self) -> None:
         for task in self._tasks:

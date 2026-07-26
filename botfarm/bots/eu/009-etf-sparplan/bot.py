@@ -2,7 +2,7 @@
 """ETF Sparplan — Vermögensaufbau mit ETF-Sparplänen
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-etf-sparplan
+Run as a unit: systemctl start botfarm-eu-009-etf-sparplan
 """
 
 import sys

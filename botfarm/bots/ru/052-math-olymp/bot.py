@@ -2,7 +2,7 @@
 """Олимпиадная Математика — Задачи всероса с разборами
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-math-olymp
+Run as a unit: systemctl start botfarm-ru-052-math-olymp
 """
 
 import sys

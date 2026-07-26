@@ -2,7 +2,7 @@
 """Бренд Пакет — Логотип, фирстиль, гайдлайн
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-brand-pack
+Run as a unit: systemctl start botfarm-ru-089-brand-pack
 """
 
 import sys

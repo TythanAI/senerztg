@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/024-code-mentor/docker-compose.yml up -d
 services:
-  botfarm-eu-code-mentor:
+  botfarm-eu-024-code-mentor:
     build:
       context: ../../..
       dockerfile: bots/eu/024-code-mentor/Dockerfile
-    container_name: botfarm-eu-code-mentor
+    container_name: botfarm-eu-024-code-mentor
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9223:9223"
+      - "9523:9523"
     volumes:
       - ./data:/app/bot/data
     logging:

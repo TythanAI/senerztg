@@ -2,7 +2,7 @@
 """Digital Nomad Setup — Residency, banking, and taxes
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-digital-nomad
+Run as a unit: systemctl start botfarm-eu-092-digital-nomad
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Dota Тренер — Разбор реплеев и стратегия
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-dota-coach
+Run as a unit: systemctl start botfarm-ru-190-dota-coach
 """
 
 import sys

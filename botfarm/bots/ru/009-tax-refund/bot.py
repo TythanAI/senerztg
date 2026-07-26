@@ -2,7 +2,7 @@
 """Налог Возврат — Возврат НДФЛ под ключ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-tax-refund
+Run as a unit: systemctl start botfarm-ru-009-tax-refund
 """
 
 import sys

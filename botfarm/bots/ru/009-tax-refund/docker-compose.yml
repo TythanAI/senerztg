@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/009-tax-refund/docker-compose.yml up -d
 services:
-  botfarm-ru-tax-refund:
+  botfarm-ru-009-tax-refund:
     build:
       context: ../../..
       dockerfile: bots/ru/009-tax-refund/Dockerfile
-    container_name: botfarm-ru-tax-refund
+    container_name: botfarm-ru-009-tax-refund
     restart: unless-stopped
     env_file: .env
     ports:

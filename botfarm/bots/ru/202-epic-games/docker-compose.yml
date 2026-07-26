@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/202-epic-games/docker-compose.yml up -d
+services:
+  botfarm-ru-202-epic-games:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/202-epic-games/Dockerfile
+    container_name: botfarm-ru-202-epic-games
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9201:9201"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

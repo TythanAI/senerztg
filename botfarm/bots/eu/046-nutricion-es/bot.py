@@ -2,7 +2,7 @@
 """Nutrición Práctica — Come bien sin dietas imposibles
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-nutricion-es
+Run as a unit: systemctl start botfarm-eu-046-nutricion-es
 """
 
 import sys

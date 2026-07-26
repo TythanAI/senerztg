@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/033-security-audit/docker-compose.yml up -d
 services:
-  botfarm-eu-security-audit:
+  botfarm-eu-033-security-audit:
     build:
       context: ../../..
       dockerfile: bots/eu/033-security-audit/Dockerfile
-    container_name: botfarm-eu-security-audit
+    container_name: botfarm-eu-033-security-audit
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9232:9232"
+      - "9532:9532"
     volumes:
       - ./data:/app/bot/data
     logging:

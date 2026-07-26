@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/376-sms-numbers/docker-compose.yml up -d
+services:
+  botfarm-ru-376-sms-numbers:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/376-sms-numbers/Dockerfile
+    container_name: botfarm-ru-376-sms-numbers
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9375:9375"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

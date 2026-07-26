@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/055-nutrition-plan/docker-compose.yml up -d
 services:
-  botfarm-ru-nutrition-plan:
+  botfarm-ru-055-nutrition-plan:
     build:
       context: ../../..
       dockerfile: bots/ru/055-nutrition-plan/Dockerfile
-    container_name: botfarm-ru-nutrition-plan
+    container_name: botfarm-ru-055-nutrition-plan
     restart: unless-stopped
     env_file: .env
     ports:

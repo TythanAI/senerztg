@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/079-beauty-shop/docker-compose.yml up -d
 services:
-  botfarm-ru-beauty-shop:
+  botfarm-ru-079-beauty-shop:
     build:
       context: ../../..
       dockerfile: bots/ru/079-beauty-shop/Dockerfile
-    container_name: botfarm-ru-beauty-shop
+    container_name: botfarm-ru-079-beauty-shop
     restart: unless-stopped
     env_file: .env
     ports:

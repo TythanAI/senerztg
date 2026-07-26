@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/316-twitch-channel/docker-compose.yml up -d
+services:
+  botfarm-ru-316-twitch-channel:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/316-twitch-channel/Dockerfile
+    container_name: botfarm-ru-316-twitch-channel
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9315:9315"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

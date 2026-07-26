@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/459-brawl-boost/docker-compose.yml up -d
+services:
+  botfarm-ru-459-brawl-boost:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/459-brawl-boost/Dockerfile
+    container_name: botfarm-ru-459-brawl-boost
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9458:9458"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

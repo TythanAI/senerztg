@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/087-crm-setup/docker-compose.yml up -d
 services:
-  botfarm-ru-crm-setup:
+  botfarm-ru-087-crm-setup:
     build:
       context: ../../..
       dockerfile: bots/ru/087-crm-setup/Dockerfile
-    container_name: botfarm-ru-crm-setup
+    container_name: botfarm-ru-087-crm-setup
     restart: unless-stopped
     env_file: .env
     ports:

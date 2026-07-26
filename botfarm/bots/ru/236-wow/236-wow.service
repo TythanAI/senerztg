@@ -1,0 +1,27 @@
+[Unit]
+Description=World of Warcraft Аккаунты (ru-236-wow)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botfarm
+WorkingDirectory=/opt/botfarm/bots/ru/236-wow
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/botfarm/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=botfarm-ru-236-wow
+
+# Hardening — the bot only needs its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/botfarm/bots/ru/236-wow
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

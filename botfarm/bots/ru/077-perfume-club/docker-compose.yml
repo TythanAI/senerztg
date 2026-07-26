@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/077-perfume-club/docker-compose.yml up -d
 services:
-  botfarm-ru-perfume-club:
+  botfarm-ru-077-perfume-club:
     build:
       context: ../../..
       dockerfile: bots/ru/077-perfume-club/Dockerfile
-    container_name: botfarm-ru-perfume-club
+    container_name: botfarm-ru-077-perfume-club
     restart: unless-stopped
     env_file: .env
     ports:

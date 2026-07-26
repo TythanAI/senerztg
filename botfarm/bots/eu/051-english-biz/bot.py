@@ -2,7 +2,7 @@
 """Business English — Meetings, emails, presentations
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-english-biz
+Run as a unit: systemctl start botfarm-eu-051-english-biz
 """
 
 import sys

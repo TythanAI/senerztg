@@ -2,7 +2,7 @@
 """PMP Exam Prep — Pass on the first attempt
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-pmp-prep
+Run as a unit: systemctl start botfarm-eu-053-pmp-prep
 """
 
 import sys

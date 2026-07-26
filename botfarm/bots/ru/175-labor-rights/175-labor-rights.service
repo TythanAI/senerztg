@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-labor-rights
+SyslogIdentifier=botfarm-ru-175-labor-rights
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

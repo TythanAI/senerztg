@@ -2,7 +2,7 @@
 """Геймдев Старт — Unity: первая игра
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-game-dev
+Run as a unit: systemctl start botfarm-ru-108-game-dev
 """
 
 import sys

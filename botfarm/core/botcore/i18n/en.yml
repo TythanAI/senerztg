@@ -1,5 +1,6 @@
 menu:
   catalog: "🛍 Catalog"
+  balance: "💼 Balance"
   subscription: "⭐ Subscription"
   profile: "👤 Profile"
   referral: "🤝 Affiliate"
@@ -31,6 +32,10 @@ catalog:
   empty: "The catalog is empty for now — check back soon."
   item: "<b>{title}</b>\n\n{description}\n\n💰 Price: <b>{price}</b>"
   buy: "🛒 Buy for {price}"
+  item_stock: "<b>{title}</b>\n\n{description}\n\n💰 Price: <b>{price}</b>\n📦 In stock: <b>{stock}</b>\n\nHow many?"
+  sold_out: "<b>{title}</b>\n\n😔 Out of stock. We restock regularly — check back soon or message support."
+  sold_out_short: "Out of stock"
+  only_left: "Only {count} left"
   period: "⏳ Access: {days} days"
 
 checkout:
@@ -51,6 +56,8 @@ delivery:
   service: "Your order <b>{title}</b> is confirmed. We'll be in touch shortly."
   subscription: "Subscription <b>{title}</b> is active until <b>{until}</b>."
   fallback: "Thanks for your purchase! Your materials are on the way."
+  accounts: "✅ <b>{title}</b>\n\nYour order ({count} items). Save these details — they are not recoverable automatically."
+  out_of_stock: "⚠️ Payment received, but the item sold out at the moment of delivery. An operator has been alerted and will contact you within the hour to either deliver or refund."
 
 profile:
   title: "<b>Profile</b>\n\n🆔 ID: <code>{tg_id}</code>\n💼 Purchases: {orders}\n💰 Balance: {balance}"
@@ -107,6 +114,11 @@ admin:
   promos: "🎟 Promo codes"
   orders: "🧾 Orders"
   leads: "📇 Leads"
+  stock: "📦 Stock"
+  stock_hint: "To restock: <code>/stock SKU</code>, then send the items, one per line."
+  stock_prompt: "Send items for <code>{sku}</code>, one per line.\nCurrently in stock: {count}."
+  stock_added: "✅ Added {count} to <code>{sku}</code>.\nTotal in stock: {total}."
+  stock_empty: "Empty message — nothing to add."
   broadcast_prompt: "Send the message to broadcast. It goes to every user."
   broadcast_confirm: "Send this to {count} users?"
   broadcast_started: "Broadcast started…"
@@ -119,3 +131,17 @@ admin:
 errors:
   flood: "Too many requests. Please slow down."
   not_found: "Not found."
+
+balance:
+  title: "<b>💼 Balance</b>\n\nAvailable: <b>{balance}</b>\n\nTop up once, then buy in a single tap.\nBetween {min} and {max} per top-up."
+  current: "💼 Your balance: <b>{balance}</b>"
+  custom: "✏️ Custom amount"
+  ask_amount: "Send the amount as a number.\n\nBetween {min} and {max}."
+  bad_amount: "That does not look like an amount. Send a number, e.g. 25."
+  out_of_range: "The amount must be between {min} and {max}."
+  confirm: "Topping up by <b>{amount}</b>.\n\nChoose a payment method:"
+  pay_with: "💼 Pay from balance"
+  paid: "✅ Paid from balance. Your order has been delivered."
+  not_enough: "Not enough balance. Please top up first."
+  topped_up: "✅ Balance topped up by <b>{amount}</b>.\nCurrent balance: <b>{balance}</b>"
+  product_title: "Balance top-up"

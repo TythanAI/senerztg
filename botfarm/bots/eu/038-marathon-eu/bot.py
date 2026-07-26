@@ -2,7 +2,7 @@
 """Marathon Sub-4 — 16-week plan with pacing charts
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-marathon-eu
+Run as a unit: systemctl start botfarm-eu-038-marathon-eu
 """
 
 import sys

@@ -2,7 +2,7 @@
 """SMM Фабрика — Ведение соцсетей под ключ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-smm-factory
+Run as a unit: systemctl start botfarm-ru-081-smm-factory
 """
 
 import sys

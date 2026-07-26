@@ -17,8 +17,8 @@ WORKDIR /app/bot
 RUN useradd --create-home --uid 10001 botuser && chown -R botuser:botuser /app
 USER botuser
 
-EXPOSE 9225
+EXPOSE 9525
 HEALTHCHECK --interval=60s --timeout=5s --start-period=20s --retries=3 \
-  CMD python -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:9225/healthz', timeout=4).status==200 else 1)"
+  CMD python -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:9525/healthz', timeout=4).status==200 else 1)"
 
 CMD ["python", "bot.py"]

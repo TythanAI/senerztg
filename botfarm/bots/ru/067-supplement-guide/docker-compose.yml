@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/067-supplement-guide/docker-compose.yml up -d
 services:
-  botfarm-ru-supplement-guide:
+  botfarm-ru-067-supplement-guide:
     build:
       context: ../../..
       dockerfile: bots/ru/067-supplement-guide/Dockerfile
-    container_name: botfarm-ru-supplement-guide
+    container_name: botfarm-ru-067-supplement-guide
     restart: unless-stopped
     env_file: .env
     ports:

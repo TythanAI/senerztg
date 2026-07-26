@@ -2,7 +2,7 @@
 """Уход за Участком — Газон, обрезка, сезонные работы
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-garden-care
+Run as a unit: systemctl start botfarm-ru-124-garden-care
 """
 
 import sys

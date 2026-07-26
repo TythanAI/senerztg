@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/016-realty-invest/docker-compose.yml up -d
 services:
-  botfarm-ru-realty-invest:
+  botfarm-ru-016-realty-invest:
     build:
       context: ../../..
       dockerfile: bots/ru/016-realty-invest/Dockerfile
-    container_name: botfarm-ru-realty-invest
+    container_name: botfarm-ru-016-realty-invest
     restart: unless-stopped
     env_file: .env
     ports:

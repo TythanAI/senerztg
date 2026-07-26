@@ -2,7 +2,7 @@
 """Походное Снаряжение — Списки и обзоры для походов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-camp-gear
+Run as a unit: systemctl start botfarm-ru-153-camp-gear
 """
 
 import sys

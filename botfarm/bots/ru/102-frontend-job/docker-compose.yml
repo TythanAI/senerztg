@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/102-frontend-job/docker-compose.yml up -d
 services:
-  botfarm-ru-frontend-job:
+  botfarm-ru-102-frontend-job:
     build:
       context: ../../..
       dockerfile: bots/ru/102-frontend-job/Dockerfile
-    container_name: botfarm-ru-frontend-job
+    container_name: botfarm-ru-102-frontend-job
     restart: unless-stopped
     env_file: .env
     ports:

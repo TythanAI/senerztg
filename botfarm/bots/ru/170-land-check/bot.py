@@ -2,7 +2,7 @@
 """Проверка Участка — Юридическая чистота земли
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-land-check
+Run as a unit: systemctl start botfarm-ru-170-land-check
 """
 
 import sys

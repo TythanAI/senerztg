@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/137-knit-patterns/docker-compose.yml up -d
 services:
-  botfarm-ru-knit-patterns:
+  botfarm-ru-137-knit-patterns:
     build:
       context: ../../..
       dockerfile: bots/ru/137-knit-patterns/Dockerfile
-    container_name: botfarm-ru-knit-patterns
+    container_name: botfarm-ru-137-knit-patterns
     restart: unless-stopped
     env_file: .env
     ports:

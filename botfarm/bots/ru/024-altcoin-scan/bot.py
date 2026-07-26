@@ -2,7 +2,7 @@
 """Альт Скан — Скринер альткоинов и точки входа
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-altcoin-scan
+Run as a unit: systemctl start botfarm-ru-024-altcoin-scan
 """
 
 import sys

@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-pottery-club
+SyslogIdentifier=botfarm-ru-136-pottery-club
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

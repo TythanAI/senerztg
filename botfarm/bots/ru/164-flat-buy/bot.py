@@ -2,7 +2,7 @@
 """Покупка Квартиры — Подбор и сопровождение сделки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-flat-buy
+Run as a unit: systemctl start botfarm-ru-164-flat-buy
 """
 
 import sys

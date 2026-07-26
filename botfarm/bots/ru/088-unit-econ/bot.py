@@ -2,7 +2,7 @@
 """Юнит-Экономика — Считаем прибыль до запуска
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-unit-econ
+Run as a unit: systemctl start botfarm-ru-088-unit-econ
 """
 
 import sys

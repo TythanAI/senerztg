@@ -2,7 +2,7 @@
 """Мастерская Текста — Пишем сильные тексты каждую неделю
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-writing-craft
+Run as a unit: systemctl start botfarm-ru-050-writing-craft
 """
 
 import sys

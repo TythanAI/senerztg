@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/106-semrush-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-106-semrush-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/106-semrush-eu/Dockerfile
+    container_name: botfarm-eu-106-semrush-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9605:9605"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/097-import-china/docker-compose.yml up -d
 services:
-  botfarm-ru-import-china:
+  botfarm-ru-097-import-china:
     build:
       context: ../../..
       dockerfile: bots/ru/097-import-china/Dockerfile
-    container_name: botfarm-ru-import-china
+    container_name: botfarm-ru-097-import-china
     restart: unless-stopped
     env_file: .env
     ports:

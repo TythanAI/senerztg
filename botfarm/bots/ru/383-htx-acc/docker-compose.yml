@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/383-htx-acc/docker-compose.yml up -d
+services:
+  botfarm-ru-383-htx-acc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/383-htx-acc/Dockerfile
+    container_name: botfarm-ru-383-htx-acc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9382:9382"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/053-pmp-prep/docker-compose.yml up -d
 services:
-  botfarm-eu-pmp-prep:
+  botfarm-eu-053-pmp-prep:
     build:
       context: ../../..
       dockerfile: bots/eu/053-pmp-prep/Dockerfile
-    container_name: botfarm-eu-pmp-prep
+    container_name: botfarm-eu-053-pmp-prep
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9252:9252"
+      - "9552:9552"
     volumes:
       - ./data:/app/bot/data
     logging:

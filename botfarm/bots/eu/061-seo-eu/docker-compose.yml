@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/061-seo-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-seo-eu:
+  botfarm-eu-061-seo-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/061-seo-eu/Dockerfile
-    container_name: botfarm-eu-seo-eu
+    container_name: botfarm-eu-061-seo-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9260:9260"
+      - "9560:9560"
     volumes:
       - ./data:/app/bot/data
     logging:

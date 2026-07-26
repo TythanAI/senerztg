@@ -2,7 +2,7 @@
 """Ретро Игры — Эмуляторы, ромы, настройка
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-retro-games
+Run as a unit: systemctl start botfarm-ru-200-retro-games
 """
 
 import sys

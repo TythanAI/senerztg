@@ -1,8 +1,9 @@
 """Business-model templates.
 
 An archetype answers: what does this bot sell, in how many tiers, which
-modules does it need, and what does the copy say. Ten archetypes × 300 niches
-gives every bot a coherent, sellable product line instead of a stub catalog.
+modules does it need, and what does the copy say. Twelve archetypes (eight
+here, four stock-backed ones in archetypes_shop) across 1000 niches give every
+bot a coherent, sellable product line instead of a stub catalog.
 
 Copy is authored per language; `de` and `es` cover the archetypes actually used
 by German/Spanish bots and fall back to `en` otherwise.
@@ -480,6 +481,14 @@ _LEADGEN = {
     },
 }
 
+from archetypes_shop import (  # noqa: E402
+    SHOP_MODULES,
+    SHOP_REFERRAL,
+    SHOP_TEMPLATES,
+    SHOP_TRIAL_DAYS,
+    shop_delivery,
+)
+
 TEMPLATES: dict[str, dict[str, Any]] = {
     "course": _COURSE,
     "club": _CLUB,
@@ -489,6 +498,7 @@ TEMPLATES: dict[str, dict[str, Any]] = {
     "shop": _SHOP,
     "saas": _SAAS,
     "leadgen": _LEADGEN,
+    **SHOP_TEMPLATES,
 }
 
 #: Which bot modules each archetype switches on.
@@ -501,6 +511,7 @@ MODULES: dict[str, tuple[str, ...]] = {
     "shop": ("catalog", "faq", "support", "referral"),
     "saas": ("catalog", "subscription", "faq", "support", "referral"),
     "leadgen": ("catalog", "faq", "support", "booking", "quiz", "reviews"),
+    **SHOP_MODULES,
 }
 
 #: Affiliate payout per archetype — high-margin digital goods can afford more.
@@ -513,10 +524,11 @@ REFERRAL: dict[str, int] = {
     "shop": 30,
     "saas": 20,
     "leadgen": 5,
+    **SHOP_REFERRAL,
 }
 
 #: Free-trial length in days (0 = no trial). Only meaningful with subscriptions.
-TRIAL_DAYS: dict[str, int] = {"club": 3, "signals": 2, "saas": 7}
+TRIAL_DAYS: dict[str, int] = {"club": 3, "signals": 2, "saas": 7, **SHOP_TRIAL_DAYS}
 
 
 def template_for(archetype: str, lang: str) -> dict[str, Any]:
@@ -549,6 +561,8 @@ def build_catalog(entry: dict) -> list[dict]:
 
 def _delivery_for(kind: str, entry: dict) -> dict:
     """What the buyer receives. Placeholders the owner replaces before launch."""
+    if entry["archetype"] in SHOP_TEMPLATES:
+        return shop_delivery(entry["archetype"], entry["lang"], kind)
     if kind == "subscription":
         return {
             "invite_link": "https://t.me/+REPLACE_WITH_YOUR_PRIVATE_CHANNEL_INVITE",

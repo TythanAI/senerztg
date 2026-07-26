@@ -2,7 +2,7 @@
 """Дивидендный клуб — Портфель на дивидендах: разборы и сделки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-dividend-club
+Run as a unit: systemctl start botfarm-ru-002-dividend-club
 """
 
 import sys

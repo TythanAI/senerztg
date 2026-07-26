@@ -2,7 +2,7 @@
 """Зал Программа — Персональная программа на 12 недель
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-gym-program
+Run as a unit: systemctl start botfarm-ru-054-gym-program
 """
 
 import sys

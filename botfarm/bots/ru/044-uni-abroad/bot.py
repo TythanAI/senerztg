@@ -2,7 +2,7 @@
 """Универ за Рубежом — Поступление в вузы Европы
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-uni-abroad
+Run as a unit: systemctl start botfarm-ru-044-uni-abroad
 """
 
 import sys

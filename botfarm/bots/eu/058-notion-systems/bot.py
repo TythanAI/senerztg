@@ -2,7 +2,7 @@
 """Notion Systems — Templates that run your work
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-notion-systems
+Run as a unit: systemctl start botfarm-eu-058-notion-systems
 """
 
 import sys

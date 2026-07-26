@@ -2,7 +2,7 @@
 """Передержка Питомцев — Догситтер и выгул
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-pet-care
+Run as a unit: systemctl start botfarm-ru-125-pet-care
 """
 
 import sys

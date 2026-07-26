@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/048-interview-prep/docker-compose.yml up -d
 services:
-  botfarm-eu-interview-prep:
+  botfarm-eu-048-interview-prep:
     build:
       context: ../../..
       dockerfile: bots/eu/048-interview-prep/Dockerfile
-    container_name: botfarm-eu-interview-prep
+    container_name: botfarm-eu-048-interview-prep
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9247:9247"
+      - "9547:9547"
     volumes:
       - ./data:/app/bot/data
     logging:

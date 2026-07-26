@@ -2,7 +2,7 @@
 """Interview Coaching — Mock interviews with real feedback
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-interview-prep
+Run as a unit: systemctl start botfarm-eu-048-interview-prep
 """
 
 import sys

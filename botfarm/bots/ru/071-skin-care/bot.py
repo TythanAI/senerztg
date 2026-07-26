@@ -2,7 +2,7 @@
 """Косметолог Онлайн — Индивидуальный уход по типу кожи
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-skin-care
+Run as a unit: systemctl start botfarm-ru-071-skin-care
 """
 
 import sys

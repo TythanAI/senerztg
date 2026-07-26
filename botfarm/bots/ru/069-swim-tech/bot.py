@@ -2,7 +2,7 @@
 """Техника Плавания — Кроль без одышки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-swim-tech
+Run as a unit: systemctl start botfarm-ru-069-swim-tech
 """
 
 import sys

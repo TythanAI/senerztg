@@ -2,7 +2,7 @@
 """Мобильные Легенды — Мета, герои, тактика
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mobile-legends
+Run as a unit: systemctl start botfarm-ru-192-mobile-legends
 """
 
 import sys

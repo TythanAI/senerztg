@@ -2,7 +2,7 @@
 """Школа Фото — Съёмка и обработка на телефон
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-photo-school
+Run as a unit: systemctl start botfarm-ru-133-photo-school
 """
 
 import sys

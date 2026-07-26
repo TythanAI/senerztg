@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/040-kids-logic/docker-compose.yml up -d
 services:
-  botfarm-ru-kids-logic:
+  botfarm-ru-040-kids-logic:
     build:
       context: ../../..
       dockerfile: bots/ru/040-kids-logic/Dockerfile
-    container_name: botfarm-ru-kids-logic
+    container_name: botfarm-ru-040-kids-logic
     restart: unless-stopped
     env_file: .env
     ports:

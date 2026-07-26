@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/351-trello/docker-compose.yml up -d
+services:
+  botfarm-ru-351-trello:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/351-trello/Dockerfile
+    container_name: botfarm-ru-351-trello
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9350:9350"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

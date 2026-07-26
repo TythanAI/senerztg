@@ -2,7 +2,7 @@
 """FIRE Blueprint — Retire two decades early on a normal salary
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-fire-plan
+Run as a unit: systemctl start botfarm-eu-003-fire-plan
 """
 
 import sys

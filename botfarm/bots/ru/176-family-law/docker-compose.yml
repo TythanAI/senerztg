@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/176-family-law/docker-compose.yml up -d
 services:
-  botfarm-ru-family-law:
+  botfarm-ru-176-family-law:
     build:
       context: ../../..
       dockerfile: bots/ru/176-family-law/Dockerfile
-    container_name: botfarm-ru-family-law
+    container_name: botfarm-ru-176-family-law
     restart: unless-stopped
     env_file: .env
     ports:

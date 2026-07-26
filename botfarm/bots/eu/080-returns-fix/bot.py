@@ -2,7 +2,7 @@
 """Returns Reduction — Cut return rates by a third
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-returns-fix
+Run as a unit: systemctl start botfarm-eu-080-returns-fix
 """
 
 import sys

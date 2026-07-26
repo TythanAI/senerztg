@@ -2,7 +2,7 @@
 """ФинПлан Про — Личный финансовый план за одну встречу
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-finplan-pro
+Run as a unit: systemctl start botfarm-ru-005-finplan-pro
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Ипотека Консультант — Одобрение и снижение ставки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mortgage-calc
+Run as a unit: systemctl start botfarm-ru-163-mortgage-calc
 """
 
 import sys

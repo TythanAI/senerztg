@@ -2,7 +2,7 @@
 """Йога Каждый День — Практики по 15 минут
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-yoga-daily
+Run as a unit: systemctl start botfarm-ru-058-yoga-daily
 """
 
 import sys

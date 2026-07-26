@@ -2,7 +2,7 @@
 """Учитель Инструменты — Генератор заданий и проверок
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-teacher-tools
+Run as a unit: systemctl start botfarm-ru-046-teacher-tools
 """
 
 import sys

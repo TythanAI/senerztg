@@ -2,7 +2,7 @@
 """Кредитный Рейтинг — Поднимаем скоринг перед ипотекой
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-credit-score
+Run as a unit: systemctl start botfarm-ru-010-credit-score
 """
 
 import sys

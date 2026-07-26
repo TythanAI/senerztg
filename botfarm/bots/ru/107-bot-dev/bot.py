@@ -2,7 +2,7 @@
 """Разработка Ботов — Telegram-боты как источник дохода
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bot-dev
+Run as a unit: systemctl start botfarm-ru-107-bot-dev
 """
 
 import sys

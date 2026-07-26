@@ -2,7 +2,7 @@
 """Interior Design — Floor plans and 3D visuals
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-interior-eu
+Run as a unit: systemctl start botfarm-eu-098-interior-eu
 """
 
 import sys

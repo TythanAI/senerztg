@@ -2,7 +2,7 @@
 """Product Sourcing — Vetted suppliers and samples
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-product-source
+Run as a unit: systemctl start botfarm-eu-074-product-source
 """
 
 import sys

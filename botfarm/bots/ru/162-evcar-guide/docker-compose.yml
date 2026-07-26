@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/162-evcar-guide/docker-compose.yml up -d
 services:
-  botfarm-ru-evcar-guide:
+  botfarm-ru-162-evcar-guide:
     build:
       context: ../../..
       dockerfile: bots/ru/162-evcar-guide/Dockerfile
-    container_name: botfarm-ru-evcar-guide
+    container_name: botfarm-ru-162-evcar-guide
     restart: unless-stopped
     env_file: .env
     ports:

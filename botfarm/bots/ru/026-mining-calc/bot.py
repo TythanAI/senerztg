@@ -2,7 +2,7 @@
 """Майнинг Калькулятор — Окупаемость ферм в реальном времени
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-mining-calc
+Run as a unit: systemctl start botfarm-ru-026-mining-calc
 """
 
 import sys

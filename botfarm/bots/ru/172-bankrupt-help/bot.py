@@ -2,7 +2,7 @@
 """Банкротство Физлиц — Списание долгов законно
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bankrupt-help
+Run as a unit: systemctl start botfarm-ru-172-bankrupt-help
 """
 
 import sys

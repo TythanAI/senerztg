@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/129-tutor-find/docker-compose.yml up -d
 services:
-  botfarm-ru-tutor-find:
+  botfarm-ru-129-tutor-find:
     build:
       context: ../../..
       dockerfile: bots/ru/129-tutor-find/Dockerfile
-    container_name: botfarm-ru-tutor-find
+    container_name: botfarm-ru-129-tutor-find
     restart: unless-stopped
     env_file: .env
     ports:

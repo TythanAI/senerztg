@@ -2,7 +2,7 @@
 """Cloud Cost Audit — Cut your AWS bill by 30%
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-aws-cost
+Run as a unit: systemctl start botfarm-eu-027-aws-cost
 """
 
 import sys

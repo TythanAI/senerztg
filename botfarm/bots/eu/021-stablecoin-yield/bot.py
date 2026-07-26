@@ -2,7 +2,7 @@
 """Stablecoin Yield — Low-volatility crypto income
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-stablecoin-yield
+Run as a unit: systemctl start botfarm-eu-021-stablecoin-yield
 """
 
 import sys

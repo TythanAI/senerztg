@@ -2,7 +2,7 @@
 """Детский Праздник — Аниматоры и программа
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-kids-party
+Run as a unit: systemctl start botfarm-ru-126-kids-party
 """
 
 import sys

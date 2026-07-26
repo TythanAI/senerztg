@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/198-poker-school/docker-compose.yml up -d
 services:
-  botfarm-ru-poker-school:
+  botfarm-ru-198-poker-school:
     build:
       context: ../../..
       dockerfile: bots/ru/198-poker-school/Dockerfile
-    container_name: botfarm-ru-poker-school
+    container_name: botfarm-ru-198-poker-school
     restart: unless-stopped
     env_file: .env
     ports:

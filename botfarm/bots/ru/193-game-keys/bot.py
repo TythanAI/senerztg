@@ -2,7 +2,7 @@
 """Ключи Игр — Активации и подписки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-game-keys
+Run as a unit: systemctl start botfarm-ru-193-game-keys
 """
 
 import sys

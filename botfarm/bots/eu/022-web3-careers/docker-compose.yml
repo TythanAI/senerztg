@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/022-web3-careers/docker-compose.yml up -d
 services:
-  botfarm-eu-web3-careers:
+  botfarm-eu-022-web3-careers:
     build:
       context: ../../..
       dockerfile: bots/eu/022-web3-careers/Dockerfile
-    container_name: botfarm-eu-web3-careers
+    container_name: botfarm-eu-022-web3-careers
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9221:9221"
+      - "9521:9521"
     volumes:
       - ./data:/app/bot/data
     logging:

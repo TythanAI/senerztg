@@ -2,7 +2,7 @@
 """Van Conversion Plans — Build plans and part lists
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-van-life
+Run as a unit: systemctl start botfarm-eu-089-van-life
 """
 
 import sys

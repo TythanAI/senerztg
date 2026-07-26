@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/496-copywriting-service-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-496-copywriting-service-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/496-copywriting-service-eu/Dockerfile
+    container_name: botfarm-eu-496-copywriting-service-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9995:9995"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

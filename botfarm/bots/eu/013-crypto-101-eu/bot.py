@@ -2,7 +2,7 @@
 """Crypto Foundations — Self-custody, exchanges, and risk
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-crypto-101-eu
+Run as a unit: systemctl start botfarm-eu-013-crypto-101-eu
 """
 
 import sys

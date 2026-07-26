@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/122-furniture-make/docker-compose.yml up -d
 services:
-  botfarm-ru-furniture-make:
+  botfarm-ru-122-furniture-make:
     build:
       context: ../../..
       dockerfile: bots/ru/122-furniture-make/Dockerfile
-    container_name: botfarm-ru-furniture-make
+    container_name: botfarm-ru-122-furniture-make
     restart: unless-stopped
     env_file: .env
     ports:

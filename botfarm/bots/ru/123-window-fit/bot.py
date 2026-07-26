@@ -2,7 +2,7 @@
 """Окна Установка — Замер, монтаж, гарантия
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-window-fit
+Run as a unit: systemctl start botfarm-ru-123-window-fit
 """
 
 import sys

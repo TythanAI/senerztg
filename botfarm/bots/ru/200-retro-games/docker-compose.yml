@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/200-retro-games/docker-compose.yml up -d
 services:
-  botfarm-ru-retro-games:
+  botfarm-ru-200-retro-games:
     build:
       context: ../../..
       dockerfile: bots/ru/200-retro-games/Dockerfile
-    container_name: botfarm-ru-retro-games
+    container_name: botfarm-ru-200-retro-games
     restart: unless-stopped
     env_file: .env
     ports:

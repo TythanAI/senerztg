@@ -2,7 +2,7 @@
 """Ремонт Техники — Стиральные, холодильники, плиты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-appliance-fix
+Run as a unit: systemctl start botfarm-ru-132-appliance-fix
 """
 
 import sys

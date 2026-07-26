@@ -2,7 +2,7 @@
 """Debt Payoff Plan — Escape consumer debt in 18 months
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-debt-payoff
+Run as a unit: systemctl start botfarm-eu-005-debt-payoff
 """
 
 import sys

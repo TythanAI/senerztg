@@ -2,7 +2,7 @@
 """Packaging Design — Shelf-ready packaging artwork
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-packaging-design
+Run as a unit: systemctl start botfarm-eu-077-packaging-design
 """
 
 import sys

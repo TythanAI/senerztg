@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/007-budget-family/docker-compose.yml up -d
 services:
-  botfarm-ru-budget-family:
+  botfarm-ru-007-budget-family:
     build:
       context: ../../..
       dockerfile: bots/ru/007-budget-family/Dockerfile
-    container_name: botfarm-ru-budget-family
+    container_name: botfarm-ru-007-budget-family
     restart: unless-stopped
     env_file: .env
     ports:

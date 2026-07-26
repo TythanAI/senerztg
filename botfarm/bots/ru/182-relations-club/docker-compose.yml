@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/182-relations-club/docker-compose.yml up -d
 services:
-  botfarm-ru-relations-club:
+  botfarm-ru-182-relations-club:
     build:
       context: ../../..
       dockerfile: bots/ru/182-relations-club/Dockerfile
-    container_name: botfarm-ru-relations-club
+    container_name: botfarm-ru-182-relations-club
     restart: unless-stopped
     env_file: .env
     ports:

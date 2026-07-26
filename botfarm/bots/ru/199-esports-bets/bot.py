@@ -2,7 +2,7 @@
 """Киберспорт Аналитика — Разборы матчей и статистика
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-esports-bets
+Run as a unit: systemctl start botfarm-ru-199-esports-bets
 """
 
 import sys

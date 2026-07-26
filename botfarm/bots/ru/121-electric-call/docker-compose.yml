@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/121-electric-call/docker-compose.yml up -d
 services:
-  botfarm-ru-electric-call:
+  botfarm-ru-121-electric-call:
     build:
       context: ../../..
       dockerfile: bots/ru/121-electric-call/Dockerfile
-    container_name: botfarm-ru-electric-call
+    container_name: botfarm-ru-121-electric-call
     restart: unless-stopped
     env_file: .env
     ports:

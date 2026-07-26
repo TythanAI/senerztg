@@ -2,7 +2,7 @@
 """CS2 Прокачка — Апгрейд ранга с тренером
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-cs2-boost
+Run as a unit: systemctl start botfarm-ru-189-cs2-boost
 """
 
 import sys

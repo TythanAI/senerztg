@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/404-payoneer-acc/docker-compose.yml up -d
+services:
+  botfarm-ru-404-payoneer-acc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/404-payoneer-acc/Dockerfile
+    container_name: botfarm-ru-404-payoneer-acc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9403:9403"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

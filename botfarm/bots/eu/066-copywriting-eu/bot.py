@@ -2,7 +2,7 @@
 """Conversion Copywriting — Words that sell without hype
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-copywriting-eu
+Run as a unit: systemctl start botfarm-eu-066-copywriting-eu
 """
 
 import sys

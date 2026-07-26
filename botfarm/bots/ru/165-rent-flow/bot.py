@@ -2,7 +2,7 @@
 """Аренда Поток — Учёт арендаторов и платежей
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-rent-flow
+Run as a unit: systemctl start botfarm-ru-165-rent-flow
 """
 
 import sys

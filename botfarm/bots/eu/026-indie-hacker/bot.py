@@ -2,7 +2,7 @@
 """Indie Hacker Club — Build in public with a real cohort
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-indie-hacker
+Run as a unit: systemctl start botfarm-eu-026-indie-hacker
 """
 
 import sys

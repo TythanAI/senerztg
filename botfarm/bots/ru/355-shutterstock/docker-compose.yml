@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/355-shutterstock/docker-compose.yml up -d
+services:
+  botfarm-ru-355-shutterstock:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/355-shutterstock/Dockerfile
+    container_name: botfarm-ru-355-shutterstock
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9354:9354"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

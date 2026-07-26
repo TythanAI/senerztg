@@ -2,7 +2,7 @@
 """Автозапчасти Гид — Каталоги и подбор по VIN
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-car-parts
+Run as a unit: systemctl start botfarm-ru-157-car-parts
 """
 
 import sys

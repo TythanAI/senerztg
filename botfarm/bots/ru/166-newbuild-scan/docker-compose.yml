@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/166-newbuild-scan/docker-compose.yml up -d
 services:
-  botfarm-ru-newbuild-scan:
+  botfarm-ru-166-newbuild-scan:
     build:
       context: ../../..
       dockerfile: bots/ru/166-newbuild-scan/Dockerfile
-    container_name: botfarm-ru-newbuild-scan
+    container_name: botfarm-ru-166-newbuild-scan
     restart: unless-stopped
     env_file: .env
     ports:

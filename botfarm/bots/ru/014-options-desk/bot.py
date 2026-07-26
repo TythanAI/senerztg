@@ -2,7 +2,7 @@
 """Опционный Стол — Опционные стратегии на практике
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-options-desk
+Run as a unit: systemctl start botfarm-ru-014-options-desk
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Школа Макияжа — Макияж на каждый день и вечер
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-makeup-school
+Run as a unit: systemctl start botfarm-ru-072-makeup-school
 """
 
 import sys

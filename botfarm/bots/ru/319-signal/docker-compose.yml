@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/319-signal/docker-compose.yml up -d
+services:
+  botfarm-ru-319-signal:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/319-signal/Dockerfile
+    container_name: botfarm-ru-319-signal
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9318:9318"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

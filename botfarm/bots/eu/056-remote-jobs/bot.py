@@ -2,7 +2,7 @@
 """Remote Job Feed — Vetted remote roles, daily
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-remote-jobs
+Run as a unit: systemctl start botfarm-eu-056-remote-jobs
 """
 
 import sys

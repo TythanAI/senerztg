@@ -2,7 +2,7 @@
 """Выгорание Стоп — Восстановление ресурса за 6 недель
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-burnout-fix
+Run as a unit: systemctl start botfarm-ru-181-burnout-fix
 """
 
 import sys

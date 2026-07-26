@@ -2,7 +2,7 @@
 """Solidity Developer — Ship audited smart contracts
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-solidity-dev
+Run as a unit: systemctl start botfarm-eu-018-solidity-dev
 """
 
 import sys

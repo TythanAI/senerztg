@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/008-pension-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-pension-eu:
+  botfarm-eu-008-pension-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/008-pension-eu/Dockerfile
-    container_name: botfarm-eu-pension-eu
+    container_name: botfarm-eu-008-pension-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9207:9207"
+      - "9507:9507"
     volumes:
       - ./data:/app/bot/data
     logging:

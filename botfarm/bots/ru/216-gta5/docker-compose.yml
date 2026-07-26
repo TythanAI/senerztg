@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/216-gta5/docker-compose.yml up -d
+services:
+  botfarm-ru-216-gta5:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/216-gta5/Dockerfile
+    container_name: botfarm-ru-216-gta5
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9215:9215"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

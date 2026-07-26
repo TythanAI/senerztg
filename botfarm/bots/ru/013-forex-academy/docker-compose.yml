@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/013-forex-academy/docker-compose.yml up -d
 services:
-  botfarm-ru-forex-academy:
+  botfarm-ru-013-forex-academy:
     build:
       context: ../../..
       dockerfile: bots/ru/013-forex-academy/Dockerfile
-    container_name: botfarm-ru-forex-academy
+    container_name: botfarm-ru-013-forex-academy
     restart: unless-stopped
     env_file: .env
     ports:

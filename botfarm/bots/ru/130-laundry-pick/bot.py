@@ -2,7 +2,7 @@
 """Химчистка Доставка — Забираем и привозим
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-laundry-pick
+Run as a unit: systemctl start botfarm-ru-130-laundry-pick
 """
 
 import sys

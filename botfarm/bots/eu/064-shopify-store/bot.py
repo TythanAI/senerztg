@@ -2,7 +2,7 @@
 """Shopify Store Build — Launch-ready store in 10 days
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-shopify-store
+Run as a unit: systemctl start botfarm-eu-064-shopify-store
 """
 
 import sys

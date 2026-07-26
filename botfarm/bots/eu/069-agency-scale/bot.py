@@ -2,7 +2,7 @@
 """Agency Scaling — From freelancer to a team of ten
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-agency-scale
+Run as a unit: systemctl start botfarm-eu-069-agency-scale
 """
 
 import sys

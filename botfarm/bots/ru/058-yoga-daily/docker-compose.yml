@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/058-yoga-daily/docker-compose.yml up -d
 services:
-  botfarm-ru-yoga-daily:
+  botfarm-ru-058-yoga-daily:
     build:
       context: ../../..
       dockerfile: bots/ru/058-yoga-daily/Dockerfile
-    container_name: botfarm-ru-yoga-daily
+    container_name: botfarm-ru-058-yoga-daily
     restart: unless-stopped
     env_file: .env
     ports:

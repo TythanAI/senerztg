@@ -2,7 +2,7 @@
 """Китайский Старт — HSK 1-3 за четыре месяца
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-chinese-start
+Run as a unit: systemctl start botfarm-ru-035-chinese-start
 """
 
 import sys

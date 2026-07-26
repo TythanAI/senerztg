@@ -2,7 +2,7 @@
 """CRM Внедрение — amoCRM и Битрикс24 под ключ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-crm-setup
+Run as a unit: systemctl start botfarm-ru-087-crm-setup
 """
 
 import sys

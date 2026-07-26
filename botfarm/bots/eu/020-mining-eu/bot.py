@@ -2,7 +2,7 @@
 """Mining Profit Tracker — Live ROI for your rigs
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-mining-eu
+Run as a unit: systemctl start botfarm-eu-020-mining-eu
 """
 
 import sys

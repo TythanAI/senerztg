@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/056-keto-guide/docker-compose.yml up -d
 services:
-  botfarm-ru-keto-guide:
+  botfarm-ru-056-keto-guide:
     build:
       context: ../../..
       dockerfile: bots/ru/056-keto-guide/Dockerfile
-    container_name: botfarm-ru-keto-guide
+    container_name: botfarm-ru-056-keto-guide
     restart: unless-stopped
     env_file: .env
     ports:

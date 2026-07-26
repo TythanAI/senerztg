@@ -2,7 +2,7 @@
 """План Питания — КБЖУ и меню под вашу цель
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-nutrition-plan
+Run as a unit: systemctl start botfarm-ru-055-nutrition-plan
 """
 
 import sys

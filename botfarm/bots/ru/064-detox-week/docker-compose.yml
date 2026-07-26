@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/064-detox-week/docker-compose.yml up -d
 services:
-  botfarm-ru-detox-week:
+  botfarm-ru-064-detox-week:
     build:
       context: ../../..
       dockerfile: bots/ru/064-detox-week/Dockerfile
-    container_name: botfarm-ru-detox-week
+    container_name: botfarm-ru-064-detox-week
     restart: unless-stopped
     env_file: .env
     ports:

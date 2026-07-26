@@ -2,7 +2,7 @@
 """FIFA Трейд — Заработок на трансферном рынке
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-fifa-trade
+Run as a unit: systemctl start botfarm-ru-197-fifa-trade
 """
 
 import sys

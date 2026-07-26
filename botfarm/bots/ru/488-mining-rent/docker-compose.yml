@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/488-mining-rent/docker-compose.yml up -d
+services:
+  botfarm-ru-488-mining-rent:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/488-mining-rent/Dockerfile
+    container_name: botfarm-ru-488-mining-rent
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9487:9487"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

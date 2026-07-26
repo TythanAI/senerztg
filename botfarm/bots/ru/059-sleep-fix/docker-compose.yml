@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/059-sleep-fix/docker-compose.yml up -d
 services:
-  botfarm-ru-sleep-fix:
+  botfarm-ru-059-sleep-fix:
     build:
       context: ../../..
       dockerfile: bots/ru/059-sleep-fix/Dockerfile
-    container_name: botfarm-ru-sleep-fix
+    container_name: botfarm-ru-059-sleep-fix
     restart: unless-stopped
     env_file: .env
     ports:

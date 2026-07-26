@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/083-marketplace-wb/docker-compose.yml up -d
 services:
-  botfarm-ru-marketplace-wb:
+  botfarm-ru-083-marketplace-wb:
     build:
       context: ../../..
       dockerfile: bots/ru/083-marketplace-wb/Dockerfile
-    container_name: botfarm-ru-marketplace-wb
+    container_name: botfarm-ru-083-marketplace-wb
     restart: unless-stopped
     env_file: .env
     ports:

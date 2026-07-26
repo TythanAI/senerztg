@@ -2,7 +2,7 @@
 """Отношения Клуб — Практики для пар
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-relations-club
+Run as a unit: systemctl start botfarm-ru-182-relations-club
 """
 
 import sys

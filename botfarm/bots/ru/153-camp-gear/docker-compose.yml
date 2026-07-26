@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/153-camp-gear/docker-compose.yml up -d
 services:
-  botfarm-ru-camp-gear:
+  botfarm-ru-153-camp-gear:
     build:
       context: ../../..
       dockerfile: bots/ru/153-camp-gear/Dockerfile
-    container_name: botfarm-ru-camp-gear
+    container_name: botfarm-ru-153-camp-gear
     restart: unless-stopped
     env_file: .env
     ports:

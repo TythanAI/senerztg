@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/073-hair-care/docker-compose.yml up -d
 services:
-  botfarm-ru-hair-care:
+  botfarm-ru-073-hair-care:
     build:
       context: ../../..
       dockerfile: bots/ru/073-hair-care/Dockerfile
-    container_name: botfarm-ru-hair-care
+    container_name: botfarm-ru-073-hair-care
     restart: unless-stopped
     env_file: .env
     ports:

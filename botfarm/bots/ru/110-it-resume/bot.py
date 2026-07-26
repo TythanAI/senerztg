@@ -2,7 +2,7 @@
 """IT Резюме — Резюме и LinkedIn, которые зовут
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-it-resume
+Run as a unit: systemctl start botfarm-ru-110-it-resume
 """
 
 import sys

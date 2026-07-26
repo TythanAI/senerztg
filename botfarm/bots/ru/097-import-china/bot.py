@@ -2,7 +2,7 @@
 """Импорт из Китая — Поставщики, логистика, таможня
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-import-china
+Run as a unit: systemctl start botfarm-ru-097-import-china
 """
 
 import sys

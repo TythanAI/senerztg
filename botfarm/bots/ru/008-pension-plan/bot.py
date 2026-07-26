@@ -2,7 +2,7 @@
 """Пенсия Сам — Собственный пенсионный капитал
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-pension-plan
+Run as a unit: systemctl start botfarm-ru-008-pension-plan
 """
 
 import sys

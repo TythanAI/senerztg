@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/100-ads-audit/docker-compose.yml up -d
 services:
-  botfarm-ru-ads-audit:
+  botfarm-ru-100-ads-audit:
     build:
       context: ../../..
       dockerfile: bots/ru/100-ads-audit/Dockerfile
-    container_name: botfarm-ru-ads-audit
+    container_name: botfarm-ru-100-ads-audit
     restart: unless-stopped
     env_file: .env
     ports:

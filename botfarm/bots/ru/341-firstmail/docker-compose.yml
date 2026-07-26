@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/341-firstmail/docker-compose.yml up -d
+services:
+  botfarm-ru-341-firstmail:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/341-firstmail/Dockerfile
+    container_name: botfarm-ru-341-firstmail
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9340:9340"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

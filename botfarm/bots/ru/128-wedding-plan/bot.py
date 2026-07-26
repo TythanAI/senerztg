@@ -2,7 +2,7 @@
 """Свадебный Организатор — Свадьба без нервов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-wedding-plan
+Run as a unit: systemctl start botfarm-ru-128-wedding-plan
 """
 
 import sys

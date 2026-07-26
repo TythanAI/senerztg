@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/009-etf-sparplan/docker-compose.yml up -d
 services:
-  botfarm-eu-etf-sparplan:
+  botfarm-eu-009-etf-sparplan:
     build:
       context: ../../..
       dockerfile: bots/eu/009-etf-sparplan/Dockerfile
-    container_name: botfarm-eu-etf-sparplan
+    container_name: botfarm-eu-009-etf-sparplan
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9208:9208"
+      - "9508:9508"
     volumes:
       - ./data:/app/bot/data
     logging:

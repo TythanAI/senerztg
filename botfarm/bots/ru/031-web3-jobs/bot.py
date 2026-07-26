@@ -2,7 +2,7 @@
 """Web3 Работа — Вакансии и гранты web3
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-web3-jobs
+Run as a unit: systemctl start botfarm-ru-031-web3-jobs
 """
 
 import sys

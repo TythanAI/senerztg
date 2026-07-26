@@ -2,7 +2,7 @@
 """IPO Радар — Разборы размещений и аллокации
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ipo-radar
+Run as a unit: systemctl start botfarm-ru-011-ipo-radar
 """
 
 import sys

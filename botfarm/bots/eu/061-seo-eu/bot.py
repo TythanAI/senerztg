@@ -2,7 +2,7 @@
 """SEO Growth — Rankings that convert
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-seo-eu
+Run as a unit: systemctl start botfarm-eu-061-seo-eu
 """
 
 import sys

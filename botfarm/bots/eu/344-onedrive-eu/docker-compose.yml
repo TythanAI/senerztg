@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/344-onedrive-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-344-onedrive-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/344-onedrive-eu/Dockerfile
+    container_name: botfarm-eu-344-onedrive-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9843:9843"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

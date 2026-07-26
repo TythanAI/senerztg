@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-eu-real-estate-eu
+SyslogIdentifier=botfarm-eu-011-real-estate-eu
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

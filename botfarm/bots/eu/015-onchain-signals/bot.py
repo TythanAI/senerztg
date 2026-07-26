@@ -2,7 +2,7 @@
 """On-Chain Signals — Whale flows and exchange reserves
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-onchain-signals
+Run as a unit: systemctl start botfarm-eu-015-onchain-signals
 """
 
 import sys

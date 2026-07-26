@@ -2,7 +2,7 @@
 """Мастер Бровей — Архитектура и окрашивание
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-brows-master
+Run as a unit: systemctl start botfarm-ru-075-brows-master
 """
 
 import sys

@@ -1,0 +1,27 @@
+[Unit]
+Description=Valve (ru-421-valve-key)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botfarm
+WorkingDirectory=/opt/botfarm/bots/ru/421-valve-key
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/botfarm/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=botfarm-ru-421-valve-key
+
+# Hardening — the bot only needs its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/botfarm/bots/ru/421-valve-key
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

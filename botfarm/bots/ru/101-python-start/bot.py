@@ -2,7 +2,7 @@
 """Python Старт — От синтаксиса до первого проекта
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-python-start
+Run as a unit: systemctl start botfarm-ru-101-python-start
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Content Calendar — Plan a quarter in an afternoon
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-content-eu
+Run as a unit: systemctl start botfarm-eu-063-content-eu
 """
 
 import sys

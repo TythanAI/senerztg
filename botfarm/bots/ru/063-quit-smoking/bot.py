@@ -2,7 +2,7 @@
 """Бросить Курить — 21 день без сигарет
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-quit-smoking
+Run as a unit: systemctl start botfarm-ru-063-quit-smoking
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Кондитер Про — Торты на заказ как бизнес
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bake-pro
+Run as a unit: systemctl start botfarm-ru-139-bake-pro
 """
 
 import sys

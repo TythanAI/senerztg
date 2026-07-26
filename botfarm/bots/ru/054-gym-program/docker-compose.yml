@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/054-gym-program/docker-compose.yml up -d
 services:
-  botfarm-ru-gym-program:
+  botfarm-ru-054-gym-program:
     build:
       context: ../../..
       dockerfile: bots/ru/054-gym-program/Dockerfile
-    container_name: botfarm-ru-gym-program
+    container_name: botfarm-ru-054-gym-program
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Публичные Выступления — Речь, которая держит зал
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-public-speak
+Run as a unit: systemctl start botfarm-ru-049-public-speak
 """
 
 import sys

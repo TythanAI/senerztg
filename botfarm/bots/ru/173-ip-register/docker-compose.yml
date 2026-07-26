@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/173-ip-register/docker-compose.yml up -d
 services:
-  botfarm-ru-ip-register:
+  botfarm-ru-173-ip-register:
     build:
       context: ../../..
       dockerfile: bots/ru/173-ip-register/Dockerfile
-    container_name: botfarm-ru-ip-register
+    container_name: botfarm-ru-173-ip-register
     restart: unless-stopped
     env_file: .env
     ports:

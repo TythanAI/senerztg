@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/133-photo-school/docker-compose.yml up -d
 services:
-  botfarm-ru-photo-school:
+  botfarm-ru-133-photo-school:
     build:
       context: ../../..
       dockerfile: bots/ru/133-photo-school/Dockerfile
-    container_name: botfarm-ru-photo-school
+    container_name: botfarm-ru-133-photo-school
     restart: unless-stopped
     env_file: .env
     ports:

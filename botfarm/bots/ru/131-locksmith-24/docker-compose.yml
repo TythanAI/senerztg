@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/131-locksmith-24/docker-compose.yml up -d
 services:
-  botfarm-ru-locksmith-24:
+  botfarm-ru-131-locksmith-24:
     build:
       context: ../../..
       dockerfile: bots/ru/131-locksmith-24/Dockerfile
-    container_name: botfarm-ru-locksmith-24
+    container_name: botfarm-ru-131-locksmith-24
     restart: unless-stopped
     env_file: .env
     ports:

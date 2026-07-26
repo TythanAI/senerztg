@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/068-marathon-prep/docker-compose.yml up -d
 services:
-  botfarm-ru-marathon-prep:
+  botfarm-ru-068-marathon-prep:
     build:
       context: ../../..
       dockerfile: bots/ru/068-marathon-prep/Dockerfile
-    container_name: botfarm-ru-marathon-prep
+    container_name: botfarm-ru-068-marathon-prep
     restart: unless-stopped
     env_file: .env
     ports:

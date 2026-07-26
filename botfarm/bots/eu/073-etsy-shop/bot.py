@@ -2,7 +2,7 @@
 """Etsy Shop Growth — From first listing to full-time
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-etsy-shop
+Run as a unit: systemctl start botfarm-eu-073-etsy-shop
 """
 
 import sys

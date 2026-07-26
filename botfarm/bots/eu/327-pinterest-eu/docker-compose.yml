@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/327-pinterest-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-327-pinterest-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/327-pinterest-eu/Dockerfile
+    container_name: botfarm-eu-327-pinterest-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9826:9826"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

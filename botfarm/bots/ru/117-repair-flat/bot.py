@@ -2,7 +2,7 @@
 """Ремонт Квартир — Смета и бригада за один день
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-repair-flat
+Run as a unit: systemctl start botfarm-ru-117-repair-flat
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Теория Музыки — От нот до собственных треков
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-music-theory
+Run as a unit: systemctl start botfarm-ru-047-music-theory
 """
 
 import sys

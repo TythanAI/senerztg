@@ -2,7 +2,7 @@
 """Subscription Box — Recurring revenue from physical goods
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-subscription-box
+Run as a unit: systemctl start botfarm-eu-078-subscription-box
 """
 
 import sys

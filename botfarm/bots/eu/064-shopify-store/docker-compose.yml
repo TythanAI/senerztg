@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/064-shopify-store/docker-compose.yml up -d
 services:
-  botfarm-eu-shopify-store:
+  botfarm-eu-064-shopify-store:
     build:
       context: ../../..
       dockerfile: bots/eu/064-shopify-store/Dockerfile
-    container_name: botfarm-eu-shopify-store
+    container_name: botfarm-eu-064-shopify-store
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9263:9263"
+      - "9563:9563"
     volumes:
       - ./data:/app/bot/data
     logging:

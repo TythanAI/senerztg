@@ -2,7 +2,7 @@
 """Недвижка Инвест — Доходная недвижимость без ипотеки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-realty-invest
+Run as a unit: systemctl start botfarm-ru-016-realty-invest
 """
 
 import sys

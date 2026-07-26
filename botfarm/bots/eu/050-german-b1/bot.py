@@ -2,7 +2,7 @@
 """German B1 Sprint — Pass B1 in four months
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-german-b1
+Run as a unit: systemctl start botfarm-eu-050-german-b1
 """
 
 import sys

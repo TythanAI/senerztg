@@ -2,7 +2,7 @@
 """CV Rewrite — ATS-proof CV and LinkedIn profile
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-cv-rewrite
+Run as a unit: systemctl start botfarm-eu-047-cv-rewrite
 """
 
 import sys

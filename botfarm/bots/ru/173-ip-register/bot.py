@@ -2,7 +2,7 @@
 """Регистрация ИП — ИП и ООО под ключ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-ip-register
+Run as a unit: systemctl start botfarm-ru-173-ip-register
 """
 
 import sys

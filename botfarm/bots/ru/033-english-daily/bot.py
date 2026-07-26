@@ -2,7 +2,7 @@
 """Английский Каждый День — 10 минут в день до уровня B2
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-english-daily
+Run as a unit: systemctl start botfarm-ru-033-english-daily
 """
 
 import sys

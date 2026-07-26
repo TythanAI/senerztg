@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/147-cheap-flights/docker-compose.yml up -d
 services:
-  botfarm-ru-cheap-flights:
+  botfarm-ru-147-cheap-flights:
     build:
       context: ../../..
       dockerfile: bots/ru/147-cheap-flights/Dockerfile
-    container_name: botfarm-ru-cheap-flights
+    container_name: botfarm-ru-147-cheap-flights
     restart: unless-stopped
     env_file: .env
     ports:

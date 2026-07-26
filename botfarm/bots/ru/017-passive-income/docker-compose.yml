@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/017-passive-income/docker-compose.yml up -d
 services:
-  botfarm-ru-passive-income:
+  botfarm-ru-017-passive-income:
     build:
       context: ../../..
       dockerfile: bots/ru/017-passive-income/Dockerfile
-    container_name: botfarm-ru-passive-income
+    container_name: botfarm-ru-017-passive-income
     restart: unless-stopped
     env_file: .env
     ports:

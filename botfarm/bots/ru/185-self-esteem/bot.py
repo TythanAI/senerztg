@@ -2,7 +2,7 @@
 """Самооценка — Опора на себя за 30 дней
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-self-esteem
+Run as a unit: systemctl start botfarm-ru-185-self-esteem
 """
 
 import sys

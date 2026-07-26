@@ -2,7 +2,7 @@
 """ИнвестСтарт — Инвестиции с нуля: от первого счёта до портфеля
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-invest-start
+Run as a unit: systemctl start botfarm-ru-001-invest-start
 """
 
 import sys

@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/140-wine-club/docker-compose.yml up -d
 services:
-  botfarm-ru-wine-club:
+  botfarm-ru-140-wine-club:
     build:
       context: ../../..
       dockerfile: bots/ru/140-wine-club/Dockerfile
-    container_name: botfarm-ru-wine-club
+    container_name: botfarm-ru-140-wine-club
     restart: unless-stopped
     env_file: .env
     ports:

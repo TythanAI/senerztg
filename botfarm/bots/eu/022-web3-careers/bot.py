@@ -2,7 +2,7 @@
 """Web3 Careers — Vetted roles and grant deadlines
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-web3-careers
+Run as a unit: systemctl start botfarm-eu-022-web3-careers
 """
 
 import sys

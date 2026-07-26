@@ -2,7 +2,7 @@
 """P2P Арбитраж — Связки и работа с рисками P2P
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-p2p-arbitrage
+Run as a unit: systemctl start botfarm-ru-025-p2p-arbitrage
 """
 
 import sys

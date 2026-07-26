@@ -2,7 +2,7 @@
 """Актив 50+ — Движение и здоровье после пятидесяти
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-senior-fit
+Run as a unit: systemctl start botfarm-ru-066-senior-fit
 """
 
 import sys

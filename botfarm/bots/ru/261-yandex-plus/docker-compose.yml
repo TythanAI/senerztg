@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/261-yandex-plus/docker-compose.yml up -d
+services:
+  botfarm-ru-261-yandex-plus:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/261-yandex-plus/Dockerfile
+    container_name: botfarm-ru-261-yandex-plus
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9260:9260"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

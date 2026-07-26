@@ -2,7 +2,7 @@
 """Cooking Club — A new technique every week
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-cooking-eu
+Run as a unit: systemctl start botfarm-eu-083-cooking-eu
 """
 
 import sys

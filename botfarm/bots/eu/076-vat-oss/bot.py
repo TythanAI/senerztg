@@ -2,7 +2,7 @@
 """EU VAT & OSS — Sell across borders, compliantly
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-vat-oss
+Run as a unit: systemctl start botfarm-eu-076-vat-oss
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Нутрициолог Онлайн — Подбор добавок по анализам
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-supplement-guide
+Run as a unit: systemctl start botfarm-ru-067-supplement-guide
 """
 
 import sys

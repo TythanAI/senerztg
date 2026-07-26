@@ -2,7 +2,7 @@
 """Трудовые Споры — Увольнение, зарплата, суд
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-labor-rights
+Run as a unit: systemctl start botfarm-ru-175-labor-rights
 """
 
 import sys

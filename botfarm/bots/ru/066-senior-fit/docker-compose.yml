@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/066-senior-fit/docker-compose.yml up -d
 services:
-  botfarm-ru-senior-fit:
+  botfarm-ru-066-senior-fit:
     build:
       context: ../../..
       dockerfile: bots/ru/066-senior-fit/Dockerfile
-    container_name: botfarm-ru-senior-fit
+    container_name: botfarm-ru-066-senior-fit
     restart: unless-stopped
     env_file: .env
     ports:

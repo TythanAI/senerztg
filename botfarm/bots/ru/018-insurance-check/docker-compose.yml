@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/018-insurance-check/docker-compose.yml up -d
 services:
-  botfarm-ru-insurance-check:
+  botfarm-ru-018-insurance-check:
     build:
       context: ../../..
       dockerfile: bots/ru/018-insurance-check/Dockerfile
-    container_name: botfarm-ru-insurance-check
+    container_name: botfarm-ru-018-insurance-check
     restart: unless-stopped
     env_file: .env
     ports:

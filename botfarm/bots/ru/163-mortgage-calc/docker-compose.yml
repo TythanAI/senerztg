@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/163-mortgage-calc/docker-compose.yml up -d
 services:
-  botfarm-ru-mortgage-calc:
+  botfarm-ru-163-mortgage-calc:
     build:
       context: ../../..
       dockerfile: bots/ru/163-mortgage-calc/Dockerfile
-    container_name: botfarm-ru-mortgage-calc
+    container_name: botfarm-ru-163-mortgage-calc
     restart: unless-stopped
     env_file: .env
     ports:

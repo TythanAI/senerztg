@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/453-destiny-carry-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-453-destiny-carry-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/453-destiny-carry-eu/Dockerfile
+    container_name: botfarm-eu-453-destiny-carry-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9952:9952"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

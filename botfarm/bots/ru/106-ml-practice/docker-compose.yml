@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/106-ml-practice/docker-compose.yml up -d
 services:
-  botfarm-ru-ml-practice:
+  botfarm-ru-106-ml-practice:
     build:
       context: ../../..
       dockerfile: bots/ru/106-ml-practice/Dockerfile
-    container_name: botfarm-ru-ml-practice
+    container_name: botfarm-ru-106-ml-practice
     restart: unless-stopped
     env_file: .env
     ports:

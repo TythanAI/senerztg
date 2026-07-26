@@ -2,7 +2,7 @@
 """SPA Дома — Салонные процедуры своими руками
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-spa-home
+Run as a unit: systemctl start botfarm-ru-078-spa-home
 """
 
 import sys

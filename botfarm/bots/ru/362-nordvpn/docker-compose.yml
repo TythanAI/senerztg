@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/362-nordvpn/docker-compose.yml up -d
+services:
+  botfarm-ru-362-nordvpn:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/362-nordvpn/Dockerfile
+    container_name: botfarm-ru-362-nordvpn
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9361:9361"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

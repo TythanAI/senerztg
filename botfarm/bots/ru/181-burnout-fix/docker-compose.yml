@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/181-burnout-fix/docker-compose.yml up -d
 services:
-  botfarm-ru-burnout-fix:
+  botfarm-ru-181-burnout-fix:
     build:
       context: ../../..
       dockerfile: bots/ru/181-burnout-fix/Dockerfile
-    container_name: botfarm-ru-burnout-fix
+    container_name: botfarm-ru-181-burnout-fix
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Ногтевой Сервис — Профессия мастера маникюра
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-nails-pro
+Run as a unit: systemctl start botfarm-ru-074-nails-pro
 """
 
 import sys

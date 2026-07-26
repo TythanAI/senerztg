@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/187-meditation/docker-compose.yml up -d
 services:
-  botfarm-ru-meditation:
+  botfarm-ru-187-meditation:
     build:
       context: ../../..
       dockerfile: bots/ru/187-meditation/Dockerfile
-    container_name: botfarm-ru-meditation
+    container_name: botfarm-ru-187-meditation
     restart: unless-stopped
     env_file: .env
     ports:

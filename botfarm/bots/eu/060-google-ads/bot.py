@@ -2,7 +2,7 @@
 """Google Ads Management — Managed search campaigns
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-google-ads
+Run as a unit: systemctl start botfarm-eu-060-google-ads
 """
 
 import sys

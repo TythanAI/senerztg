@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-ru-credit-score
+SyslogIdentifier=botfarm-ru-010-credit-score
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

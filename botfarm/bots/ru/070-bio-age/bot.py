@@ -2,7 +2,7 @@
 """Биовозраст — Расшифровка анализов и план
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bio-age
+Run as a unit: systemctl start botfarm-ru-070-bio-age
 """
 
 import sys

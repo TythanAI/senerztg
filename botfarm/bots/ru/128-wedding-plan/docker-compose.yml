@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/128-wedding-plan/docker-compose.yml up -d
 services:
-  botfarm-ru-wedding-plan:
+  botfarm-ru-128-wedding-plan:
     build:
       context: ../../..
       dockerfile: bots/ru/128-wedding-plan/Dockerfile
-    container_name: botfarm-ru-wedding-plan
+    container_name: botfarm-ru-128-wedding-plan
     restart: unless-stopped
     env_file: .env
     ports:

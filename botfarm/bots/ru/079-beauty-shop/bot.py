@@ -2,7 +2,7 @@
 """Бьюти Гайды — Готовые гайды по уходу и макияжу
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-beauty-shop
+Run as a unit: systemctl start botfarm-ru-079-beauty-shop
 """
 
 import sys

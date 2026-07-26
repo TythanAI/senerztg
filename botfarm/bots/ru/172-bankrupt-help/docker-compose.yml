@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/172-bankrupt-help/docker-compose.yml up -d
 services:
-  botfarm-ru-bankrupt-help:
+  botfarm-ru-172-bankrupt-help:
     build:
       context: ../../..
       dockerfile: bots/ru/172-bankrupt-help/Dockerfile
-    container_name: botfarm-ru-bankrupt-help
+    container_name: botfarm-ru-172-bankrupt-help
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """NFT Дроп — Ранние дропы и вайтлисты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-nft-drop
+Run as a unit: systemctl start botfarm-ru-021-nft-drop
 """
 
 import sys

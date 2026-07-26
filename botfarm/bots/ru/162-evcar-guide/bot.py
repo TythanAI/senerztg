@@ -2,7 +2,7 @@
 """Электромобиль Гид — Покупка и эксплуатация в России
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-evcar-guide
+Run as a unit: systemctl start botfarm-ru-162-evcar-guide
 """
 
 import sys

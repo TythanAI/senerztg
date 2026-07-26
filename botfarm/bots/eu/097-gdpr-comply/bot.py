@@ -2,7 +2,7 @@
 """GDPR Compliance — Policies and records that hold up
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-gdpr-comply
+Run as a unit: systemctl start botfarm-eu-097-gdpr-comply
 """
 
 import sys

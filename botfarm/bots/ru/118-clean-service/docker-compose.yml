@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/118-clean-service/docker-compose.yml up -d
 services:
-  botfarm-ru-clean-service:
+  botfarm-ru-118-clean-service:
     build:
       context: ../../..
       dockerfile: bots/ru/118-clean-service/Dockerfile
-    container_name: botfarm-ru-clean-service
+    container_name: botfarm-ru-118-clean-service
     restart: unless-stopped
     env_file: .env
     ports:

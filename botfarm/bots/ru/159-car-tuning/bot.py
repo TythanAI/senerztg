@@ -2,7 +2,7 @@
 """Тюнинг Клуб — Доработки и разборы проектов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-car-tuning
+Run as a unit: systemctl start botfarm-ru-159-car-tuning
 """
 
 import sys

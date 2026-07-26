@@ -2,7 +2,7 @@
 """Торговый Бот — Сетки и DCA без программирования
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-trading-bots
+Run as a unit: systemctl start botfarm-ru-032-trading-bots
 """
 
 import sys

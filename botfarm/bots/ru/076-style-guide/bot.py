@@ -2,7 +2,7 @@
 """Стилист Онлайн — Гардероб, который работает
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-style-guide
+Run as a unit: systemctl start botfarm-ru-076-style-guide
 """
 
 import sys

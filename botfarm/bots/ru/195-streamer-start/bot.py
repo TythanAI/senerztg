@@ -2,7 +2,7 @@
 """Стример Старт — Первая тысяча зрителей
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-streamer-start
+Run as a unit: systemctl start botfarm-ru-195-streamer-start
 """
 
 import sys

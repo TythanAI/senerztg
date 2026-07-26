@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/165-rent-flow/docker-compose.yml up -d
 services:
-  botfarm-ru-rent-flow:
+  botfarm-ru-165-rent-flow:
     build:
       context: ../../..
       dockerfile: bots/ru/165-rent-flow/Dockerfile
-    container_name: botfarm-ru-rent-flow
+    container_name: botfarm-ru-165-rent-flow
     restart: unless-stopped
     env_file: .env
     ports:

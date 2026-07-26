@@ -2,7 +2,7 @@
 """Переезд Просто — Грузчики и транспорт по городу
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-moving-help
+Run as a unit: systemctl start botfarm-ru-119-moving-help
 """
 
 import sys

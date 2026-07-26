@@ -2,7 +2,7 @@
 """Скорочтение — Читать втрое быстрее с пониманием
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-speed-read
+Run as a unit: systemctl start botfarm-ru-041-speed-read
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Тренажёр Памяти — Мнемотехники и ежедневные тренировки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-memory-gym
+Run as a unit: systemctl start botfarm-ru-042-memory-gym
 """
 
 import sys

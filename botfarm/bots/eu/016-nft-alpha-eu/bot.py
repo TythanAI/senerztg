@@ -2,7 +2,7 @@
 """NFT Alpha — Mints and floor moves before the crowd
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-nft-alpha-eu
+Run as a unit: systemctl start botfarm-eu-016-nft-alpha-eu
 """
 
 import sys

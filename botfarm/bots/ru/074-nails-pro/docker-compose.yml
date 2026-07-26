@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/074-nails-pro/docker-compose.yml up -d
 services:
-  botfarm-ru-nails-pro:
+  botfarm-ru-074-nails-pro:
     build:
       context: ../../..
       dockerfile: bots/ru/074-nails-pro/Dockerfile
-    container_name: botfarm-ru-nails-pro
+    container_name: botfarm-ru-074-nails-pro
     restart: unless-stopped
     env_file: .env
     ports:

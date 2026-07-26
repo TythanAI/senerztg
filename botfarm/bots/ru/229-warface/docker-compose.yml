@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/229-warface/docker-compose.yml up -d
+services:
+  botfarm-ru-229-warface:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/229-warface/Dockerfile
+    container_name: botfarm-ru-229-warface
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9228:9228"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

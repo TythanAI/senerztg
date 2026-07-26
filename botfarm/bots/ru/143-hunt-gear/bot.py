@@ -2,7 +2,7 @@
 """Охота Снаряжение — Гайды по экипировке и сезонам
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-hunt-gear
+Run as a unit: systemctl start botfarm-ru-143-hunt-gear
 """
 
 import sys

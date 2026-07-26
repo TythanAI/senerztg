@@ -2,7 +2,7 @@
 """Open Source Path — Land your first maintainer role
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-open-source
+Run as a unit: systemctl start botfarm-eu-034-open-source
 """
 
 import sys

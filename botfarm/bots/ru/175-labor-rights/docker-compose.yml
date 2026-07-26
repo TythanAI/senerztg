@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/175-labor-rights/docker-compose.yml up -d
 services:
-  botfarm-ru-labor-rights:
+  botfarm-ru-175-labor-rights:
     build:
       context: ../../..
       dockerfile: bots/ru/175-labor-rights/Dockerfile
-    container_name: botfarm-ru-labor-rights
+    container_name: botfarm-ru-175-labor-rights
     restart: unless-stopped
     env_file: .env
     ports:

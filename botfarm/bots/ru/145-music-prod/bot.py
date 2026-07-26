@@ -2,7 +2,7 @@
 """Продюсирование Музыки — Свой трек от идеи до релиза
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-music-prod
+Run as a unit: systemctl start botfarm-ru-145-music-prod
 """
 
 import sys

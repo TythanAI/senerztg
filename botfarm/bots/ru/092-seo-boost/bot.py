@@ -2,7 +2,7 @@
 """SEO Рост — Продвижение сайта в топ
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-seo-boost
+Run as a unit: systemctl start botfarm-ru-092-seo-boost
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Керамика Клуб — Гончарное дело для начинающих
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-pottery-club
+Run as a unit: systemctl start botfarm-ru-136-pottery-club
 """
 
 import sys

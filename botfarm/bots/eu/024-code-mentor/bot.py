@@ -2,7 +2,7 @@
 """Code Mentor — Senior review of your architecture
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-code-mentor
+Run as a unit: systemctl start botfarm-eu-024-code-mentor
 """
 
 import sys

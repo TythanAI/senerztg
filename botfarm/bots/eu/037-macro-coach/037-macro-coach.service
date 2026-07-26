@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-eu-macro-coach
+SyslogIdentifier=botfarm-eu-037-macro-coach
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

@@ -2,7 +2,7 @@
 """Релокация Консультация — Переезд: страна, статус, налоги
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-relocate-help
+Run as a unit: systemctl start botfarm-ru-152-relocate-help
 """
 
 import sys

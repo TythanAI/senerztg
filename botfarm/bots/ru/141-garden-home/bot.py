@@ -2,7 +2,7 @@
 """Домашний Сад — Растения, которые не гибнут
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-garden-home
+Run as a unit: systemctl start botfarm-ru-141-garden-home
 """
 
 import sys

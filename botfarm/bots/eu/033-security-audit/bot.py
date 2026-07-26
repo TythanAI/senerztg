@@ -2,7 +2,7 @@
 """Security Audit — Pen-test report for your web app
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-security-audit
+Run as a unit: systemctl start botfarm-eu-033-security-audit
 """
 
 import sys

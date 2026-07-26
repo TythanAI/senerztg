@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/023-btc-cycle/docker-compose.yml up -d
 services:
-  botfarm-ru-btc-cycle:
+  botfarm-ru-023-btc-cycle:
     build:
       context: ../../..
       dockerfile: bots/ru/023-btc-cycle/Dockerfile
-    container_name: botfarm-ru-btc-cycle
+    container_name: botfarm-ru-023-btc-cycle
     restart: unless-stopped
     env_file: .env
     ports:

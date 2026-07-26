@@ -280,6 +280,117 @@ async def create_promo(
     )
 
 
+# -------------------------------------------------------------------- stock
+
+
+class StockFlow(StatesGroup):
+    waiting_items = State()
+
+
+@router.callback_query(AdminCB.filter(F.action == "stock"))
+async def show_stock(
+    callback: CallbackQuery,
+    config: NicheConfig,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    admin_ids: tuple[int, ...],
+) -> None:
+    if not _is_admin(user, admin_ids):
+        await callback.answer(t("admin.denied"), show_alert=True)
+        return
+
+    counts = await repos.stock.counts()
+    lines = ["<b>📦 Склад</b>", ""]
+    account_products = [p for p in config.active_products() if p.kind == "account"]
+    if not account_products:
+        lines.append("В этом боте нет товаров со складом.")
+    for product in account_products:
+        left = counts.get(product.sku, 0)
+        mark = "🟢" if left > 10 else "🟡" if left > 0 else "🔴"
+        lines.append(f"{mark} <code>{esc(product.sku)}</code> — {left} шт. · {esc(product.title)}")
+
+    lines += ["", t("admin.stock_hint")]
+    await _edit(callback, truncate("\n".join(lines)), back_button(t))
+    await callback.answer()
+
+
+@router.message(Command("stock"))
+async def cmd_stock(
+    message: Message,
+    state: FSMContext,
+    config: NicheConfig,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    admin_ids: tuple[int, ...],
+) -> None:
+    """`/stock <sku>` then paste the units, one per line."""
+    if not _is_admin(user, admin_ids):
+        return
+
+    parts = (message.text or "").split(maxsplit=1)
+    counts = await repos.stock.counts()
+
+    if len(parts) < 2:
+        lines = ["<b>📦 Склад</b>", ""]
+        for product in config.active_products():
+            if product.kind == "account":
+                lines.append(
+                    f"<code>{esc(product.sku)}</code> — {counts.get(product.sku, 0)} шт."
+                )
+        lines += ["", t("admin.stock_hint")]
+        await message.answer(truncate("\n".join(lines)))
+        return
+
+    sku = parts[1].strip().split()[0]
+    product = config.product(sku)
+    if product is None or product.kind != "account":
+        await message.answer(f"Нет товара со складом с SKU <code>{esc(sku)}</code>.")
+        return
+
+    await state.set_state(StockFlow.waiting_items)
+    await state.update_data(stock_sku=sku)
+    await message.answer(
+        t("admin.stock_prompt", sku=esc(sku), count=counts.get(sku, 0)),
+        reply_markup=back_button(t),
+    )
+
+
+@router.message(StockFlow.waiting_items, F.text)
+async def receive_stock(
+    message: Message,
+    state: FSMContext,
+    t: Translator,
+    repos: Repos,
+    user: User,
+    admin_ids: tuple[int, ...],
+) -> None:
+    if not _is_admin(user, admin_ids):
+        await state.clear()
+        return
+
+    data = await state.get_data()
+    sku = str(data.get("stock_sku") or "")
+    if not sku:
+        await state.clear()
+        return
+
+    lines = [line for line in (message.text or "").splitlines() if line.strip()]
+    if not lines:
+        await message.answer(t("admin.stock_empty"))
+        return
+
+    added = await repos.stock.add(sku, lines, note=f"by {user.tg_id}")
+    total = await repos.stock.available(sku)
+    await state.clear()
+    await message.answer(
+        t("admin.stock_added", count=added, sku=esc(sku), total=total),
+        reply_markup=back_button(t),
+    )
+    log.info("admin %s loaded %s units into %s", user.tg_id, added, sku)
+
+
 # --------------------------------------------------- manual order confirming
 
 

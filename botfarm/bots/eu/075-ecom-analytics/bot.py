@@ -2,7 +2,7 @@
 """E-com Analytics — Real margins per product
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-ecom-analytics
+Run as a unit: systemctl start botfarm-eu-075-ecom-analytics
 """
 
 import sys

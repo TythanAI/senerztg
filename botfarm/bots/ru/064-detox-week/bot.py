@@ -2,7 +2,7 @@
 """Детокс Неделя — Мягкая перезагрузка организма
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-detox-week
+Run as a unit: systemctl start botfarm-ru-064-detox-week
 """
 
 import sys

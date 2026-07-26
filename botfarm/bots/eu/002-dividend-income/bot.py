@@ -2,7 +2,7 @@
 """Dividend Income Club — Monthly dividend picks and payout tracking
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-dividend-income
+Run as a unit: systemctl start botfarm-eu-002-dividend-income
 """
 
 import sys

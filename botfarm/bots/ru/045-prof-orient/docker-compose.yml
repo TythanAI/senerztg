@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/045-prof-orient/docker-compose.yml up -d
 services:
-  botfarm-ru-prof-orient:
+  botfarm-ru-045-prof-orient:
     build:
       context: ../../..
       dockerfile: bots/ru/045-prof-orient/Dockerfile
-    container_name: botfarm-ru-prof-orient
+    container_name: botfarm-ru-045-prof-orient
     restart: unless-stopped
     env_file: .env
     ports:

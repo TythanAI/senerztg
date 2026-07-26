@@ -2,7 +2,7 @@
 """Испанский Клуб — Разговорная практика с носителем
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-spanish-club
+Run as a unit: systemctl start botfarm-ru-036-spanish-club
 """
 
 import sys

@@ -2,7 +2,7 @@
 """Автоюрист — ДТП, страховая, лишение прав
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-auto-law
+Run as a unit: systemctl start botfarm-ru-177-auto-law
 """
 
 import sys

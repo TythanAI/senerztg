@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/014-defi-yield-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-defi-yield-eu:
+  botfarm-eu-014-defi-yield-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/014-defi-yield-eu/Dockerfile
-    container_name: botfarm-eu-defi-yield-eu
+    container_name: botfarm-eu-014-defi-yield-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9213:9213"
+      - "9513:9513"
     volumes:
       - ./data:/app/bot/data
     logging:

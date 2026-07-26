@@ -2,7 +2,7 @@
 """Photography Craft — Manual mode to paid shoots
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-photo-eu
+Run as a unit: systemctl start botfarm-eu-081-photo-eu
 """
 
 import sys

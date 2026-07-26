@@ -2,7 +2,7 @@
 """Здоровая Спина — Упражнения при сидячей работе
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-back-health
+Run as a unit: systemctl start botfarm-ru-060-back-health
 """
 
 import sys

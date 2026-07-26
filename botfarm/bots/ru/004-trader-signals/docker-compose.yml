@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/004-trader-signals/docker-compose.yml up -d
 services:
-  botfarm-ru-trader-signals:
+  botfarm-ru-004-trader-signals:
     build:
       context: ../../..
       dockerfile: bots/ru/004-trader-signals/Dockerfile
-    container_name: botfarm-ru-trader-signals
+    container_name: botfarm-ru-004-trader-signals
     restart: unless-stopped
     env_file: .env
     ports:

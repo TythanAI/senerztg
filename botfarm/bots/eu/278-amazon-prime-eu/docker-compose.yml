@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/278-amazon-prime-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-278-amazon-prime-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/278-amazon-prime-eu/Dockerfile
+    container_name: botfarm-eu-278-amazon-prime-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9777:9777"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

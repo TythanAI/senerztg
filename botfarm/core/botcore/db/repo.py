@@ -7,7 +7,7 @@ import json
 from decimal import Decimal
 from typing import Any, Sequence
 
-from sqlalchemy import func, select, update
+from sqlalchemy import delete, func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -18,6 +18,7 @@ from .models import (
     Payment,
     Promo,
     Setting,
+    StockItem,
     Subscription,
     Ticket,
     User,
@@ -92,6 +93,22 @@ class UserRepo:
             update(User).where(User.id == user_id).values(balance=User.balance + amount)
         )
 
+    async def spend_balance(self, user_id: int, amount: Decimal) -> bool:
+        """Debit atomically. False means insufficient funds — never overdraws.
+
+        The balance check lives in the WHERE clause on purpose: reading the
+        balance and then writing it would let two concurrent purchases both
+        pass the check and spend the same money.
+        """
+        if amount <= 0:
+            return True
+        result = await self.session.execute(
+            update(User)
+            .where(User.id == user_id, User.balance >= amount)
+            .values(balance=User.balance - amount)
+        )
+        return bool(result.rowcount)
+
     async def count(self) -> int:
         return int(await self.session.scalar(select(func.count(User.id))) or 0)
 
@@ -136,6 +153,8 @@ class OrderRepo:
         currency: str,
         provider: str,
         ttl_minutes: int = 60,
+        quantity: int = 1,
+        promo_code: str | None = None,
     ) -> Order:
         order = Order(
             user_id=user.id,
@@ -144,11 +163,48 @@ class OrderRepo:
             amount=amount,
             currency=currency,
             provider=provider,
+            quantity=max(1, quantity),
+            promo_code=promo_code,
             expires_at=utcnow() + dt.timedelta(minutes=ttl_minutes),
         )
         self.session.add(order)
         await self.session.flush()
         return order
+
+    async def open_count_for(self, user_id: int) -> int:
+        """How many unpaid orders this user is sitting on."""
+        return int(
+            await self.session.scalar(
+                select(func.count(Order.id)).where(
+                    Order.user_id == user_id, Order.status == "pending"
+                )
+            )
+            or 0
+        )
+
+    async def drop_stale_pending_for(self, user_id: int, keep: int = 5) -> int:
+        """Cancel a user's oldest unpaid orders beyond `keep`.
+
+        Every tap on a buy button opens an order. Without this, idly browsing
+        the catalog grows the table without bound, which is both a disk-fill
+        vector and noise in the admin panel.
+        """
+        stale = list(
+            await self.session.scalars(
+                select(Order.id)
+                .where(Order.user_id == user_id, Order.status == "pending")
+                .order_by(Order.created_at.desc())
+                .offset(keep)
+            )
+        )
+        if not stale:
+            return 0
+        result = await self.session.execute(
+            update(Order)
+            .where(Order.id.in_(stale), Order.status == "pending")
+            .values(status="cancelled")
+        )
+        return int(result.rowcount or 0)
 
     async def get(self, order_id: int) -> Order | None:
         return await self.session.get(Order, order_id)
@@ -303,6 +359,110 @@ class SubscriptionRepo:
         return list(rows)
 
 
+class StockRepo:
+    """Inventory for account shops: load it, count it, issue it exactly once."""
+
+    def __init__(self, session: AsyncSession) -> None:
+        self.session = session
+
+    async def available(self, sku: str) -> int:
+        return int(
+            await self.session.scalar(
+                select(func.count(StockItem.id)).where(
+                    StockItem.sku == sku, StockItem.status == "available"
+                )
+            )
+            or 0
+        )
+
+    async def counts(self) -> dict[str, int]:
+        rows = await self.session.execute(
+            select(StockItem.sku, func.count(StockItem.id))
+            .where(StockItem.status == "available")
+            .group_by(StockItem.sku)
+        )
+        return {sku: int(count) for sku, count in rows.all()}
+
+    async def add(self, sku: str, payloads: Sequence[str], note: str = "") -> int:
+        """Load new units. Blank lines are skipped, duplicates are allowed."""
+        added = 0
+        for payload in payloads:
+            payload = payload.strip()
+            if not payload:
+                continue
+            self.session.add(
+                StockItem(sku=sku, payload=payload[:4000], note=note[:256] or None)
+            )
+            added += 1
+        await self.session.flush()
+        return added
+
+    async def issue(self, sku: str, quantity: int, order_id: int) -> list[str]:
+        """Hand `quantity` units to one order, or nothing at all.
+
+        Selecting then updating with `status == 'available'` still in the
+        WHERE clause makes the claim conditional: if another transaction took
+        a row in between, rowcount comes back short and we raise so the whole
+        purchase rolls back rather than delivering half an order.
+        """
+        if quantity <= 0:
+            return []
+
+        candidates = list(
+            await self.session.scalars(
+                select(StockItem.id)
+                .where(StockItem.sku == sku, StockItem.status == "available")
+                .order_by(StockItem.id)
+                .limit(quantity)
+                .with_for_update(skip_locked=True)
+                if self.session.bind and self.session.bind.dialect.name == "postgresql"
+                else select(StockItem.id)
+                .where(StockItem.sku == sku, StockItem.status == "available")
+                .order_by(StockItem.id)
+                .limit(quantity)
+            )
+        )
+        if len(candidates) < quantity:
+            raise OutOfStock(sku, requested=quantity, available=len(candidates))
+
+        result = await self.session.execute(
+            update(StockItem)
+            .where(StockItem.id.in_(candidates), StockItem.status == "available")
+            .values(status="sold", order_id=order_id, sold_at=utcnow())
+        )
+        if int(result.rowcount or 0) != quantity:
+            # Someone else claimed one mid-flight; abort rather than under-deliver.
+            raise OutOfStock(sku, requested=quantity, available=int(result.rowcount or 0))
+
+        rows = await self.session.scalars(
+            select(StockItem).where(StockItem.id.in_(candidates))
+        )
+        return [row.payload for row in rows]
+
+    async def issued_for(self, order_id: int) -> list[str]:
+        """Re-read what an order already received, for a repeat delivery."""
+        rows = await self.session.scalars(
+            select(StockItem).where(StockItem.order_id == order_id).order_by(StockItem.id)
+        )
+        return [row.payload for row in rows]
+
+    async def purge_sku(self, sku: str) -> int:
+        result = await self.session.execute(
+            delete(StockItem).where(StockItem.sku == sku, StockItem.status == "available")
+        )
+        return int(result.rowcount or 0)
+
+
+class OutOfStock(RuntimeError):
+    """Raised when inventory cannot cover an order."""
+
+    def __init__(self, sku: str, requested: int, available: int) -> None:
+        super().__init__(f"{sku}: requested {requested}, only {available} available")
+        self.sku = sku
+        self.requested = requested
+        self.available = available
+
+
 class PromoRepo:
     def __init__(self, session: AsyncSession) -> None:
         self.session = session
@@ -324,11 +484,24 @@ class PromoRepo:
         return promo
 
     async def redeem(self, code: str) -> Promo | None:
+        """Consume one use. Call this when an order is *paid*, not when the
+        code is typed — otherwise anyone can exhaust a limited promo for free.
+
+        The `used < max_uses` check is part of the UPDATE so two buyers
+        redeeming the last use at once cannot both succeed.
+        """
         promo = await self.get(code)
         if promo is None or not promo.is_usable():
             return None
-        promo.used += 1
-        await self.session.flush()
+
+        stmt = update(Promo).where(Promo.id == promo.id, Promo.active.is_(True))
+        if promo.max_uses:
+            stmt = stmt.where(Promo.used < promo.max_uses)
+        result = await self.session.execute(stmt.values(used=Promo.used + 1))
+        if not result.rowcount:
+            return None
+
+        await self.session.refresh(promo)
         return promo
 
     async def all(self) -> Sequence[Promo]:
@@ -394,6 +567,24 @@ class MiscRepo:
         rows = await self.session.execute(stmt)
         return {name: int(count) for name, count in rows.all()}
 
+    async def prune_events(self, keep_days: int = 90) -> int:
+        """Analytics rows are cheap individually and unbounded in aggregate."""
+        cutoff = utcnow() - dt.timedelta(days=keep_days)
+        result = await self.session.execute(delete(Event).where(Event.created_at < cutoff))
+        return int(result.rowcount or 0)
+
+    async def count_recent_events(self, tg_id: int, name: str, minutes: int) -> int:
+        """Used to rate-limit sensitive actions such as promo-code guessing."""
+        since = utcnow() - dt.timedelta(minutes=minutes)
+        return int(
+            await self.session.scalar(
+                select(func.count(Event.id)).where(
+                    Event.tg_id == tg_id, Event.name == name, Event.created_at >= since
+                )
+            )
+            or 0
+        )
+
     async def get_setting(self, key: str, default: str = "") -> str:
         row = await self.session.get(Setting, key)
         return row.value if row else default
@@ -410,7 +601,9 @@ class MiscRepo:
 class Repos:
     """One handle passed into handlers via middleware."""
 
-    __slots__ = ("session", "users", "orders", "payments", "subs", "promos", "misc")
+    __slots__ = (
+        "session", "users", "orders", "payments", "subs", "promos", "stock", "misc",
+    )
 
     def __init__(self, session: AsyncSession) -> None:
         self.session = session
@@ -419,4 +612,5 @@ class Repos:
         self.payments = PaymentRepo(session)
         self.subs = SubscriptionRepo(session)
         self.promos = PromoRepo(session)
+        self.stock = StockRepo(session)
         self.misc = MiscRepo(session)

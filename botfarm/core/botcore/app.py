@@ -142,7 +142,10 @@ class BotApp:
 
         self.dp.include_router(build_router(self.config.modules))
 
-        self.jobs = BackgroundJobs(self.db, self.bot, self.checkout, self.config, self.t)
+        self.jobs = BackgroundJobs(
+            self.db, self.bot, self.checkout, self.config, self.t,
+            throttle=self._throttle,
+        )
         self.jobs.start()
 
         if self.secrets.webhook_base or self.secrets.web_port:

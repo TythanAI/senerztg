@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/158-driving-exam/docker-compose.yml up -d
 services:
-  botfarm-ru-driving-exam:
+  botfarm-ru-158-driving-exam:
     build:
       context: ../../..
       dockerfile: bots/ru/158-driving-exam/Dockerfile
-    container_name: botfarm-ru-driving-exam
+    container_name: botfarm-ru-158-driving-exam
     restart: unless-stopped
     env_file: .env
     ports:

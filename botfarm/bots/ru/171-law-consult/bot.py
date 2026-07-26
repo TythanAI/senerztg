@@ -2,7 +2,7 @@
 """Юрист Онлайн — Консультация по вашему вопросу
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-law-consult
+Run as a unit: systemctl start botfarm-ru-171-law-consult
 """
 
 import sys

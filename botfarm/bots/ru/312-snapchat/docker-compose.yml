@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/312-snapchat/docker-compose.yml up -d
+services:
+  botfarm-ru-312-snapchat:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/312-snapchat/Dockerfile
+    container_name: botfarm-ru-312-snapchat
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9311:9311"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

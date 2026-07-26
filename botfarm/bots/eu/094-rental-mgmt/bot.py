@@ -2,7 +2,7 @@
 """Rental Manager — Tenants, rent, and paperwork
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-rental-mgmt
+Run as a unit: systemctl start botfarm-eu-094-rental-mgmt
 """
 
 import sys

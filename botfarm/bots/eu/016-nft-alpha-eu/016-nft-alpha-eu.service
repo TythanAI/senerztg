@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-eu-nft-alpha-eu
+SyslogIdentifier=botfarm-eu-016-nft-alpha-eu
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

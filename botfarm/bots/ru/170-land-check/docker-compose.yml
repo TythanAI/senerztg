@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/170-land-check/docker-compose.yml up -d
 services:
-  botfarm-ru-land-check:
+  botfarm-ru-170-land-check:
     build:
       context: ../../..
       dockerfile: bots/ru/170-land-check/Dockerfile
-    container_name: botfarm-ru-land-check
+    container_name: botfarm-ru-170-land-check
     restart: unless-stopped
     env_file: .env
     ports:

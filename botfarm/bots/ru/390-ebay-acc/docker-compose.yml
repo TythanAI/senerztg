@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/390-ebay-acc/docker-compose.yml up -d
+services:
+  botfarm-ru-390-ebay-acc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/390-ebay-acc/Dockerfile
+    container_name: botfarm-ru-390-ebay-acc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9389:9389"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

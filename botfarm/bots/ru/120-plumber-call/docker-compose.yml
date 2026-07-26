@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/120-plumber-call/docker-compose.yml up -d
 services:
-  botfarm-ru-plumber-call:
+  botfarm-ru-120-plumber-call:
     build:
       context: ../../..
       dockerfile: bots/ru/120-plumber-call/Dockerfile
-    container_name: botfarm-ru-plumber-call
+    container_name: botfarm-ru-120-plumber-call
     restart: unless-stopped
     env_file: .env
     ports:

@@ -2,7 +2,7 @@
 """Танцы Дома — Хореография по видеоурокам
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-dance-home
+Run as a unit: systemctl start botfarm-ru-146-dance-home
 """
 
 import sys

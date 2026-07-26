@@ -2,7 +2,7 @@
 """Airdrop Farming — Testnet checklists and wallet hygiene
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-airdrop-eu
+Run as a unit: systemctl start botfarm-eu-019-airdrop-eu
 """
 
 import sys

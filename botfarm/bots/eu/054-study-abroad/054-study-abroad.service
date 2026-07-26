@@ -13,7 +13,7 @@ Restart=always
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=botfarm-eu-study-abroad
+SyslogIdentifier=botfarm-eu-054-study-abroad
 
 # Hardening — the bot only needs its own directory.
 NoNewPrivileges=true

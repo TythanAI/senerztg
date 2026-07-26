@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/292-cursor-ai/docker-compose.yml up -d
+services:
+  botfarm-ru-292-cursor-ai:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/292-cursor-ai/Dockerfile
+    container_name: botfarm-ru-292-cursor-ai
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9291:9291"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

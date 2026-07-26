@@ -2,7 +2,7 @@
 """Фронтенд Работа — React-разработчик за 6 месяцев
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-frontend-job
+Run as a unit: systemctl start botfarm-ru-102-frontend-job
 """
 
 import sys

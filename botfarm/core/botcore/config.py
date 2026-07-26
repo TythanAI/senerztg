@@ -40,7 +40,7 @@ class Product:
     sort: int = 0
     active: bool = True
 
-    VALID_KINDS = ("digital", "subscription", "service", "consult")
+    VALID_KINDS = ("digital", "subscription", "service", "consult", "account")
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Product":
@@ -61,6 +61,8 @@ class Product:
         period = int(raw.get("period_days", 0) or 0)
         if kind == "subscription" and period <= 0:
             raise ConfigError(f"product {sku}: subscription needs period_days > 0")
+        if kind == "account" and period:
+            raise ConfigError(f"product {sku}: account products have no period_days")
 
         return cls(
             sku=sku,
@@ -164,6 +166,8 @@ class NicheConfig:
         "content",
         "booking",
         "reviews",
+        "balance",
+        "stock",
     )
 
     @property
@@ -226,6 +230,9 @@ class NicheConfig:
 
         if "subscription" in modules and not any(p.kind == "subscription" for p in catalog):
             raise ConfigError("module 'subscription' is enabled but no subscription product exists")
+
+        if "stock" in modules and not any(p.kind == "account" for p in catalog):
+            raise ConfigError("module 'stock' is enabled but no account product exists")
 
         referral = int(raw.get("referral_percent", 0) or 0)
         if not 0 <= referral <= 50:

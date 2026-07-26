@@ -2,7 +2,7 @@
 """Сантехник Вызов — Мастер за 60 минут
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-plumber-call
+Run as a unit: systemctl start botfarm-ru-120-plumber-call
 """
 
 import sys

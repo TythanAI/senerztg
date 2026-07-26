@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/063-quit-smoking/docker-compose.yml up -d
 services:
-  botfarm-ru-quit-smoking:
+  botfarm-ru-063-quit-smoking:
     build:
       context: ../../..
       dockerfile: bots/ru/063-quit-smoking/Dockerfile
-    container_name: botfarm-ru-quit-smoking
+    container_name: botfarm-ru-063-quit-smoking
     restart: unless-stopped
     env_file: .env
     ports:

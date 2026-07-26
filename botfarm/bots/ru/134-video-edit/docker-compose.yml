@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/134-video-edit/docker-compose.yml up -d
 services:
-  botfarm-ru-video-edit:
+  botfarm-ru-134-video-edit:
     build:
       context: ../../..
       dockerfile: bots/ru/134-video-edit/Dockerfile
-    container_name: botfarm-ru-video-edit
+    container_name: botfarm-ru-134-video-edit
     restart: unless-stopped
     env_file: .env
     ports:

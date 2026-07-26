@@ -2,7 +2,7 @@
 """Страховка Чек — Аудит полисов и подбор защиты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-insurance-check
+Run as a unit: systemctl start botfarm-ru-018-insurance-check
 """
 
 import sys

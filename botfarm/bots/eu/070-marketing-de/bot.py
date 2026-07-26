@@ -2,7 +2,7 @@
 """Online Marketing DE — Kunden gewinnen im DACH-Raum
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-marketing-de
+Run as a unit: systemctl start botfarm-eu-070-marketing-de
 """
 
 import sys

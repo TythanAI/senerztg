@@ -2,7 +2,7 @@
 """Банк Выгода — Лучшие вклады, карты и кэшбэк недели
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-bank-deals
+Run as a unit: systemctl start botfarm-ru-015-bank-deals
 """
 
 import sys

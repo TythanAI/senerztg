@@ -2,7 +2,7 @@
 """Контент План — Календарь публикаций и идеи
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-content-plan
+Run as a unit: systemctl start botfarm-ru-090-content-plan
 """
 
 import sys

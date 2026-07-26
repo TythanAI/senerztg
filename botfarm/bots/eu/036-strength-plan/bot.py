@@ -2,7 +2,7 @@
 """Strength Programme — 12 weeks to a real deadlift
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-strength-plan
+Run as a unit: systemctl start botfarm-eu-036-strength-plan
 """
 
 import sys

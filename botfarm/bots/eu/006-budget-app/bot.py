@@ -2,7 +2,7 @@
 """Zero-Based Budget — Every euro assigned, every month
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-budget-app
+Run as a unit: systemctl start botfarm-eu-006-budget-app
 """
 
 import sys

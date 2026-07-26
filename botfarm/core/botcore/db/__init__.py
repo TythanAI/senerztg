@@ -7,12 +7,13 @@ from .models import (
     Payment,
     Promo,
     Setting,
+    StockItem,
     Subscription,
     Ticket,
     User,
     utcnow,
 )
-from .repo import Repos
+from .repo import OutOfStock, Repos
 
 __all__ = [
     "Base",
@@ -22,8 +23,10 @@ __all__ = [
     "Order",
     "Payment",
     "Promo",
+    "OutOfStock",
     "Repos",
     "Setting",
+    "StockItem",
     "Subscription",
     "Ticket",
     "User",

@@ -2,7 +2,7 @@
 """Подбор Репетитора — Преподаватель под задачу
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-tutor-find
+Run as a unit: systemctl start botfarm-ru-129-tutor-find
 """
 
 import sys

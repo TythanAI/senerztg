@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/034-ielts-target/docker-compose.yml up -d
 services:
-  botfarm-ru-ielts-target:
+  botfarm-ru-034-ielts-target:
     build:
       context: ../../..
       dockerfile: bots/ru/034-ielts-target/Dockerfile
-    container_name: botfarm-ru-ielts-target
+    container_name: botfarm-ru-034-ielts-target
     restart: unless-stopped
     env_file: .env
     ports:

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/331-protonmail/docker-compose.yml up -d
+services:
+  botfarm-ru-331-protonmail:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/331-protonmail/Dockerfile
+    container_name: botfarm-ru-331-protonmail
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9330:9330"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

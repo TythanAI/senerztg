@@ -2,7 +2,7 @@
 """Дизайн Интерьера — Планировка и визуализация
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-interior-design
+Run as a unit: systemctl start botfarm-ru-168-interior-design
 """
 
 import sys

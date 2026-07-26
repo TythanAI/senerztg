@@ -2,7 +2,7 @@
 """Сон Наладить — Протокол восстановления сна
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-sleep-fix
+Run as a unit: systemctl start botfarm-ru-059-sleep-fix
 """
 
 import sys

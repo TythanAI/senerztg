@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/093-mortgage-eu/docker-compose.yml up -d
 services:
-  botfarm-eu-mortgage-eu:
+  botfarm-eu-093-mortgage-eu:
     build:
       context: ../../..
       dockerfile: bots/eu/093-mortgage-eu/Dockerfile
-    container_name: botfarm-eu-mortgage-eu
+    container_name: botfarm-eu-093-mortgage-eu
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9292:9292"
+      - "9592:9592"
     volumes:
       - ./data:/app/bot/data
     logging:

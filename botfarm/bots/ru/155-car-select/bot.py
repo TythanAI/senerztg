@@ -2,7 +2,7 @@
 """Подбор Авто — Проверка и выбор машины
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-car-select
+Run as a unit: systemctl start botfarm-ru-155-car-select
 """
 
 import sys

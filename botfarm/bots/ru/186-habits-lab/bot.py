@@ -2,7 +2,7 @@
 """Лаборатория Привычек — Трекер и разборы срывов
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-habits-lab
+Run as a unit: systemctl start botfarm-ru-186-habits-lab
 """
 
 import sys

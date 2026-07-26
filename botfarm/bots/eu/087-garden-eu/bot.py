@@ -2,7 +2,7 @@
 """Urban Gardening — Grow food on a balcony
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-garden-eu
+Run as a unit: systemctl start botfarm-eu-087-garden-eu
 """
 
 import sys

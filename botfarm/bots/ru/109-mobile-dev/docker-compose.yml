@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/109-mobile-dev/docker-compose.yml up -d
 services:
-  botfarm-ru-mobile-dev:
+  botfarm-ru-109-mobile-dev:
     build:
       context: ../../..
       dockerfile: bots/ru/109-mobile-dev/Dockerfile
-    container_name: botfarm-ru-mobile-dev
+    container_name: botfarm-ru-109-mobile-dev
     restart: unless-stopped
     env_file: .env
     ports:

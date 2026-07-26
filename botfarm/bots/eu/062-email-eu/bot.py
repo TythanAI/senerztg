@@ -2,7 +2,7 @@
 """Email Revenue — Flows that print money on autopilot
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-email-eu
+Run as a unit: systemctl start botfarm-eu-062-email-eu
 """
 
 import sys

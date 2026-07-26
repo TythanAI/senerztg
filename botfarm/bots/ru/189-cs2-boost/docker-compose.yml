@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/189-cs2-boost/docker-compose.yml up -d
 services:
-  botfarm-ru-cs2-boost:
+  botfarm-ru-189-cs2-boost:
     build:
       context: ../../..
       dockerfile: bots/ru/189-cs2-boost/Dockerfile
-    container_name: botfarm-ru-cs2-boost
+    container_name: botfarm-ru-189-cs2-boost
     restart: unless-stopped
     env_file: .env
     ports:

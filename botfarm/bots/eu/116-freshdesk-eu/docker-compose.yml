@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/116-freshdesk-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-116-freshdesk-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/116-freshdesk-eu/Dockerfile
+    container_name: botfarm-eu-116-freshdesk-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9615:9615"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

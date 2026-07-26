@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/245-spotify/docker-compose.yml up -d
+services:
+  botfarm-ru-245-spotify:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/245-spotify/Dockerfile
+    container_name: botfarm-ru-245-spotify
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9244:9244"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

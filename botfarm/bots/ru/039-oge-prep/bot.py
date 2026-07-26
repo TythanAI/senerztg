@@ -2,7 +2,7 @@
 """ОГЭ Подготовка — Все предметы девятого класса
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-oge-prep
+Run as a unit: systemctl start botfarm-ru-039-oge-prep
 """
 
 import sys

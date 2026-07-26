@@ -85,6 +85,9 @@ class Order(Base, TimestampMixin):
     amount: Mapped[Decimal] = mapped_column(Numeric(14, 2), nullable=False)
     currency: Mapped[str] = mapped_column(String(8), nullable=False)
 
+    quantity: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
+    promo_code: Mapped[str | None] = mapped_column(String(32))
+
     provider: Mapped[str] = mapped_column(String(32), nullable=False)
     external_id: Mapped[str | None] = mapped_column(String(128), index=True)
     pay_url: Mapped[str | None] = mapped_column(Text)
@@ -125,6 +128,32 @@ class Subscription(Base, TimestampMixin):
         if expires.tzinfo is None:  # SQLite round-trips naive datetimes
             expires = expires.replace(tzinfo=dt.timezone.utc)
         return expires > now
+
+
+class StockItem(Base, TimestampMixin):
+    """One unit of sellable inventory — an account, a key, a code.
+
+    This is what makes an account shop work: each row is issued to exactly
+    one buyer. `status` moves available → sold and never back, and the
+    transition is done with a conditional UPDATE so two simultaneous buyers
+    can never receive the same credentials.
+    """
+
+    __tablename__ = "stock"
+
+    STATUSES = ("available", "sold", "hold")
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    sku: Mapped[str] = mapped_column(String(64), index=True, nullable=False)
+    payload: Mapped[str] = mapped_column(Text, nullable=False)
+    status: Mapped[str] = mapped_column(String(16), default="available", nullable=False)
+    order_id: Mapped[int | None] = mapped_column(
+        ForeignKey("orders.id", ondelete="SET NULL"), index=True
+    )
+    sold_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
+    note: Mapped[str | None] = mapped_column(String(256))
+
+    __table_args__ = (Index("ix_stock_sku_status", "sku", "status"),)
 
 
 class Payment(Base, TimestampMixin):

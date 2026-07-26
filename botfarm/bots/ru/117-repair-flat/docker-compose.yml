@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/117-repair-flat/docker-compose.yml up -d
 services:
-  botfarm-ru-repair-flat:
+  botfarm-ru-117-repair-flat:
     build:
       context: ../../..
       dockerfile: bots/ru/117-repair-flat/Dockerfile
-    container_name: botfarm-ru-repair-flat
+    container_name: botfarm-ru-117-repair-flat
     restart: unless-stopped
     env_file: .env
     ports:

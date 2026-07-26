@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/333-dropbox/docker-compose.yml up -d
+services:
+  botfarm-ru-333-dropbox:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/333-dropbox/Dockerfile
+    container_name: botfarm-ru-333-dropbox
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9332:9332"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

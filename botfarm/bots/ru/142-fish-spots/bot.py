@@ -2,7 +2,7 @@
 """Рыбные Места — Клёв, снасти, точки
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-fish-spots
+Run as a unit: systemctl start botfarm-ru-142-fish-spots
 """
 
 import sys

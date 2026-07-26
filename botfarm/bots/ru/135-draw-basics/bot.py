@@ -2,7 +2,7 @@
 """Рисование с Нуля — Скетчи и портреты
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-ru-draw-basics
+Run as a unit: systemctl start botfarm-ru-135-draw-basics
 """
 
 import sys

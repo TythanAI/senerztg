@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/008-pension-plan/docker-compose.yml up -d
 services:
-  botfarm-ru-pension-plan:
+  botfarm-ru-008-pension-plan:
     build:
       context: ../../..
       dockerfile: bots/ru/008-pension-plan/Dockerfile
-    container_name: botfarm-ru-pension-plan
+    container_name: botfarm-ru-008-pension-plan
     restart: unless-stopped
     env_file: .env
     ports:

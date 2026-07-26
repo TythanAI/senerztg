@@ -2,7 +2,7 @@
 """Daily Yoga — Fifteen minutes, every morning
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-yoga-eu
+Run as a unit: systemctl start botfarm-eu-039-yoga-eu
 """
 
 import sys

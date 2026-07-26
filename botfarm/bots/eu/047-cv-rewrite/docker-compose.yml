@@ -1,14 +1,14 @@
 # Build from the botfarm root:  docker compose -f bots/eu/047-cv-rewrite/docker-compose.yml up -d
 services:
-  botfarm-eu-cv-rewrite:
+  botfarm-eu-047-cv-rewrite:
     build:
       context: ../../..
       dockerfile: bots/eu/047-cv-rewrite/Dockerfile
-    container_name: botfarm-eu-cv-rewrite
+    container_name: botfarm-eu-047-cv-rewrite
     restart: unless-stopped
     env_file: .env
     ports:
-      - "9246:9246"
+      - "9546:9546"
     volumes:
       - ./data:/app/bot/data
     logging:

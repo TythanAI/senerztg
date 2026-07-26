@@ -2,7 +2,7 @@
 """SaaS Launch Kit — Idea to first paying customer
 
 Run locally:   python bot.py
-Run as a unit: systemctl start botfarm-eu-saas-launch
+Run as a unit: systemctl start botfarm-eu-025-saas-launch
 """
 
 import sys

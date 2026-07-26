@@ -1,10 +1,10 @@
 # Build from the botfarm root:  docker compose -f bots/ru/095-franchise-buy/docker-compose.yml up -d
 services:
-  botfarm-ru-franchise-buy:
+  botfarm-ru-095-franchise-buy:
     build:
       context: ../../..
       dockerfile: bots/ru/095-franchise-buy/Dockerfile
-    container_name: botfarm-ru-franchise-buy
+    container_name: botfarm-ru-095-franchise-buy
     restart: unless-stopped
     env_file: .env
     ports:
