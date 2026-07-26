@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/183-dating-guide/docker-compose.yml up -d
+services:
+  botfarm-ru-dating-guide:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/183-dating-guide/Dockerfile
+    container_name: botfarm-ru-dating-guide
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9182:9182"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

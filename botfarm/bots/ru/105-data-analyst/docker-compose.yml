@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/105-data-analyst/docker-compose.yml up -d
+services:
+  botfarm-ru-data-analyst:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/105-data-analyst/Dockerfile
+    container_name: botfarm-ru-data-analyst
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9104:9104"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

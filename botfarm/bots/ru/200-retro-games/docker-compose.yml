@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/200-retro-games/docker-compose.yml up -d
+services:
+  botfarm-ru-retro-games:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/200-retro-games/Dockerfile
+    container_name: botfarm-ru-retro-games
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9199:9199"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

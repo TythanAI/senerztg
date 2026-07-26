@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/036-spanish-club/docker-compose.yml up -d
+services:
+  botfarm-ru-spanish-club:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/036-spanish-club/Dockerfile
+    container_name: botfarm-ru-spanish-club
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9035:9035"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

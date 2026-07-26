@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/084-ozon-seller/docker-compose.yml up -d
+services:
+  botfarm-ru-ozon-seller:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/084-ozon-seller/Dockerfile
+    container_name: botfarm-ru-ozon-seller
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9083:9083"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

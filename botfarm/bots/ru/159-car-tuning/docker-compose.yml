@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/159-car-tuning/docker-compose.yml up -d
+services:
+  botfarm-ru-car-tuning:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/159-car-tuning/Dockerfile
+    container_name: botfarm-ru-car-tuning
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9158:9158"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

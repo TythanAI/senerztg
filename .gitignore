@@ -1,2 +1,5 @@
 *.db
 __pycache__/
+
+# Build artifacts — the archives are regenerated from the tree, not stored in git.
+dist/

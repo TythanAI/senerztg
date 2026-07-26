@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/126-kids-party/docker-compose.yml up -d
+services:
+  botfarm-ru-kids-party:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/126-kids-party/Dockerfile
+    container_name: botfarm-ru-kids-party
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9125:9125"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

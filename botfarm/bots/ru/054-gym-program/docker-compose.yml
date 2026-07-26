@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/054-gym-program/docker-compose.yml up -d
+services:
+  botfarm-ru-gym-program:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/054-gym-program/Dockerfile
+    container_name: botfarm-ru-gym-program
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9053:9053"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

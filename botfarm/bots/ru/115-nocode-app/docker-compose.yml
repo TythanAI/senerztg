@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/115-nocode-app/docker-compose.yml up -d
+services:
+  botfarm-ru-nocode-app:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/115-nocode-app/Dockerfile
+    container_name: botfarm-ru-nocode-app
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9114:9114"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

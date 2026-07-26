@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/162-evcar-guide/docker-compose.yml up -d
+services:
+  botfarm-ru-evcar-guide:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/162-evcar-guide/Dockerfile
+    container_name: botfarm-ru-evcar-guide
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9161:9161"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

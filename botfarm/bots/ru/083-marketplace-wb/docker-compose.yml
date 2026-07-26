@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/083-marketplace-wb/docker-compose.yml up -d
+services:
+  botfarm-ru-marketplace-wb:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/083-marketplace-wb/Dockerfile
+    container_name: botfarm-ru-marketplace-wb
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9082:9082"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

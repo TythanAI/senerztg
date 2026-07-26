@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/120-plumber-call/docker-compose.yml up -d
+services:
+  botfarm-ru-plumber-call:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/120-plumber-call/Dockerfile
+    container_name: botfarm-ru-plumber-call
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9119:9119"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

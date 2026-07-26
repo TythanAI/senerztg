@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/171-law-consult/docker-compose.yml up -d
+services:
+  botfarm-ru-law-consult:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/171-law-consult/Dockerfile
+    container_name: botfarm-ru-law-consult
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9170:9170"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

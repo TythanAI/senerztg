@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/180-anxiety-help/docker-compose.yml up -d
+services:
+  botfarm-ru-anxiety-help:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/180-anxiety-help/Dockerfile
+    container_name: botfarm-ru-anxiety-help
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9179:9179"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

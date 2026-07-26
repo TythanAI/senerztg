@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/113-cyber-def/docker-compose.yml up -d
+services:
+  botfarm-ru-cyber-def:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/113-cyber-def/Dockerfile
+    container_name: botfarm-ru-cyber-def
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9112:9112"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

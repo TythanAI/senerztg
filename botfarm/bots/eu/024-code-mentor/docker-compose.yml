@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/024-code-mentor/docker-compose.yml up -d
+services:
+  botfarm-eu-code-mentor:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/024-code-mentor/Dockerfile
+    container_name: botfarm-eu-code-mentor
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9223:9223"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

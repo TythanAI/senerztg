@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/190-dota-coach/docker-compose.yml up -d
+services:
+  botfarm-ru-dota-coach:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/190-dota-coach/Dockerfile
+    container_name: botfarm-ru-dota-coach
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9189:9189"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

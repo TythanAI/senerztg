@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/129-tutor-find/docker-compose.yml up -d
+services:
+  botfarm-ru-tutor-find:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/129-tutor-find/Dockerfile
+    container_name: botfarm-ru-tutor-find
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9128:9128"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

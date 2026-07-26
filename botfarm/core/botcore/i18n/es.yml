@@ -1,0 +1,105 @@
+# Buyer-facing Spanish. Missing keys fall back to en.yml.
+menu:
+  catalog: "🛍 Catálogo"
+  subscription: "⭐ Suscripción"
+  profile: "👤 Perfil"
+  referral: "🤝 Afiliados"
+  support: "💬 Soporte"
+  faq: "❓ Preguntas"
+  content: "📚 Biblioteca"
+  quiz: "🧭 Encuentra tu opción"
+  booking: "📅 Reservar"
+  reviews: "🌟 Reseñas"
+
+common:
+  back: "⬅️ Atrás"
+  cancel: "✖️ Cancelar"
+  menu: "🏠 Menú principal"
+  error: "Algo salió mal. Inténtalo de nuevo o escribe a soporte."
+  done: "Listo ✅"
+  loading: "Un momento…"
+  yes: "Sí"
+  no: "No"
+  skip: "Omitir"
+
+start:
+  welcome: "<b>{name}</b>\n\n{tagline}\n\nElige una sección 👇"
+  back: "Menú principal. ¿En qué te ayudamos?"
+  banned: "El acceso a este bot está restringido."
+
+catalog:
+  title: "<b>Catálogo</b>\n\nElige una opción:"
+  empty: "El catálogo está vacío por ahora — vuelve pronto."
+  item: "<b>{title}</b>\n\n{description}\n\n💰 Precio: <b>{price}</b>"
+  buy: "🛒 Comprar por {price}"
+  period: "⏳ Acceso: {days} días"
+
+checkout:
+  choose_method: "<b>{title}</b>\n💰 Total: <b>{price}</b>\n\nElige método de pago:"
+  no_methods: "El pago no está disponible ahora. Escribe a soporte y tomamos el pedido manualmente."
+  created: "Factura creada. Pulsa «Pagar» y luego «Ya pagué»."
+  pay: "💳 Pagar"
+  check: "🔄 Ya pagué"
+  pending: "El pago aún no llega. Si acabas de pagar, espera un minuto y pulsa otra vez."
+  paid: "✅ ¡Pago recibido! Gracias."
+  expired: "La factura caducó. Crea un pedido nuevo."
+  cancelled: "Pedido cancelado."
+  error: "No se pudo crear la factura. Prueba otro método de pago."
+  promo_hint: "¿Tienes un código promocional? Envíalo antes de pagar."
+
+delivery:
+  digital: "<b>{title}</b>\n\n{payload}"
+  service: "Tu pedido <b>{title}</b> está confirmado. Te contactamos en breve."
+  subscription: "La suscripción <b>{title}</b> está activa hasta <b>{until}</b>."
+  fallback: "¡Gracias por tu compra! Te enviamos los materiales."
+
+profile:
+  title: "<b>Perfil</b>\n\n🆔 ID: <code>{tg_id}</code>\n💼 Compras: {orders}\n💰 Saldo: {balance}"
+  orders: "<b>Pedidos recientes</b>"
+  no_orders: "Aún no hay pedidos."
+  order_line: "#{id} · {title} · {amount} · {status}"
+  subs: "<b>Suscripciones</b>"
+  sub_line: "{sku} — activa hasta {until}"
+  no_subs: "Sin suscripciones activas."
+
+referral:
+  title: "<b>Programa de afiliados</b>\n\nGanas <b>{percent}%</b> de cada compra de tus invitados.\n\n🔗 Tu enlace:\n<code>{link}</code>\n\n👥 Invitados: <b>{count}</b>\n💰 Ganado: <b>{earned}</b>"
+  disabled: "El programa de afiliados no está activo."
+  bonus: "🤝 Comisión de afiliado: <b>{amount}</b> por la compra de tu invitado."
+
+support:
+  prompt: "Describe tu consulta en un mensaje — te respondemos aquí mismo."
+  sent: "Mensaje enviado ✅ Solemos responder en menos de una hora."
+  contact: "O escríbenos directamente: {username}"
+  reply: "<b>Respuesta de soporte:</b>\n\n{text}"
+
+faq:
+  title: "<b>Preguntas frecuentes</b>"
+  empty: "Todavía no hay nada aquí."
+
+promo:
+  prompt: "Envía tu código promocional."
+  ok: "Código aplicado: −{percent}%"
+  bad: "Este código no es válido o ya se usó."
+
+subscription:
+  title: "<b>Suscripción</b>\n\n{description}"
+  active: "✅ Activa hasta <b>{until}</b>"
+  inactive: "Sin suscripción activa."
+  trial: "🎁 ¡Prueba de {days} días activada!"
+  trial_used: "Ya usaste el periodo de prueba."
+  expiring: "⏳ Tu suscripción <b>{sku}</b> termina el {until}. ¿Renovar?"
+  expired: "Tu suscripción terminó. Renueva para recuperar el acceso."
+
+leadgen:
+  prompt: "Déjanos un contacto — te proponemos la mejor opción."
+  phone_button: "📱 Enviar teléfono"
+  saved: "¡Gracias! Solicitud recibida ✅"
+
+quiz:
+  intro: "Responde unas preguntas y te recomendamos la mejor opción."
+  done: "¡Listo! Te recomendamos:"
+
+errors:
+  flood: "Demasiadas solicitudes. Ve un poco más despacio."
+  not_found: "No encontrado."

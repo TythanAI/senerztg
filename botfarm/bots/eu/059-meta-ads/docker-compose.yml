@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/059-meta-ads/docker-compose.yml up -d
+services:
+  botfarm-eu-meta-ads:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/059-meta-ads/Dockerfile
+    container_name: botfarm-eu-meta-ads
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9258:9258"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

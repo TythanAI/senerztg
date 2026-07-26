@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/042-memory-gym/docker-compose.yml up -d
+services:
+  botfarm-ru-memory-gym:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/042-memory-gym/Dockerfile
+    container_name: botfarm-ru-memory-gym
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9041:9041"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,301 @@
+id,name,region,lang,currency,archetype,tier,topic,products,price_min,price_max,providers,referral_percent,port,path
+ru-001-invest-start,ИнвестСтарт,ru,ru,RUB,course,standard,инвестиции,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9000,bots/ru/001-invest-start
+ru-002-dividend-club,Дивидендный клуб,ru,ru,RUB,club,premium,дивидендные акции,3,4890.0,39190.0,yookassa|sbp|cryptobot|manual,20,9001,bots/ru/002-dividend-club
+ru-003-bond-lab,Облигации Лаб,ru,ru,RUB,course,standard,облигации,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9002,bots/ru/003-bond-lab
+ru-004-trader-signals,Трейдер Сигналы,ru,ru,RUB,signals,premium,трейдинг,3,2190.0,17140.0,yookassa|sbp|cryptobot|manual,20,9003,bots/ru/004-trader-signals
+ru-005-finplan-pro,ФинПлан Про,ru,ru,RUB,consult,premium,финансовое планирование,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9004,bots/ru/005-finplan-pro
+ru-006-debt-free,Долги Стоп,ru,ru,RUB,course,budget,закрытие долгов,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9005,bots/ru/006-debt-free
+ru-007-budget-family,Семейный Бюджет,ru,ru,RUB,saas,budget,семейный бюджет,3,380.0,2440.0,yookassa|sbp|cryptobot|stars|manual,20,9006,bots/ru/007-budget-family
+ru-008-pension-plan,Пенсия Сам,ru,ru,RUB,course,standard,пенсионные накопления,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9007,bots/ru/008-pension-plan
+ru-009-tax-refund,Налог Возврат,ru,ru,RUB,service,standard,налоговые вычеты,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9008,bots/ru/009-tax-refund
+ru-010-credit-score,Кредитный Рейтинг,ru,ru,RUB,service,standard,кредитная история,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9009,bots/ru/010-credit-score
+ru-011-ipo-radar,IPO Радар,ru,ru,RUB,signals,premium,IPO,3,2190.0,17140.0,yookassa|sbp|cryptobot|manual,20,9010,bots/ru/011-ipo-radar
+ru-012-etf-portfolio,ETF Портфель,ru,ru,RUB,course,standard,ETF,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9011,bots/ru/012-etf-portfolio
+ru-013-forex-academy,Форекс Академия,ru,ru,RUB,course,premium,форекс,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9012,bots/ru/013-forex-academy
+ru-014-options-desk,Опционный Стол,ru,ru,RUB,club,elite,опционы,3,14890.0,119190.0,yookassa|sbp|cryptobot|manual,20,9013,bots/ru/014-options-desk
+ru-015-bank-deals,Банк Выгода,ru,ru,RUB,signals,budget,банковские продукты,3,210.0,1710.0,yookassa|sbp|cryptobot|stars|manual,20,9014,bots/ru/015-bank-deals
+ru-016-realty-invest,Недвижка Инвест,ru,ru,RUB,course,premium,инвестиции в недвижимость,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9015,bots/ru/016-realty-invest
+ru-017-passive-income,Пассивный Доход,ru,ru,RUB,club,standard,пассивный доход,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9016,bots/ru/017-passive-income
+ru-018-insurance-check,Страховка Чек,ru,ru,RUB,consult,standard,страхование,3,1480.0,11170.0,yookassa|sbp|cryptobot|manual,10,9017,bots/ru/018-insurance-check
+ru-019-crypto-base,Крипта База,ru,ru,RUB,course,standard,криптовалюты,3,1480.0,8930.0,yookassa|sbp|cryptobot|ton|manual,25,9018,bots/ru/019-crypto-base
+ru-020-defi-farm,DeFi Ферма,ru,ru,RUB,club,premium,DeFi,3,4890.0,39190.0,yookassa|sbp|cryptobot|ton|manual,20,9019,bots/ru/020-defi-farm
+ru-021-nft-drop,NFT Дроп,ru,ru,RUB,signals,standard,NFT,3,660.0,5210.0,yookassa|sbp|cryptobot|ton|manual,20,9020,bots/ru/021-nft-drop
+ru-022-airdrop-hunter,Аирдроп Хантер,ru,ru,RUB,club,standard,аирдропы,3,1480.0,11910.0,yookassa|sbp|cryptobot|ton|manual,20,9021,bots/ru/022-airdrop-hunter
+ru-023-btc-cycle,BTC Цикл,ru,ru,RUB,signals,premium,биткоин,3,2190.0,17140.0,yookassa|sbp|cryptobot|ton|manual,20,9022,bots/ru/023-btc-cycle
+ru-024-altcoin-scan,Альт Скан,ru,ru,RUB,signals,premium,альткоины,3,2190.0,17140.0,yookassa|sbp|cryptobot|ton|manual,20,9023,bots/ru/024-altcoin-scan
+ru-025-p2p-arbitrage,P2P Арбитраж,ru,ru,RUB,course,premium,P2P-арбитраж,3,4890.0,29390.0,yookassa|sbp|cryptobot|ton|manual,25,9024,bots/ru/025-p2p-arbitrage
+ru-026-mining-calc,Майнинг Калькулятор,ru,ru,RUB,saas,standard,майнинг,3,1180.0,7440.0,yookassa|sbp|cryptobot|ton|manual,20,9025,bots/ru/026-mining-calc
+ru-027-ton-dev,TON Разработка,ru,ru,RUB,course,premium,разработка на TON,3,4890.0,29390.0,yookassa|sbp|cryptobot|ton|manual,25,9026,bots/ru/027-ton-dev
+ru-028-crypto-tax-ru,Крипта Налог,ru,ru,RUB,service,premium,налоги на крипту,3,4890.0,24490.0,yookassa|sbp|cryptobot|ton|manual,10,9027,bots/ru/028-crypto-tax-ru
+ru-029-wallet-secure,Кошелёк Защита,ru,ru,RUB,course,budget,безопасность криптокошельков,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|ton|manual,25,9028,bots/ru/029-wallet-secure
+ru-030-stables-yield,Стейбл Доход,ru,ru,RUB,club,standard,стейблкоины,3,1480.0,11910.0,yookassa|sbp|cryptobot|ton|manual,20,9029,bots/ru/030-stables-yield
+ru-031-web3-jobs,Web3 Работа,ru,ru,RUB,club,standard,работа в web3,3,1480.0,11910.0,yookassa|sbp|cryptobot|ton|manual,20,9030,bots/ru/031-web3-jobs
+ru-032-trading-bots,Торговый Бот,ru,ru,RUB,saas,premium,торговые боты,3,3910.0,24490.0,yookassa|sbp|cryptobot|manual,20,9031,bots/ru/032-trading-bots
+ru-033-english-daily,Английский Каждый День,ru,ru,RUB,club,budget,английский язык,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9032,bots/ru/033-english-daily
+ru-034-ielts-target,IELTS Цель,ru,ru,RUB,course,premium,IELTS,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9033,bots/ru/034-ielts-target
+ru-035-chinese-start,Китайский Старт,ru,ru,RUB,course,standard,китайский язык,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9034,bots/ru/035-chinese-start
+ru-036-spanish-club,Испанский Клуб,ru,ru,RUB,club,standard,испанский язык,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9035,bots/ru/036-spanish-club
+ru-037-ege-math,ЕГЭ Математика,ru,ru,RUB,course,standard,ЕГЭ по математике,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9036,bots/ru/037-ege-math
+ru-038-ege-russian,ЕГЭ Русский,ru,ru,RUB,course,standard,ЕГЭ по русскому,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9037,bots/ru/038-ege-russian
+ru-039-oge-prep,ОГЭ Подготовка,ru,ru,RUB,club,budget,ОГЭ,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9038,bots/ru/039-oge-prep
+ru-040-kids-logic,Детская Логика,ru,ru,RUB,club,budget,развитие детей,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9039,bots/ru/040-kids-logic
+ru-041-speed-read,Скорочтение,ru,ru,RUB,course,budget,скорочтение,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9040,bots/ru/041-speed-read
+ru-042-memory-gym,Тренажёр Памяти,ru,ru,RUB,saas,budget,тренировка памяти,3,380.0,2440.0,yookassa|sbp|cryptobot|stars|manual,20,9041,bots/ru/042-memory-gym
+ru-043-essay-help,Помощь с Работой,ru,ru,RUB,service,premium,учебные работы,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9042,bots/ru/043-essay-help
+ru-044-uni-abroad,Универ за Рубежом,ru,ru,RUB,consult,elite,образование за рубежом,3,14890.0,111740.0,yookassa|sbp|cryptobot|manual,10,9043,bots/ru/044-uni-abroad
+ru-045-prof-orient,Профориентация,ru,ru,RUB,consult,standard,профориентация,3,1480.0,11170.0,yookassa|sbp|cryptobot|manual,10,9044,bots/ru/045-prof-orient
+ru-046-teacher-tools,Учитель Инструменты,ru,ru,RUB,saas,standard,инструменты для учителей,3,1180.0,7440.0,yookassa|sbp|cryptobot|manual,20,9045,bots/ru/046-teacher-tools
+ru-047-music-theory,Теория Музыки,ru,ru,RUB,course,standard,теория музыки,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9046,bots/ru/047-music-theory
+ru-048-guitar-start,Гитара Старт,ru,ru,RUB,course,budget,игра на гитаре,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9047,bots/ru/048-guitar-start
+ru-049-public-speak,Публичные Выступления,ru,ru,RUB,course,premium,ораторское мастерство,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9048,bots/ru/049-public-speak
+ru-050-writing-craft,Мастерская Текста,ru,ru,RUB,club,standard,копирайтинг,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9049,bots/ru/050-writing-craft
+ru-051-chess-school,Шахматная Школа,ru,ru,RUB,club,standard,шахматы,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9050,bots/ru/051-chess-school
+ru-052-math-olymp,Олимпиадная Математика,ru,ru,RUB,club,standard,олимпиадная математика,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9051,bots/ru/052-math-olymp
+ru-053-fit-home,Фит Дома,ru,ru,RUB,club,budget,домашние тренировки,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9052,bots/ru/053-fit-home
+ru-054-gym-program,Зал Программа,ru,ru,RUB,course,standard,тренировки в зале,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9053,bots/ru/054-gym-program
+ru-055-nutrition-plan,План Питания,ru,ru,RUB,service,standard,питание,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9054,bots/ru/055-nutrition-plan
+ru-056-keto-guide,Кето Гид,ru,ru,RUB,course,standard,кето-диета,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9055,bots/ru/056-keto-guide
+ru-057-run-coach,Беговой Тренер,ru,ru,RUB,club,standard,бег,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9056,bots/ru/057-run-coach
+ru-058-yoga-daily,Йога Каждый День,ru,ru,RUB,club,budget,йога,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9057,bots/ru/058-yoga-daily
+ru-059-sleep-fix,Сон Наладить,ru,ru,RUB,course,budget,качество сна,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9058,bots/ru/059-sleep-fix
+ru-060-back-health,Здоровая Спина,ru,ru,RUB,course,standard,здоровье спины,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9059,bots/ru/060-back-health
+ru-061-women-health,Женское Здоровье,ru,ru,RUB,club,standard,женское здоровье,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9060,bots/ru/061-women-health
+ru-062-mens-power,Мужская Форма,ru,ru,RUB,club,standard,мужское здоровье,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9061,bots/ru/062-mens-power
+ru-063-quit-smoking,Бросить Курить,ru,ru,RUB,course,budget,отказ от курения,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9062,bots/ru/063-quit-smoking
+ru-064-detox-week,Детокс Неделя,ru,ru,RUB,course,budget,детокс,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9063,bots/ru/064-detox-week
+ru-065-mama-fit,Мама в Форме,ru,ru,RUB,club,standard,фитнес для мам,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9064,bots/ru/065-mama-fit
+ru-066-senior-fit,Актив 50+,ru,ru,RUB,club,budget,фитнес 50+,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9065,bots/ru/066-senior-fit
+ru-067-supplement-guide,Нутрициолог Онлайн,ru,ru,RUB,consult,premium,нутрициология,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9066,bots/ru/067-supplement-guide
+ru-068-marathon-prep,Марафон Подготовка,ru,ru,RUB,course,premium,марафон,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9067,bots/ru/068-marathon-prep
+ru-069-swim-tech,Техника Плавания,ru,ru,RUB,course,standard,плавание,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9068,bots/ru/069-swim-tech
+ru-070-bio-age,Биовозраст,ru,ru,RUB,service,elite,биохакинг,3,14890.0,74490.0,yookassa|sbp|cryptobot|manual,10,9069,bots/ru/070-bio-age
+ru-071-skin-care,Косметолог Онлайн,ru,ru,RUB,consult,standard,уход за кожей,3,1480.0,11170.0,yookassa|sbp|cryptobot|manual,10,9070,bots/ru/071-skin-care
+ru-072-makeup-school,Школа Макияжа,ru,ru,RUB,course,standard,макияж,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9071,bots/ru/072-makeup-school
+ru-073-hair-care,Уход за Волосами,ru,ru,RUB,course,budget,уход за волосами,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9072,bots/ru/073-hair-care
+ru-074-nails-pro,Ногтевой Сервис,ru,ru,RUB,course,premium,маникюр,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9073,bots/ru/074-nails-pro
+ru-075-brows-master,Мастер Бровей,ru,ru,RUB,course,standard,брови,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9074,bots/ru/075-brows-master
+ru-076-style-guide,Стилист Онлайн,ru,ru,RUB,consult,premium,стиль и гардероб,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9075,bots/ru/076-style-guide
+ru-077-perfume-club,Парфюм Клуб,ru,ru,RUB,club,budget,парфюмерия,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9076,bots/ru/077-perfume-club
+ru-078-spa-home,SPA Дома,ru,ru,RUB,course,budget,домашний уход,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9077,bots/ru/078-spa-home
+ru-079-beauty-shop,Бьюти Гайды,ru,ru,RUB,shop,budget,бьюти-гайды,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9078,bots/ru/079-beauty-shop
+ru-080-tattoo-book,Тату Запись,ru,ru,RUB,leadgen,standard,татуировки,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9079,bots/ru/080-tattoo-book
+ru-081-smm-factory,SMM Фабрика,ru,ru,RUB,service,premium,SMM,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9080,bots/ru/081-smm-factory
+ru-082-target-ads,Таргет Про,ru,ru,RUB,course,premium,таргетированная реклама,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9081,bots/ru/082-target-ads
+ru-083-marketplace-wb,Wildberries Старт,ru,ru,RUB,course,premium,торговля на Wildberries,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9082,bots/ru/083-marketplace-wb
+ru-084-ozon-seller,Ozon Продавец,ru,ru,RUB,course,premium,торговля на Ozon,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9083,bots/ru/084-ozon-seller
+ru-085-avito-flow,Авито Поток,ru,ru,RUB,course,standard,продажи на Авито,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9084,bots/ru/085-avito-flow
+ru-086-sales-script,Скрипты Продаж,ru,ru,RUB,shop,standard,скрипты продаж,4,880.0,6690.0,yookassa|sbp|cryptobot|ton|manual,30,9085,bots/ru/086-sales-script
+ru-087-crm-setup,CRM Внедрение,ru,ru,RUB,service,elite,внедрение CRM,3,14890.0,74490.0,yookassa|sbp|cryptobot|manual,10,9086,bots/ru/087-crm-setup
+ru-088-unit-econ,Юнит-Экономика,ru,ru,RUB,course,premium,юнит-экономика,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9087,bots/ru/088-unit-econ
+ru-089-brand-pack,Бренд Пакет,ru,ru,RUB,service,premium,брендинг,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9088,bots/ru/089-brand-pack
+ru-090-content-plan,Контент План,ru,ru,RUB,saas,standard,контент-маркетинг,3,1180.0,7440.0,yookassa|sbp|cryptobot|manual,20,9089,bots/ru/090-content-plan
+ru-091-email-flow,Email Воронки,ru,ru,RUB,course,standard,email-маркетинг,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9090,bots/ru/091-email-flow
+ru-092-seo-boost,SEO Рост,ru,ru,RUB,service,elite,SEO,3,14890.0,74490.0,yookassa|sbp|cryptobot|manual,10,9091,bots/ru/092-seo-boost
+ru-093-landing-fast,Лендинг Быстро,ru,ru,RUB,service,premium,лендинги,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9092,bots/ru/093-landing-fast
+ru-094-hr-hiring,Найм Без Боли,ru,ru,RUB,course,premium,подбор персонала,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9093,bots/ru/094-hr-hiring
+ru-095-franchise-buy,Франшиза Аудит,ru,ru,RUB,consult,elite,франшизы,3,14890.0,111740.0,yookassa|sbp|cryptobot|manual,10,9094,bots/ru/095-franchise-buy
+ru-096-business-plan,Бизнес-План,ru,ru,RUB,service,premium,бизнес-планы,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9095,bots/ru/096-business-plan
+ru-097-import-china,Импорт из Китая,ru,ru,RUB,course,premium,импорт из Китая,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9096,bots/ru/097-import-china
+ru-098-tender-win,Тендеры 44-ФЗ,ru,ru,RUB,course,premium,тендеры,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9097,bots/ru/098-tender-win
+ru-099-local-biz,Локальный Бизнес,ru,ru,RUB,leadgen,standard,локальный маркетинг,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9098,bots/ru/099-local-biz
+ru-100-ads-audit,Аудит Рекламы,ru,ru,RUB,consult,premium,аудит рекламы,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9099,bots/ru/100-ads-audit
+ru-101-python-start,Python Старт,ru,ru,RUB,course,standard,Python,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9100,bots/ru/101-python-start
+ru-102-frontend-job,Фронтенд Работа,ru,ru,RUB,course,premium,фронтенд,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9101,bots/ru/102-frontend-job
+ru-103-qa-manual,QA Тестировщик,ru,ru,RUB,course,standard,тестирование ПО,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9102,bots/ru/103-qa-manual
+ru-104-devops-lab,DevOps Лаб,ru,ru,RUB,course,elite,DevOps,3,14890.0,89390.0,yookassa|sbp|cryptobot|manual,25,9103,bots/ru/104-devops-lab
+ru-105-data-analyst,Аналитик Данных,ru,ru,RUB,course,premium,аналитика данных,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9104,bots/ru/105-data-analyst
+ru-106-ml-practice,ML Практика,ru,ru,RUB,club,premium,машинное обучение,3,4890.0,39190.0,yookassa|sbp|cryptobot|manual,20,9105,bots/ru/106-ml-practice
+ru-107-bot-dev,Разработка Ботов,ru,ru,RUB,course,premium,разработка ботов,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9106,bots/ru/107-bot-dev
+ru-108-game-dev,Геймдев Старт,ru,ru,RUB,course,premium,разработка игр,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9107,bots/ru/108-game-dev
+ru-109-mobile-dev,Мобильная Разработка,ru,ru,RUB,course,premium,мобильная разработка,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9108,bots/ru/109-mobile-dev
+ru-110-it-resume,IT Резюме,ru,ru,RUB,service,standard,трудоустройство в IT,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9109,bots/ru/110-it-resume
+ru-111-code-review,Код Ревью,ru,ru,RUB,consult,premium,код-ревью,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9110,bots/ru/111-code-review
+ru-112-freelance-it,IT Фриланс,ru,ru,RUB,club,standard,IT-фриланс,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9111,bots/ru/112-freelance-it
+ru-113-cyber-def,Кибербезопасность,ru,ru,RUB,course,elite,кибербезопасность,3,14890.0,89390.0,yookassa|sbp|cryptobot|manual,25,9112,bots/ru/113-cyber-def
+ru-114-linux-admin,Linux Админ,ru,ru,RUB,course,premium,администрирование Linux,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9113,bots/ru/114-linux-admin
+ru-115-nocode-app,Nocode Приложения,ru,ru,RUB,course,standard,no-code,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9114,bots/ru/115-nocode-app
+ru-116-ai-tools,Нейросети Практика,ru,ru,RUB,club,standard,нейросети,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9115,bots/ru/116-ai-tools
+ru-117-repair-flat,Ремонт Квартир,ru,ru,RUB,leadgen,premium,ремонт квартир,3,1710.0,19590.0,yookassa|sbp|cryptobot|manual,5,9116,bots/ru/117-repair-flat
+ru-118-clean-service,Клининг Заказ,ru,ru,RUB,leadgen,standard,клининг,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9117,bots/ru/118-clean-service
+ru-119-moving-help,Переезд Просто,ru,ru,RUB,leadgen,standard,переезды,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9118,bots/ru/119-moving-help
+ru-120-plumber-call,Сантехник Вызов,ru,ru,RUB,leadgen,standard,сантехника,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9119,bots/ru/120-plumber-call
+ru-121-electric-call,Электрик Вызов,ru,ru,RUB,leadgen,standard,электрика,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9120,bots/ru/121-electric-call
+ru-122-furniture-make,Мебель на Заказ,ru,ru,RUB,leadgen,premium,мебель на заказ,3,1710.0,19590.0,yookassa|sbp|cryptobot|manual,5,9121,bots/ru/122-furniture-make
+ru-123-window-fit,Окна Установка,ru,ru,RUB,leadgen,premium,остекление,3,1710.0,19590.0,yookassa|sbp|cryptobot|manual,5,9122,bots/ru/123-window-fit
+ru-124-garden-care,Уход за Участком,ru,ru,RUB,leadgen,standard,уход за участком,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9123,bots/ru/124-garden-care
+ru-125-pet-care,Передержка Питомцев,ru,ru,RUB,leadgen,budget,уход за питомцами,3,160.0,1950.0,yookassa|sbp|cryptobot|stars|manual,5,9124,bots/ru/125-pet-care
+ru-126-kids-party,Детский Праздник,ru,ru,RUB,leadgen,standard,детские праздники,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9125,bots/ru/126-kids-party
+ru-127-photo-book,Фотограф Запись,ru,ru,RUB,leadgen,standard,фотосъёмка,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9126,bots/ru/127-photo-book
+ru-128-wedding-plan,Свадебный Организатор,ru,ru,RUB,consult,elite,организация свадеб,3,14890.0,111740.0,yookassa|sbp|cryptobot|manual,10,9127,bots/ru/128-wedding-plan
+ru-129-tutor-find,Подбор Репетитора,ru,ru,RUB,leadgen,standard,репетиторы,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9128,bots/ru/129-tutor-find
+ru-130-laundry-pick,Химчистка Доставка,ru,ru,RUB,leadgen,budget,химчистка,3,160.0,1950.0,yookassa|sbp|cryptobot|stars|manual,5,9129,bots/ru/130-laundry-pick
+ru-131-locksmith-24,Вскрытие Замков,ru,ru,RUB,leadgen,standard,вскрытие замков,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9130,bots/ru/131-locksmith-24
+ru-132-appliance-fix,Ремонт Техники,ru,ru,RUB,leadgen,standard,ремонт бытовой техники,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9131,bots/ru/132-appliance-fix
+ru-133-photo-school,Школа Фото,ru,ru,RUB,course,standard,фотография,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9132,bots/ru/133-photo-school
+ru-134-video-edit,Монтаж Видео,ru,ru,RUB,course,standard,видеомонтаж,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9133,bots/ru/134-video-edit
+ru-135-draw-basics,Рисование с Нуля,ru,ru,RUB,course,budget,рисование,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9134,bots/ru/135-draw-basics
+ru-136-pottery-club,Керамика Клуб,ru,ru,RUB,club,standard,керамика,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9135,bots/ru/136-pottery-club
+ru-137-knit-patterns,Вязание Схемы,ru,ru,RUB,shop,budget,вязание,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9136,bots/ru/137-knit-patterns
+ru-138-cook-school,Кулинарная Школа,ru,ru,RUB,club,budget,кулинария,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9137,bots/ru/138-cook-school
+ru-139-bake-pro,Кондитер Про,ru,ru,RUB,course,premium,кондитерское дело,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9138,bots/ru/139-bake-pro
+ru-140-wine-club,Винный Клуб,ru,ru,RUB,club,standard,вино,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9139,bots/ru/140-wine-club
+ru-141-garden-home,Домашний Сад,ru,ru,RUB,club,budget,комнатные растения,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9140,bots/ru/141-garden-home
+ru-142-fish-spots,Рыбные Места,ru,ru,RUB,club,budget,рыбалка,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9141,bots/ru/142-fish-spots
+ru-143-hunt-gear,Охота Снаряжение,ru,ru,RUB,shop,standard,охота,4,880.0,6690.0,yookassa|sbp|cryptobot|manual,30,9142,bots/ru/143-hunt-gear
+ru-144-model-craft,Моделизм,ru,ru,RUB,shop,standard,моделизм,4,880.0,6690.0,yookassa|sbp|cryptobot|manual,30,9143,bots/ru/144-model-craft
+ru-145-music-prod,Продюсирование Музыки,ru,ru,RUB,course,premium,музыкальное продюсирование,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9144,bots/ru/145-music-prod
+ru-146-dance-home,Танцы Дома,ru,ru,RUB,club,budget,танцы,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9145,bots/ru/146-dance-home
+ru-147-cheap-flights,Дешёвые Билеты,ru,ru,RUB,signals,budget,авиабилеты,3,210.0,1710.0,yookassa|sbp|cryptobot|stars|manual,20,9146,bots/ru/147-cheap-flights
+ru-148-visa-help,Виза Помощь,ru,ru,RUB,service,premium,визы,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9147,bots/ru/148-visa-help
+ru-149-tour-select,Подбор Тура,ru,ru,RUB,leadgen,standard,туры,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9148,bots/ru/149-tour-select
+ru-150-road-trip,Автопутешествия,ru,ru,RUB,shop,budget,автопутешествия,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9149,bots/ru/150-road-trip
+ru-151-hotel-deals,Отели Выгодно,ru,ru,RUB,signals,budget,отели,3,210.0,1710.0,yookassa|sbp|cryptobot|stars|manual,20,9150,bots/ru/151-hotel-deals
+ru-152-relocate-help,Релокация Консультация,ru,ru,RUB,consult,elite,релокация,3,14890.0,111740.0,yookassa|sbp|cryptobot|manual,10,9151,bots/ru/152-relocate-help
+ru-153-camp-gear,Походное Снаряжение,ru,ru,RUB,shop,budget,походы,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9152,bots/ru/153-camp-gear
+ru-154-city-guides,Гиды по Городам,ru,ru,RUB,shop,budget,городские гиды,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9153,bots/ru/154-city-guides
+ru-155-car-select,Подбор Авто,ru,ru,RUB,consult,premium,подбор автомобиля,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9154,bots/ru/155-car-select
+ru-156-car-diag,Автодиагностика,ru,ru,RUB,leadgen,standard,диагностика авто,3,510.0,5950.0,yookassa|sbp|cryptobot|manual,5,9155,bots/ru/156-car-diag
+ru-157-car-parts,Автозапчасти Гид,ru,ru,RUB,shop,standard,автозапчасти,4,880.0,6690.0,yookassa|sbp|cryptobot|manual,30,9156,bots/ru/157-car-parts
+ru-158-driving-exam,Экзамен ГИБДД,ru,ru,RUB,course,budget,экзамен в ГИБДД,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9157,bots/ru/158-driving-exam
+ru-159-car-tuning,Тюнинг Клуб,ru,ru,RUB,club,standard,тюнинг,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9158,bots/ru/159-car-tuning
+ru-160-truck-work,Дальнобой Работа,ru,ru,RUB,club,standard,грузоперевозки,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9159,bots/ru/160-truck-work
+ru-161-moto-school,Мотошкола,ru,ru,RUB,course,standard,мотоциклы,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9160,bots/ru/161-moto-school
+ru-162-evcar-guide,Электромобиль Гид,ru,ru,RUB,course,standard,электромобили,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9161,bots/ru/162-evcar-guide
+ru-163-mortgage-calc,Ипотека Консультант,ru,ru,RUB,consult,premium,ипотека,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9162,bots/ru/163-mortgage-calc
+ru-164-flat-buy,Покупка Квартиры,ru,ru,RUB,leadgen,elite,покупка квартиры,3,5210.0,59590.0,yookassa|sbp|cryptobot|manual,5,9163,bots/ru/164-flat-buy
+ru-165-rent-flow,Аренда Поток,ru,ru,RUB,saas,standard,управление арендой,3,1180.0,7440.0,yookassa|sbp|cryptobot|manual,20,9164,bots/ru/165-rent-flow
+ru-166-newbuild-scan,Новостройки Скан,ru,ru,RUB,signals,standard,новостройки,3,660.0,5210.0,yookassa|sbp|cryptobot|manual,20,9165,bots/ru/166-newbuild-scan
+ru-167-dacha-build,Дом Построить,ru,ru,RUB,course,premium,строительство дома,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9166,bots/ru/167-dacha-build
+ru-168-interior-design,Дизайн Интерьера,ru,ru,RUB,service,elite,дизайн интерьера,3,14890.0,74490.0,yookassa|sbp|cryptobot|manual,10,9167,bots/ru/168-interior-design
+ru-169-realtor-school,Школа Риелтора,ru,ru,RUB,course,premium,работа риелтором,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9168,bots/ru/169-realtor-school
+ru-170-land-check,Проверка Участка,ru,ru,RUB,consult,premium,земельные участки,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9169,bots/ru/170-land-check
+ru-171-law-consult,Юрист Онлайн,ru,ru,RUB,consult,premium,юридические консультации,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9170,bots/ru/171-law-consult
+ru-172-bankrupt-help,Банкротство Физлиц,ru,ru,RUB,service,elite,банкротство,3,14890.0,74490.0,yookassa|sbp|cryptobot|manual,10,9171,bots/ru/172-bankrupt-help
+ru-173-ip-register,Регистрация ИП,ru,ru,RUB,service,standard,регистрация бизнеса,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9172,bots/ru/173-ip-register
+ru-174-accounting-out,Бухгалтерия Аутсорс,ru,ru,RUB,service,premium,бухгалтерия,3,4890.0,24490.0,yookassa|sbp|cryptobot|manual,10,9173,bots/ru/174-accounting-out
+ru-175-labor-rights,Трудовые Споры,ru,ru,RUB,consult,premium,трудовое право,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9174,bots/ru/175-labor-rights
+ru-176-family-law,Семейный Юрист,ru,ru,RUB,consult,premium,семейное право,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9175,bots/ru/176-family-law
+ru-177-auto-law,Автоюрист,ru,ru,RUB,consult,premium,автоправо,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9176,bots/ru/177-auto-law
+ru-178-contract-check,Проверка Договора,ru,ru,RUB,service,standard,проверка договоров,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9177,bots/ru/178-contract-check
+ru-179-psy-online,Психолог Онлайн,ru,ru,RUB,consult,premium,психотерапия,3,4890.0,36740.0,yookassa|sbp|cryptobot|manual,10,9178,bots/ru/179-psy-online
+ru-180-anxiety-help,Тревога Под Контроль,ru,ru,RUB,course,standard,тревожность,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9179,bots/ru/180-anxiety-help
+ru-181-burnout-fix,Выгорание Стоп,ru,ru,RUB,course,standard,выгорание,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9180,bots/ru/181-burnout-fix
+ru-182-relations-club,Отношения Клуб,ru,ru,RUB,club,standard,отношения,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9181,bots/ru/182-relations-club
+ru-183-dating-guide,Знакомства Гид,ru,ru,RUB,course,budget,знакомства,3,480.0,2930.0,yookassa|sbp|cryptobot|stars|manual,25,9182,bots/ru/183-dating-guide
+ru-184-parent-school,Школа Родителей,ru,ru,RUB,club,standard,воспитание детей,3,1480.0,11910.0,yookassa|sbp|cryptobot|manual,20,9183,bots/ru/184-parent-school
+ru-185-self-esteem,Самооценка,ru,ru,RUB,course,standard,самооценка,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9184,bots/ru/185-self-esteem
+ru-186-habits-lab,Лаборатория Привычек,ru,ru,RUB,saas,budget,привычки,3,380.0,2440.0,yookassa|sbp|cryptobot|stars|manual,20,9185,bots/ru/186-habits-lab
+ru-187-meditation,Медитация Каждый День,ru,ru,RUB,club,budget,медитация,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9186,bots/ru/187-meditation
+ru-188-career-coach,Карьерный Коуч,ru,ru,RUB,consult,elite,карьерный коучинг,3,14890.0,111740.0,yookassa|sbp|cryptobot|manual,10,9187,bots/ru/188-career-coach
+ru-189-cs2-boost,CS2 Прокачка,ru,ru,RUB,service,standard,CS2,3,1480.0,7440.0,yookassa|sbp|cryptobot|manual,10,9188,bots/ru/189-cs2-boost
+ru-190-dota-coach,Dota Тренер,ru,ru,RUB,consult,standard,Dota 2,3,1480.0,11170.0,yookassa|sbp|cryptobot|manual,10,9189,bots/ru/190-dota-coach
+ru-191-wot-guide,Танки Гайды,ru,ru,RUB,club,budget,World of Tanks,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9190,bots/ru/191-wot-guide
+ru-192-mobile-legends,Мобильные Легенды,ru,ru,RUB,club,budget,мобильные MOBA,3,480.0,3910.0,yookassa|sbp|cryptobot|stars|manual,20,9191,bots/ru/192-mobile-legends
+ru-193-game-keys,Ключи Игр,ru,ru,RUB,shop,standard,ключи для игр,4,880.0,6690.0,yookassa|sbp|cryptobot|manual,30,9192,bots/ru/193-game-keys
+ru-194-steam-skins,Скины Сигналы,ru,ru,RUB,signals,premium,скины CS2,3,2190.0,17140.0,yookassa|sbp|cryptobot|manual,20,9193,bots/ru/194-steam-skins
+ru-195-streamer-start,Стример Старт,ru,ru,RUB,course,standard,стриминг,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9194,bots/ru/195-streamer-start
+ru-196-minecraft-serv,Майнкрафт Сервер,ru,ru,RUB,saas,budget,серверы Minecraft,3,380.0,2440.0,yookassa|sbp|cryptobot|stars|manual,20,9195,bots/ru/196-minecraft-serv
+ru-197-fifa-trade,FIFA Трейд,ru,ru,RUB,course,standard,FIFA Ultimate Team,3,1480.0,8930.0,yookassa|sbp|cryptobot|manual,25,9196,bots/ru/197-fifa-trade
+ru-198-poker-school,Покерная Школа,ru,ru,RUB,course,premium,покер,3,4890.0,29390.0,yookassa|sbp|cryptobot|manual,25,9197,bots/ru/198-poker-school
+ru-199-esports-bets,Киберспорт Аналитика,ru,ru,RUB,signals,premium,киберспортивная аналитика,3,2190.0,17140.0,yookassa|sbp|cryptobot|manual,20,9198,bots/ru/199-esports-bets
+ru-200-retro-games,Ретро Игры,ru,ru,RUB,shop,budget,ретро-гейминг,4,280.0,2190.0,yookassa|sbp|cryptobot|stars|manual,30,9199,bots/ru/200-retro-games
+eu-001-index-investing,Index Investing 101,eu,en,EUR,course,standard,index investing,3,28.0,173.0,stripe|cryptobot|manual,25,9200,bots/eu/001-index-investing
+eu-002-dividend-income,Dividend Income Club,eu,en,EUR,club,premium,dividend investing,3,78.0,631.0,stripe|cryptobot|manual,20,9201,bots/eu/002-dividend-income
+eu-003-fire-plan,FIRE Blueprint,eu,en,EUR,course,premium,financial independence,3,78.0,473.0,stripe|cryptobot|manual,25,9202,bots/eu/003-fire-plan
+eu-004-options-income,Options Income Desk,eu,en,EUR,signals,premium,options trading,3,35.0,275.0,stripe|cryptobot|manual,20,9203,bots/eu/004-options-income
+eu-005-debt-payoff,Debt Payoff Plan,eu,en,EUR,course,budget,debt payoff,3,8.0,53.0,stripe|cryptobot|manual,25,9204,bots/eu/005-debt-payoff
+eu-006-budget-app,Zero-Based Budget,eu,en,EUR,saas,budget,budgeting,3,6.0,44.0,stripe|cryptobot|stars|manual,20,9205,bots/eu/006-budget-app
+eu-007-tax-eu,EU Tax Advisor,eu,en,EUR,consult,elite,EU taxation,3,198.0,1491.0,stripe|cryptobot|manual,10,9206,bots/eu/007-tax-eu
+eu-008-pension-eu,Private Pension EU,eu,de,EUR,course,standard,pension planning,3,28.0,173.0,stripe|cryptobot|manual,25,9207,bots/eu/008-pension-eu
+eu-009-etf-sparplan,ETF Sparplan,eu,de,EUR,course,standard,ETF-Sparpläne,3,28.0,173.0,stripe|cryptobot|manual,25,9208,bots/eu/009-etf-sparplan
+eu-010-swing-trader,Swing Trader Pro,eu,en,EUR,signals,premium,swing trading,3,35.0,275.0,stripe|cryptobot|manual,20,9209,bots/eu/010-swing-trader
+eu-011-real-estate-eu,EU Property Investing,eu,en,EUR,course,premium,property investing,3,78.0,473.0,stripe|cryptobot|manual,25,9210,bots/eu/011-real-estate-eu
+eu-012-side-income,Side Income Lab,eu,en,EUR,club,standard,side income,3,28.0,231.0,stripe|cryptobot|manual,20,9211,bots/eu/012-side-income
+eu-013-crypto-101-eu,Crypto Foundations,eu,en,EUR,course,standard,cryptocurrency,3,28.0,173.0,stripe|cryptobot|ton|manual,25,9212,bots/eu/013-crypto-101-eu
+eu-014-defi-yield-eu,DeFi Yield Room,eu,en,EUR,club,premium,DeFi yield,3,78.0,631.0,stripe|cryptobot|ton|manual,20,9213,bots/eu/014-defi-yield-eu
+eu-015-onchain-signals,On-Chain Signals,eu,en,EUR,signals,premium,on-chain analysis,3,35.0,275.0,stripe|cryptobot|manual,20,9214,bots/eu/015-onchain-signals
+eu-016-nft-alpha-eu,NFT Alpha,eu,en,EUR,signals,standard,NFT trading,3,12.0,101.0,stripe|cryptobot|ton|manual,20,9215,bots/eu/016-nft-alpha-eu
+eu-017-crypto-tax-eu,Crypto Tax Report,eu,en,EUR,service,premium,crypto taxation,3,78.0,394.0,stripe|cryptobot|ton|manual,10,9216,bots/eu/017-crypto-tax-eu
+eu-018-solidity-dev,Solidity Developer,eu,en,EUR,course,elite,Solidity,3,198.0,1193.0,stripe|cryptobot|ton|manual,25,9217,bots/eu/018-solidity-dev
+eu-019-airdrop-eu,Airdrop Farming,eu,en,EUR,club,standard,airdrop farming,3,28.0,231.0,stripe|cryptobot|ton|manual,20,9218,bots/eu/019-airdrop-eu
+eu-020-mining-eu,Mining Profit Tracker,eu,en,EUR,saas,standard,crypto mining,3,22.0,144.0,stripe|cryptobot|ton|manual,20,9219,bots/eu/020-mining-eu
+eu-021-stablecoin-yield,Stablecoin Yield,eu,en,EUR,club,standard,stablecoin yield,3,28.0,231.0,stripe|cryptobot|ton|manual,20,9220,bots/eu/021-stablecoin-yield
+eu-022-web3-careers,Web3 Careers,eu,en,EUR,club,standard,web3 jobs,3,28.0,231.0,stripe|cryptobot|ton|manual,20,9221,bots/eu/022-web3-careers
+eu-023-api-monitor,API Uptime Monitor,eu,en,EUR,saas,standard,API monitoring,3,22.0,144.0,stripe|cryptobot|manual,20,9222,bots/eu/023-api-monitor
+eu-024-code-mentor,Code Mentor,eu,en,EUR,consult,premium,code mentoring,3,78.0,591.0,stripe|cryptobot|manual,10,9223,bots/eu/024-code-mentor
+eu-025-saas-launch,SaaS Launch Kit,eu,en,EUR,course,premium,SaaS launch,3,78.0,473.0,stripe|cryptobot|manual,25,9224,bots/eu/025-saas-launch
+eu-026-indie-hacker,Indie Hacker Club,eu,en,EUR,club,standard,indie hacking,3,28.0,231.0,stripe|cryptobot|manual,20,9225,bots/eu/026-indie-hacker
+eu-027-aws-cost,Cloud Cost Audit,eu,en,EUR,service,elite,cloud cost optimisation,3,198.0,994.0,stripe|cryptobot|manual,10,9226,bots/eu/027-aws-cost
+eu-028-devops-eu,DevOps Pipeline,eu,en,EUR,course,elite,DevOps,3,198.0,1193.0,stripe|cryptobot|manual,25,9227,bots/eu/028-devops-eu
+eu-029-python-eu,Python for Work,eu,en,EUR,course,standard,Python automation,3,28.0,173.0,stripe|cryptobot|manual,25,9228,bots/eu/029-python-eu
+eu-030-data-eng,Data Engineering,eu,en,EUR,course,elite,data engineering,3,198.0,1193.0,stripe|cryptobot|manual,25,9229,bots/eu/030-data-eng
+eu-031-ai-prompts,Prompt Library,eu,en,EUR,shop,budget,AI prompting,4,5.0,39.0,stripe|cryptobot|stars|manual,30,9230,bots/eu/031-ai-prompts
+eu-032-no-code-eu,No-Code Founder,eu,en,EUR,course,standard,no-code,3,28.0,173.0,stripe|cryptobot|manual,25,9231,bots/eu/032-no-code-eu
+eu-033-security-audit,Security Audit,eu,en,EUR,service,elite,security auditing,3,198.0,994.0,stripe|cryptobot|manual,10,9232,bots/eu/033-security-audit
+eu-034-open-source,Open Source Path,eu,en,EUR,club,standard,open source,3,28.0,231.0,stripe|cryptobot|manual,20,9233,bots/eu/034-open-source
+eu-035-home-hiit,Home HIIT,eu,en,EUR,club,budget,home workouts,3,8.0,71.0,stripe|cryptobot|manual,20,9234,bots/eu/035-home-hiit
+eu-036-strength-plan,Strength Programme,eu,en,EUR,course,standard,strength training,3,28.0,173.0,stripe|cryptobot|manual,25,9235,bots/eu/036-strength-plan
+eu-037-macro-coach,Macro Coaching,eu,en,EUR,service,premium,nutrition coaching,3,78.0,394.0,stripe|cryptobot|manual,10,9236,bots/eu/037-macro-coach
+eu-038-marathon-eu,Marathon Sub-4,eu,en,EUR,course,premium,marathon training,3,78.0,473.0,stripe|cryptobot|manual,25,9237,bots/eu/038-marathon-eu
+eu-039-yoga-eu,Daily Yoga,eu,en,EUR,club,budget,yoga,3,8.0,71.0,stripe|cryptobot|manual,20,9238,bots/eu/039-yoga-eu
+eu-040-sleep-eu,Sleep Protocol,eu,en,EUR,course,budget,sleep improvement,3,8.0,53.0,stripe|cryptobot|manual,25,9239,bots/eu/040-sleep-eu
+eu-041-mobility-eu,Desk Worker Mobility,eu,en,EUR,course,standard,mobility training,3,28.0,173.0,stripe|cryptobot|manual,25,9240,bots/eu/041-mobility-eu
+eu-042-ernaehrung,Ernährungsplan,eu,de,EUR,course,standard,Ernährung,3,28.0,173.0,stripe|cryptobot|manual,25,9241,bots/eu/042-ernaehrung
+eu-043-fitness-de,Fitness Zuhause,eu,de,EUR,club,budget,Heimtraining,3,8.0,71.0,stripe|cryptobot|manual,20,9242,bots/eu/043-fitness-de
+eu-044-mental-fit,Mental Fitness,eu,en,EUR,club,standard,mental fitness,3,28.0,231.0,stripe|cryptobot|manual,20,9243,bots/eu/044-mental-fit
+eu-045-longevity,Longevity Review,eu,en,EUR,consult,elite,longevity,3,198.0,1491.0,stripe|cryptobot|manual,10,9244,bots/eu/045-longevity
+eu-046-nutricion-es,Nutrición Práctica,eu,es,EUR,course,standard,nutrición,3,28.0,173.0,stripe|cryptobot|manual,25,9245,bots/eu/046-nutricion-es
+eu-047-cv-rewrite,CV Rewrite,eu,en,EUR,service,standard,CV writing,3,28.0,144.0,stripe|cryptobot|manual,10,9246,bots/eu/047-cv-rewrite
+eu-048-interview-prep,Interview Coaching,eu,en,EUR,consult,premium,interview preparation,3,78.0,591.0,stripe|cryptobot|manual,10,9247,bots/eu/048-interview-prep
+eu-049-salary-nego,Salary Negotiation,eu,en,EUR,course,standard,salary negotiation,3,28.0,173.0,stripe|cryptobot|manual,25,9248,bots/eu/049-salary-nego
+eu-050-german-b1,German B1 Sprint,eu,de,EUR,course,standard,German language,3,28.0,173.0,stripe|cryptobot|manual,25,9249,bots/eu/050-german-b1
+eu-051-english-biz,Business English,eu,en,EUR,club,standard,business English,3,28.0,231.0,stripe|cryptobot|manual,20,9250,bots/eu/051-english-biz
+eu-052-spanish-es,Español Conversación,eu,es,EUR,club,budget,español,3,8.0,71.0,stripe|cryptobot|manual,20,9251,bots/eu/052-spanish-es
+eu-053-pmp-prep,PMP Exam Prep,eu,en,EUR,course,premium,PMP certification,3,78.0,473.0,stripe|cryptobot|manual,25,9252,bots/eu/053-pmp-prep
+eu-054-study-abroad,Study Abroad EU,eu,en,EUR,consult,elite,studying abroad,3,198.0,1491.0,stripe|cryptobot|manual,10,9253,bots/eu/054-study-abroad
+eu-055-freelance-start,Freelance Launch,eu,en,EUR,course,standard,freelancing,3,28.0,173.0,stripe|cryptobot|manual,25,9254,bots/eu/055-freelance-start
+eu-056-remote-jobs,Remote Job Feed,eu,en,EUR,signals,budget,remote work,3,5.0,31.0,stripe|cryptobot|stars|manual,20,9255,bots/eu/056-remote-jobs
+eu-057-public-speaking-eu,Speak with Impact,eu,en,EUR,course,premium,public speaking,3,78.0,473.0,stripe|cryptobot|manual,25,9256,bots/eu/057-public-speaking-eu
+eu-058-notion-systems,Notion Systems,eu,en,EUR,shop,budget,Notion templates,4,5.0,39.0,stripe|cryptobot|stars|manual,30,9257,bots/eu/058-notion-systems
+eu-059-meta-ads,Meta Ads Mastery,eu,en,EUR,course,premium,Meta advertising,3,78.0,473.0,stripe|cryptobot|manual,25,9258,bots/eu/059-meta-ads
+eu-060-google-ads,Google Ads Management,eu,en,EUR,service,elite,Google Ads,3,198.0,994.0,stripe|cryptobot|manual,10,9259,bots/eu/060-google-ads
+eu-061-seo-eu,SEO Growth,eu,en,EUR,service,elite,SEO,3,198.0,994.0,stripe|cryptobot|manual,10,9260,bots/eu/061-seo-eu
+eu-062-email-eu,Email Revenue,eu,en,EUR,course,standard,email marketing,3,28.0,173.0,stripe|cryptobot|manual,25,9261,bots/eu/062-email-eu
+eu-063-content-eu,Content Calendar,eu,en,EUR,saas,standard,content marketing,3,22.0,144.0,stripe|cryptobot|manual,20,9262,bots/eu/063-content-eu
+eu-064-shopify-store,Shopify Store Build,eu,en,EUR,service,premium,Shopify,3,78.0,394.0,stripe|cryptobot|manual,10,9263,bots/eu/064-shopify-store
+eu-065-amazon-fba,Amazon FBA EU,eu,en,EUR,course,premium,Amazon FBA,3,78.0,473.0,stripe|cryptobot|manual,25,9264,bots/eu/065-amazon-fba
+eu-066-copywriting-eu,Conversion Copywriting,eu,en,EUR,course,premium,copywriting,3,78.0,473.0,stripe|cryptobot|manual,25,9265,bots/eu/066-copywriting-eu
+eu-067-branding-eu,Brand Identity,eu,en,EUR,service,premium,branding,3,78.0,394.0,stripe|cryptobot|manual,10,9266,bots/eu/067-branding-eu
+eu-068-tiktok-growth,Short-Form Growth,eu,en,EUR,course,standard,short-form video,3,28.0,173.0,stripe|cryptobot|manual,25,9267,bots/eu/068-tiktok-growth
+eu-069-agency-scale,Agency Scaling,eu,en,EUR,consult,elite,agency growth,3,198.0,1491.0,stripe|cryptobot|manual,10,9268,bots/eu/069-agency-scale
+eu-070-marketing-de,Online Marketing DE,eu,de,EUR,course,premium,Online-Marketing,3,78.0,473.0,stripe|cryptobot|manual,25,9269,bots/eu/070-marketing-de
+eu-071-dropship-eu,Dropshipping EU,eu,en,EUR,course,premium,dropshipping,3,78.0,473.0,stripe|cryptobot|manual,25,9270,bots/eu/071-dropship-eu
+eu-072-print-demand,Print on Demand,eu,en,EUR,course,standard,print on demand,3,28.0,173.0,stripe|cryptobot|manual,25,9271,bots/eu/072-print-demand
+eu-073-etsy-shop,Etsy Shop Growth,eu,en,EUR,course,standard,Etsy,3,28.0,173.0,stripe|cryptobot|manual,25,9272,bots/eu/073-etsy-shop
+eu-074-product-source,Product Sourcing,eu,en,EUR,service,premium,product sourcing,3,78.0,394.0,stripe|cryptobot|manual,10,9273,bots/eu/074-product-source
+eu-075-ecom-analytics,E-com Analytics,eu,en,EUR,saas,premium,e-commerce analytics,3,62.0,394.0,stripe|cryptobot|manual,20,9274,bots/eu/075-ecom-analytics
+eu-076-vat-oss,EU VAT & OSS,eu,en,EUR,consult,premium,EU VAT,3,78.0,591.0,stripe|cryptobot|manual,10,9275,bots/eu/076-vat-oss
+eu-077-packaging-design,Packaging Design,eu,en,EUR,service,premium,packaging design,3,78.0,394.0,stripe|cryptobot|manual,10,9276,bots/eu/077-packaging-design
+eu-078-subscription-box,Subscription Box,eu,en,EUR,course,standard,subscription boxes,3,28.0,173.0,stripe|cryptobot|manual,25,9277,bots/eu/078-subscription-box
+eu-079-wholesale-eu,Wholesale Deals,eu,en,EUR,club,standard,wholesale,3,28.0,231.0,stripe|cryptobot|manual,20,9278,bots/eu/079-wholesale-eu
+eu-080-returns-fix,Returns Reduction,eu,en,EUR,consult,premium,returns management,3,78.0,591.0,stripe|cryptobot|manual,10,9279,bots/eu/080-returns-fix
+eu-081-photo-eu,Photography Craft,eu,en,EUR,course,standard,photography,3,28.0,173.0,stripe|cryptobot|manual,25,9280,bots/eu/081-photo-eu
+eu-082-video-eu,Video Editing,eu,en,EUR,course,standard,video editing,3,28.0,173.0,stripe|cryptobot|manual,25,9281,bots/eu/082-video-eu
+eu-083-cooking-eu,Cooking Club,eu,en,EUR,club,budget,cooking,3,8.0,71.0,stripe|cryptobot|manual,20,9282,bots/eu/083-cooking-eu
+eu-084-wine-eu,Wine Discovery,eu,en,EUR,club,standard,wine,3,28.0,231.0,stripe|cryptobot|manual,20,9283,bots/eu/084-wine-eu
+eu-085-guitar-eu,Guitar in 30 Days,eu,en,EUR,course,budget,guitar,3,8.0,53.0,stripe|cryptobot|manual,25,9284,bots/eu/085-guitar-eu
+eu-086-chess-eu,Chess Improvement,eu,en,EUR,club,standard,chess,3,28.0,231.0,stripe|cryptobot|manual,20,9285,bots/eu/086-chess-eu
+eu-087-garden-eu,Urban Gardening,eu,en,EUR,club,budget,urban gardening,3,8.0,71.0,stripe|cryptobot|manual,20,9286,bots/eu/087-garden-eu
+eu-088-travel-hack,Flight Deal Alerts,eu,en,EUR,signals,budget,flight deals,3,5.0,31.0,stripe|cryptobot|stars|manual,20,9287,bots/eu/088-travel-hack
+eu-089-van-life,Van Conversion Plans,eu,en,EUR,shop,standard,van conversion,4,16.0,129.0,stripe|cryptobot|manual,30,9288,bots/eu/089-van-life
+eu-090-running-eu,Running Club,eu,en,EUR,club,budget,running,3,8.0,71.0,stripe|cryptobot|manual,20,9289,bots/eu/090-running-eu
+eu-091-relocate-eu,Relocation to Europe,eu,en,EUR,consult,elite,relocation,3,198.0,1491.0,stripe|cryptobot|manual,10,9290,bots/eu/091-relocate-eu
+eu-092-digital-nomad,Digital Nomad Setup,eu,en,EUR,course,premium,digital nomad life,3,78.0,473.0,stripe|cryptobot|manual,25,9291,bots/eu/092-digital-nomad
+eu-093-mortgage-eu,EU Mortgage Advice,eu,en,EUR,consult,elite,mortgages,3,198.0,1491.0,stripe|cryptobot|manual,10,9292,bots/eu/093-mortgage-eu
+eu-094-rental-mgmt,Rental Manager,eu,en,EUR,saas,standard,rental management,3,22.0,144.0,stripe|cryptobot|manual,20,9293,bots/eu/094-rental-mgmt
+eu-095-gmbh-setup,Company Formation,eu,en,EUR,service,elite,company formation,3,198.0,994.0,stripe|cryptobot|manual,10,9294,bots/eu/095-gmbh-setup
+eu-096-contract-eu,Contract Review,eu,en,EUR,service,premium,contract review,3,78.0,394.0,stripe|cryptobot|manual,10,9295,bots/eu/096-contract-eu
+eu-097-gdpr-comply,GDPR Compliance,eu,en,EUR,service,premium,GDPR compliance,3,78.0,394.0,stripe|cryptobot|manual,10,9296,bots/eu/097-gdpr-comply
+eu-098-interior-eu,Interior Design,eu,en,EUR,service,elite,interior design,3,198.0,994.0,stripe|cryptobot|manual,10,9297,bots/eu/098-interior-eu
+eu-099-inmobiliaria-es,Inmobiliaria Directa,eu,es,EUR,leadgen,premium,inmobiliaria,3,27.0,315.0,stripe|cryptobot|manual,5,9298,bots/eu/099-inmobiliaria-es
+eu-100-umzug-de,Umzugsservice,eu,de,EUR,leadgen,standard,Umzüge,3,9.0,115.0,stripe|cryptobot|manual,5,9299,bots/eu/100-umzug-de

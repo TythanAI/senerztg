@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/051-chess-school/docker-compose.yml up -d
+services:
+  botfarm-ru-chess-school:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/051-chess-school/Dockerfile
+    container_name: botfarm-ru-chess-school
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9050:9050"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

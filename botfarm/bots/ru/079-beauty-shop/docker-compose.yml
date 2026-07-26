@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/079-beauty-shop/docker-compose.yml up -d
+services:
+  botfarm-ru-beauty-shop:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/079-beauty-shop/Dockerfile
+    container_name: botfarm-ru-beauty-shop
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9078:9078"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/102-frontend-job/docker-compose.yml up -d
+services:
+  botfarm-ru-frontend-job:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/102-frontend-job/Dockerfile
+    container_name: botfarm-ru-frontend-job
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9101:9101"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

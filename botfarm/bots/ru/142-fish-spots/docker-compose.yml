@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/142-fish-spots/docker-compose.yml up -d
+services:
+  botfarm-ru-fish-spots:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/142-fish-spots/Dockerfile
+    container_name: botfarm-ru-fish-spots
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9141:9141"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

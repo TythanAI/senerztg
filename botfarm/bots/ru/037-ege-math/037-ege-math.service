@@ -1,0 +1,27 @@
+[Unit]
+Description=ЕГЭ Математика (ru-037-ege-math)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botfarm
+WorkingDirectory=/opt/botfarm/bots/ru/037-ege-math
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/botfarm/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=botfarm-ru-ege-math
+
+# Hardening — the bot only needs its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/botfarm/bots/ru/037-ege-math
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

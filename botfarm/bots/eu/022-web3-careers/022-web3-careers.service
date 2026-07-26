@@ -1,0 +1,27 @@
+[Unit]
+Description=Web3 Careers (eu-022-web3-careers)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botfarm
+WorkingDirectory=/opt/botfarm/bots/eu/022-web3-careers
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/botfarm/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=botfarm-eu-web3-careers
+
+# Hardening — the bot only needs its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/botfarm/bots/eu/022-web3-careers
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

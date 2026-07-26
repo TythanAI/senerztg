@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/151-hotel-deals/docker-compose.yml up -d
+services:
+  botfarm-ru-hotel-deals:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/151-hotel-deals/Dockerfile
+    container_name: botfarm-ru-hotel-deals
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9150:9150"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

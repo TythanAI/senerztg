@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/074-nails-pro/docker-compose.yml up -d
+services:
+  botfarm-ru-nails-pro:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/074-nails-pro/Dockerfile
+    container_name: botfarm-ru-nails-pro
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9073:9073"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

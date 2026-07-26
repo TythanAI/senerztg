@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/169-realtor-school/docker-compose.yml up -d
+services:
+  botfarm-ru-realtor-school:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/169-realtor-school/Dockerfile
+    container_name: botfarm-ru-realtor-school
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9168:9168"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

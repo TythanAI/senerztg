@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/193-game-keys/docker-compose.yml up -d
+services:
+  botfarm-ru-game-keys:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/193-game-keys/Dockerfile
+    container_name: botfarm-ru-game-keys
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9192:9192"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

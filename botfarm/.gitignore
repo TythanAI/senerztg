@@ -1,0 +1,22 @@
+# Secrets — must never be committed.
+.env
+*.env
+!.env.example
+
+# Runtime data
+*.db
+*.db-wal
+*.db-shm
+data/
+saas/data/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+venv/
+.venv/
+
+# Build output
+dist/

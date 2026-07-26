@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/031-web3-jobs/docker-compose.yml up -d
+services:
+  botfarm-ru-web3-jobs:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/031-web3-jobs/Dockerfile
+    container_name: botfarm-ru-web3-jobs
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9030:9030"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

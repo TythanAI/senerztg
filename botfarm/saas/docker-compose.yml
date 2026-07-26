@@ -1,0 +1,300 @@
+# All 13 APIs on one host. Build once, run many.
+services:
+  saas-qr:
+    build: .
+    container_name: saas-qr
+    restart: unless-stopped
+    environment:
+      SERVICE: qr
+      PORT: "8001"
+      SAAS_DB: /app/data/qr.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-ogimage:
+    build: .
+    container_name: saas-ogimage
+    restart: unless-stopped
+    environment:
+      SERVICE: ogimage
+      PORT: "8002"
+      SAAS_DB: /app/data/ogimage.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-imgtool:
+    build: .
+    container_name: saas-imgtool
+    restart: unless-stopped
+    environment:
+      SERVICE: imgtool
+      PORT: "8003"
+      SAAS_DB: /app/data/imgtool.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-shortlink:
+    build: .
+    container_name: saas-shortlink
+    restart: unless-stopped
+    environment:
+      SERVICE: shortlink
+      PORT: "8004"
+      SAAS_DB: /app/data/shortlink.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-mailcheck:
+    build: .
+    container_name: saas-mailcheck
+    restart: unless-stopped
+    environment:
+      SERVICE: mailcheck
+      PORT: "8005"
+      SAAS_DB: /app/data/mailcheck.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-authkit:
+    build: .
+    container_name: saas-authkit
+    restart: unless-stopped
+    environment:
+      SERVICE: authkit
+      PORT: "8006"
+      SAAS_DB: /app/data/authkit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-textkit:
+    build: .
+    container_name: saas-textkit
+    restart: unless-stopped
+    environment:
+      SERVICE: textkit
+      PORT: "8007"
+      SAAS_DB: /app/data/textkit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8007:8007"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-devkit:
+    build: .
+    container_name: saas-devkit
+    restart: unless-stopped
+    environment:
+      SERVICE: devkit
+      PORT: "8008"
+      SAAS_DB: /app/data/devkit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8008:8008"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-datakit:
+    build: .
+    container_name: saas-datakit
+    restart: unless-stopped
+    environment:
+      SERVICE: datakit
+      PORT: "8009"
+      SAAS_DB: /app/data/datakit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8009:8009"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-colorkit:
+    build: .
+    container_name: saas-colorkit
+    restart: unless-stopped
+    environment:
+      SERVICE: colorkit
+      PORT: "8010"
+      SAAS_DB: /app/data/colorkit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8010:8010"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-geokit:
+    build: .
+    container_name: saas-geokit
+    restart: unless-stopped
+    environment:
+      SERVICE: geokit
+      PORT: "8011"
+      SAAS_DB: /app/data/geokit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8011:8011"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-moneykit:
+    build: .
+    container_name: saas-moneykit
+    restart: unless-stopped
+    environment:
+      SERVICE: moneykit
+      PORT: "8012"
+      SAAS_DB: /app/data/moneykit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8012:8012"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  saas-timekit:
+    build: .
+    container_name: saas-timekit
+    restart: unless-stopped
+    environment:
+      SERVICE: timekit
+      PORT: "8013"
+      SAAS_DB: /app/data/timekit.db
+      SAAS_ADMIN_TOKEN: ${SAAS_ADMIN_TOKEN:?set SAAS_ADMIN_TOKEN in .env}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      CRYPTOBOT_TOKEN: ${CRYPTOBOT_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+    ports:
+      - "8013:8013"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

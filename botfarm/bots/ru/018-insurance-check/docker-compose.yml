@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/018-insurance-check/docker-compose.yml up -d
+services:
+  botfarm-ru-insurance-check:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/018-insurance-check/Dockerfile
+    container_name: botfarm-ru-insurance-check
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9017:9017"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

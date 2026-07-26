@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/017-crypto-tax-eu/docker-compose.yml up -d
+services:
+  botfarm-eu-crypto-tax-eu:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/017-crypto-tax-eu/Dockerfile
+    container_name: botfarm-eu-crypto-tax-eu
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9216:9216"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

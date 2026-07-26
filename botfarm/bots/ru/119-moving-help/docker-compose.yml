@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/119-moving-help/docker-compose.yml up -d
+services:
+  botfarm-ru-moving-help:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/119-moving-help/Dockerfile
+    container_name: botfarm-ru-moving-help
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9118:9118"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

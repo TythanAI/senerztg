@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/026-mining-calc/docker-compose.yml up -d
+services:
+  botfarm-ru-mining-calc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/026-mining-calc/Dockerfile
+    container_name: botfarm-ru-mining-calc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9025:9025"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

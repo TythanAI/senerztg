@@ -1,0 +1,27 @@
+[Unit]
+Description=Майнинг Калькулятор (ru-026-mining-calc)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botfarm
+WorkingDirectory=/opt/botfarm/bots/ru/026-mining-calc
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/botfarm/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=botfarm-ru-mining-calc
+
+# Hardening — the bot only needs its own directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/botfarm/bots/ru/026-mining-calc
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

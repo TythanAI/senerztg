@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/075-brows-master/docker-compose.yml up -d
+services:
+  botfarm-ru-brows-master:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/075-brows-master/Dockerfile
+    container_name: botfarm-ru-brows-master
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9074:9074"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

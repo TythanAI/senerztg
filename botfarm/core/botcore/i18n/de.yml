@@ -1,0 +1,106 @@
+# Buyer-facing German. Keys not listed here fall back to en.yml (admin panel
+# stays English — it is read by the shop owner, not the customer).
+menu:
+  catalog: "🛍 Katalog"
+  subscription: "⭐ Abo"
+  profile: "👤 Profil"
+  referral: "🤝 Partnerprogramm"
+  support: "💬 Support"
+  faq: "❓ FAQ"
+  content: "📚 Bibliothek"
+  quiz: "🧭 Passendes finden"
+  booking: "📅 Termin"
+  reviews: "🌟 Bewertungen"
+
+common:
+  back: "⬅️ Zurück"
+  cancel: "✖️ Abbrechen"
+  menu: "🏠 Hauptmenü"
+  error: "Etwas ist schiefgelaufen. Bitte erneut versuchen oder den Support kontaktieren."
+  done: "Fertig ✅"
+  loading: "Einen Moment…"
+  yes: "Ja"
+  no: "Nein"
+  skip: "Überspringen"
+
+start:
+  welcome: "<b>{name}</b>\n\n{tagline}\n\nWählen Sie unten einen Bereich 👇"
+  back: "Hauptmenü. Womit können wir helfen?"
+  banned: "Der Zugang zu diesem Bot ist gesperrt."
+
+catalog:
+  title: "<b>Katalog</b>\n\nWählen Sie ein Angebot:"
+  empty: "Der Katalog ist derzeit leer — schauen Sie bald wieder vorbei."
+  item: "<b>{title}</b>\n\n{description}\n\n💰 Preis: <b>{price}</b>"
+  buy: "🛒 Für {price} kaufen"
+  period: "⏳ Laufzeit: {days} Tage"
+
+checkout:
+  choose_method: "<b>{title}</b>\n💰 Gesamt: <b>{price}</b>\n\nZahlungsart wählen:"
+  no_methods: "Die Kasse ist vorübergehend nicht verfügbar. Schreiben Sie dem Support — wir nehmen die Bestellung manuell auf."
+  created: "Rechnung erstellt. Auf „Bezahlen“ tippen, danach auf „Ich habe bezahlt“."
+  pay: "💳 Bezahlen"
+  check: "🔄 Ich habe bezahlt"
+  pending: "Die Zahlung ist noch nicht eingegangen. Bitte eine Minute warten und erneut tippen."
+  paid: "✅ Zahlung erhalten! Vielen Dank."
+  expired: "Diese Rechnung ist abgelaufen. Bitte neu bestellen."
+  cancelled: "Bestellung storniert."
+  error: "Die Rechnung konnte nicht erstellt werden. Bitte eine andere Zahlungsart wählen."
+  promo_hint: "Gutscheincode? Senden Sie ihn vor der Zahlung."
+
+delivery:
+  digital: "<b>{title}</b>\n\n{payload}"
+  service: "Ihre Bestellung <b>{title}</b> ist bestätigt. Wir melden uns in Kürze."
+  subscription: "Abo <b>{title}</b> ist aktiv bis <b>{until}</b>."
+  fallback: "Danke für Ihren Kauf! Ihre Unterlagen sind unterwegs."
+
+profile:
+  title: "<b>Profil</b>\n\n🆔 ID: <code>{tg_id}</code>\n💼 Käufe: {orders}\n💰 Guthaben: {balance}"
+  orders: "<b>Letzte Bestellungen</b>"
+  no_orders: "Noch keine Bestellungen."
+  order_line: "#{id} · {title} · {amount} · {status}"
+  subs: "<b>Abos</b>"
+  sub_line: "{sku} — aktiv bis {until}"
+  no_subs: "Keine aktiven Abos."
+
+referral:
+  title: "<b>Partnerprogramm</b>\n\nSie erhalten <b>{percent}%</b> von jedem Kauf Ihrer Eingeladenen.\n\n🔗 Ihr Link:\n<code>{link}</code>\n\n👥 Eingeladen: <b>{count}</b>\n💰 Verdient: <b>{earned}</b>"
+  disabled: "Das Partnerprogramm ist nicht aktiviert."
+  bonus: "🤝 Partner-Gutschrift: <b>{amount}</b> aus dem Kauf Ihres Kontakts."
+
+support:
+  prompt: "Beschreiben Sie Ihr Anliegen in einer Nachricht — wir antworten hier."
+  sent: "Nachricht gesendet ✅ Wir antworten meist innerhalb einer Stunde."
+  contact: "Oder direkt: {username}"
+  reply: "<b>Antwort vom Support:</b>\n\n{text}"
+
+faq:
+  title: "<b>Häufige Fragen</b>"
+  empty: "Hier ist noch nichts."
+
+promo:
+  prompt: "Senden Sie Ihren Gutscheincode."
+  ok: "Gutschein aktiviert: −{percent}%"
+  bad: "Dieser Code ist ungültig oder bereits eingelöst."
+
+subscription:
+  title: "<b>Abo</b>\n\n{description}"
+  active: "✅ Aktiv bis <b>{until}</b>"
+  inactive: "Kein aktives Abo."
+  trial: "🎁 {days} Tage Testzugang aktiviert!"
+  trial_used: "Der Testzugang wurde bereits genutzt."
+  expiring: "⏳ Ihr Abo <b>{sku}</b> endet am {until}. Verlängern?"
+  expired: "Ihr Abo ist abgelaufen. Verlängern Sie für weiteren Zugriff."
+
+leadgen:
+  prompt: "Hinterlassen Sie einen Kontakt — wir melden uns mit einem passenden Angebot."
+  phone_button: "📱 Telefon senden"
+  saved: "Danke! Anfrage erhalten ✅"
+
+quiz:
+  intro: "Beantworten Sie ein paar Fragen — wir finden das Passende."
+  done: "Fertig! Unsere Empfehlung:"
+
+errors:
+  flood: "Zu viele Anfragen. Bitte etwas langsamer."
+  not_found: "Nicht gefunden."

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/087-crm-setup/docker-compose.yml up -d
+services:
+  botfarm-ru-crm-setup:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/087-crm-setup/Dockerfile
+    container_name: botfarm-ru-crm-setup
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9086:9086"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

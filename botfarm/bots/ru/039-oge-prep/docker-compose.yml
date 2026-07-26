@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/039-oge-prep/docker-compose.yml up -d
+services:
+  botfarm-ru-oge-prep:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/039-oge-prep/Dockerfile
+    container_name: botfarm-ru-oge-prep
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9038:9038"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

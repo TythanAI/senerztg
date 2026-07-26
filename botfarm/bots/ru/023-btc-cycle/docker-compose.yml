@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/023-btc-cycle/docker-compose.yml up -d
+services:
+  botfarm-ru-btc-cycle:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/023-btc-cycle/Dockerfile
+    container_name: botfarm-ru-btc-cycle
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9022:9022"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

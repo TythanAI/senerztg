@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/136-pottery-club/docker-compose.yml up -d
+services:
+  botfarm-ru-pottery-club:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/136-pottery-club/Dockerfile
+    container_name: botfarm-ru-pottery-club
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9135:9135"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/045-longevity/docker-compose.yml up -d
+services:
+  botfarm-eu-longevity:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/045-longevity/Dockerfile
+    container_name: botfarm-eu-longevity
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9244:9244"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

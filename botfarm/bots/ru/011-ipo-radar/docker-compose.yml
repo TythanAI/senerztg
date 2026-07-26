@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/011-ipo-radar/docker-compose.yml up -d
+services:
+  botfarm-ru-ipo-radar:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/011-ipo-radar/Dockerfile
+    container_name: botfarm-ru-ipo-radar
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9010:9010"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

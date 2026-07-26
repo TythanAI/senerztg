@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/138-cook-school/docker-compose.yml up -d
+services:
+  botfarm-ru-cook-school:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/138-cook-school/Dockerfile
+    container_name: botfarm-ru-cook-school
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9137:9137"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

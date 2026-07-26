@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/081-smm-factory/docker-compose.yml up -d
+services:
+  botfarm-ru-smm-factory:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/081-smm-factory/Dockerfile
+    container_name: botfarm-ru-smm-factory
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9080:9080"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

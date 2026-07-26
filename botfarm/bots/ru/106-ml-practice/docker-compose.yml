@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/106-ml-practice/docker-compose.yml up -d
+services:
+  botfarm-ru-ml-practice:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/106-ml-practice/Dockerfile
+    container_name: botfarm-ru-ml-practice
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9105:9105"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

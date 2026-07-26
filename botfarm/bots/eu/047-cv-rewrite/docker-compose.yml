@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/047-cv-rewrite/docker-compose.yml up -d
+services:
+  botfarm-eu-cv-rewrite:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/047-cv-rewrite/Dockerfile
+    container_name: botfarm-eu-cv-rewrite
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9246:9246"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

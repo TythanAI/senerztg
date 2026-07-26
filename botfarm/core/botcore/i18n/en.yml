@@ -1,0 +1,121 @@
+menu:
+  catalog: "🛍 Catalog"
+  subscription: "⭐ Subscription"
+  profile: "👤 Profile"
+  referral: "🤝 Affiliate"
+  support: "💬 Support"
+  faq: "❓ FAQ"
+  content: "📚 Library"
+  quiz: "🧭 Find my fit"
+  booking: "📅 Book"
+  reviews: "🌟 Reviews"
+
+common:
+  back: "⬅️ Back"
+  cancel: "✖️ Cancel"
+  menu: "🏠 Main menu"
+  error: "Something went wrong. Try again or contact support."
+  done: "Done ✅"
+  loading: "One moment…"
+  yes: "Yes"
+  no: "No"
+  skip: "Skip"
+
+start:
+  welcome: "<b>{name}</b>\n\n{tagline}\n\nPick a section below 👇"
+  back: "Main menu. What do you need?"
+  banned: "Access to this bot is restricted."
+
+catalog:
+  title: "<b>Catalog</b>\n\nChoose an item:"
+  empty: "The catalog is empty for now — check back soon."
+  item: "<b>{title}</b>\n\n{description}\n\n💰 Price: <b>{price}</b>"
+  buy: "🛒 Buy for {price}"
+  period: "⏳ Access: {days} days"
+
+checkout:
+  choose_method: "<b>{title}</b>\n💰 Total: <b>{price}</b>\n\nChoose a payment method:"
+  no_methods: "Checkout is temporarily unavailable. Message support and we'll take the order manually."
+  created: "Invoice created. Tap “Pay”, then “I have paid”."
+  pay: "💳 Pay"
+  check: "🔄 I have paid"
+  pending: "Payment hasn't arrived yet. If you just paid, wait a minute and tap again."
+  paid: "✅ Payment received! Thank you."
+  expired: "This invoice expired. Please start a new order."
+  cancelled: "Order cancelled."
+  error: "Could not create the invoice. Please try another payment method."
+  promo_hint: "Got a promo code? Send it before paying."
+
+delivery:
+  digital: "<b>{title}</b>\n\n{payload}"
+  service: "Your order <b>{title}</b> is confirmed. We'll be in touch shortly."
+  subscription: "Subscription <b>{title}</b> is active until <b>{until}</b>."
+  fallback: "Thanks for your purchase! Your materials are on the way."
+
+profile:
+  title: "<b>Profile</b>\n\n🆔 ID: <code>{tg_id}</code>\n💼 Purchases: {orders}\n💰 Balance: {balance}"
+  orders: "<b>Recent orders</b>"
+  no_orders: "No orders yet."
+  order_line: "#{id} · {title} · {amount} · {status}"
+  subs: "<b>Subscriptions</b>"
+  sub_line: "{sku} — active until {until}"
+  no_subs: "No active subscriptions."
+
+referral:
+  title: "<b>Affiliate program</b>\n\nYou earn <b>{percent}%</b> of every purchase made by your invites.\n\n🔗 Your link:\n<code>{link}</code>\n\n👥 Invited: <b>{count}</b>\n💰 Earned: <b>{earned}</b>"
+  disabled: "The affiliate program is not enabled."
+  bonus: "🤝 Affiliate payout: <b>{amount}</b> from your referral's purchase."
+
+support:
+  prompt: "Describe your question in one message — an operator will reply right here."
+  sent: "Message sent ✅ We usually reply within an hour."
+  contact: "Or reach us directly: {username}"
+  reply: "<b>Support reply:</b>\n\n{text}"
+
+faq:
+  title: "<b>Frequently asked</b>"
+  empty: "Nothing here yet."
+
+promo:
+  prompt: "Send your promo code."
+  ok: "Promo applied: −{percent}%"
+  bad: "This code is invalid or already used."
+
+subscription:
+  title: "<b>Subscription</b>\n\n{description}"
+  active: "✅ Active until <b>{until}</b>"
+  inactive: "No active subscription."
+  trial: "🎁 {days}-day trial activated!"
+  trial_used: "You have already used the trial."
+  expiring: "⏳ Your <b>{sku}</b> subscription ends on {until}. Renew?"
+  expired: "Your subscription ended. Renew to restore access."
+
+leadgen:
+  prompt: "Leave a contact — we'll get back to you with a tailored option."
+  phone_button: "📱 Share phone"
+  saved: "Thank you! Request received ✅"
+
+quiz:
+  intro: "Answer a few questions and we'll match you with the right option."
+  done: "All set! We recommend:"
+
+admin:
+  denied: "Not authorised."
+  panel: "<b>Admin panel</b>\n\n👥 Users: {users} (+{today} today)\n🧾 Payments: {paid}\n💰 Revenue: {revenue}"
+  stats: "📊 Stats"
+  broadcast: "📣 Broadcast"
+  promos: "🎟 Promo codes"
+  orders: "🧾 Orders"
+  leads: "📇 Leads"
+  broadcast_prompt: "Send the message to broadcast. It goes to every user."
+  broadcast_confirm: "Send this to {count} users?"
+  broadcast_started: "Broadcast started…"
+  broadcast_done: "Broadcast finished: {sent} delivered, {failed} failed."
+  promo_prompt: "Format: <code>CODE PERCENT [LIMIT] [DAYS]</code>\nExample: <code>SALE20 20 100 7</code>"
+  promo_created: "Promo <b>{code}</b> created: −{percent}%"
+  confirm_paid: "✅ Confirm payment"
+  order_confirmed: "Order #{id} confirmed manually."
+
+errors:
+  flood: "Too many requests. Please slow down."
+  not_found: "Not found."

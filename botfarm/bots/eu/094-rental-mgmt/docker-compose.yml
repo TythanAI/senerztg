@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/094-rental-mgmt/docker-compose.yml up -d
+services:
+  botfarm-eu-rental-mgmt:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/094-rental-mgmt/Dockerfile
+    container_name: botfarm-eu-rental-mgmt
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9293:9293"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

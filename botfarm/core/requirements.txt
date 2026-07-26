@@ -1,0 +1,7 @@
+aiogram>=3.13,<4
+aiohttp>=3.9
+SQLAlchemy[asyncio]>=2.0
+aiosqlite>=0.20
+PyYAML>=6.0
+# Uncomment when moving a bot from SQLite to Postgres:
+# asyncpg>=0.29

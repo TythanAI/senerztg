@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/150-road-trip/docker-compose.yml up -d
+services:
+  botfarm-ru-road-trip:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/150-road-trip/Dockerfile
+    container_name: botfarm-ru-road-trip
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9149:9149"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/146-dance-home/docker-compose.yml up -d
+services:
+  botfarm-ru-dance-home:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/146-dance-home/Dockerfile
+    container_name: botfarm-ru-dance-home
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9145:9145"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

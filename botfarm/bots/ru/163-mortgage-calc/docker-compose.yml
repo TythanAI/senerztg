@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/163-mortgage-calc/docker-compose.yml up -d
+services:
+  botfarm-ru-mortgage-calc:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/163-mortgage-calc/Dockerfile
+    container_name: botfarm-ru-mortgage-calc
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9162:9162"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

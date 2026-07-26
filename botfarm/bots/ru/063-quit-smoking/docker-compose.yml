@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/063-quit-smoking/docker-compose.yml up -d
+services:
+  botfarm-ru-quit-smoking:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/063-quit-smoking/Dockerfile
+    container_name: botfarm-ru-quit-smoking
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9062:9062"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

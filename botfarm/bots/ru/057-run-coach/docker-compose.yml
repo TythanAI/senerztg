@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/057-run-coach/docker-compose.yml up -d
+services:
+  botfarm-ru-run-coach:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/057-run-coach/Dockerfile
+    container_name: botfarm-ru-run-coach
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9056:9056"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/128-wedding-plan/docker-compose.yml up -d
+services:
+  botfarm-ru-wedding-plan:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/128-wedding-plan/Dockerfile
+    container_name: botfarm-ru-wedding-plan
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9127:9127"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

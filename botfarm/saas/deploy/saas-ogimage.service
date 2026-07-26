@@ -1,0 +1,26 @@
+[Unit]
+Description=OG Image API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=saas
+WorkingDirectory=/opt/saas
+EnvironmentFile=/opt/saas/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=SAAS_DB=/opt/saas/data/ogimage.db
+ExecStart=/opt/saas/venv/bin/python serve.py ogimage --port 8002
+Restart=always
+RestartSec=10
+SyslogIdentifier=saas-ogimage
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/saas/data
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

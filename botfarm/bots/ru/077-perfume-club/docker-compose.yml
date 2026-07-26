@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/077-perfume-club/docker-compose.yml up -d
+services:
+  botfarm-ru-perfume-club:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/077-perfume-club/Dockerfile
+    container_name: botfarm-ru-perfume-club
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9076:9076"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

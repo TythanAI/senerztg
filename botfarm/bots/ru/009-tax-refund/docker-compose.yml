@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/009-tax-refund/docker-compose.yml up -d
+services:
+  botfarm-ru-tax-refund:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/009-tax-refund/Dockerfile
+    container_name: botfarm-ru-tax-refund
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9008:9008"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

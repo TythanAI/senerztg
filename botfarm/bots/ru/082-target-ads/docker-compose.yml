@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/082-target-ads/docker-compose.yml up -d
+services:
+  botfarm-ru-target-ads:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/082-target-ads/Dockerfile
+    container_name: botfarm-ru-target-ads
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9081:9081"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

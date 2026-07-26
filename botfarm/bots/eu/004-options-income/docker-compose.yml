@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/004-options-income/docker-compose.yml up -d
+services:
+  botfarm-eu-options-income:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/004-options-income/Dockerfile
+    container_name: botfarm-eu-options-income
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9203:9203"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

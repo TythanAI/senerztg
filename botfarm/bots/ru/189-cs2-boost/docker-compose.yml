@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/189-cs2-boost/docker-compose.yml up -d
+services:
+  botfarm-ru-cs2-boost:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/189-cs2-boost/Dockerfile
+    container_name: botfarm-ru-cs2-boost
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9188:9188"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

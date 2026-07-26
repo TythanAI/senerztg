@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/147-cheap-flights/docker-compose.yml up -d
+services:
+  botfarm-ru-cheap-flights:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/147-cheap-flights/Dockerfile
+    container_name: botfarm-ru-cheap-flights
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9146:9146"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,26 @@
+[Unit]
+Description=Money Toolkit API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=saas
+WorkingDirectory=/opt/saas
+EnvironmentFile=/opt/saas/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=SAAS_DB=/opt/saas/data/moneykit.db
+ExecStart=/opt/saas/venv/bin/python serve.py moneykit --port 8012
+Restart=always
+RestartSec=10
+SyslogIdentifier=saas-moneykit
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/saas/data
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

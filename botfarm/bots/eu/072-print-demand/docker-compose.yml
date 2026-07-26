@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/072-print-demand/docker-compose.yml up -d
+services:
+  botfarm-eu-print-demand:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/072-print-demand/Dockerfile
+    container_name: botfarm-eu-print-demand
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9271:9271"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

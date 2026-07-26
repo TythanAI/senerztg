@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/017-passive-income/docker-compose.yml up -d
+services:
+  botfarm-ru-passive-income:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/017-passive-income/Dockerfile
+    container_name: botfarm-ru-passive-income
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9016:9016"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

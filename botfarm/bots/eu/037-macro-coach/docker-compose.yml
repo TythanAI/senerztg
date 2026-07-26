@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/eu/037-macro-coach/docker-compose.yml up -d
+services:
+  botfarm-eu-macro-coach:
+    build:
+      context: ../../..
+      dockerfile: bots/eu/037-macro-coach/Dockerfile
+    container_name: botfarm-eu-macro-coach
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9236:9236"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

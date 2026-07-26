@@ -1,0 +1,18 @@
+# Build from the botfarm root:  docker compose -f bots/ru/153-camp-gear/docker-compose.yml up -d
+services:
+  botfarm-ru-camp-gear:
+    build:
+      context: ../../..
+      dockerfile: bots/ru/153-camp-gear/Dockerfile
+    container_name: botfarm-ru-camp-gear
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9152:9152"
+    volumes:
+      - ./data:/app/bot/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
